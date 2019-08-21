@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "coding-commands",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A collection of useful commands for many different tools and programming languages.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "André Kovac <me@andrekovac.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Andruschenko/coding-commands/issues"
   },
   "dependencies": {
     "gatsby": "^2.13.73",
@@ -38,15 +38,15 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/Andruschenko/coding-commands#readme",
   "keywords": [
-    "gatsby"
+    "commands", "coding"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/Andruschenko/coding-commands.git"
   },
   "scripts": {
     "build": "gatsby build",
