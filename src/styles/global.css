@@ -12,9 +12,8 @@
 
 /* Prompt for all users */
 .command-line-prompt > span[data-user]:before {
-  content: '[' attr(data-user) '@' attr(data-host) '] $';
-  /* Hide the user and host information */
-  content: '#';
+  /* content: '[' attr(data-user) '@' attr(data-host) '] $'; */
+  content: '$'; /* Hide the user and host information */
 }
 
 /* Prompt for root */
