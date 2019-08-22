@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: `https://quizzical-jang-fb6dca.netlify.com/`,
     social: {
       twitter: `andrekovac`,
-      homepage: `https://www.andrekovac.com`,
     },
   },
   plugins: [
