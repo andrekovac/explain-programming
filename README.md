@@ -5,8 +5,49 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's blog starter
+  Coding commands
 </h1>
+
+## TODO
+
+* [ ] Restyle inline code block
+
+	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
+	* See [https://using-remark.gatsbyjs.org/code-and-syntax-highlighting/#inline-code]()
+
+* [ ] categories
+
+	* See [https://github.com/wonism/gatsby-advanced-blog]()
+
+* [ ] search
+
+	* Look at [https://github.com/greglobinski/gatsby-starter-hero-blog]() for an example
+	* See [https://www.gatsbyjs.org/docs/adding-search/]()
+
+* [ ] Create logo
+* [ ] Host on my programming url
+* [ ] Rewrite bash fields where necessary (to show prompt)
+* [ ] Javascript: Write out examples instead of using screenshots
+* [ ] Javascript: Include other command files
+* [ ] Remove description from preview
+* [ ] Think of how to us mdx
+
+	See [https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/#installation]()
+* [ ] Styles: Switch to styles-components
+
+	See [https://www.gatsbyjs.org/docs/creating-global-styles/#how-to-add-global-styles-in-gatsby-with-standard-css-files]()
+* [ ] Draft option
+
+	See [https://github.com/wonism/gatsby-advanced-blog]()
+
+* [ ] Check out gatsby example site
+
+	* See [https://github.com/prichey/prestonrichey.com/tree/master/src]()
+	* See [https://prestonrichey.com/blog/react-in-markdown/]()
+
+---
+
+## Gatsby blog starter README
 
 Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
