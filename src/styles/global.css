@@ -1,0 +1,27 @@
+/*
+ * Adapting the styling of the prompt.
+ * See https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
+ * for more information.
+ */
+.command-line-prompt > span:before {
+  color: #999;
+  content: ' ';
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: '[' attr(data-user) '@' attr(data-host) '] $';
+  /* Hide the user and host information */
+  content: '#';
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user='root']:before {
+  content: '[' attr(data-user) '@' attr(data-host) '] #';
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
+}

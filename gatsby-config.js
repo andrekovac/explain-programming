@@ -10,6 +10,7 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-plugin-mdx',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -40,7 +41,15 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              prompt: {
+                user: `user`,
+                global: true,
+              },
+            },
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
