@@ -1,42 +1,10 @@
 ---
 title: React Native
+description: Concepts, syntax and code snippets for React Native
 date: '2019-08-21T17:58:32.169Z'
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 category: 'framework'
+tags: ['javascript', 'react-native']
 ---
-
-## Errors
-
-#### Android build erros
-
-```bash
-cd android && ./gradlew clean && cd ..
-```
-
-like suggested [here](https://github.com/airbnb/lottie-react-native/issues/64) or [here](https://github.com/react-community/react-native-maps/issues/378) or [here](https://github.com/BranchMetrics/react-native-branch-deep-linking/issues/225).
-
-#### iOS Run errors
-
-Quick fix
-
-```bash
-npm start -- --reset-cache
-```
-
-Elaborate fix
-
-```bash
-watchman watch-del-all
-rm -rf ./node_modules
-rm -rf $TMPDIR/react-*
-// npm cache clean
-yarn cache clean
-yarn install
-
-yarn start -- --reset-cache
-
-react-native run-ios
-```
 
 ## Android configuration
 
@@ -52,7 +20,11 @@ react-native init NameOfProject
 
 1.  open project file in xcode
 
-        $ open NameOfProject/ios/NameOfProject.xcodeproj
+  On **OSX** you can use the `open` command:
+
+  ```bash
+  open NameOfProject/ios/NameOfProject.xcodeproj
+  ```
 
 2.  build project in Product/Build (will open console window)
 
@@ -83,13 +55,17 @@ react-native run-android
 
 ###### View files in emulator with the [Android Device Monitor](http://stackoverflow.com/questions/18530114/accessing-files-from-genymotion-sd-card)
 
-    $ monitor
+```bash
+monitor
+```
 
 ##### Open emulator app and create/start emulator
 
 IMPORTANT: Make sure all other virtual machines are turned off! Including `Docker for Mac`!
 
-    $ android avd
+```bash
+android avd
+```
 
 This should do it. Then stretch the emulator windows such that the menu-item (see image) is visible. Only then the shortcut `Cmd + M` will open the React Native Dev Menu where you have to press `Reload JS` to make changes visible.
 
@@ -97,7 +73,9 @@ This should do it. Then stretch the emulator windows such that the menu-item (se
 
 In case something doesn't work run the following.
 
-    $ react-native start
+```bash
+react-native start
+```
 
 If an error occurs, it will show you tipps on what to do, e.g.
 
@@ -106,11 +84,15 @@ If an error occurs, it will show you tipps on what to do, e.g.
 Most likely another process is already using this port
 Run the following command to find out which process:
 
-    lsof -n -i4TCP:8081
+```bash
+lsof -n -i4TCP:8081
+```
 
 You can either shut down the other process:
 
-    kill -9 <PID>
+```bash
+kill -9 <PID>
+```
 
 or run packager on different port.
 
@@ -130,7 +112,9 @@ To run without a server, bundle the jsfile into the apk by running:
 
 - execute the following:
 
-      		curl "http://localhost:8081/index.android.bundle?platform=android" -o "android/app/src/main/assets/index.android.bundle"
+  ```bash
+  curl "http://localhost:8081/index.android.bundle?platform=android" -o "android/app/src/main/assets/index.android.bundle"
+  ```
 
 ## Run project on device
 
@@ -158,65 +142,60 @@ To run without a server, bundle the jsfile into the apk by running:
 - Each `Animated` function like `spring`, `timing` or `decay` return an object with two functions `start` and `stop` to start or stop the animation. The `start(callback)` function can be passed a `callback` function to call when the animation starts.
 - Start animation when you want it to start, i.e. at mount of component in `componentDidMount` or in a redux actionCreator when action is called:
 
-      	```js
-      	componentDidMount() {
-       Animated.timing(          // Uses easing functions
-         this.state.fadeAnim,    // The value to drive
-         {toValue: 1}            // Configuration
-       ).start();                // Don't forget start!
-
+  ```js
+  componentDidMount() {
+    Animated.timing(          // Uses easing functions
+      this.state.fadeAnim,    // The value to drive
+      { toValue: 1 }          // Configuration
+    ).start();                // Don't forget start!
   }
-
-  ```
-
   ```
 
 - Interpolation:
 
-      	I set my Animated.Value as:
+  I set my Animated.Value as:
 
-      	```js
-      	this.state = {
-
-  fadeAnim: new Animated.Value(0), // init opacity 0
+  ```js
+  this.state = {
+    fadeAnim: new Animated.Value(0), // init opacity 0
   };
-  ...
-  Animated.timing( // Uses easing functions
-  this.state.fadeAnim, // The value to drive
-  {toValue: 1} // Configuration
-  ).start(); // Don't forget start!
 
-  ````
+  // ...other stuff
 
-      	This means my Animated.Value goes from `0 to 1`. If I define it as `inputRange`, my outputRange can be anything else, i.e. here pixels of translation, i.e. a translation from the position 150px to 0px. `opacity` is changed from 0 to 1.
+  Animated.timing(        // Uses easing functions
+    this.state.fadeAnim,  // The value to drive
+    { toValue: 1 }        // Configuration
+  ).start();              // Don't forget start!
+  ```
 
-      	```js
-      	<Animated.View
-      		style={{
-      	     opacity: this.state.fadeAnim, // Binds directly
-      	     transform: [{
-      	       translateY: this.state.fadeAnim.interpolate({
-      	         inputRange: [0, 1],
-      	         outputRange: [150, 0]  // 0 : 150, 0.5 : 75, 1 : 0
-      	       }),
-      	     }],
-      	   }}>
+  This means my Animated.Value goes from `0 to 1`. If I define it as `inputRange`, my outputRange can be anything else, i.e. here pixels of translation, i.e. a translation from the position 150px to 0px. `opacity` is changed from 0 to 1.
 
+  ```js
+  <Animated.View
+    style={{
+      opacity: this.state.fadeAnim, // Binds directly
+      transform: [{
+        translateY: this.state.fadeAnim.interpolate({
+          inputRange: [0, 1],
+          outputRange: [150, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+        }),
+      }],
+    }}>
   </Animated.View>
-  ````
+  ```
 
-      	see the config in `Interpolation.js`
+  See the config in `Interpolation.js`:
 
-      	```js
-      	export type InterpolationConfigType = {
-      	  inputRange: Array<number>;
-      	  outputRange: (Array<number> | Array<string>);
-      	  easing?: ((input: number) => number);
-      	  extrapolate?: ExtrapolateType;
-      	  extrapolateLeft?: ExtrapolateType;
-      	  extrapolateRight?: ExtrapolateType;
-      	};
-      	```
+  ```js
+  export type InterpolationConfigType = {
+    inputRange: Array<number>;
+    outputRange: (Array<number> | Array<string>);
+    easing?: ((input: number) => number);
+    extrapolate?: ExtrapolateType;
+    extrapolateLeft?: ExtrapolateType;
+    extrapolateRight?: ExtrapolateType;
+  };
+  ```
 
 - `this.state.foo = Animated.Value(0)`
   _ `this.state.foo.addListener(value => rememberValue(value))` so you can observe updates from animations.
@@ -312,7 +291,7 @@ see proxipedia
 
 in `android/app/src/main/AndroidManifest.xml` add:
 
-```
+```xml
 <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove"/>
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:node="remove"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="remove"/>

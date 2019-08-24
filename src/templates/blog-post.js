@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Tags from '../components/tags'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -28,14 +29,16 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.title}
             </h1>
+            <Tags tags={post.frontmatter.tags} />
             <p
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
+                fontStyle: 'italic',
                 marginBottom: rhythm(1),
               }}
             >
-              {post.frontmatter.date}
+              {post.frontmatter.category}
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -96,8 +99,10 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        # date(formatString: "MMMM DD, YYYY")
         description
+        category
+        tags
       }
     }
   }

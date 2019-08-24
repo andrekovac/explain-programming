@@ -1,15 +1,16 @@
 ---
 title: Javascript
-date: '2019-08-06T23:46:37.121Z'
+description: Concepts, syntax and code snippets for Javascript
+date: '2019-08-20T23:46:37.121Z'
 category: 'programming-language'
-tags: ['draft', 'long']
+tags: ['javascript']
 ---
 
 ## JS Hacks
 
 - life hack: console log function that auto-indents based on the depth of your call stack ([Tweet from Sophie Alpert](https://twitter.com/sophiebits/status/1058448900460138497)):
 
-  ```javascript
+  ```js
   function log(message) {
     console.log(
       '  '.repeat(new Error().stack.match(/\n/g).length - 2) + message
@@ -31,35 +32,11 @@ Use CSS selectors
 document.querySelector('.ng-scope')
 ```
 
-## Javascript Event Loop
-
-Participants: Event stack, web APIs, task queue, event loop
-
-Javascript runs an [event loop](http://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html) in which functions can be registered to run in the next iteration of the never ending single-threaded loop.
-
-- `setTimeout(..., 0)` deferes code in the callback function to be executed when the event stack is empty.
-
-  ```js
-  setTimeout(function() {
-    console.log('hello')
-  }, 0)
-  ```
-
-### Synchronous code
-
-Code which is **not** called as a call-back from another function (i.e. registered to be executed in the next iteration) and is called in the current iteration is blocking the event loop.
-
-### Asynchronous code
-
-Registers an `event handler` (a **callback** routine) and doesn't block the event loop.
-
-With callback JS is concurrent out of the box.
-
 ## Javascript - Common Errors + Solutions
 
 [JavaScript Not Working? Start with the 10 Most Common Mistakes JavaScript Developers Make](http://www.toptal.com/javascript/10-most-common-javascript-mistakes)
 
-e.g. Common Mistake #6: Incorrect use of function definitions inside for loops:
+e.g. Common Mistake #6: Incorrect use of function definitions inside `for` loops:
 
 Solution: Use an outer function + inner callback function
 
@@ -78,13 +55,15 @@ for (var i = 0; i < n; i++) {
 }
 ```
 
-Explanation: `i` would not present in function in for loop. By creating a closure it then is present in the inner function returned.
+**Explanation**: `i` would not be present in function in for loop. By creating a *closure*, it then is present in the inner function returned.
 
 ## Web Requests
 
-The global `fetch` function is an easier way to make web requests and handle responses than using an `XMLHttpRequest`.
+The global `fetch` function is an easier way to make web requests and handle responses compared to using an `XMLHttpRequest`.
 
 #### XMLHttpRequest
+
+Example:
 
 ```js
 function loadDoc() {
@@ -101,7 +80,7 @@ function loadDoc() {
 
 #### Fetch
 
-- working with Promises.
+- works with Promises
 - with ES6 (Babel) (as used in `react native` tutorial):
 
 ```js
@@ -123,9 +102,9 @@ fetchData: function() {
 #### jQuery `$.ajax()`
 
 ```js
-var menuId = $('ul.nav')
-  .first()
-  .attr('id')
+// Store an id form a DOM element to be sent in your request
+var menuId = $('ul.nav').first().attr('id')
+// Define the request
 var request = $.ajax({
   url: 'script.php',
   method: 'POST',
@@ -133,10 +112,11 @@ var request = $.ajax({
   dataType: 'html',
 })
 
+// Display the result of the request inside the DOM element with the id `log`
 request.done(function(msg) {
   $('#log').html(msg)
 })
-
+// In case the request throws an error, show an alert
 request.fail(function(jqXHR, textStatus) {
   alert('Request failed: ' + textStatus)
 })
@@ -168,17 +148,17 @@ jqxhr.always(function() {
 
 ## strict mode
 
-Add the following line at the **beginning** of your script!
+- Add the following line at the **beginning** of your script!
 
-```js
-'use strict'
-```
+  ```js
+  'use strict'
+  ```
 
-[JavaScript Use Strict](http://www.w3schools.com/js/js_strict.asp)
+- More information: [JavaScript Use Strict](http://www.w3schools.com/js/js_strict.asp)
 
 ## `with`
 
-in the following example `Math` is added to the top of the scope chain and thus you don't have to write `Math.PI`.
+In the following example `Math` is added to the top of the scope chain and thus you don't have to write `Math.PI`.
 
 ```js
 var a, x, y
