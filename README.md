@@ -8,6 +8,20 @@
   Coding commands
 </h1>
 
+## Run
+
+1. Install dependencies
+
+  ```bash
+  yarn
+  ```
+
+2. Run development server
+
+  ```bash
+  gatsby develop
+  ```
+
 ## TODO
 
 * [ ] Restyle inline code block
@@ -64,7 +78,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
     ```
 
-1.  **Start developing.**
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -73,7 +87,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     gatsby develop
     ```
 
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 

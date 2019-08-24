@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Coding Commands`,
+    title: `Explain Programming`,
     author: `André Kovac`,
     description: `Find the most useful commands for a programming language or a framework fast - ready to use!`,
     siteUrl: `https://quizzical-jang-fb6dca.netlify.com/`,
