@@ -43,14 +43,14 @@
 * [ ] Rewrite bash fields where necessary (to show prompt)
 * [ ] Javascript: Write out examples instead of using screenshots
 * [ ] Javascript: Include other command files
-* [ ] Remove description from preview
+* [x] Remove description from preview
 * [ ] Think of how to us mdx
 
 	See [https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/#installation]()
-* [ ] Styles: Switch to styles-components
+* [ ] Styles: Switch to styled-components
 
 	See [https://www.gatsbyjs.org/docs/creating-global-styles/#how-to-add-global-styles-in-gatsby-with-standard-css-files]()
-* [ ] Draft option
+* [x] Draft option
 
 	See [https://github.com/wonism/gatsby-advanced-blog]()
 
