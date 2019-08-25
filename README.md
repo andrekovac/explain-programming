@@ -24,7 +24,8 @@
 
 ## TODO
 
-* [ ] Add google analytics
+* [x] Add google analytics
+* [ ] Add impressum and privacy policy pages
 * [ ] Trace back creation dates of original **commands** files and add in `date` field.
 * [ ] Restyle inline code block
 
