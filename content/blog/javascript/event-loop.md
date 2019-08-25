@@ -1,6 +1,6 @@
 ---
 title: Javascript Event Loop
-description: Definitions and concepts behind the Javascript Event Loop
+description: Javascript event loop, synchronous and asynchronous code explained
 date: '2019-08-24T23:46:37.121Z'
 category: 'programming-language'
 tags: ['javascript', 'theory']
@@ -8,9 +8,9 @@ tags: ['javascript', 'theory']
 
 **Participants**: Event stack, web APIs, task queue, event loop
 
-Javascript runs an [event loop](http://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html) in which functions can be registered to run in the next iteration of the never ending single-threaded loop.
+Javascript runs an [event loop (greatly explained in this YouTube video)](http://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html) in which functions can be registered to run in the next iteration of the never ending single-threaded loop.
 
-- `setTimeout(..., 0)` deferes code in the callback function to be executed when the event stack is empty.
+- `setTimeout(..., 0)` deferes code in the callback function to be executed when the event stack is empty, e.g.:
 
   ```js
   setTimeout(function() {

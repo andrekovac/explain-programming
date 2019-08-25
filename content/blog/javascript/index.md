@@ -1,44 +1,64 @@
 ---
-title: Javascript
-description: Concepts, syntax and code snippets for Javascript
+title: Javascript - Interesting and cool stuff
+description: Concepts, syntax and code snippets of interesting and cool stuff you can do with Javascript
 date: '2019-08-20T23:46:37.121Z'
 category: 'programming-language'
 tags: ['javascript']
 ---
 
-## JS Hacks
+## Interesting/Cool stuff
 
-- life hack: console log function that auto-indents based on the depth of your call stack ([Tweet from Sophie Alpert](https://twitter.com/sophiebits/status/1058448900460138497)):
+### `&&` call not returning boolean
 
-  ```js
-  function log(message) {
-    console.log(
-      '  '.repeat(new Error().stack.match(/\n/g).length - 2) + message
-    )
-  }
-  ```
-
-## DOM manipulation
-
-Use DOM id/class/... names
+If `hasClose` is false, the Button will not be shown..
 
 ```js
-document.getElementById('fb-root')
+{
+  hasClose && (
+    <ButtonIcon
+      style={styles.closeButton}
+      themeProps={closeThemeProps}
+      icon="close"
+      onPress={onClose}
+    />
+  )
+}
 ```
 
-Use CSS selectors
+### `console.log` with auto-indent
+
+`console.log` function that auto-indents based on the depth of your call stack ([Tweet from Sophie Alpert](https://twitter.com/sophiebits/status/1058448900460138497)):
 
 ```js
-document.querySelector('.ng-scope')
+function log(message) {
+  console.log(
+    '  '.repeat(new Error().stack.match(/\n/g).length - 2) + message
+  )
+}
 ```
 
-## Javascript - Common Errors + Solutions
+### switch-case chaining
 
-[JavaScript Not Working? Start with the 10 Most Common Mistakes JavaScript Developers Make](http://www.toptal.com/javascript/10-most-common-javascript-mistakes)
+Chain cases (i.e. let several cases have the same result):
 
-e.g. Common Mistake #6: Incorrect use of function definitions inside `for` loops:
+```js
+case 'BackAction':
+case 'back':
+case 'pop':
+	return currentState.index > 0 ?
+		NavigationStateUtils.pop(currentState) :
+		currentState;
+```
 
-Solution: Use an outer function + inner callback function
+### Promise `then` and `resolve` interplay
+
+Inside a `then()` chain, `resolve()` function call let's it directly jump to next `then()`.
+
+### Incorrect use of function definitions inside `for` loops:
+
+**Mistake**: Incorrect use of function definitions inside `for` loops.
+
+**Solution**: Use an outer function + inner callback function
 
 ```js
 var elements = document.getElementsByTagName('input')
@@ -57,123 +77,50 @@ for (var i = 0; i < n; i++) {
 
 **Explanation**: `i` would not be present in function in for loop. By creating a *closure*, it then is present in the inner function returned.
 
-## Web Requests
+(taken from [JavaScript Not Working? Start with the 10 Most Common Mistakes JavaScript Developers Make](http://www.toptal.com/javascript/10-most-common-javascript-mistakes) - Common Mistake #6)
 
-The global `fetch` function is an easier way to make web requests and handle responses compared to using an `XMLHttpRequest`.
-
-#### XMLHttpRequest
-
-Example:
+### Ansi color in `console.log`
 
 ```js
-function loadDoc() {
-  var xhttp = new XMLHttpRequest()
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById('demo').innerHTML = xhttp.responseText
-    }
-  }
-  xhttp.open('GET', 'demo_get2.asp?fname=Henry&lname=Ford', true)
-  xhttp.send()
-}
+console.log('\x1b[41m\x1b[37m%s\x1b[0m', 'FAILED', result)
+console.log('\x1b[36m%s\x1b[0m', 'I am cyan') //cyan
 ```
 
-#### Fetch
+## Misc
 
-- works with Promises
-- with ES6 (Babel) (as used in `react native` tutorial):
+### Logging with `console.log()`
+
+#### `console.log()` vs. `console.dir()`
+
+- `console.log(JSON.stringify(a));`
+- `console.dir(a);`
+
+* Current state
+
+[console.log object at current state](http://stackoverflow.com/questions/7389069/console-log-object-at-current-state)
+
+### DOM manipulation
+
+Use DOM id/class/... names
 
 ```js
-fetchData: function() {
-    fetch(REQUEST_URL)
-      .then((response) => response.json())
-      .then((responseData) => {
-        this.setState({
-          movies: responseData.movies,
-        });
-      })
-      .catch(err => console.log(err))
-      .done(); // always make sure to call done() or any errors thrown will get swallowed.
-  },
+document.getElementById('fb-root')
 ```
 
-`fetch` returns a Promise, `response.json()` again returns a Promise which can then be resolved to yield the response data if successful.
-
-#### jQuery `$.ajax()`
+Use CSS selectors
 
 ```js
-// Store an id form a DOM element to be sent in your request
-var menuId = $('ul.nav').first().attr('id')
-// Define the request
-var request = $.ajax({
-  url: 'script.php',
-  method: 'POST',
-  data: { id: menuId },
-  dataType: 'html',
-})
-
-// Display the result of the request inside the DOM element with the id `log`
-request.done(function(msg) {
-  $('#log').html(msg)
-})
-// In case the request throws an error, show an alert
-request.fail(function(jqXHR, textStatus) {
-  alert('Request failed: ' + textStatus)
-})
+document.querySelector('.ng-scope')
 ```
 
-or
+### File i/o
 
-```js
-// Assign handlers immediately after making the request,
-// and remember the jqXHR object for this request
-var jqxhr = $.ajax('example.php')
-  .done(function() {
-    alert('success')
-  })
-  .fail(function() {
-    alert('error')
-  })
-  .always(function() {
-    alert('complete')
-  })
+- [Reading files in JavaScript using the File APIs](http://www.html5rocks.com/en/tutorials/file/dndfiles/)
 
-// Perform other work here ...
 
-// Set another completion function for the request above
-jqxhr.always(function() {
-  alert('second complete')
-})
-```
+## 🤷‍ What's going on here?
 
-## strict mode
-
-- Add the following line at the **beginning** of your script!
-
-  ```js
-  'use strict'
-  ```
-
-- More information: [JavaScript Use Strict](http://www.w3schools.com/js/js_strict.asp)
-
-## `with`
-
-In the following example `Math` is added to the top of the scope chain and thus you don't have to write `Math.PI`.
-
-```js
-var a, x, y
-var r = 10
-
-with (Math) {
-  a = PI * r * r
-  x = r * cos(PI)
-  y = r * sin(PI / 2)
-}
-```
-
-see [with statement documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/with).
-
-## Misc commands
+I don't understand these bits - I onces wrote it down because I found it interesting but can't recall why I did anymore...
 
 ### several expressions on one line with parentheses ()
 
@@ -190,314 +137,7 @@ function C() {
 }
 ```
 
-As for the y === 2, this is because you did not var y; inside C, so y = 2 sets window.y, and in the global scope this === window.
-
-## Functional JavaScript
-
-- [An Introduction to Functional JavaScript](http://www.sitepoint.com/introduction-functional-javascript/)
-
---> see separate file `Functional Javascript.md`
-
-## File i/o
-
-- [Reading files in JavaScript using the File APIs](http://www.html5rocks.com/en/tutorials/file/dndfiles/)
-
-## console.log()
-
-#### console.log() vs. console.dir()
-
-##### Current state
-
-- console.log(JSON.stringify(a));
-- console.dir(a);
-
-#### Ansi color in console.log
-
-For example
-
-```js
-console.log('\x1b[41m\x1b[37m%s\x1b[0m', 'FAILED', result)
-console.log('\x1b[36m%s\x1b[0m', 'I am cyan') //cyan
-```
-
-[console.log object at current state](http://stackoverflow.com/questions/7389069/console-log-object-at-current-state)
-
-## Literal vs. Object
-
-- Array Literal
-
-      	```js
-      	['eat', 'bananas']
-      	```
-
-- Array Object
-
-      	```js
-      	new Array('eat', 'bananas')
-      	```
-
-## `apply()`, `call()`, `...` (spread operator)
-
-_UNDER_CONSTRUCTION_
-
-[apply()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
-[... spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
-
-## `bind()`
-
-Example from [MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind):
-
-In `bind(context, [variable1, variable2, ...])` the `context` will be bound as `this` to the newly created `bound function`.
-
-```js
-this.x = 9
-var module = {
-  x: 81,
-  getX: function() {
-    return this.x
-  },
-}
-
-module.getX() // 81
-
-var retrieveX = module.getX
-retrieveX()
-// returns 9. The function gets invoked at the global
-// scope.
-
-// Create a new function with 'this' bound to module
-// New programmers might confuse the
-// global var x with module's property x
-var boundGetX = retrieveX.bind(module)
-boundGetX() // 81
-```
-
-## Common.js (modules)
-
-#### ES6+ syntax
-
-- Alternative 1
-
-      	```js
-      	const foo = () => { ... }
-      	export default foo;
-      	```
-
-      	```js
-      	import foo from './foo';
-      	```
-
-- Alternative 2
-
-      	```js
-      	export const foo = () => { ... }
-      	```
-
-      	```js
-      	import { foo } from './foo';
-      	```
-
-#### ES5 and older syntax
-
-Use `import` and `export` statements to require modules.
-
-[Understanding module.exports and exports in Node.js](http://www.sitepoint.com/understanding-module-exports-exports-node-js/)
-
-#### Own modules
-
-##### Export module
-
-```js
-var foo = "Hello";
-var bar = function() { console.log("Amazing!" };
-
-module.exports = { foo: foo, bar: bar };
-```
-
-##### Import module
-
-```js
-require('../actions/foobar.js')
-```
-
-_or_
-
-```js
-var Bar = React.createClass({ ... });
-module.exports = Bar;
-```
-
-```js
-require('../actions/Bar')
-```
-
-### Add third-party module (file with js functions)
-
-`require` command
-
-var express = require('express');
-
-## Immutability in JS
-
-Don't mutate an object, but create a new one with the change, i.e. change the reference
-
-- Vanilla JS
-
-      	```js
-      	// objects
-      	var yourCarRepainted = Object.assign({}, yourCar, { color: 'red' });
-      	// array
-      	var changedList = [].concat(list);
-      	```
-
-- immutable.js
-
-## switch-case
-
-Chain cases:
-
-```js
-case 'BackAction':
-case 'back':
-case 'pop':
-	return currentState.index > 0 ?
-		NavigationStateUtils.pop(currentState) :
-		currentState;
-```
-
-## Promises
-
-Inside a `then()` chain, `resolve()` function call let's it directly jump to next `then()`.
-
-## rest vs. spread operator `...`
-
-- `rest` operator gives you rest of input arguments as array. \* should always occur at end of the list
-- `spread` operator splits array into single arguments for a function.
-
-## Cool stuff
-
-If `hasClose` is false, the Button will not be shown..
-
-```js
-{
-  hasClose && (
-    <ButtonIcon
-      style={styles.closeButton}
-      themeProps={closeThemeProps}
-      icon="close"
-      onPress={onClose}
-    />
-  )
-}
-```
-
-## Prototypes
-
-see [this excerpt out of the book `SpeakingJS`](http://speakingjs.com/es5/ch17.html#prototype_relationship)
-
-Only getting a property considers the complete prototype chain of an object. Setting and deleting ignores inheritance and affects only own properties.
-
-#### Prototypes
-
-##### Create an object with properties of a prototype
-
-Given the object
-
-```js
-var PersonProto = {
-  describe: function() {
-    return 'Person named ' + this.name
-  },
-}
-```
-
-Create a new object with property `describe` inherited from prototype `PersonProto` and property `name` as an **own** property:
-
-```js
-var jane = Object.create(PersonProto)
-jane.name = 'Jane'
-```
-
-or less common:
-
-```js
-var jane = Object.create(PersonProto, {
-  name: { value: 'Jane', writable: true },
-})
-```
-
-Here creating an object `B` where it's properties are all inherited from `A`:
-
-```js
-var A = {}
-var B = Object.create(A)
-```
-
-##### Generic Methods: Borrowing Methods from Prototypes
-
-Call it like so
-
-```js
-Object.prototype.hasOwnProperty.call(obj, 'foo')
-```
-
-or shorter like so
-
-```js
-{}.hasOwnProperty.call(obj, 'foo')  // shorter
-```
-
-##### Property Attributes and Property Descriptors
-
-Properties can be added via descriptors
-
-```js
-Object.create(proto, propDescObj?)
-```
-
-##### Constructors & Instances --> Creating prototypes
-
-By convention, the names of constructors start with uppercase letters
-
-```js
-function Person(name) {
-  this.name = name
-}
-
-Person.prototype.describe = function() {
-  return 'Person named ' + this.name
-}
-
-var jane = new Person('Jane')
-jane.describe() // 'Person named Jane'
-```
-
-#### With ES6+ syntax `Class` is shortcut for setting prototype.
-
-- ES6
-
-      	![ES6](./ES6.png)
-
-- is compiled to:
-
-      	![ES old](./ES_old.png)
-
-## Generators
-
-From [ES6 generators explained](http://2ality.com/2015/03/es6-generators.html)
-
-Here not a generator function is used after `yield*`, but another iterable.
-
-```js
-function* bla() {
-  yield 'sequence'
-  yield* ['of', 'yielded']
-  yield 'values'
-}
-
-let arr = [...bla()]
-// ['sequence', 'of', 'yielded', 'values']
-```
+As for the `y === 2`, this is because you did not `var y;` inside `C`, so `y = 2` sets `window.y`, and in the global scope `this === window`.
 
 ## Links
 
