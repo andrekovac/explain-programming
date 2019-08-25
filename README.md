@@ -25,6 +25,7 @@
 ## TODO
 
 * [ ] Add google analytics
+* [ ] Trace back creation dates of original **commands** files and add in `date` field.
 * [ ] Restyle inline code block
 
 	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
