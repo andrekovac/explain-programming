@@ -24,6 +24,7 @@
 
 ## TODO
 
+* [ ] Add google analytics
 * [ ] Restyle inline code block
 
 	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
