@@ -9,12 +9,18 @@ export const THEORY = 'theory'
 
 // LANGUAGES
 export const JAVASCRIPT = 'javascript'
+export const TYPESCRIPT = 'typescript'
 
 // FRAMEWORKS
 export const REACT = 'react'
 export const REACT_NATIVE = 'react-native'
 
 // MISC
+export const SERVER = 'server'
 export const ANIMATIONS = 'animations'
 export const INTERNALS = 'internals'
 export const PERFORMANCE = 'performance'
+export const TYPES = 'types'
+
+// OTHER
+export const OUTDATED = 'outdated'
