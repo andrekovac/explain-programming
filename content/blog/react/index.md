@@ -67,7 +67,9 @@ export UnstyledButton;
 
 ![](./react_lifecycle.png)
 
-(graphic designed by **Dan Abramov** I believe)
+And here a graphic designed by **Dan Abramov**:
+
+![](./react-16-3-0-image.jpg)
 
 ## Refs
 
@@ -175,7 +177,6 @@ At bottom of root component include
 ```js
 React.render(<MyRootComponent />, document.body);
 ```
-
 
 ## React discussion
 

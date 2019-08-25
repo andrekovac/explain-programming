@@ -141,3 +141,16 @@ If you use Redux with React, `react-redux` will provide you with the dispatch fu
 ## Initial state (when using `Immutable.js`)
 
 Set an initial state of a single entity with a `Record`. Then in the reducer map multiple of that entity.
+
+## `createSelector`
+
+Wrap in `createSelector`. Without that, every time the root state changes the result would be recomputed.
+
+```js
+const selectIsDownloaded = (state, ownProps) =>
+  createSelector(
+    selectId,
+    selectSelectedLocaleOfAttraction,
+    (id, locale) => hasBundleForAttraction(state, { id, locale })
+  )(state, ownProps);
+```

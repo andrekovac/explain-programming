@@ -15,3 +15,9 @@ I write stuff down which I find difficult or which I suspect I will need again a
 I had all my notes in Markdown anyway and I switched computers, didn't know where what was standing. I used `Spotlight` as my search.
 
 Other people encouraged me that it might be helpful for others.
+
+## About
+
+- Some pages are more elaborate than others.
+- Some only contain very basic information for the simple tasks I mostly used it for or just wanted to remember.
+- Other pages contain more in depth discussions and theory.

@@ -3,7 +3,7 @@ title: React Native - Run on Android/iOS devices
 description: How to run react-native projects on Android and iOS devices
 date: '2019-08-21T17:58:32.169Z'
 category: 'framework'
-tags: ['javascript', 'react-native']
+tags: ['javascript', 'react-native', 'outdated']
 ---
 
 **Note (from August 2019)**: This doc is pretty outdated (first written in January 2016) and helped me a lot when React Native was still much more immature than it is now. Consider using **expo** these days which provides a much easier React Native workflow.

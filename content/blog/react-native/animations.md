@@ -1,10 +1,23 @@
 ---
 title: React Native Animations
 description: How to animate in React Native using the Animated library
-date: '2019-08-25T17:58:32.169Z'
+date: '2015-12-29T17:58:32.169Z'
 category: 'framework'
 tags: ['javascript', 'react-native', 'animations']
 ---
+
+## Animated Library
+
+Only `View`, `Text` and `Image` can be animated.
+
+* See `src/animationsDemo/AnimatedSimple.js` for a simple file to demonstrate the basics.
+
+* e.g. `timing` animation config:
+
+```js
+easing: Easing.inOut(Easing.ease),
+    duration: 800,
+```
 
 ## Animations
 
@@ -72,3 +85,35 @@ tags: ['javascript', 'react-native', 'animations']
 - `this.state.foo = Animated.Value(0)`
   _ `this.state.foo.addListener(value => rememberValue(value))` so you can observe updates from animations.
   _ `this.state.foo.setOffset`: Sets an offset that is applied on top of whatever value is set, whether via setValue, an animation, or `Animated.event`. Useful for compensating things like the start of a pan gesture. \* Value can be set via `setValue`, an animation, or `Animated.event`.
+
+
+## panResponder (dragging stuff)
+
+[React-native Animated API with PanResponder](http://browniefed.com/blog/react-native-animated-api-with-panresponder/)
+
+1. Constructor: Instantiate a new `Animated.Value` or `Animated.ValueXY` or other animations (look at all the Proptypes [at the bottom of `AnimatedImplementation.js`](https://github.com/facebook/react-native/blob/master/Libraries/Animated/src/AnimatedImplementation.js):
+
+	```js
+	this.state = { anim: new Animated.Value(0), };
+	```
+
+	```js
+	this.state = { pan: new Animated.ValueXY(), };
+	```
+
+2. The React `View` Component has all responder proptypes, e.g.
+
+		onResponderRelease: PropTypes.func,
+
+	Find the rest in [the `View.js` Component file](https://github.com/facebook/react-native/blob/master/Libraries/Components/View/View.js).
+
+5. Write the current location of the panResponder to the state.
+
+```js
+this.panListener = this.state.pan.addListener((value) => this.currentPanValue = value);
+```
+
+## Further links
+
+* [How to create Twitter exploding hearts](http://browniefed.com/blog/react-native-how-to-create-twitter-exploding-hearts/)
+* [Animated with React-Art - Firework Tap To Shoot](http://browniefed.com/blog/react-native-animated-with-react-art-firework-show/)

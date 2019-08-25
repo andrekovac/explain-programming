@@ -3,7 +3,7 @@ title: React Native version upgrade
 date: '2019-08-21T17:58:32.169Z'
 description: Flow of upgrading react native to a new version.
 category: 'framework'
-tags: ['javascript', 'react-native']
+tags: ['javascript', 'react-native', 'outdated']
 ---
 
 **Note (from August 2019)**: This document is pretty outdated (first written in January 2016) and helped me a lot when React Native was still much more immature than it is now. Consider using **expo** these days which provides a much easier React Native workflow.
