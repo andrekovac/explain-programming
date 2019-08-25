@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Tags from '../components/tags'
 
+import { mapCategoryToRepresentation } from '../constants/Category'
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
@@ -36,8 +37,8 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small style={{ fontStyle: 'italic', marginLeft: rhythm(1) }}>
-                  {node.frontmatter.category}
+                <small style={{ marginLeft: rhythm(1) }}>
+                  {mapCategoryToRepresentation[node.frontmatter.category]}
                 </small>
                 <Tags tags={node.frontmatter.tags} />
               </header>

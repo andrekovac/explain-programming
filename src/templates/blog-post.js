@@ -5,6 +5,8 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Tags from '../components/tags'
+
+import { mapCategoryToRepresentation } from '../constants/Category'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -38,7 +40,7 @@ class BlogPostTemplate extends React.Component {
                 marginBottom: rhythm(1),
               }}
             >
-              {post.frontmatter.category}
+              {mapCategoryToRepresentation[post.frontmatter.category]}
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
