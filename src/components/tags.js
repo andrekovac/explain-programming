@@ -4,7 +4,7 @@ import { rhythm } from '../utils/typography'
 import { OUTDATED } from '../constants/Tag'
 
 const Tags = ({ tags }) => (
-  <div>
+  <span style={{ verticalAlign: 'text-bottom' }}>
     {tags.map((tag, index) => (
       <span
         style={{
@@ -13,12 +13,13 @@ const Tags = ({ tags }) => (
           backgroundColor: tag === OUTDATED ? '#bf4040' : 'rgb(14, 28, 128)',
           borderRadius: 5,
           color: 'white',
+          fontSize: '0.8rem',
         }}
       >
         <small>{tag}</small>
       </span>
     ))}
-  </div>
+  </span>
 )
 
 export default Tags

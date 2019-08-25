@@ -6,7 +6,10 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Tags from '../components/tags'
 
-import { mapCategoryToRepresentation } from '../constants/Category'
+import {
+  mapCategoryToWord,
+  mapCategoryToShortHand,
+} from '../constants/Category'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -26,27 +29,39 @@ class BlogPostTemplate extends React.Component {
             <h1
               style={{
                 marginTop: rhythm(1),
-                marginBottom: 0,
+                marginBottom: rhythm(1 / 3),
               }}
             >
               {post.frontmatter.title}
             </h1>
-            <Tags tags={post.frontmatter.tags} />
-            <p
-              style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                fontStyle: 'italic',
-                marginBottom: rhythm(1),
-              }}
-            >
-              {mapCategoryToRepresentation[post.frontmatter.category]}
-            </p>
+            <div style={{ marginBottom: rhythm(1.5) }}>
+              <Tags tags={post.frontmatter.tags} />
+              <span
+                style={{
+                  ...scale(-1 / 5),
+                  fontSize: rhythm(0.6),
+                  marginLeft: rhythm(1),
+                  verticalAlign: 'unset',
+                }}
+              >
+                <span>{mapCategoryToShortHand[post.frontmatter.category]}</span>
+                <span
+                  style={{
+                    fontSize: rhythm(0.5),
+                    marginLeft: rhythm(1 / 4),
+                  }}
+                >
+                  {mapCategoryToWord[post.frontmatter.category]}
+                </span>
+              </span>
+            </div>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
-              marginBottom: rhythm(1),
+              marginTop: rhythm(1.5),
+              marginBottom: rhythm(1 / 2),
+              height: 2,
             }}
           />
           <footer>

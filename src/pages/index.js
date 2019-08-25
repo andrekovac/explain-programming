@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Tags from '../components/tags'
 
-import { mapCategoryToRepresentation } from '../constants/Category'
+import { mapCategoryToShortHand } from '../constants/Category'
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
@@ -18,7 +18,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
+        {/* <Bio /> */}
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`
@@ -37,8 +37,14 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small style={{ marginLeft: rhythm(1) }}>
-                  {mapCategoryToRepresentation[node.frontmatter.category]}
+                <small
+                  style={{
+                    fontSize: rhythm(0.9),
+                    marginLeft: rhythm(1 / 2),
+                    marginRight: rhythm(1 / 4),
+                  }}
+                >
+                  {mapCategoryToShortHand[node.frontmatter.category]}
                 </small>
                 <Tags tags={node.frontmatter.tags} />
               </header>
@@ -48,6 +54,7 @@ class BlogIndex extends React.Component {
                     fontStyle: `${
                       node.frontmatter.description ? 'normal' : 'italic'
                     }`,
+                    fontSize: rhythm(0.5),
                   }}
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || defaultDescription,

@@ -8,8 +8,6 @@ tags: ['javascript', 'react-native', 'outdated']
 
 **Note (from August 2019)**: This doc is pretty outdated (first written in January 2016) and helped me a lot when React Native was still much more immature than it is now. Consider using **expo** these days which provides a much easier React Native workflow.
 
----
-
 ## Configurations
 
 ### Android configuration

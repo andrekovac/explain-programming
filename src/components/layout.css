@@ -1,0 +1,27 @@
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  color: #4a4a4a;
+  border-top: 0.8px solid #4a4a4a;
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+li {
+  margin-bottom: 0.1rem;
+}
+
+footer {
+  margin-top: 3rem;
+}

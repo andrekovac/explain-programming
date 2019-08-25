@@ -2,11 +2,9 @@
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
-// Syntax highlighting
-// Choose a theme from here: https://github.com/PrismJS/prism/tree/1d5047df37aacc900f8270b1c6215028f6988eb1/themes
-import 'prismjs/themes/prism-okaidia.css'
 // Add a fancy prompt for `shell` or `bash` code fields
 import 'prismjs/plugins/command-line/prism-command-line.css'
+// Syntax highlighting
+import './src/styles/command-block-theme.css'
 
-// Global styles
-import './src/styles/global.css'
+// Global styles are inside components/layout.css (used by layout.js)

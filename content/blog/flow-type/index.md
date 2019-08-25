@@ -1,6 +1,6 @@
 ---
 title: 'Flow Typechecker'
-description: 'Concepts, syntax and code snippets for React, covering the topics state, props, components, the component life cycle, refs, JSX, mixins and a manual React setup'
+description: 'Flow is a typechecker for Javascript. This page includes some interesting aspects of it'
 date: '2017-06-07T17:58:32.169Z'
 category: 'framework'
 tags: ['javascript', 'types']
@@ -48,10 +48,10 @@ tags: ['javascript', 'types']
      ...
 	```
 
-### React
+## React
 
-* React Elements
+### React Elements
 
-	```js
-	type Props = React.ElementProps<typeof SectionList>;`
-	```
+```js
+type Props = React.ElementProps<typeof SectionList>;`
+```
