@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  Coding commands
+  Explain programming
 </h1>
 
 ## Run
