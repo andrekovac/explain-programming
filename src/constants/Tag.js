@@ -21,6 +21,8 @@ export const ANIMATIONS = 'animations'
 export const INTERNALS = 'internals'
 export const PERFORMANCE = 'performance'
 export const TYPES = 'types'
+export const DEV_OPS = 'dev-ops'
 
 // OTHER
 export const OUTDATED = 'outdated'
+export const BASIC = 'basic'
