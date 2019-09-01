@@ -1,12 +1,14 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
+  <a href="https://quizzical-jang-fb6dca.netlify.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
   Explain programming
 </h1>
+
+Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com).
 
 ## Run
 
