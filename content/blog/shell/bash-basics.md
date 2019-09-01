@@ -1,5 +1,5 @@
 ---
-title: bash basics
+title: 'bash basics'
 date: '2019-08-27T17:52:03.284Z'
 description: 'A set of basic (or not so basic) bash (shell) commands'
 category: 'shell'

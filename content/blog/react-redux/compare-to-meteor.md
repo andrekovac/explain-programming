@@ -1,6 +1,6 @@
 ---
-title: Redux - Compare to meteor.js
-description: Blog article comparing the learning curve and outcome of redux and meteor
+title: 'Redux - Compare to meteor.js'
+description: 'Blog article comparing the learning curve and outcome of redux and meteor'
 date: '2016-03-20T12:20:00.169Z'
 category: 'framework'
 tags: ['javascript', 'react', 'redux']

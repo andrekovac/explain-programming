@@ -1,5 +1,5 @@
 ---
-title: Imperative vs. declarative programming
+title: 'Imperative vs. declarative programming'
 date: '2019-08-01T17:52:03.284Z'
 description: 'What do the terms imperative and declarative mean in the context of programming languages?'
 category: 'theory'

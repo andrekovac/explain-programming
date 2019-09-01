@@ -1,6 +1,6 @@
 ---
-title: Javascript Prototypes
-description: Explanations and examples about Javascript prototypes
+title: 'Javascript Prototypes'
+description: 'Explanations and examples about Javascript prototypes'
 date: '2019-08-20T23:46:37.121Z'
 category: 'programming-language'
 tags: ['javascript']

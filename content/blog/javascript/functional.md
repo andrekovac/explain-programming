@@ -1,6 +1,6 @@
 ---
-title: Functional JavaScript
-description: The usage of functional programming concepts in Javascript
+title: 'Functional JavaScript'
+description: 'The usage of functional programming concepts in Javascript'
 date: '2019-08-20T23:46:37.121Z'
 category: 'programming-language'
 tags: ['javascript', 'functional']

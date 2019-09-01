@@ -1,5 +1,5 @@
 ---
-title: Docker Compose
+title: 'Docker Compose'
 date: '2019-08-01T17:52:03.284Z'
 description: 'docker-compose'
 category: 'tool'

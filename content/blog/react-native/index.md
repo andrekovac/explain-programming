@@ -1,6 +1,6 @@
 ---
-title: React Native
-description: Concepts, syntax and code snippets for React Native
+title: 'React Native'
+description: 'Concepts, syntax and code snippets for React Native'
 date: '2019-08-21T17:58:32.169Z'
 category: 'framework'
 tags: ['javascript', 'react-native']

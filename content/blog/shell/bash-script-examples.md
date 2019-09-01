@@ -1,5 +1,5 @@
 ---
-title: bash script examples
+title: 'bash script examples'
 date: '2014-09-03T17:52:03.284Z'
 description: 'Some nice examples of bash scripts to learn from'
 category: 'shell'

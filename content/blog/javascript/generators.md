@@ -1,6 +1,6 @@
 ---
-title: Javascript Generators
-description: Iterables, Iterator functions and Generator Functions - ES6 Generators in Javascript explained
+title: 'Javascript Generators'
+description: 'Iterables, Iterator functions and Generator Functions - ES6 Generators in Javascript explained'
 date: '2019-08-20T23:46:37.121Z'
 category: 'programming-language'
 tags: ['javascript']

@@ -1,6 +1,6 @@
 ---
-title: React Native Android Native Module
-description: How to create a native Android module for React Native
+title: 'React Native Android Native Module'
+description: 'How to create a native Android module for React Native'
 date: '2016-07-13T17:58:32.169Z'
 category: 'framework'
 tags: ['javascript', 'react-native']

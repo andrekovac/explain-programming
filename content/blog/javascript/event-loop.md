@@ -1,6 +1,6 @@
 ---
-title: Javascript Event Loop
-description: Javascript event loop, synchronous and asynchronous code explained
+title: 'Javascript Event Loop'
+description: 'Javascript event loop, synchronous and asynchronous code explained'
 date: '2019-08-24T23:46:37.121Z'
 category: 'programming-language'
 tags: ['javascript', 'theory']

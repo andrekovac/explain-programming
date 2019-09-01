@@ -1,6 +1,6 @@
 ---
-title: React Native - Run on Android/iOS devices
-description: How to run react-native projects on Android and iOS devices
+title: 'React Native - Run on Android/iOS devices'
+description: 'How to run react-native projects on Android and iOS devices'
 date: '2019-08-21T17:58:32.169Z'
 category: 'framework'
 tags: ['javascript', 'react-native', 'outdated']

@@ -1,5 +1,5 @@
 ---
-title: bash - useful commands
+title: 'bash - useful commands'
 date: '2016-08-28T17:52:03.284Z'
 description: 'Useful bash commands'
 category: 'shell'

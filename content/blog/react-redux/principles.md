@@ -1,6 +1,6 @@
 ---
-title: Redux Theory
-description: Theory and principles of React's most popular state management library Redux.js
+title: 'Redux Theory'
+description: "Theory and principles of React's most popular state management library Redux.js"
 date: '2016-03-20T12:20:00.169Z'
 category: 'framework'
 tags: ['javascript', 'react', 'redux', 'theory']

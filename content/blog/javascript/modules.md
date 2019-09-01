@@ -1,6 +1,6 @@
 ---
-title: Javascript Modules
-description: Modules - import and export in Javascript
+title: 'Javascript Modules'
+description: 'Modules - import and export in Javascript'
 date: '2019-08-20T23:46:37.121Z'
 category: 'programming-language'
 tags: ['javascript']

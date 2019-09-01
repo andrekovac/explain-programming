@@ -1,5 +1,5 @@
 ---
-title: curl
+title: 'curl'
 date: '2016-08-28T17:52:03.284Z'
 description: 'Examples on how to use the `curl` shell command'
 category: 'shell'

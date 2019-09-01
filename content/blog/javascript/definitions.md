@@ -1,6 +1,6 @@
 ---
-title: Javascript Definitions
-description: Important definitions of the Javascript programming language
+title: 'Javascript Definitions'
+description: 'Important definitions of the Javascript programming language'
 date: '2019-08-25T23:46:37.121Z'
 category: 'programming-language'
 tags: ['javascript', 'definitions']
