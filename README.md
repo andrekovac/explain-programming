@@ -21,8 +21,11 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 2. Run development server
 
   ```bash
-  gatsby develop
+  yarn start
   ```
+
+3. Access the site at `http://localhost:8000/`
+
 
 ## TODO
 
@@ -42,8 +45,19 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 
 	* Look at [https://github.com/greglobinski/gatsby-starter-hero-blog]() for an example
 	* See [https://www.gatsbyjs.org/docs/adding-search/]()
+	* [ ] Search for name + description
+	* [ ] Search which includes every word in every page
 
-* [ ] Create logo
+* [ ] Clickable tags
+
+  * [ ] Filter by tags
+  * [ ] Filter by category
+
+* [ ] Logo
+
+  * [ ] Design Logo
+  * [ ] Add logo in README, to title, as `static/favicon.ico`
+
 * [ ] Host on my programming url
 * [ ] Rewrite bash fields where necessary (to show prompt)
 * [ ] Javascript: Write out examples instead of using screenshots
@@ -63,6 +77,8 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 
 	* See [https://github.com/prichey/prestonrichey.com/tree/master/src]()
 	* See [https://prestonrichey.com/blog/react-in-markdown/]()
+
+* [ ] Design: Make a point cloud
 
 ---
 
