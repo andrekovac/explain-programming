@@ -80,14 +80,30 @@ Use [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/).
 
 To replace a list of words/passwords with `***REMOVED***`, do the following:
 
-1. Download the .jar file from the homepage and place is somewhere
+1. Download the `.jar` file (perhaps `bfg-1.13.0.jar`) from the homepage and place is somewhere, e.g. in the folder `~/bin/` and change its name to `bfg.jar` so that it is easier.
 2. Copy/backup your files/git repo (i.e. `.git/` folder)!!!
 3. Create a file `words.txt` with words/passwords you want to remove from all of history. One line for each word. You can delete this file right after you finished these steps.
 4. Inside the folder of the repository, i.e. inside the folder with the `.git/` folder run the following command:
 
-```bash
-java -jar ./path/to/bfg.jar --replace-text words.txt .git
-```
+	```bash
+	java -jar ~/bin/bfg.jar --replace-text words.txt .git
+	```
+
+5. What has happened?
+
+	- The values of each line in `words.txt` will be replaced with the string `***REMOVED***` in your local repository.
+	- A `.git.bfg-report` folder with information about the deletion is created.
+
+6. To do now
+
+	- Run `git push -f` to force push your locally changed files to the remote.
+	- It will prompt you to run the following command which prunes older `reflog` entries:
+
+		```
+		git reflog expire --expire=now --all && git gc --prune=now --aggressive
+		```
+
+		If this command is not run, the deleted information might still be available in the `reflog`.
 
 ## Random
 
