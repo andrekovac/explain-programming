@@ -6,8 +6,6 @@ category: 'tool'
 tags: ['git']
 ---
 
-## The tool `source{d}` (`srcd`)
-
 The company [source{d}](https://sourced.tech/) offers a tool `srcd`.
 I was part of a workshop by [Francesco ...](https://twitter.com/francesc) at [Galvanize]() in San Francisco in April 2019.
 
