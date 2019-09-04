@@ -1,60 +1,10 @@
 ---
 title: 'Git'
-description: 'Useful commands and procedures for the version control system git'
+description: 'Some difficult and useful commands and procedures for the version control system git'
 date: '2016-01-07T02:30:00.169Z'
 category: 'tool'
 tags: ['git']
 ---
-
-## Review PR work-flow
-
-Taken from here when clicking on `command line instructions`:
-
-![](./merge-pr-command-line-instructions.png)
-
-1. Check out the branch
-
-	```bash
-	git checkout -b jampueroc-master master
-
-	git pull git://github.com/jampueroc/react-native-kontaktio.git master
-	```
-
----
-
-Alternative (Verify!)
-
-
-1. Add remote of your package on the account of the user who filed the PR:
-
-	```bash
-	// Look at all remotes
-	git remote -v
-
-	// Add new remote with name OtherUser
-	git remote add OtherUser git@github.com: OtherUser/my-repo.git
-	```
-
-2. Fetch branches and checkout
-
-	1. Begin tracking remote branches of `OtherUser`:
-
-		```bash
-		git fetch OtherUser
-		```
-
-	2. List both remote-tracking branches and local branches:
-
-		```bash
-		git branch -a
-		```
-
-	3. Checkout to the branch
-
-		```bash
-		git checkout remotes/OtherUser/name-of-branch
-		```
-
 
 ## Recover lost file
 
