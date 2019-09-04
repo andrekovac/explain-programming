@@ -20,8 +20,9 @@ See [https://github.com/src-d/engine-analyses]() for some Jupyter notebooks whic
 ## Run
 
 1. Download `srcd` from [the sourced website](https://sourced.tech/get-started/)
-2. Navigate to the git repo you want to analyze
-3. Run `srcd sql` for a cli tool or `srcd web sql` for a nice browser UI
+   and place the executable somewhere in your path (perhaps into `~/bin/`).
+2. Navigate to the git repo you want to analyze.
+3. Run `srcd sql` for a cli tool or `srcd web sql` (**recommended**) to open a nice browser UI
 4. Run SQL commands (see examples below)
 
 ## Commands
@@ -34,16 +35,6 @@ Examples of what might be interesting to query in a `git` repository.
 SELECT COUNT(*) FROM commits;
 ```
 
-### List up to 10 repositories in a project
-
-```sql
-SELECT *
-FROM refs
-WHERE ref_name="HEAD"
-LIMIT 10;
-```
-
-
 ### Most productive devs in a project
 
 ```sql
@@ -52,7 +43,6 @@ FROM commits
 GROUP BY commit_author_name
 ORDER BY n DESC;
 ```
-
 
 ### Most used programming language in project
 
@@ -67,7 +57,6 @@ GROUP BY lang
 ORDER BY n DESC
 ```
 
-
 ### Most used words given a programming language
 
 ```sql
@@ -79,5 +68,14 @@ SELECT LANGUAGE(file_path, blob_content) AS lang,
          	'//uast:String/Value') as strings
 FROM files
 WHERE lang = 'JavaScript'
+LIMIT 10;
+```
+
+### List up to 10 repositories in a project
+
+```sql
+SELECT *
+FROM refs
+WHERE ref_name="HEAD"
 LIMIT 10;
 ```
