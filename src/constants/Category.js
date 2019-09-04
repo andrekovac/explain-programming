@@ -7,12 +7,15 @@ export const FRAMEWORK = 'framework'
 export const TOOL = 'tool'
 export const SHELL = 'shell'
 
+export const ABOUT = 'about'
+
 export const mapCategoryToWord = {
   [PROGRAMMING_LANGUAGE]: 'Programming Language',
   [THEORY]: 'Theory',
   [FRAMEWORK]: 'Framework',
   [TOOL]: 'Tool',
   [SHELL]: 'Shell',
+  [ABOUT]: 'About',
 }
 
 export const mapCategoryToShortHand = {
@@ -21,4 +24,5 @@ export const mapCategoryToShortHand = {
   [FRAMEWORK]: '🍱',
   [TOOL]: '🛠',
   [SHELL]: '🗞',
+  [ABOUT]: '🤷‍',
 }
