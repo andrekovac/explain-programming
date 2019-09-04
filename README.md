@@ -36,9 +36,7 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
 	* See [https://using-remark.gatsbyjs.org/code-and-syntax-highlighting/#inline-code]()
 
-* [ ] categories
-
-	* See [https://github.com/wonism/gatsby-advanced-blog]()
+* [x] Categories
 
 * [ ] search
 
@@ -52,10 +50,10 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
   * [ ] Filter by tags
   * [ ] Filter by category
 
-* [ ] Logo
+* [x] Logo
 
-  * [ ] Design Logo
-  * [ ] Add logo in README, to title, as `static/favicon.ico`
+  * [x] Design Logo
+  * [x] Add logo in README, to title, as `static/favicon.ico`
 
 * [ ] Host on my programming url
 * [ ] Rewrite bash fields where necessary (to show prompt)
