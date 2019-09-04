@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import Logo from './logo';
 import { rhythm, scale } from '../utils/typography'
 import './layout.css'
 
@@ -27,7 +28,17 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            <div
+              style={{
+                display: 'flex',
+                flex: 1,
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
+              <Logo width={'2.5em'} height={'2.5em'} />
+              <div style={{ marginLeft: 10 }}>{title}</div>
+            </div>
           </Link>
         </h1>
       )

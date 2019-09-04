@@ -1,7 +1,6 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://quizzical-jang-fb6dca.netlify.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+    <img alt="Explain Programming" src="./content/assets/explain-programming-logo.svg" width="80" />
   </a>
 </p>
 <h1 align="center">
@@ -81,6 +80,7 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 * [ ] Design: Make a point cloud
 
 ---
+<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 
 ## Gatsby blog starter README
 
