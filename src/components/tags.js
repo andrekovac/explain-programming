@@ -3,9 +3,9 @@ import React from 'react'
 import { rhythm } from '../utils/typography'
 import { OUTDATED, BASIC } from '../constants/Tag'
 
-const Tags = ({ tags }) => (
+const Tags = props => (
   <span style={{ verticalAlign: 'text-bottom' }}>
-    {tags.map((tag, index) => {
+    {props.tags.map((tag, index) => {
       let backgroundColor = ''
       switch (tag) {
         case OUTDATED:
@@ -26,7 +26,9 @@ const Tags = ({ tags }) => (
             borderRadius: 5,
             color: 'white',
             fontSize: '0.8rem',
+            cursor: 'pointer'
           }}
+          onClick={() => props.onTagSelect(tag)}
         >
           <small>{tag}</small>
         </span>
