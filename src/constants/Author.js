@@ -1,5 +1,7 @@
-export const AK = 'André Kovac'
+export const ANDRE_KOVAC = 'André Kovac'
+export const ANNA_KAPLAN = 'Anna Kaplan'
 
 export const mapNameToInitials = {
-  [AK]: 'AK',
+  [ANDRE_KOVAC]: 'André',
+  [ANNA_KAPLAN]: 'Anna',
 }
