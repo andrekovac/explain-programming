@@ -2,6 +2,7 @@
 title: 'Redux'
 description: "Instructions on how to use React's most popular state management library Redux.js"
 date: '2016-03-20T12:20:00.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react', 'redux']
 ---

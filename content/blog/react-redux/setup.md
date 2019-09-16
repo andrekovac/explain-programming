@@ -2,6 +2,7 @@
 title: 'Redux Setup'
 description: 'How to setup your React or React Native app to use redux. Also showing a special case with the use of Immutable.js'
 date: '2016-03-20T12:20:00.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react', 'redux']
 ---

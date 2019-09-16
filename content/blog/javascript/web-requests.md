@@ -2,6 +2,7 @@
 title: 'Javascript Web Requests'
 description: 'Different ways to fetch data in Javascript. See examples and compare how to make web requests with XMLHttpRequest, the Fetch API and jQuery'
 date: '2019-08-25T23:46:37.121Z'
+author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'jQuery', 'async']
 ---

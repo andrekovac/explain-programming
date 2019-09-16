@@ -5,6 +5,7 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Tags from '../components/tags'
+import Author from '../components/author'
 
 import { mapCategoryToShortHand } from '../constants/Category'
 import { rhythm } from '../utils/typography'
@@ -37,6 +38,7 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
+                <Author name={node.frontmatter.author} />
                 <small
                   style={{
                     fontSize: rhythm(0.9),
@@ -92,6 +94,7 @@ export const pageQuery = graphql`
             # date(formatString: "MMMM DD, YYYY")
             title
             description
+            author
             category
             tags
             draft

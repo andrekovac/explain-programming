@@ -2,6 +2,7 @@
 title: 'React - Understand <ListView />'
 description: 'A look under the hood of the React ListView component'
 date: '2019-08-25T17:58:32.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react', 'internals']
 ---

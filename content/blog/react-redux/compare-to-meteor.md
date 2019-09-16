@@ -2,6 +2,7 @@
 title: 'Redux - Compare to meteor.js'
 description: 'Blog article comparing the learning curve and outcome of redux and meteor'
 date: '2016-03-20T12:20:00.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react', 'redux']
 draft: true

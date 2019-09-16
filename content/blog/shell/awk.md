@@ -1,6 +1,7 @@
 ---
 title: 'awk'
 date: '2018-01-08T17:52:03.284Z'
+author: 'André Kovac'
 description: 'Examples on how to use the `awk` shell command'
 category: 'shell'
 tags: ['bash']

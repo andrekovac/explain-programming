@@ -1,6 +1,7 @@
 ---
 title: 'Rust'
 date: '2019-08-01T17:52:03.284Z'
+author: 'André Kovac'
 description: 'The most important Rust commands and principles'
 category: 'programming-language'
 tags: ['rust']

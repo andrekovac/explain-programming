@@ -2,6 +2,7 @@
 title: 'Git commands for contributing to open source projects'
 description: 'Useful commands which come in handy when collaborating on GitHub projects'
 date: '2019-06-07T02:30:00.169Z'
+author: 'André Kovac'
 category: 'tool'
 tags: ['git']
 draft: true

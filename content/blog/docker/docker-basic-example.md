@@ -1,6 +1,7 @@
 ---
 title: 'Docker Basic'
 date: '2019-08-01T17:52:03.284Z'
+author: 'André Kovac'
 description: 'A basic example of how to create a DockerFile'
 category: 'tool'
 tags: ['docker', 'dev-ops', 'basic']

@@ -2,6 +2,7 @@
 title: 'ngrok'
 description: 'Some information concerning the tool ngrok which you can use to create http tunnels easily'
 date: '2016-08-27T12:07:32.169Z'
+author: 'André Kovac'
 category: 'tool'
 tags: ['dev-ops']
 ---

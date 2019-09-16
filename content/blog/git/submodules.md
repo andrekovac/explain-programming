@@ -2,6 +2,7 @@
 title: 'Git Submodules'
 description: 'Useful commands concerning submodules of the popular version control system git'
 date: '2019-06-07T02:30:00.169Z'
+author: 'André Kovac'
 category: 'tool'
 tags: ['git']
 ---

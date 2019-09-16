@@ -2,6 +2,7 @@
 title: 'Homebrew'
 description: 'Homebrew is a popular package manager for OSX. This page includes some commands I used rather frequently'
 date: '2016-01-07T02:30:00.169Z'
+author: 'André Kovac'
 category: 'tool'
 tags: []
 ---

@@ -1,6 +1,7 @@
 ---
 title: 'React Native version upgrade'
 date: '2019-08-21T17:58:32.169Z'
+author: 'André Kovac'
 description: 'Flow of upgrading react native to a new version.'
 category: 'framework'
 tags: ['javascript', 'react-native', 'outdated']

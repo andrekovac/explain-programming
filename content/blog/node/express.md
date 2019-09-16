@@ -2,6 +2,7 @@
 title: 'Express.js'
 description: 'Basic information on how to set up a server with Express.js'
 date: '2016-01-07T11:58:52.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'node', 'server']
 ---

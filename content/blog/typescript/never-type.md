@@ -2,6 +2,7 @@
 title: 'Typescript `never` type'
 description: 'Discussions about the `never` type in Typescript'
 date: '2018-03-15T12:07:32.169Z'
+author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'typescript']
 ---

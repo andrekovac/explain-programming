@@ -2,6 +2,7 @@
 title: 'Git: Code as data'
 description: 'What you can do with the tool `srcd` (from source{d}) to transform your git repository into a database which you can query'
 date: '2019-06-07T02:30:00.169Z'
+author: 'André Kovac'
 category: 'tool'
 tags: ['git']
 ---

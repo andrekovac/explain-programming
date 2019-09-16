@@ -1,6 +1,7 @@
 ---
 title: 'bash script'
 date: '2016-08-28T17:52:03.284Z'
+author: 'André Kovac'
 description: 'How to create your bash script (with examples)'
 category: 'shell'
 tags: ['bash']

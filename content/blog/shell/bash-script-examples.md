@@ -1,6 +1,7 @@
 ---
 title: 'bash script examples'
 date: '2014-09-03T17:52:03.284Z'
+author: 'André Kovac'
 description: 'Some nice examples of bash scripts to learn from'
 category: 'shell'
 tags: ['bash']

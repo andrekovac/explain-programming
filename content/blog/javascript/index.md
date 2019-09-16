@@ -2,6 +2,7 @@
 title: 'Javascript - Interesting and cool stuff'
 description: 'Concepts, syntax and code snippets of interesting and cool stuff you can do with Javascript'
 date: '2019-08-20T23:46:37.121Z'
+author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript']
 ---

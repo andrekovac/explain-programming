@@ -2,6 +2,7 @@
 title: 'React Native Animations'
 description: 'How to animate in React Native using the Animated library'
 date: '2015-12-29T17:58:32.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react-native', 'animations']
 ---

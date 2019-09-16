@@ -2,6 +2,7 @@
 title: 'Typescript - Strict flags'
 description: 'Discussion of the effect of the strict flags `--strictNullChecks` and `--noImplicitAny`'
 date: '2018-03-01T12:07:32.169Z'
+author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'typescript']
 ---

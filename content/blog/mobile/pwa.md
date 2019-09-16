@@ -2,6 +2,7 @@
 title: 'Progressive Web App (PWA)'
 description: 'Links talk'
 date: '2015-12-28T11:58:52.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'mobile']
 draft: true

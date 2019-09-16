@@ -1,6 +1,7 @@
 ---
 title: 'curl'
 date: '2016-08-28T17:52:03.284Z'
+author: 'André Kovac'
 description: 'Examples on how to use the `curl` shell command'
 category: 'shell'
 tags: ['bash']

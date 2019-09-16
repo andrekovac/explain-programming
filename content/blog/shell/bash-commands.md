@@ -1,6 +1,7 @@
 ---
 title: 'bash - useful commands'
 date: '2016-08-28T17:52:03.284Z'
+author: 'André Kovac'
 description: 'Useful bash commands'
 category: 'shell'
 tags: ['bash']

@@ -2,6 +2,7 @@
 title: 'React Native'
 description: 'Concepts, syntax and code snippets for React Native'
 date: '2019-08-21T17:58:32.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react-native']
 ---

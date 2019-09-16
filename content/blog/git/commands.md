@@ -2,6 +2,7 @@
 title: 'Git'
 description: 'Some difficult and useful commands and procedures for the version control system git'
 date: '2016-01-07T02:30:00.169Z'
+author: 'André Kovac'
 category: 'tool'
 tags: ['git']
 ---

@@ -2,6 +2,7 @@
 title: 'Typescript'
 description: 'Concepts, syntax and code snippets for Typescript'
 date: '2016-08-27T12:07:32.169Z'
+author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'typescript']
 ---

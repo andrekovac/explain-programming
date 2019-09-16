@@ -2,6 +2,7 @@
 title: 'Redux Middleware'
 description: 'Talking about two popular redux middlewares: `redux-saga` and `redux-thunk`.'
 date: '2016-03-20T12:20:00.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react', 'redux']
 ---

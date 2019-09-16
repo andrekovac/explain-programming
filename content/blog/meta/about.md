@@ -2,6 +2,7 @@
 title: 'A_Introduction'
 description: 'The about page - Why did I create this?'
 date: '2019-08-21T17:58:32.169Z'
+author: 'André Kovac'
 category: 'about'
 tags: ['meta']
 ---

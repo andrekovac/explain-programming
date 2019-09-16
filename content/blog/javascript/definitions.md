@@ -2,6 +2,7 @@
 title: 'Javascript Definitions'
 description: 'Important definitions of the Javascript programming language'
 date: '2019-08-25T23:46:37.121Z'
+author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'definitions']
 ---

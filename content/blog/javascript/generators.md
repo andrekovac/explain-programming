@@ -2,6 +2,7 @@
 title: 'Javascript Generators'
 description: 'Iterables, Iterator functions and Generator Functions - ES6 Generators in Javascript explained'
 date: '2019-08-20T23:46:37.121Z'
+author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript']
 draft: true

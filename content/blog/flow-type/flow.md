@@ -2,6 +2,7 @@
 title: 'Flow Typechecker'
 description: 'Flow is a typechecker for Javascript. This page includes some interesting aspects of it'
 date: '2017-06-07T17:58:32.169Z'
+author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'types']
 ---

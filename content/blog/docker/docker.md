@@ -1,6 +1,7 @@
 ---
 title: 'Docker'
 date: '2019-08-01T17:52:03.284Z'
+author: 'André Kovac'
 description: ''
 category: 'tool'
 tags: ['docker', 'dev-ops']
