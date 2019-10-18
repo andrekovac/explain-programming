@@ -28,7 +28,7 @@ const Tags = props => (
             fontSize: '0.8rem',
             cursor: 'pointer'
           }}
-          onClick={() => props.onTagSelect(tag)}
+          onClick={() => props.onTagSelect && props.onTagSelect(tag)}
         >
           <small>{tag}</small>
         </span>
