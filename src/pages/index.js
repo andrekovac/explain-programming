@@ -28,25 +28,36 @@ const BlogIndex = props => {
   }
 
   const onTagSelect = tag => {
-    setSelectedTag(tag);
+    setSelectedTag(tag)
   }
 
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title="Explain Programming | Home" />
       <Bio />
-      <span
+      <div
         style={{
-          border: '1px solid black',
-          borderRadius: 5,
-          padding: 5,
-          cursor: 'pointer',
-          backgroundColor: selectedTag === NONE ? 'lightgrey' : 'white'
+          display: 'flex',
+          justifyContent: 'center',
         }}
-        onClick={() => setSelectedTag(NONE)}
       >
-        Show all
-      </span>
+        <span
+          style={{
+            borderRadius: 5,
+            padding: 10,
+            marginBottom: 10,
+            cursor: selectedTag === NONE ? 'inherit' : 'pointer',
+            color: 'white',
+            backgroundColor: '#9C590B',
+            opacity: selectedTag === NONE ? 0 : 1,
+          }}
+          disabled={selectedTag !== NONE}
+          onClick={() => setSelectedTag(NONE)}
+        >
+          Show all
+        </span>
+      </div>
+
       {posts.filter(filterBySelectedTag).map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`
