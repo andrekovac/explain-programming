@@ -88,8 +88,8 @@ jane.describe() // 'Person named Jane'
 
 - ES6
 
-      	![ES6](./ES6.png)
+  ![ES6](./ES6.png)
 
 - is compiled to:
 
-      	![ES old](./ES_old.png)
+  ![ES old](./ES_old.png)

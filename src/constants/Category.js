@@ -6,6 +6,8 @@ export const THEORY = 'theory'
 export const FRAMEWORK = 'framework'
 export const TOOL = 'tool'
 export const SHELL = 'shell'
+export const BUSINESS = 'business'
+export const DATA = 'data'
 
 export const ABOUT = 'about'
 
@@ -15,6 +17,8 @@ export const mapCategoryToWord = {
   [FRAMEWORK]: 'Framework',
   [TOOL]: 'Tool',
   [SHELL]: 'Shell',
+  [BUSINESS]: 'Business',
+  [DATA]: 'Data',
   [ABOUT]: 'About',
 }
 
@@ -24,5 +28,7 @@ export const mapCategoryToShortHand = {
   [FRAMEWORK]: '🍱',
   [TOOL]: '🛠',
   [SHELL]: '🗞',
+  [BUSINESS]: '📈',
+  [DATA]: '🔢',
   [ABOUT]: '🤷‍',
 }
