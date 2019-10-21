@@ -81,12 +81,32 @@ On GitHub you get the following instructions when clicking on **command line ins
 
 ![](./merge-pr-command-line-instructions.png)
 
-1. Check out the branch
+1. Get the branch of the other person who commited a PR with the newest change
+
+	1. Create a new branch which is a copy of the branch the PR should be merged to
+
+		```bash
+		git checkout -b jampueroc-master master
+		```
+
+	2. Pull the content of the other person onto that newly created branch
+
+		```bash
+		git pull git://github.com/jampueroc/react-native-kontaktio.git master
+		```
+
+2. Test whether everything is alright
+3. Go back to the branch which you want to merge into
 
 	```bash
-	git checkout -b jampueroc-master master
+	git checkout master
+	```
 
-	git pull git://github.com/jampueroc/react-native-kontaktio.git master
+4. Do a fast-forward merge into the branch (here `master`) and push to its remote
+
+	```bash
+	git merge --no-ff jampueroc-master
+	git push origin master
 	```
 
 ---
@@ -123,3 +143,5 @@ Alternative (Verify!)
 		```bash
 		git checkout remotes/OtherUser/name-of-branch
 		```
+
+		**NOTE**: This leads you to a detached HEAD state of that branch!

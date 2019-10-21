@@ -26,3 +26,4 @@ export const DEV_OPS = 'dev-ops'
 // OTHER
 export const OUTDATED = 'outdated'
 export const BASIC = 'basic'
+export const NONE = 'none'
