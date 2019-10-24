@@ -95,3 +95,7 @@ Jonny
 ## CRMs for Cust Dev
 
 Recommendation from Phillip of EF: [https://www.streak.com/]()
+
+## Other
+
+Entrepreneur First shared this [Customer Development Deep Dive](./LD13_ Customer Development Deep Dive.docx) with the London Cohort 2019.
