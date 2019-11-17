@@ -5,6 +5,7 @@ date: '2019-10-23T23:46:37.121Z'
 author: 'André Kovac'
 category: 'business'
 tags: ['brand']
+draft: true
 ---
 
 ## Tools

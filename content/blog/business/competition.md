@@ -5,6 +5,7 @@ date: '2019-10-24T23:46:37.121Z'
 author: 'André Kovac'
 category: 'business'
 tags: ['competition']
+draft: true
 ---
 
 ## Tools

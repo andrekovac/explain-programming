@@ -1,5 +1,5 @@
 ---
-title: 'Charles'
+title: 'Charles - Proxy Server Tool'
 description: 'Proxy server tool Charles - What it can be used for and how to use it.'
 date: '2016-08-23T17:58:32.169Z'
 author: 'André Kovac'

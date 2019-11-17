@@ -4,7 +4,8 @@ description: 'More elaborate things to do with Google Docs'
 date: '20169-10-17T12:07:32.169Z'
 author: 'André Kovac'
 category: 'tool'
-tags: [word-processing]
+tags: ['word-processing', 'stub']
+draft: true
 ---
 
 # Google docs commands
