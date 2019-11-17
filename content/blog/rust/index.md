@@ -19,3 +19,7 @@ rustup doc
 ## Values
 
 Can either be a `mutable reference`, a `sharable reference` or a `value`.
+
+## Packages
+
+Build front-ends with Rust: [Yew](https://github.com/yewstack/yew)
