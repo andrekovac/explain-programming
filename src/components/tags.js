@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { rhythm } from '../utils/typography'
-import { OUTDATED, BASIC } from '../constants/Tag'
+import { OUTDATED, BASIC, STUB } from '../constants/Tag'
 
 const Tags = props => (
   <span style={{ verticalAlign: 'text-bottom' }}>
@@ -13,6 +13,9 @@ const Tags = props => (
           break
         case BASIC:
           backgroundColor = 'green'
+          break
+        case STUB:
+          backgroundColor = '#e4b464'
           break
         default:
           backgroundColor = 'rgb(14, 28, 128)'
@@ -26,7 +29,7 @@ const Tags = props => (
             borderRadius: 5,
             color: 'white',
             fontSize: '0.8rem',
-            cursor: 'pointer'
+            cursor: 'pointer',
           }}
           onClick={() => props.onTagSelect && props.onTagSelect(tag)}
         >
