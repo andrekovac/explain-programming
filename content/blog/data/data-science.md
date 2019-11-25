@@ -5,6 +5,7 @@ author: 'André Kovac'
 description: 'A basic example of how to create a DockerFile'
 category: 'data'
 tags: ['business-intelligence']
+draft: true
 ---
 
 ## Business Intelligence (BI) Tools

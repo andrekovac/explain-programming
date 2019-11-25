@@ -7,6 +7,12 @@ export const CONCEPTS = 'concepts'
 export const DEFINITIONS = 'concepts'
 export const THEORY = 'theory'
 
+// DATA SCIENCE / AI
+
+export const NLP = 'nlp'
+export const ARTIFICIAL_INTELLIGENCE = 'artificial-intelligence'
+export const MACHINE_LEARNING = 'machine-learning'
+
 // LANGUAGES
 export const JAVASCRIPT = 'javascript'
 export const TYPESCRIPT = 'typescript'
