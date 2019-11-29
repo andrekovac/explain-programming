@@ -12,7 +12,7 @@ draft: true
 
 ### How to sync calendar delegates to iOS devices
 
-1. Go to [google.com/calendar/syncselect]() inside your mobile browser.
+1. Go to [https://calendar.google.com/calendar/syncselect]() inside your mobile browser.
 2. Under `Shared Calendars`, tick the boxes for the calendars you want to see on iPhone, iPad, and Mac.
 
 [Taken from this article](https://www.imore.com/shared-google-calendars-not-showing-iphone-ipad-mac-fix)
