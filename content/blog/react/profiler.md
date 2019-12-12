@@ -8,7 +8,7 @@ tags: ['javascript', 'react', 'performance']
 draft: true
 ---
 
-# React profiler
+## React profiler
 
 [Good video](https://www.youtube.com/watch?v=00RoZflFE34)
 
