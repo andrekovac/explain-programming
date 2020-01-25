@@ -1,22 +1,23 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Bio from '../components/bio'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Tags from '../components/tags'
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Tags from '../components/tags';
 
 import {
   mapCategoryToWord,
   mapCategoryToShortHand,
-} from '../constants/Category'
-import { rhythm, scale } from '../utils/typography'
+} from '../constants/Category';
+import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const post = this.props.data.markdownRemark;
+    const { title: siteTitle, siteUrl } = this.props.data.site.siteMetadata;
+    const slug = post.fields.slug;
+    const { previous, next } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -57,6 +58,19 @@ class BlogPostTemplate extends React.Component {
             </div>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <p
+            style={{
+              marginTop: rhythm(1),
+            }}
+          >
+            <a
+              href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Discuss on Twitter
+            </a>
+          </p>
           <hr
             style={{
               marginTop: rhythm(1.5),
@@ -96,11 +110,11 @@ class BlogPostTemplate extends React.Component {
           </ul>
         </nav>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -108,6 +122,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -121,6 +136,9 @@ export const pageQuery = graphql`
         category
         tags
       }
+      fields {
+        slug
+      }
     }
   }
-`
+`;
