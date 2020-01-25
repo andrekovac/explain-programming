@@ -37,14 +37,14 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginBottom: rhythm(0),
       }}
     >
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
-          marginRight: rhythm(1 / 2),
+          marginRight: rhythm(0.5),
           marginBottom: 0,
           minWidth: 50,
           borderRadius: `100%`,
@@ -58,7 +58,7 @@ const Bio = () => {
         creates software and speaks at events.
         {` `}
         Visit his <a href={`https://www.andrekovac.com/`}>homepage</a> for more
-        information about him.
+        information and ways to contact him.
       </p>
     </div>
   )

@@ -92,6 +92,25 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <footer>
+            <h3
+              style={{
+                fontFamily: `Montserrat, sans-serif`,
+                fontStyle: 'normal',
+                marginTop: 0,
+                marginBottom: rhythm(0.8),
+              }}
+            >
+              <Link
+                style={{
+                  boxShadow: `none`,
+                  textDecoration: `none`,
+                  color: `#9C590B`,
+                }}
+                to={`/`}
+              >
+                {siteTitle}
+              </Link>
+            </h3>
             <Bio />
           </footer>
         </article>

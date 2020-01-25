@@ -37,6 +37,14 @@ article td {
   padding: 2px;
 }
 
+article ul {
+  margin-left: 1rem;
+}
+
 footer {
   margin-top: 3rem;
+}
+
+article footer {
+  margin-bottom: 2rem;
 }
