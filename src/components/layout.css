@@ -41,7 +41,7 @@ article td {
   padding: 2px;
 }
 
-article ul {
+article ul, #privacy-policy ul {
   margin-left: 1rem;
 }
 

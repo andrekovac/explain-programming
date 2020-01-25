@@ -85,6 +85,14 @@ class Layout extends React.Component {
           >
             André Kovac
           </a>
+          <span> • </span>
+          <Link to={'/imprint'}>
+            Imprint
+          </Link>
+          <span> • </span>
+          <Link to={'/privacy-policy'}>
+            Privacy Policy
+          </Link>
         </footer>
       </div>
     );
