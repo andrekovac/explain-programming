@@ -28,10 +28,10 @@ Operations on Series:
 | `unique()` | |
 | `nunique()` | |
 | `apply(someFunction)` | Apply function to every element in column |
-| `del df['new'] | Delete column *new* |
+| `del df['new']` | Delete column *new* |
 | `df.drop(['new'], inplace = true)` | Delete column *new* |
 | `df.dropna()` | Remove lines with `nan` values |
-| `df.transpose()` or just `df.T` | |
+| `df.transpose()` or just `df.T` | Transpose |
 
 
 ## Dataframe

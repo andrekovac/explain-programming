@@ -1,15 +1,15 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
 import Logo from './logo';
-import { rhythm, scale } from '../utils/typography'
-import './layout.css'
+import { rhythm, scale } from '../utils/typography';
+import './layout.css';
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    const { location, title, children } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
+    let header;
 
     if (location.pathname === rootPath) {
       header = (
@@ -41,7 +41,7 @@ class Layout extends React.Component {
             </div>
           </Link>
         </h1>
-      )
+      );
     } else {
       header = (
         <h3
@@ -61,7 +61,7 @@ class Layout extends React.Component {
             {title}
           </Link>
         </h3>
-      )
+      );
     }
     return (
       <div
@@ -78,11 +78,17 @@ class Layout extends React.Component {
           {/* TODO: Add impressum and privacy policy */}©{' '}
           {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.andrekovac.com">André Kovac</a>
+          <a
+            href="https://www.andrekovac.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            André Kovac
+          </a>
         </footer>
       </div>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

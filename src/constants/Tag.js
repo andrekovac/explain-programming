@@ -30,6 +30,7 @@ export const INTERNALS = 'internals'
 export const PERFORMANCE = 'performance'
 export const TYPES = 'types'
 export const DEV_OPS = 'dev-ops'
+export const MARKDOWN = 'markdown'
 
 // OTHER
 export const OUTDATED = 'outdated'

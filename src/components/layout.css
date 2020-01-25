@@ -7,6 +7,10 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+a {
+  color: #9C590B;
+}
+
 article h2 {
   color: #4a4a44;
   /* border-top: 0.8px solid #4a4a4a; */
