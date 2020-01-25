@@ -31,7 +31,7 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 * [x] Add google analytics
 * [ ] Add impressum and privacy policy pages
 * [ ] Trace back creation dates of original **commands** files and add in `date` field.
-* [ ] Restyle inline code block
+* [x] Restyle inline code block
 
 	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
 	* See [https://using-remark.gatsbyjs.org/code-and-syntax-highlighting/#inline-code]()
@@ -45,9 +45,9 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 	* [ ] Search for name + description
 	* [ ] Search which includes every word in every page
 
-* [ ] Clickable tags
+* [x] Clickable tags
 
-  * [ ] Filter by tags
+  * [x] Filter by tags
   * [ ] Filter by category
 
 * [x] Logo
@@ -75,7 +75,9 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 	* See [https://github.com/prichey/prestonrichey.com/tree/master/src]()
 	* See [https://prestonrichey.com/blog/react-in-markdown/]()
 
-* [ ] Design: Make a point cloud
+* [ ] Design
+  * [ ] Make a point cloud
+  * [ ] Make code block wide to cover entire page!
 
 ---
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
