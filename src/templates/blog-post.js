@@ -19,6 +19,11 @@ class BlogPostTemplate extends React.Component {
     const slug = post.fields.slug;
     const { previous, next } = this.props.pageContext;
 
+    const githubSlug =
+      slug.split('/').length > 3
+        ? `${slug.slice(0, -1)}.md`
+        : `${slug}index.md`;
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -69,6 +74,14 @@ class BlogPostTemplate extends React.Component {
               rel="noopener noreferrer"
             >
               Discuss on Twitter
+            </a>
+            <span> • </span>
+            <a
+              href={`https://github.com/Andruschenko/explain-programming/edit/master/content/blog${githubSlug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Edit on GitHub
             </a>
           </p>
           <hr
