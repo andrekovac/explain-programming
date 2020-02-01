@@ -53,14 +53,38 @@ Random numbers
 
 `torch.manual_seed(42)`
 
+## Selection
+
+Given the following 2-D tensor
+
+```python
+x = torch.from_numpy(np.random.randint(0, 5, 6)).reshape(3,2)
+```
+
+Row vs. Column:
+
+1. `x[:, 1]` will return `tensor([4, 4, 1])`
+2. `x[:, 1:]` (adding slice with `:`) will return
+    ```python
+    tensor([[4],
+            [4],
+            [1]])
+    ```
+
+
 ## Tensor operations
 
-`view(.., -1)` will infer the right dimension if you use a `-1` for one of them (like `几` in Chinese).
+### `view`
+
+* `view` creates a shallow copy, i.e. after `z = x.view(2,5)`changes to `x` (e.g. `x[0] = 1`) will also change `z`. `reshape` on the other hand creates a deep copy.
+* `view(.., -1)` will infer the right dimension if you use a `-1` for one of them (like `几` in Chinese).
 
 ```python
 x = torch.arange(10)
 x.view(2, -1)
 ```
+
+### Matrix product `mm`
 
 ```python
 a @ b       # but @ is usually used for python decorators
@@ -68,8 +92,12 @@ a @ b       # but @ is usually used for python decorators
 torch.mm(a, b)
 ```
 
-```
-x.dot()
+### Several other tensor operations
+
+```python
+x.dot()     # Dot product
+x.mm()      # Matrix product
+x * y       # Element-wise product
 x.norm()
 x.numel()
 len(x)      # Attention: Number of rows in 2-dimensional array

@@ -34,3 +34,7 @@ Gary Vaynerchuk said on Instagram: Go **acyclical**! If they don't do things a c
     > "If you didn't make 10 sales, you're not an entrepreneur"
 
     Quote from Sales person *Sander Bohlen* (`sander.bohlen@gmail.com`, `Tel +49 160 946 964 00`)
+
+## Business tools essentials
+
+* [Free, well searchable stock images](https://www.sitebuilderreport.com/stock-up)

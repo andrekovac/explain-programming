@@ -103,3 +103,5 @@ dummies = pd.get_dummies(a_cat)
 # Computing dot product of this dummmy matrix with b is exactly sum of necessary parts
 result = b.dot(dummies).reshape(3, 3)
 ```
+
+**Note**: Dummy variables are related to one-hot-encoding (1 is on, 0 is off)
