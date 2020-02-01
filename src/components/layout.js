@@ -75,7 +75,6 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          {/* TODO: Add impressum and privacy policy */}©{' '}
           {new Date().getFullYear()}, Built by
           {` `}
           <a
@@ -85,6 +84,10 @@ class Layout extends React.Component {
           >
             André Kovac
           </a>
+          <span> • </span>
+          <Link to={'/about'}>
+            About
+          </Link>
           <span> • </span>
           <Link to={'/imprint'}>
             Imprint

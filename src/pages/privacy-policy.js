@@ -19,7 +19,11 @@ class PrivacyPolicyPage extends React.Component {
             the EU General Data Protection Regulation (GDPR), is
           </p>
           <p>
-            André Kovac Klenzestr. 52a 80469 München
+            André Kovac
+            <br />
+            Klenzestr. 52a
+            <br />
+            80469 München
             <br />
             Phone: +49 176 98517802
             <br />
