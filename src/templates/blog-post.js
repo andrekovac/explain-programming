@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Bio from '../components/bio';
+import Footer from '../components/footer';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Tags from '../components/tags';
@@ -84,35 +84,7 @@ class BlogPostTemplate extends React.Component {
               Edit on GitHub
             </a>
           </p>
-          <hr
-            style={{
-              marginTop: rhythm(1.5),
-              marginBottom: rhythm(1 / 2),
-              height: 2,
-            }}
-          />
-          <footer>
-            <h3
-              style={{
-                fontFamily: `Montserrat, sans-serif`,
-                fontStyle: 'normal',
-                marginTop: 0,
-                marginBottom: rhythm(0.8),
-              }}
-            >
-              <Link
-                style={{
-                  boxShadow: `none`,
-                  textDecoration: `none`,
-                  color: `#9C590B`,
-                }}
-                to={`/`}
-              >
-                {siteTitle}
-              </Link>
-            </h3>
-            <Bio />
-          </footer>
+          <Footer />
         </article>
 
         <nav>
