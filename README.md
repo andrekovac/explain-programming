@@ -29,7 +29,8 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 ## TODO
 
 * [x] Add google analytics
-* [ ] Add impressum and privacy policy pages
+* [x] Add impressum and privacy policy pages
+* [x] Add footer with page link to impressum and privacy policy pages
 * [ ] Trace back creation dates of original **commands** files and add in `date` field.
 * [x] Restyle inline code block
 
@@ -60,7 +61,7 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 * [ ] Javascript: Write out examples instead of using screenshots
 * [ ] Javascript: Include other command files
 * [x] Remove description from preview
-* [ ] Think of how to us mdx
+* [ ] Think of how to use mdx
 
 	See [https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/#installation]()
 * [ ] Styles: Switch to styled-components
@@ -77,7 +78,12 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 
 * [ ] Design
   * [ ] Make a point cloud
+    * [ ] Set up relations between categories and tags
   * [ ] Make code block wide to cover entire page!
+
+* [ ] CMS
+  * [ ] Think about adding [https://forestry.io/]()
+  * [ ] See whether [https://tinacms.org/]() makes sense to add an edit mode (Alternative is just editing via GitHub directly)
 
 ---
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
