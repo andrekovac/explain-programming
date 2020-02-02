@@ -28,3 +28,13 @@ export const mapCategoryToShortHand = {
   [BUSINESS]: '📈',
   [DATA]: '🔢',
 }
+
+export const mapCategoryToColor = {
+  [PROGRAMMING_LANGUAGE]: '#fffbe6',
+  [THEORY]: '#fde0e0',
+  [FRAMEWORK]: '#d6ffe1',
+  [TOOL]: '#f0efff',
+  [SHELL]: '#fce4ff',
+  [BUSINESS]: '#d4f5f7',
+  [DATA]: '#ffeed9',
+}

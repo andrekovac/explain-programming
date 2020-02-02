@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import Footer from '../components/footer';
 import Layout from '../components/layout';
@@ -7,8 +8,9 @@ import SEO from '../components/seo';
 import Tags from '../components/tags';
 
 import {
-  mapCategoryToWord,
+  mapCategoryToColor,
   mapCategoryToShortHand,
+  mapCategoryToWord,
 } from '../constants/Category';
 import { rhythm, scale } from '../utils/typography';
 
@@ -50,6 +52,7 @@ class BlogPostTemplate extends React.Component {
                   verticalAlign: 'unset',
                 }}
               >
+                <ColorBar category={post.frontmatter.category} />
                 <span>{mapCategoryToShortHand[post.frontmatter.category]}</span>
                 <span
                   style={{
@@ -119,6 +122,12 @@ class BlogPostTemplate extends React.Component {
 }
 
 export default BlogPostTemplate;
+
+const ColorBar = styled.span`
+  border-left: 10px solid ${props => mapCategoryToColor[props.category]};
+  margin-right: 10px;
+`;
+
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
