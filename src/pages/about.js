@@ -22,9 +22,9 @@ class ImprintPage extends React.Component {
         </p>
         <h3>Why did I put this online?</h3>
         <p>
-          I had all my notes in *Markdown* files anyway and I sometimes had a
+          I had all my notes in <b>Markdown</b> files anyway and I sometimes had a
           hard time finding them because they are all somewhere on my computer.
-          I used *Spotlight* as my search tool, but want to improve it by having
+          I used <b>Spotlight</b> as my search tool, but want to improve it by having
           them all in one place.
         </p>
         <p>I also hope that other people might find my notes helpful.</p>

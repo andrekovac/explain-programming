@@ -3,7 +3,7 @@ title: 'Markdown'
 description: 'Interesting and rather rare or special markdown commands'
 date: '2019-12-28T23:46:37.121Z'
 author: 'André Kovac'
-category: 'Tool'
+category: 'tool'
 tags: ['markdown']
 ---
 
