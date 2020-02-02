@@ -7,28 +7,32 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
-article h2 {
+a {
+  color: #9C590B;
+}
+
+main h2 {
   color: #4a4a44;
-  border-top: 0.8px solid #4a4a4a;
-  padding-top: 0.5rem;
+  /* border-top: 0.8px solid #4a4a4a; */
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
-article h3 {
+main h3 {
   margin-top: 1.3rem;
   font-style: italic;
   color: #4a4a44;
 }
 
-article h4 {
+main h4 {
   color: #4a4a4a;
 }
 
-article p {
+main p {
   margin-bottom: 0.5rem;
 }
 
-article li {
+main li {
   margin-bottom: 0.1rem;
 }
 
@@ -37,6 +41,14 @@ article td {
   padding: 2px;
 }
 
+main ul, #privacy-policy ul {
+  margin-left: 1rem;
+}
+
 footer {
   margin-top: 3rem;
+}
+
+article footer {
+  margin-bottom: 2rem;
 }

@@ -9,8 +9,6 @@ export const SHELL = 'shell'
 export const BUSINESS = 'business'
 export const DATA = 'data'
 
-export const ABOUT = 'about'
-
 export const mapCategoryToWord = {
   [PROGRAMMING_LANGUAGE]: 'Programming Language',
   [THEORY]: 'Theory',
@@ -19,7 +17,6 @@ export const mapCategoryToWord = {
   [SHELL]: 'Shell',
   [BUSINESS]: 'Business',
   [DATA]: 'Data',
-  [ABOUT]: 'About',
 }
 
 export const mapCategoryToShortHand = {
@@ -30,5 +27,14 @@ export const mapCategoryToShortHand = {
   [SHELL]: '🗞',
   [BUSINESS]: '📈',
   [DATA]: '🔢',
-  [ABOUT]: '🤷‍',
+}
+
+export const mapCategoryToColor = {
+  [PROGRAMMING_LANGUAGE]: '#fffbe6',
+  [THEORY]: '#fde0e0',
+  [FRAMEWORK]: '#d6ffe1',
+  [TOOL]: '#f0efff',
+  [SHELL]: '#fce4ff',
+  [BUSINESS]: '#d4f5f7',
+  [DATA]: '#ffeed9',
 }

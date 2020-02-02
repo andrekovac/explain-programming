@@ -12,6 +12,8 @@ export const THEORY = 'theory'
 export const NLP = 'nlp'
 export const ARTIFICIAL_INTELLIGENCE = 'artificial-intelligence'
 export const MACHINE_LEARNING = 'machine-learning'
+export const STATISTICS = 'statistics'
+export const DATA_SCIENCE = 'data-science'
 
 // LANGUAGES
 export const JAVASCRIPT = 'javascript'
@@ -28,6 +30,7 @@ export const INTERNALS = 'internals'
 export const PERFORMANCE = 'performance'
 export const TYPES = 'types'
 export const DEV_OPS = 'dev-ops'
+export const MARKDOWN = 'markdown'
 
 // OTHER
 export const OUTDATED = 'outdated'

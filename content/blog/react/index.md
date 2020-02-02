@@ -179,6 +179,15 @@ At bottom of root component include
 React.render(<MyRootComponent />, document.body);
 ```
 
+## React hooks
+
+Great video about [state Management with React hooks](https://www.youtube.com/watch?v=-yj23RtyT-E&list=WL&index=41&t=0s).
+
+### Hooks libraries
+
+[Captain Hooks](https://github.com/stevenpersia/captain-hook)
+
+
 ## React discussion
 
 The following answers questions about `react` like:

@@ -115,12 +115,12 @@ monitor
 
 ## Run project on a real device
 
+[Link to React Native docs about running on device](https://facebook.github.io/react-native/docs/running-on-device)
+
 ### iOS
 
 - Change IP address in `ios/MyApp/AppDelegate.m` from `localhost` to IP Address of your notebook (e.g. `192.168.10.10` (find it in System Preferences/Network).
 - In **Xcode** select your phone as build target and press "Build and run"
-
-[Running On Device - iOS](https://facebook.github.io/react-native/docs/running-on-device-ios.html)
 
 ### Android
 
@@ -128,5 +128,3 @@ monitor
 2. Run `$ react-native run-android`
 3. Open the React Rage Shake Menu from within your app on your android device, go to `Dev Settings` and then to `Debug server host & port for device`. There enter your server IP (IP of your computer) and host `8081`, e.g. `192.168.50.35:8081`. On a mac you can find the IP of your computer at `System Preferences -> Network -> Advanced... -> TCP/IP -> IPv4 Address`.
 4. Open the Rage Shake Menu again and click `Reload JS`.
-
-[Running On Device - Android](http://facebook.github.io/react-native/docs/running-on-device-android.html#content)

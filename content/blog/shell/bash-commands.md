@@ -284,6 +284,12 @@ For example for the following command
 xrandr
 ```
 
+## CLI
+
+Build a CLI
+
+[A nice guide from Twilio](https://www.twilio.com/blog/how-to-build-a-cli-with-node-js)
+
 ## Links
 
 * [Essential Linux Commands](http://www.labnol.org/software/linux-commands/19028/)

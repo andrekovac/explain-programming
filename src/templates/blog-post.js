@@ -1,22 +1,30 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import Bio from '../components/bio'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Tags from '../components/tags'
+import Footer from '../components/footer';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Tags from '../components/tags';
 
 import {
-  mapCategoryToWord,
+  mapCategoryToColor,
   mapCategoryToShortHand,
-} from '../constants/Category'
-import { rhythm, scale } from '../utils/typography'
+  mapCategoryToWord,
+} from '../constants/Category';
+import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const post = this.props.data.markdownRemark;
+    const { title: siteTitle, siteUrl } = this.props.data.site.siteMetadata;
+    const slug = post.fields.slug;
+    const { previous, next } = this.props.pageContext;
+
+    const githubSlug =
+      slug.split('/').length > 3
+        ? `${slug.slice(0, -1)}.md`
+        : `${slug}index.md`;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -44,6 +52,7 @@ class BlogPostTemplate extends React.Component {
                   verticalAlign: 'unset',
                 }}
               >
+                <ColorBar category={post.frontmatter.category} />
                 <span>{mapCategoryToShortHand[post.frontmatter.category]}</span>
                 <span
                   style={{
@@ -57,16 +66,28 @@ class BlogPostTemplate extends React.Component {
             </div>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr
+          <p
             style={{
-              marginTop: rhythm(1.5),
-              marginBottom: rhythm(1 / 2),
-              height: 2,
+              marginTop: rhythm(1),
             }}
-          />
-          <footer>
-            <Bio />
-          </footer>
+          >
+            <a
+              href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Discuss on Twitter
+            </a>
+            <span> • </span>
+            <a
+              href={`https://github.com/Andruschenko/explain-programming/edit/master/content/blog${githubSlug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Edit on GitHub
+            </a>
+          </p>
+          <Footer />
         </article>
 
         <nav>
@@ -96,11 +117,17 @@ class BlogPostTemplate extends React.Component {
           </ul>
         </nav>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
+
+const ColorBar = styled.span`
+  border-left: 10px solid ${props => mapCategoryToColor[props.category]};
+  margin-right: 10px;
+`;
+
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -108,6 +135,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -121,6 +149,9 @@ export const pageQuery = graphql`
         category
         tags
       }
+      fields {
+        slug
+      }
     }
   }
-`
+`;
