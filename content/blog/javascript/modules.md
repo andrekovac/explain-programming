@@ -10,6 +10,14 @@ draft: true
 
 `Common.js` (modules)
 
+## Nice way of exporting an import
+
+From `react-navigation-tabs`, i.e. `node_modules/react-navigation-tabs/lib/typescript/src/index.d.ts`:
+
+```js
+export { default as createMaterialTopTabNavigator, } from './navigators/createMaterialTopTabNavigator';
+```
+
 ## ES6+ syntax
 
 There are two types of exports:

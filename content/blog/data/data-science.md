@@ -8,12 +8,41 @@ tags: ['business-intelligence', 'data-science', 'statistics']
 draft: true
 ---
 
-## Business Intelligence (BI) Tools
+## Data science process
+
+* **CRISP-DM**: Cross-Industry Standard Process for Data Mining
+
+    - Business Understanding
+    - Data Understanding
+    - Data Preparation
+    - Modeling
+    - Evaluation
+    - Deployment
+
+## Different layers of tools
+
+### Data science
+
+Python packages like `scikitlearn`, `tensorflow`, `pytorch`
+
+### Data engineering tools
+
+Take things which you need and put
+
+- [Spark](https://spark.apache.org/)
+- [Flink](https://flink.apache.org/)
+
+### Business Intelligence (BI) Tools
+
+Dashboard tool
 
 - [https://supermetrics.com/]()
 - [https://www.tableau.com/]()
+- [https://looker.com/]()
+
+- [Apache Superset](https://superset.incubator.apache.org/gallery.html)
 
 
-## Data engineering
+## Data retrieval
 
 [Web scraping with Javascript](https://www.youtube.com/watch?v=TzZ3YOUhCxo)

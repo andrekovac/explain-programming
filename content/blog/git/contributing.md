@@ -109,6 +109,15 @@ On GitHub you get the following instructions when clicking on **command line ins
 	git push origin master
 	```
 
+### When getting a PR for your lib you can check out locally by doing this
+
+This is what GitHub recommends you to do:
+
+```bash
+git fetch origin refs/pull/67/head
+git checkout -b <some_other_user>/master FETCH_HEAD
+```
+
 ---
 
 Alternative (Verify!)
