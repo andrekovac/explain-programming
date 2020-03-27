@@ -66,7 +66,7 @@ yupiter notebook
 
 ### venv
 
-**NOTE**: Use `venv` (NOT `virtualenv`) on OSX - the later has issues on OSX!
+**NOTE**: Use `venv` (NOT `virtualenv`) on **OSX** - the later has issues on OSX!
 
 1. In the project directory type `python3 -m venv ./env`
 2. Activate the virtual environment using `source env/bin/activate`

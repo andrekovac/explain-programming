@@ -12,8 +12,7 @@ draft: true
 
 `(pd.Series(df.columns.values).str.contains("Fahrer") == True).tolist()`
 
-
-* Return information about the elements of a Series
+### Return information about the elements of a Series
 
 e.g. to count
 
@@ -21,20 +20,26 @@ e.g. to count
 my_series.value_counts()
 ```
 
-Operations on Series:
+### Operations on Series:
 
 | Function | What? |
 | --- | --- |
-| `unique()` | |
-| `nunique()` | |
+| `unique()` | [Removes duplicate values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html?highlight=unique#pandas.Series.unique) |
+| `nunique()` | Returns the number of unique values |
+
 | `apply(someFunction)` | Apply function to every element in column |
+
+
+## Dataframe
+
+| Function | What? |
+| --- | --- |
 | `del df['new']` | Delete column *new* |
 | `df.drop(['new'], inplace = true)` | Delete column *new* |
 | `df.dropna()` | Remove lines with `nan` values |
 | `df.transpose()` or just `df.T` | Transpose |
 
-
-## Dataframe
+### Data selection
 
 * Column selection: `df[['A', 'C']]`
 * Row selection: `df.loc[['A', 'C']]`
@@ -47,26 +52,49 @@ Operations on Series:
   df[ (df['A'] > 0) & (df['B'] == 0) ]
   ```
 
-* `set_index(list_of_new_indices)`, `reset_index()`
+#### Index
 
-* `inplace` argument in most Pandas functions
+* `set_index(list_of_new_indices)`
 
-  Mutate object
+* `reset_index()`
 
-* Functions: `df.info()`, `df.dtypes`, `df.describe()`,
-* Attributes: `df.columns`, `df.index`
+  Useful when creating a new data frame out of another data frame, e.g.
+
+  ```python
+  new_df = pd.DataFrame(pd.Series(new_df)).reset_index()
+  ```
+
+  Or when resetting the index after filtering out missing values with `dropna()`
+
+#### Notes
+
+* `inplace` argument in most Pandas functions: If set to `true` (`inplace=True`), it mutates the object.
+
+* Selection by callable: `df1.loc[lambda df: df['A'] > 0, :]` [see Documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#selection-by-callable)
+
+
+### Attributes:
+
+* `df.columns`
+* `df.index`
+
+### Functions
+
+* `df.info()`, `df.dtypes`, `df.describe()`,
 
 * `groupby('ColumnName').describe().transpose()`
 
 * Sort by `Name`: `df.sort_values(by='Name', ascending=False)`
 
-* Missing values:
 
-    * `df.dropna()`
-    * `df.dropna(axis=1)`
-    * `df.dropna(thresh=2)`
-    * `df.fillna(value='FILL VALUE')`
-    * `df['A'].fillna(value=df['A'].mean())`
+#### Missing values:
+
+  * `df.isnull()` (alias: `df.isna()`)
+  * `df.dropna()`
+  * `df.dropna(axis=1)`
+  * `df.dropna(thresh=2)`
+  * `df.fillna(value='FILL VALUE')`
+  * `df['A'].fillna(value=df['A'].mean())`
 
 ## Read data
 
@@ -105,3 +133,7 @@ result = b.dot(dummies).reshape(3, 3)
 ```
 
 **Note**: Dummy variables are related to one-hot-encoding (1 is on, 0 is off)
+
+## Learning materials
+
+- [100 Pandas Puzzles](https://github.com/ajcr/100-pandas-puzzles)

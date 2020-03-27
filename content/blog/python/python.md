@@ -1,6 +1,6 @@
 ---
-title: 'Pip'
-description: 'Basic information on how to set up and use pip'
+title: 'Python'
+description: 'Basic python commands'
 date: '2016-01-07T11:58:52.169Z'
 author: 'André Kovac'
 category: 'tool'

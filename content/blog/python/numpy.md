@@ -38,3 +38,7 @@ plt.show()
 ```
 import seaborn as sns
 ```
+
+## Learning materials
+
+- [100 Numpy Puzzles](https://github.com/rougier/numpy-100)

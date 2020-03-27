@@ -102,3 +102,13 @@ x.norm()
 x.numel()
 len(x)      # Attention: Number of rows in 2-dimensional array
 ```
+
+### Derivatives and gradients
+
+```python
+x = torch.tensor(2.0, requires_grad=True)
+y = 2*x**4 + x**3 + 2*x**2 + 5*x + 1
+
+y.backward()    # dy/dx
+x.grad          # Get result of dy/dx(x)
+```
