@@ -9,6 +9,10 @@ tags: ['data-science', 'machine-learning']
 
 ## General concepts
 
+### Neural Network
+
+Last layer is usually called `L`.
+
 ### Activation function
 
 * The rectifier is a popular activation function - the positive part of its argument.
@@ -48,16 +52,52 @@ Use *one-hot-encoding* to encode output layer.
 
 #### Activation functions
 
+How to filter the output value of a neuron before passing it on.
+
 1. Non-exclusive classes
 
-Use `Sigmoid` activation function
+    Use `Sigmoid` activation function
 
 2. Exclusive classes
 
-Use `Softmax` activation function to ensure that sum of all classes equals 1.
-Now you can choose the value with highest probability.
+    * Use `Softmax` activation function to ensure that sum of all classes equals 1.
+    * This way you can choose the value with highest probability.
 
-## Useful links
+### Gradient descent
 
+* Cost/Loss functions
+
+    * Regression problems: **Quadratic cost**
+    * Classification problems: **Cross entropy** - model predicts a probablity distribution over all classes.
+
+* Optimized **learning rate**
+
+    * Adaptive gradient descent
+    * Optimizer: Adam: A Method for Stochastic Optimization
+
+### Backpropagation
+
+1. How sensitive is cost function to changes in weight matrix `w`?
+2. Take partial derivative of cost function with respect to weight `w`.
+3. Apply chain-rule to get `dC/dw = dC/da * da/dz * dz/dw`.
+4. Compute `dC/db` to also compute how much a change in the bias impacts the cost.
+
+
+## Terms
+
+* **Hadamard Product**: Element-by-element multiplication of two vectors
+* **Noise profile** of generated inputs
+
+## Resources
+
+A nice machine learning graphic:
+
+![Machine Learning Graphic](./machine-learning-graphic.jpg)
+
+### Good reads
+
+* [A booklet on machine learning systems design with exercises](https://github.com/chiphuyen/machine-learning-systems-design)
+* [The Data Engineering Cookbook - by Andreas Kraetz](https://github.com/andkret/Cookbook)
 * [Millions of accessible data sets](https://blog.google/products/search/discovering-millions-datasets-web/)
-
+* [The 100 page machine learning book](https://github.com/aburkov/theMLbook)
+* [Deep Learning for Natural Language Processing](https://www.slideshare.net/sawjd/deep-learning-for-natural-language-processing-by-roopal-garg)
