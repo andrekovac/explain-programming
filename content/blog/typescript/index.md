@@ -144,6 +144,8 @@ Type widening is the default behavior for many literal types. So e.g. a string `
 
 ## Interfaces
 
+- [Nice short article about the differences between `interface` and `type`](https://pawelgrzybek.com/typescript-interface-vs-type/)
+
 *UNDER CONSTRUCTION*
 
 ## Comparison to flow

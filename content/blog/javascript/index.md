@@ -51,10 +51,6 @@ case 'pop':
 		currentState;
 ```
 
-### Promise `then` and `resolve` interplay
-
-Inside a `then()` chain, `resolve()` function call let's it directly jump to next `then()`.
-
 ### Incorrect use of function definitions inside `for` loops:
 
 **Mistake**: Incorrect use of function definitions inside `for` loops.
