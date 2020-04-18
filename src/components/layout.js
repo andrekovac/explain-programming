@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Logo from './logo';
+import StyledLink from './styledLink';
 import { rhythm, scale } from '../utils/typography';
 import './layout.css';
 
@@ -20,12 +21,7 @@ class Layout extends React.Component {
             marginTop: rhythm(1 / 4),
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
+          <StyledLink
             to={`/`}
           >
             <div
@@ -37,9 +33,9 @@ class Layout extends React.Component {
               }}
             >
               <Logo width={'2.5em'} height={'2.5em'} />
-              <div style={{ marginLeft: 10 }}>{title}</div>
+              <div style={{ marginLeft: 10, marginBottom: 20 }}>{title}</div>
             </div>
-          </Link>
+          </StyledLink>
         </h1>
       );
     } else {
@@ -50,16 +46,11 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `#9C590B`,
-            }}
+          <StyledLink
             to={`/`}
           >
             {title}
-          </Link>
+          </StyledLink>
         </h3>
       );
     }
@@ -68,7 +59,7 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
+          maxWidth: rhythm(28),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >

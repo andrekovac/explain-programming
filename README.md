@@ -28,24 +28,44 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 
 ## TODO
 
-* [x] Add google analytics
-* [x] Add impressum and privacy policy pages
-* [x] Add footer with page link to impressum and privacy policy pages
-* [ ] Trace back creation dates of original **commands** files and add in `date` field.
-* [x] Restyle inline code block
-
-	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
-	* See [https://using-remark.gatsbyjs.org/code-and-syntax-highlighting/#inline-code]()
-
-* [x] Categories
-
-* [ ] search
+* [ ] Search
 
 	* Look at [https://github.com/greglobinski/gatsby-starter-hero-blog]() for an example
 	* See [https://www.gatsbyjs.org/docs/adding-search/]()
 	* [ ] Search for name + description
 	* [ ] Search which includes every word in every page
 
+* [ ] Host on my programming url
+* [ ] Javascript: Write out examples instead of using screenshots
+* [ ] Check _ALL_ files - whether draft or not and decide whether it looks good to be published!
+* [ ] Styles: Switch to styled-components
+	See [https://www.gatsbyjs.org/docs/creating-global-styles/#how-to-add-global-styles-in-gatsby-with-standard-css-files]()
+
+* [ ] Check out gatsby example site
+
+	* See [https://github.com/prichey/prestonrichey.com/tree/master/src]()
+	* See [https://prestonrichey.com/blog/react-in-markdown/]()
+
+* [ ] Design
+  * [ ] Make a point cloud
+    * [ ] Set up relations between categories and tags
+  * [x] Make code block wide to cover entire page! -> Made it a bit wider and I like it more now.
+  * [ ] Create new cards [make it more square] to display each article in the overview list
+
+* [ ] CMS
+  * [ ] Think about adding [https://forestry.io/]()
+  * [ ] See whether [https://tinacms.org/]() makes sense to add an edit mode (Alternative is just editing via GitHub directly)
+
+* [x] Add google analytics
+* [x] Add impressum and privacy policy pages
+* [x] Add footer with page link to impressum and privacy policy pages
+* [x] Trace back creation dates of original **commands** files and add in `date` field.
+* [x] Restyle inline code block
+
+	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
+	* See [https://using-remark.gatsbyjs.org/code-and-syntax-highlighting/#inline-code]()
+
+* [x] Categories
 * [x] Clickable tags
 
   * [x] Filter by tags
@@ -56,34 +76,14 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
   * [x] Design Logo
   * [x] Add logo in README, to title, as `static/favicon.ico`
 
-* [ ] Host on my programming url
-* [ ] Rewrite bash fields where necessary (to show prompt)
-* [ ] Javascript: Write out examples instead of using screenshots
-* [ ] Javascript: Include other command files
+* [x] Rewrite bash fields where necessary (to show prompt)
+* [x] Javascript: Include other command files
 * [x] Remove description from preview
-* [ ] Think of how to use mdx
-
+* [x] Think of how to use mdx
 	See [https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/#installation]()
-* [ ] Styles: Switch to styled-components
 
-	See [https://www.gatsbyjs.org/docs/creating-global-styles/#how-to-add-global-styles-in-gatsby-with-standard-css-files]()
 * [x] Draft option
-
 	See [https://github.com/wonism/gatsby-advanced-blog]()
-
-* [ ] Check out gatsby example site
-
-	* See [https://github.com/prichey/prestonrichey.com/tree/master/src]()
-	* See [https://prestonrichey.com/blog/react-in-markdown/]()
-
-* [ ] Design
-  * [ ] Make a point cloud
-    * [ ] Set up relations between categories and tags
-  * [ ] Make code block wide to cover entire page!
-
-* [ ] CMS
-  * [ ] Think about adding [https://forestry.io/]()
-  * [ ] See whether [https://tinacms.org/]() makes sense to add an edit mode (Alternative is just editing via GitHub directly)
 
 ---
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
@@ -100,7 +100,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     Use the Gatsby CLI to create a new site, specifying the blog starter.
 
-    ```sh
+    ```bash
     # create a new Gatsby site using the blog starter
     gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
     ```
@@ -109,7 +109,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     Navigate into your new site’s directory and start it up.
 
-    ```sh
+    ```bash
     cd my-blog-starter/
     gatsby develop
     ```

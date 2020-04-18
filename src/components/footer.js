@@ -6,10 +6,12 @@
  */
 
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import { rhythm } from '../utils/typography';
 import Bio from './bio';
+import StyledLink from './styledLink';
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -42,16 +44,11 @@ const Footer = () => {
           marginBottom: rhythm(0.8),
         }}
       >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `#9C590B`,
-          }}
+        <StyledLink
           to={`/`}
         >
           {title}
-        </Link>
+        </StyledLink>
       </h3>
       <Bio />
     </footer>

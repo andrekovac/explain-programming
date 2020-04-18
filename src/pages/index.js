@@ -7,19 +7,22 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Tags from '../components/tags';
 import Author from '../components/author';
+import StyledLink from '../components/styledLink';
 
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import {
   mapCategoryToShortHand,
   mapCategoryToColor,
 } from '../constants/Category';
 import { NONE } from '../constants/Tag';
+import { PRIMARY, PRIMARY_HOVER } from '../constants/Colors';
 import { rhythm } from '../utils/typography';
 
-const BlogIndex = props => {
+const BlogIndex = (props) => {
   const [selectedTag, setSelectedTag] = useState(NONE);
+  const { title: siteTitle } = useSiteMetadata();
 
   const { data } = props;
-  const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
   const filterBySelectedTag = ({ node }) => {
@@ -31,7 +34,7 @@ const BlogIndex = props => {
     }
   };
 
-  const onTagSelect = tag => {
+  const onTagSelect = (tag) => {
     setSelectedTag(tag);
   };
 
@@ -45,21 +48,12 @@ const BlogIndex = props => {
           justifyContent: 'center',
         }}
       >
-        <span
-          style={{
-            borderRadius: 5,
-            padding: 10,
-            marginBottom: 10,
-            cursor: selectedTag === NONE ? 'inherit' : 'pointer',
-            color: 'white',
-            backgroundColor: '#9C590B',
-            opacity: selectedTag === NONE ? 0 : 1,
-          }}
+        <ShowAllButton
           disabled={selectedTag !== NONE}
           onClick={() => setSelectedTag(NONE)}
         >
           Show all
-        </span>
+        </ShowAllButton>
       </div>
 
       {posts.filter(filterBySelectedTag).map(({ node }) => {
@@ -67,44 +61,45 @@ const BlogIndex = props => {
         const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`;
 
         return (
-          <ArticleElement key={node.fields.slug} category={node.frontmatter.category}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                    marginTop: rhythm(2 / 3),
-                    display: 'inline-block',
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <Author name={node.frontmatter.author} />
-                <small
-                  style={{
-                    fontSize: rhythm(0.9),
-                    marginLeft: rhythm(1 / 2),
-                    marginRight: rhythm(1 / 4),
-                  }}
-                >
-                  {mapCategoryToShortHand[node.frontmatter.category]}
-                </small>
-                <Tags tags={node.frontmatter.tags} onTagSelect={onTagSelect} />
-              </header>
-              <section>
-                <p
-                  style={{
-                    fontStyle: `${
-                      node.frontmatter.description ? 'normal' : 'italic'
-                    }`,
-                    fontSize: rhythm(0.5),
-                  }}
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || defaultDescription,
-                  }}
-                />
-              </section>
+          <ArticleElement
+            key={node.fields.slug}
+            category={node.frontmatter.category}
+          >
+            <header>
+              <h3
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                  marginTop: rhythm(2 / 3),
+                  display: 'inline-block',
+                }}
+              >
+                <StyledLink to={node.fields.slug}>{title}</StyledLink>
+              </h3>
+              <Author name={node.frontmatter.author} />
+              <small
+                style={{
+                  fontSize: rhythm(0.9),
+                  marginLeft: rhythm(1 / 2),
+                  marginRight: rhythm(1 / 4),
+                }}
+              >
+                {mapCategoryToShortHand[node.frontmatter.category]}
+              </small>
+              <Tags tags={node.frontmatter.tags} onTagSelect={onTagSelect} />
+            </header>
+            <section>
+              <p
+                style={{
+                  fontStyle: `${
+                    node.frontmatter.description ? 'normal' : 'italic'
+                  }`,
+                  fontSize: rhythm(0.6),
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || defaultDescription,
+                }}
+              />
+            </section>
           </ArticleElement>
         );
       })}
@@ -115,23 +110,30 @@ const BlogIndex = props => {
 export default BlogIndex;
 
 const ArticleElement = styled.article`
-  border-left: 10px solid ${props => mapCategoryToColor[props.category]};
+  border-left: 10px solid ${(props) => mapCategoryToColor[props.category]};
   padding-left: 10px;
-  &:hover {
-    background-color: ${props => mapCategoryToColor[props.category]};
+`;
+
+const ShowAllButton = styled.span`
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: ${(props) => (!props.disabled ? 'inherit' : 'pointer')};
+  color: white;
+  background-color: ${PRIMARY};
+  opacity: ${(props) => (!props.disabled ? 0 : 1)};
+
+  &:hover,
+  &:active {
+    background-color: ${PRIMARY_HOVER};
   }
 `;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       filter: { frontmatter: { draft: { ne: true } } }
-      sort: { fields: [frontmatter___title], order: ASC }
+      sort: { fields: [frontmatter___category], order: ASC }
     ) {
       edges {
         node {

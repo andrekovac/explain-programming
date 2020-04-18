@@ -33,9 +33,16 @@ pre[class*='language-'] {
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1em;
-  margin: 0.5em 0;
+  margin-top: 10px;
+  /* Make it stand out on the sides */
   overflow: auto;
-  border-radius: 0.3em;
+  margin-right: -30px;
+  margin-left: -30px;
+}
+
+li pre[class*='language-'] {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 :not(pre) > code[class*='language-'],
@@ -44,22 +51,22 @@ pre[class*='language-'] {
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+/* :not(pre) > code[class*='language-'] {
   padding: 0.2em 0.3em;
   border-radius: 0.3em;
   white-space: normal;
   background: #f0e4bf;
   color: black;
   text-shadow: none;
-  /* vertical-align: middle; */
 }
+*/
 
 h2 > code[class*='language-'] {
-  font-size: 1.73286rem;
+  font-size: 1.3rem;
 }
 
 h3 > code[class*='language-'] {
-  font-size: 1.4427rem;
+  font-size: 1rem;
 }
 
 .token.comment,
@@ -141,11 +148,29 @@ h3 > code[class*='language-'] {
  * for more information.
  */
 .command-line-prompt > span:before {
-  color: #999;
+  color: rgb(201, 201, 201);
   content: ' ';
   display: block;
   padding-right: 0.8em;
 }
+
+.command-line-prompt {
+  border-right: none;
+  margin-right: 0;
+}
+
+/* .command-line-prompt {
+  border-right: none;
+  display: block;
+  float: left;
+  font-size: 100%;
+  letter-spacing: -1px;
+  margin-right: 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+} */
 
 /* Prompt for all users */
 .command-line-prompt > span[data-user]:before {
@@ -161,4 +186,47 @@ h3 > code[class*='language-'] {
 
 .command-line-prompt > span[data-prompt]:before {
   content: attr(data-prompt);
+}
+
+/* Line numbers */
+pre[class*='language-'].line-numbers {
+  position: relative;
+  padding-left: 2.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*='language-'].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 1em;
+  font-size: 100%;
+  left: 2em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  margin-left: 0.5em;
+  border-right: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: rgb(126, 126, 126); /* Line number color */
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
 }

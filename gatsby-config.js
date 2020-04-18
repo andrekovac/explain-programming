@@ -1,15 +1,32 @@
-module.exports = {
-  siteMetadata: {
-    title: `Explain Programming`,
-    author: `André Kovac`,
-    description: `Find the most useful commands for a programming language or a framework fast - ready to use!`,
-    siteUrl: `https://quizzical-jang-fb6dca.netlify.com/`,
-    social: {
-      twitter: `andrekovac`,
-    },
+const siteMetadata = {
+  title: `Explain Programming`,
+  author: `André Kovac`,
+  description: `Find the most useful commands for a programming language or a framework fast - ready to use!`,
+  siteUrl: `https://quizzical-jang-fb6dca.netlify.com/`,
+  social: {
+    twitter: `andrekovac`,
   },
+};
+
+module.exports = {
+  siteMetadata: siteMetadata,
   plugins: [
-    'gatsby-plugin-mdx',
+    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,9 +42,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: `pages`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-emoji`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -47,6 +72,7 @@ module.exports = {
                 user: `user`,
                 global: true,
               },
+              showLineNumbers: true,
             },
           },
           `gatsby-remark-copy-linked-files`,
@@ -84,4 +110,4 @@ module.exports = {
       },
     },
   ],
-}
+};

@@ -1,43 +1,50 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
-import { rhythm } from '../utils/typography'
-import { OUTDATED, BASIC, STUB } from '../constants/Tag'
+import { rhythm } from '../utils/typography';
+import { OUTDATED, BASIC, STUB } from '../constants/Tag';
 
-const Tags = props => (
+const Tags = (props) => (
   <span style={{ verticalAlign: 'text-bottom' }}>
     {props.tags.map((tag, index) => {
-      let backgroundColor = ''
+      let backgroundColor = '';
       switch (tag) {
         case OUTDATED:
-          backgroundColor = '#bf4040'
-          break
+          backgroundColor = '#bf4040';
+          break;
         case BASIC:
-          backgroundColor = 'green'
-          break
+          backgroundColor = 'green';
+          break;
         case STUB:
-          backgroundColor = '#e4b464'
-          break
+          backgroundColor = '#e4b464';
+          break;
         default:
-          backgroundColor = 'rgb(14, 28, 128)'
+          backgroundColor = 'rgb(14, 28, 128)';
       }
       return (
-        <span
-          style={{
-            padding: rhythm(1 / 6),
-            marginRight: rhythm(1 / 4),
-            backgroundColor,
-            borderRadius: 5,
-            color: 'white',
-            fontSize: '0.8rem',
-            cursor: 'pointer',
-          }}
+        <Tag
+          backgroundColor={backgroundColor}
           onClick={() => props.onTagSelect && props.onTagSelect(tag)}
         >
           <small>{tag}</small>
-        </span>
-      )
+        </Tag>
+      );
     })}
   </span>
-)
+);
 
-export default Tags
+const Tag = styled.span`
+  padding: ${rhythm(1 / 6)};
+  margin-right: ${rhythm(1 / 4)};
+  border-radius: 5px;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background-color: ${props => props.backgroundColor};
+
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
+export default Tags;

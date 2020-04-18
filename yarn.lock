@@ -2511,7 +2511,7 @@ babel-plugin-remove-graphql-queries@^2.8.2:
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.8.2.tgz#a2968ea62e2e39ceaabf95157d915dfee77ee36e"
   integrity sha512-zzsJdkeE4zoozow1NECllMYed5yQGVSLt532kWec7G4mWCzZaFTz/E5TM4c3/RbBs32qyFkXi7ahRsB2DbW3hQ==
 
-"babel-plugin-styled-components@>= 1":
+"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.7:
   version "1.10.7"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.10.7.tgz#3494e77914e9989b33cc2d7b3b29527a949d635c"
   integrity sha512-MBMHGcIA22996n9hZRf/UJLVVgkEOITuR2SvjHLb5dSTUyR4ZRGn+ngITapes36FI3WLxZHfRhkA1ffHxihOrg==
@@ -2749,7 +2749,7 @@ blob@0.0.5:
   resolved "https://registry.yarnpkg.com/blob/-/blob-0.0.5.tgz#d680eeef25f8cd91ad533f5b01eed48e64caf683"
   integrity sha512-gaqbzQPqOoamawKg0LGVd7SzLgXS+JH61oWprSLH+P+abTczqJbhTR8CmJ2u9/bUYNmHTGJx/UEmn6doAvvuig==
 
-bluebird@^3.0.5, bluebird@^3.5.5, bluebird@^3.7.2:
+bluebird@^3.0.5, bluebird@^3.5.0, bluebird@^3.5.5, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -4872,6 +4872,11 @@ emoji-regex@^8.0.0:
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"
   integrity sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
 
+emojione@^3.1.2:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/emojione/-/emojione-3.1.7.tgz#2d3c725c696f179c9dde3acb655c621ee9429b1e"
+  integrity sha1-LTxyXGlvF5yd3jrLZVxiHulCmx4=
+
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
@@ -6215,6 +6220,13 @@ gatsby-plugin-sharp@^2.5.5:
     svgo "1.3.2"
     uuid "^3.4.0"
 
+gatsby-plugin-styled-components@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.2.3.tgz#616f2780713a2ad975d3b2729803bd945815f63d"
+  integrity sha512-3t7DWz57T52huhBnaXny8R2jhXbvKBWQjA4CMOtauTRzopGLgJf90y4f81arqrhnyyTm8rmX8NI1PzAt8RJomg==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+
 gatsby-plugin-typography@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-2.4.2.tgz#625cf371b3b3945fe08d3df7222f46166cdd7158"
@@ -6303,6 +6315,14 @@ gatsby-remark-copy-linked-files@^2.2.2:
     path-is-inside "^1.0.2"
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
+
+gatsby-remark-emoji@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-emoji/-/gatsby-remark-emoji-0.0.3.tgz#8ce8842bcc83452eac6e035fde8cebb864e95f64"
+  integrity sha512-j4G3DeTop68MIR+lZ3lB+jsYV4FwmoE/Rpz5Z5lir1nQmf1DPAVeMzuTvLidKDvWBWSuJnwBV3Wzx9NeXnznSQ==
+  dependencies:
+    bluebird "^3.5.0"
+    emojione "^3.1.2"
 
 gatsby-remark-images@^3.2.3:
   version "3.2.3"
@@ -13980,6 +14000,22 @@ typography-normalize@^0.16.19:
   version "0.16.19"
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.16.19.tgz#58e0cf12466870c5b27006daa051fe7307780660"
   integrity sha512-vtnSv/uGBZVbd4e/ZhZB9HKBgKKlWQUXw74+ADIHHxzKp27CEf8PSR8TX1zF2qSyQ9/qMdqLwXYz8yRQFq9JLQ==
+
+typography-plugin-code@^0.16.19:
+  version "0.16.19"
+  resolved "https://registry.yarnpkg.com/typography-plugin-code/-/typography-plugin-code-0.16.19.tgz#e65e9527b7fb096f9c73a69b714013eeab07af4c"
+  integrity sha512-iIERwepUUdNPODL/nBnGuTCkA0TnflowsdZNMhhG50NNaZ2jNAhK2TWUEdSUZB+Iig1UMHtRSSXFuMt+9mWYig==
+  dependencies:
+    gray-percentage "^2.0.0"
+    lodash "^4.13.1"
+
+typography-theme-fairy-gates@^0.16.19:
+  version "0.16.19"
+  resolved "https://registry.yarnpkg.com/typography-theme-fairy-gates/-/typography-theme-fairy-gates-0.16.19.tgz#db07be642d7fbed7ebbb5b81a078cbe89def5806"
+  integrity sha512-3m0VdY504QqOKu3u3Q41iA9V8PHYFARsc28iYjP+wxZKrbc49TOUs7vH+EgqaLeeu63cIXO1wZ3BuULQLRwukg==
+  dependencies:
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.19"
 
 typography-theme-wordpress-2016@^0.16.19:
   version "0.16.19"
