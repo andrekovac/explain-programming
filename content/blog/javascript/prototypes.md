@@ -1,6 +1,6 @@
 ---
-title: 'Javascript Prototypes'
-description: 'Explanations and examples about Javascript prototypes'
+title: 'Javascript: Prototypes'
+description: 'Theory and examples of prototypical inheritance in Javascript'
 date: '2019-08-20T23:46:37.121Z'
 author: 'André Kovac'
 category: 'programming-language'
@@ -93,3 +93,31 @@ jane.describe() // 'Person named Jane'
 - is compiled to:
 
   ![ES old](./ES_old.png)
+
+
+## Example
+
+```js
+"use strict";
+
+// ES6
+class TaskCollection1 {
+    constructor(tasks = []) {
+        this.tasks = tasks;
+    }
+
+    dump() {
+        console.log(this.tasks);
+    }
+}
+
+// Legacy syntax
+var TaskCollection2 = function TaskCollection(tasks) {
+    if (tasks === void 0) tasks = [];
+    this.tasks = tasks;
+};
+
+TaskCollection2.prototype.dump = function dump() {
+    console.log(this.tasks);
+}
+```

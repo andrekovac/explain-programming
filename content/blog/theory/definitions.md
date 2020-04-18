@@ -7,6 +7,11 @@ category: 'theory'
 tags: ['concepts', 'definition', 'stub']
 ---
 
+* **Singleton**
+
+	* Restrict the instantiation of a class to one "single" instance ([see the wiki article](https://en.wikipedia.org/wiki/Singleton_pattern))
+	* This is useful when exactly one object is needed to coordinate actions across the system.
+
 * `debounce`:
 	* it limits the rate at which a function can fire
 	* In `redux-saga` is non-blocking.

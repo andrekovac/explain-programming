@@ -47,7 +47,7 @@ In the main repo run `git diff` to see which submodule commit is expected by the
 
 Among other lines you'll see something like this. Just copy the commit hash after `-Subproject` and checkout your submodule to that commit.
 
-```
+```git
 @@ -1 +1 @@
 -Subproject commit d2e3affd9bfb0bb1e8c1a6c9440356d17d174fa1
 +Subproject commit 35eda0228309bdd0d7f44dd1adbdb4b4565a5010

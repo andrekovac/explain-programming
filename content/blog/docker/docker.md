@@ -1,8 +1,8 @@
 ---
 title: 'Docker'
+description: 'Many useful commands about docker'
 date: '2019-08-01T17:52:03.284Z'
 author: 'André Kovac'
-description: ''
 category: 'tool'
 tags: ['docker', 'dev-ops']
 draft: true
@@ -129,7 +129,7 @@ This runs the `Dockerfile` for sure even if stuff is cached in the case of `dock
 1. Create **Dockerfile**
 2. Run
 
-	```sh
+	```bash
 	docker build .
 	```
 
@@ -137,7 +137,7 @@ This runs the `Dockerfile` for sure even if stuff is cached in the case of `dock
 
 	With file flag:
 
-	```sh
+	```bash
 	docker build -f /path/to/a/Dockerfile .
 	```
 
@@ -269,18 +269,18 @@ Running `$ docker-osx-dev` after starting `Docker Quickstart Terminal` is not ne
 
 4. Push to DockerHub
 
-		docker push artirigo/whazat
+		docker push myCompany/myApp
 
 ###### On the server
 
 5. Pull the just pushed image
 
-		docker pull artirigo/whazat
+		docker pull myCompany/myApp
 
 6. Upload a `DockerFile` specifically tailored for server onto server, e.g.
 
 	    php-nginx:
-		  image: artirigo/whazat
+		  image: myCompany/myApp
 		  container_name: php-nginx
 		  ports:
 		    - "80:80"
@@ -394,7 +394,7 @@ in Dockerfile
 
 * `exec "$@"`: Runs the `CMD` command from the container itself and not from the script, thereby you can quit it with `ctrl + c` from within the container.
 
-```sh
+```bash
 #!/bin/bash
 set -e
 

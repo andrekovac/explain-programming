@@ -8,6 +8,8 @@ tags: ['network']
 draft: true
 ---
 
+[The WebSocket API (WebSockets)](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+
 ## Tipps
 
 - Additional streaming server, which helps with streaming:
@@ -18,5 +20,7 @@ draft: true
 
 ## Useful links
 
-* [Real time communication Alternative Protocolls](https://stackoverflow.com/questions/14499282/what-are-the-realtime-communication-protocols-available-for-the-web)
+- [Book: High Performance Browser Networking](https://hpbn.co/)
+- [Real time communication Alternative Protocolls](https://stackoverflow.com/questions/14499282/what-are-the-realtime-communication-protocols-available-for-the-web)
 
+- [A Study of WebRTC Security](http://webrtc-security.github.io/)

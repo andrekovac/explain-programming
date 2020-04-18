@@ -1,5 +1,5 @@
 ---
-title: 'Stock footage - video, photo, audio'
+title: 'Stock footage - royality free video, photo, audio'
 description: 'Collection of useful resources for free stock footage for YouTube videos'
 date: '2020-03-26T09:24:00.000Z'
 author: 'André Kovac'

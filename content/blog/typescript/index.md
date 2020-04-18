@@ -45,7 +45,7 @@ If you explicitly set a type, you express that you know which type that function
 **When would you explicitly set a type?** - If the contextually inferred type is not helpful/wrong, explicitly set a type.
 
 
-* A type can not always be inferred. Example:
+* A type cannot always be inferred. Example:
 
 	```js
 	const foo = { a: 3, b: 'string', c: {} };
@@ -71,14 +71,14 @@ interface PersonPartial {
 
 ```js
 myObject = <TypeA> otherObject;     // using <>
-myObject = otherObject as TypeA;    // using as keyword
+myObject = otherObject as TypeA;    // using `as` keyword
 ```
 
 ## Assure that type is defined
 
 `data.name` won't be undefined and thus `myName` won't.
 
-```js
+```ts
 const myName = data!.name!;
 ```
 
@@ -88,7 +88,7 @@ Use with caution!
 
 By explicitly setting `any` I give away the responsibility to type to the stuff calling my function:
 
-```
+```ts
 const foo = (bar: string, baz: string): any => ({
   ...
 })
@@ -96,7 +96,7 @@ const foo = (bar: string, baz: string): any => ({
 
 Then I can set `Function` (i.e. make `any` more concrete):
 
-```
+```js
 const curriedFoo: Function = _.curry(foo('hello'));
 ```
 
@@ -146,7 +146,7 @@ Type widening is the default behavior for many literal types. So e.g. a string `
 
 - [Nice short article about the differences between `interface` and `type`](https://pawelgrzybek.com/typescript-interface-vs-type/)
 
-*UNDER CONSTRUCTION*
+![interfaces vs. types](./InterfacesVsTypes.jpg)
 
 ## Comparison to flow
 
@@ -161,11 +161,32 @@ To mimic the behavior of non-strict flow-type type definitions:
 	```js
 	interface Foo {
 		bar: string;
-		[key: string]: any;
+		[key: string]: any;  // a string index signature
+	}
+	```
+
+## Indexer
+
+The first line inside the `interface` is called [the indexer](https://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types):
+
+	```js
+	interface Foo {
+		[key: string]: string | number;  // indexer
+		bar: string;
 	}
 	```
 
 ## Tipps/Workarounds
+
+* Generics with fat arrow functions
+
+	Use `extends any` as a workaround:
+
+	```js
+	const f = <T1 extends any>(arg1: T1) => <T2 extends any>(arg2: T2) => {
+		return { arg1, arg2 };
+	}
+	```
 
 * Cast to any with `as any`
 
@@ -185,7 +206,6 @@ To mimic the behavior of non-strict flow-type type definitions:
 		baz: 3,
 	} as any)
 	```
-
 
 * Work around `undefined`
 

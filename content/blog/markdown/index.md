@@ -17,7 +17,7 @@ Refer to images with respect to the location of the markdown file in your Github
 
 In this example there is a `images/` folder right next to the markdown file which references it:
 
-```
+```md
 ![](images/ios_install_step01.png)
 ```
 
@@ -43,14 +43,15 @@ Result:
 
 ### Code frame
 
-[https://browserframe.com/]()
+- [Carbon](https://carbon.now.sh/)
+- [https://browserframe.com/]()
 
 ### Mock screens
 
 * Browser window mock: [Screely](https://www.screely.com/)
 * Phone mocks: [mockupphone.com](https://mockuphone.com/)
 
-Better: Use command line tool `dframe`, e.g. `dframe cat.png --frame "iPhone 7"`
+**Better**: Use command line tool [dframe](https://github.com/c0bra/deviceframe), e.g. `dframe myimage.png --frame "Apple iPhone X Black"` (or just to `dframe myimage.png` and choose a frame).
 
 
 ## Links to internal anchors

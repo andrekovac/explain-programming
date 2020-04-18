@@ -34,15 +34,15 @@ with (Math) {
 
 see [with statement documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/with).
 
-## **Literal** vs. **Object**
+## Literal vs. Object
 
-- Array Literal
+- Array **Literal**
 
   ```js
   ['eat', 'bananas']
   ```
 
-- Array Object
+- Array **Object**
 
   ```js
   new Array('eat', 'bananas')

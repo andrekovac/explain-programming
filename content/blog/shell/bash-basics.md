@@ -47,10 +47,10 @@ echo “blablabla” >> .vimrc
 ### Read files
 
 ```bash
-$ cat test.tex    	:   	Displays the contents of test.tex
-$ head test.tex		:	Display the first few lines
-$ tail test.tex		:	Display last few lines
-$ more test.tex		:
+cat test.tex    	:   	Displays the contents of test.tex
+head test.tex		:	Display the first few lines
+tail test.tex		:	Display last few lines
+more test.tex		:
 ```
 
 ### Find files

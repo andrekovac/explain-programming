@@ -9,6 +9,17 @@ tags: ['javascript']
 
 ## Interesting/Cool stuff
 
+### [Optional Chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) with the [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_Coalescing_Operator)
+
+```js
+let customer = {
+  name: "Carl",
+  details: { age: 82 }
+};
+const customerCity = customer?.city ?? "Unknown city";
+console.log(customerCity); // Unknown city
+```
+
 ### `&&` call not returning boolean
 
 If `hasClose` is false, the Button will not be shown..
@@ -138,6 +149,7 @@ As for the `y === 2`, this is because you did not `var y;` inside `C`, so `y = 2
 
 ## Links
 
+- [Eloquent Javascript Book](https://eloquentjavascript.net/)
 - Interesting JS topics mentioned, like e.g. _event delegation_:
   [Seven JavaScript Things I Wish I Knew Much Earlier In My Career](http://www.smashingmagazine.com/2010/04/seven-javascript-things-i-wish-i-knew-much-earlier-in-my-career/#event-delegation)
 - [ECMAScript6 commands](http://es6-features.org/#Lexicalthis)

@@ -1,8 +1,8 @@
 ---
-title: 'bash - useful commands'
+title: 'Youtube DL - CLI tool to download videos'
 date: '2020-03-14T11:42:18+00:00'
 author: 'André Kovac'
-description: 'Useful commands for some command line interfaces'
+description: 'Some usage examples of how to run the youtube-dl command'
 category: 'shell'
 tags: ['bash']
 ---

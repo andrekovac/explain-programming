@@ -71,7 +71,7 @@ Syntax:
 
 [Example](https://superuser.com/questions/436586/why-redirect-output-to-21-and-12#436594)
 
-```sh
+```bash
 app 2>&1 | grep hello
 ```
 
@@ -127,40 +127,11 @@ touch $file
 
 ## User generation
 
-#### Create new user with sudo rights on server
+### Give group ownership of Laravel directory structure to the web group `www-data`
 
-* [Create new user with sudo rights](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)
-* [Add user authentication to server](http://thekeesh.com/2011/05/setting-up-user-accounts-password-authentication-and-ssh-keys-on-a-new-ec2-instance/)
-
-1. ssh into server
-2. `adduser` + choose name + password
-3. `usermod -aG sudo <username>`
-4. Switch to new user `su - <username>`
-5. Test sudo rights: `sudo ls -la /root`
-
-6. enable password authentication
-
-	```bash
-	sudo vim /etc/ssh/sshd_config
-	```
-
-	Uncomment
-
-	```
-	PasswordAuthentication yes
-	```
-
-7. reload that ssh configuration
-
-	```bash
-	sudo /etc/init.d/ssh reload
-	```
-
-#### Give group ownership of Laravel directory structure to the web group
-
-	```bash
-	sudo chown -R :www-data /var/www/laravel
-	```
+```bash
+sudo chown -R :www-data /var/www/laravel
+```
 
 ## Commands
 
@@ -257,7 +228,7 @@ e.g. `docker rmi $(docker images | grep "^<none>" | awk '{ print $3 }')`
 
 For example for the following command
 
-```
+```bash
 ./command -yes -no /home/username
 ```
 
@@ -268,7 +239,7 @@ For example for the following command
 
 * Append `&` to run command/script as background job
 
-	```sh
+	```bash
 	sleep 5 && ls | grep "foo" &
 	```
 
@@ -280,7 +251,7 @@ For example for the following command
 
 ## Screens
 
-```sh
+```bash
 xrandr
 ```
 

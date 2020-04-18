@@ -45,4 +45,5 @@ Dashboard tool
 
 ## Data retrieval
 
-[Web scraping with Javascript](https://www.youtube.com/watch?v=TzZ3YOUhCxo)
+- [Chrome Extension: Data Scraper - Easy Web Scraping](https://chrome.google.com/webstore/detail/data-scraper-easy-web-scr/nndknepjnldbdbepjfgmncbggmopgden)
+- [Web scraping with Javascript](https://www.youtube.com/watch?v=TzZ3YOUhCxo)

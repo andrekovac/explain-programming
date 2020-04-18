@@ -84,3 +84,26 @@ require('../actions/Bar')
 ```js
 var express = require('express');
 ```
+
+## Import Organization
+
+*Most reasonable patterns for writing our imports*
+
+All imports needed in a file are grouped at the top.
+
+We form 3 groups of imports devided by an emtpy line.
+
+```js
+// imports from external sources (npm)
+import React, { PropTypes, Component } from 'react';
+import { StyleSheet } from 'react-native';
+import { keys, pick, compose } from 'ramda';
+
+// imports from other parts of the application like utils or other components (use absolute imports as configured)
+import CachedImage from 'components/CachedImage';
+import { pickKeys } from 'util/object';
+
+// imports from component scope: always relative
+import styles from './styles';
+import GridItem from './components/GridItem';
+```
