@@ -17,6 +17,11 @@ draft: true
 | `shift + h` | freeze frame |
 
 
+## Useful settings
+
+| Shortcut | What? |
+|---|---|
+| `s` | skimming |
 ## Sync Audio + Video
 
 ### Synchronizing single clips - audio and video
