@@ -1,11 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-import { mapNameToInitials } from '../constants/Author'
+import { rhythm } from '../utils/typography';
+import { mapNameToInitials } from '../constants/Author';
 
 const Author = ({ name }) => (
-  <span style={{ marginLeft: 10, fontStyle: 'italic', fontWeight: 'bold' }}>
+  <span
+    style={{
+      marginLeft: 10,
+      fontStyle: 'italic',
+      fontWeight: 'bold',
+      marginRight: rhythm(1 / 2),
+    }}
+  >
     {mapNameToInitials[name]}
   </span>
-)
+);
 
-export default Author
+export default Author;

@@ -34,9 +34,8 @@ const BlogIndex = (props) => {
     }
   };
 
-  const onTagSelect = (tag) => {
-    setSelectedTag(tag);
-  };
+  const onTagSelect = (tag) =>
+    tag !== selectedTag ? setSelectedTag(tag) : setSelectedTag(NONE);
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -66,6 +65,14 @@ const BlogIndex = (props) => {
             category={node.frontmatter.category}
           >
             <header>
+              <small
+                style={{
+                  fontSize: rhythm(0.9),
+                  marginRight: rhythm(1 / 4),
+                }}
+              >
+                {mapCategoryToShortHand[node.frontmatter.category]}
+              </small>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
@@ -76,15 +83,7 @@ const BlogIndex = (props) => {
                 <StyledLink to={node.fields.slug}>{title}</StyledLink>
               </h3>
               <Author name={node.frontmatter.author} />
-              <small
-                style={{
-                  fontSize: rhythm(0.9),
-                  marginLeft: rhythm(1 / 2),
-                  marginRight: rhythm(1 / 4),
-                }}
-              >
-                {mapCategoryToShortHand[node.frontmatter.category]}
-              </small>
+
               <Tags tags={node.frontmatter.tags} onTagSelect={onTagSelect} />
             </header>
             <section>
