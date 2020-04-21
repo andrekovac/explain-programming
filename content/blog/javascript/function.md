@@ -1,7 +1,8 @@
 ---
 title: 'JavaScript: Function'
 description: 'Javascript functions explained'
-date: '2016-05-16T00:00:00.000Z'
+date: '2016-05-16'
+updated: '2020-04-22'
 author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript']
@@ -17,16 +18,18 @@ var functionOne = function() {
 };
 ```
 
-* Assigning an anonymous function to a variable.
+* Assigning an **anonymous function** to a variable.
 * *NOT* hoisted, executed
 * `console.log(functionOne)` prints `''`.
-* can be a **named** function expression:
+* Instead of an **anonymous** function a **named** function can be used. Then it's called a **named** function expression:
 
-	```js
-	var functionOne = function() {
-	    // Some code
-	};
-	```
+    ```js
+    var functionOne = function functionOne() {
+        // Some code
+    };
+    ```
+
+    Names are useful. They can be seen in stack traces, call stacks and lists of breakpoints.
 
 ##### Local vs. global definition
 
@@ -61,7 +64,7 @@ function functionTwo() {
 	* Here `myFunc` **will be hoisted no matter what**, i.e. not only if the condition is fulfilled.
 	* In `strict` mode error will be thrown.
 
-###### Complicated example
+### Complicated example
 
 ```js
 function xyz(){
@@ -73,31 +76,38 @@ function xyz(){
 
 ## Combination of function **expression** and **declaration**
 
-Scope of function declarations is browser dependent :-( :
-
 ```js
 var xyz = function abc(){
-  // xyz is visible here
-  // abc is visible here
+  // Some code
 };
-// xyz is visible here
-// abc is undefined here (browser dependent, defined in Internet Explorer)
 ```
 
-To alias functions in **all** browsers use a function expression:
+- `xyz` and `abc` are not the same name. This is a so-called **mixed form**.
+- The scope of function declarations is **browser dependent** 😩 :
 
-```js
-function abc(){};
-var xyz = abc;
-```
+  ```js
+  var xyz = function abc(){
+    // xyz is visible here
+    // abc is visible here
+  };
+  // xyz is visible here
+  // abc is usually undefined here, but defined in Internet Explorer)
+  ```
 
-* `xyz` and `abc` are aliases of the same object.
+- To alias functions in **all** browsers use a function expression:
 
-##### Use case of mixed form
+  ```js
+  function abc(){};
+  var xyz = abc;
+  ```
 
-Use alias `shortcut` which is only available within the function definition because it comes in more handy:
+  `xyz` and `abc` are now aliases of the same object.
 
-```js
+### Use case of mixed form
+
+You'll not find use cases for the mixed form often, but here's an example. Here alias `shortcut` which is only available within the function definition because it comes in more handy:
+
+```javascript {6}
 really.long.external.scoped.name = function shortcut(n) {
   // Let it call itself recursively:
   shortcut(n -1);
@@ -110,7 +120,7 @@ really.long.external.scoped.name = function shortcut(n) {
 
 ## Methods
 
-- Functions are called methods when they appear in classes, i.e. prototypes or ES6 classes which essentially are prototypes.
+- **Functions** are called **methods** when they appear in classes, i.e. prototypes or ES6 classes which essentially are prototypes.
 
 ```js
 var obj = {
@@ -128,19 +138,19 @@ var obj = {
 };
 ```
 
-Computed property names:
+You can even use **computed property names**. Here `"foo" + 2` becomes the function name `foo2`:
 
 ```js
 var bar = {
-  ["foo" + 2](){return 2;},
+  ["foo" + 2](){ return 2; },
 };
+
 console.log(bar.foo2()); // 2
 ```
 
 ## First-class functions
 
-In book `most-adequate-guide` to functional programming, the author never uses the arguments in the first-class functions examples.
-E.g. he says the following two examples are equivalent (page 38):
+The following two pieces of code are equivalent:
 
 ```js
 // go back to every httpGet call in the application and explicitly pass err along.
@@ -156,4 +166,8 @@ and
 httpGet('/post/2', renderPost);”
 ```
 
-Where did the arguments `json` and `err` go?
+**You might ask**: Where did the arguments `json` and `err` go?
+
+**Answer**: You don't have to wrap the function `renderPost` into an anonymous function as it was done in the first piece of code. In both cases the equivalent of the function `renderPost` is passed to `httpGet` and `httpGet` will know what to do with it.
+
+>Taken from the book `most-adequate-guide` to functional programming in which the author uses the second version in the first-class functions examples (e.g. on page 38).

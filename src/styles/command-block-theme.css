@@ -193,6 +193,8 @@ pre[class*='language-'].line-numbers {
   position: relative;
   padding-left: 2.8em;
   counter-reset: linenumber;
+  /* Ensure text under code-block appears after an offset */
+  margin-bottom: 0.5rem;
 }
 
 pre[class*='language-'].line-numbers > code {
@@ -229,4 +231,14 @@ pre[class*='language-'].line-numbers > code {
   display: block;
   padding-right: 0.8em;
   text-align: right;
+}
+
+.gatsby-highlight-code-line {
+  background-color: rgb(111, 90, 90);
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #c16d6d;
 }

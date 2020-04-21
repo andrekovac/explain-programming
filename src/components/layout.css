@@ -10,6 +10,9 @@ main blockquote {
   margin-top: 1rem;
 }
 
+/**
+ * Border around ordered and unordered lists
+ */
 main ul,
 main ol {
   border: 1px solid #4f4f4f;
