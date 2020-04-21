@@ -137,3 +137,4 @@ result = b.dot(dummies).reshape(3, 3)
 ## Learning materials
 
 - [100 Pandas Puzzles](https://github.com/ajcr/100-pandas-puzzles)
+- [10 Minutes to Pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)

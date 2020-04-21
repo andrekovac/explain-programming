@@ -191,18 +191,21 @@ The following answers questions about `react` like:
 
 [Ember + React Discussion](http://discuss.emberjs.com/t/can-reactjs-be-used-as-a-view-within-emberjs/3470/6)
 
-## React - new links
+## Links
 
-[Considering the momentum behind React, why does Meteor continue to develop their own solution Blaze?](https://www.quora.com/Considering-the-momentum-behind-React-why-does-Meteor-continue-to-develop-their-own-solution-Blaze)
+### Component libraries
 
-## Tutorials
+- [Chakra.ui](https://chakra-ui.com/)
 
-* [Getting started](https://facebook.github.io/react/docs/getting-started.html)
-* [Official Tutorial](https://facebook.github.io/react/docs/tutorial.html)
-* [JSX in depth](https://facebook.github.io/react/docs/jsx-in-depth.html)
+### Tools to check out
 
-## Tools to check out
-
+- [React Pose](https://medium.com/@joomiguelcunha/amazing-react-animation-with-react-pose-3b67d9eb6e07)
 - [React Concurrent Mode](https://reactjs.org/docs/concurrent-mode-adoption.html)
 - [react-refresh](https://twitter.com/0xca0a/status/1216696377369145344)
 - [react-hook-form](https://react-hook-form.com/)
+
+### Tutorials
+
+- [Getting started](https://facebook.github.io/react/docs/getting-started.html)
+- [Official Tutorial](https://facebook.github.io/react/docs/tutorial.html)
+- [JSX in depth](https://facebook.github.io/react/docs/jsx-in-depth.html)
