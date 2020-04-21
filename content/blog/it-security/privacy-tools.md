@@ -35,7 +35,6 @@ Useful tools to do things in privacy
 
 - [**Pi Hole** - Network-wide Ad Blocking](https://pi-hole.net/)
 
-
 #### VPNs
 
 VPNs are good, but they also bare a risk. All your internet traffic is routed through them. So you really have to trust them.
