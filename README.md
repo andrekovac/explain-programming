@@ -28,6 +28,8 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 
 ## TODO
 
+* [ ] Copy button in code box
+
 * [ ] Search
 
 	* Look at [https://github.com/greglobinski/gatsby-starter-hero-blog]() for an example
@@ -51,6 +53,9 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
     * [ ] Set up relations between categories and tags
   * [x] Make code block wide to cover entire page! -> Made it a bit wider and I like it more now.
   * [ ] Create new cards [make it more square] to display each article in the overview list
+
+* [ ] Comments
+  * [ ] Add comment section (include Discord?)
 
 * [ ] CMS
   * [ ] Think about adding [https://forestry.io/]()
