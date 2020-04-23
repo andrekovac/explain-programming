@@ -1,10 +1,10 @@
 ---
-title: 'Redux'
+title: 'Redux Principles'
 description: 'Principles of the state management library Redux'
-date: '2016-03-20T21:06:00.000Z'
+date: '2016-03-20'
 author: 'André Kovac'
 category: 'framework'
-tags: ['javascript', 'react']
+tags: ['javascript', 'react', 'redux']
 ---
 
 Manage the state of an application. Enhancement of the flux framework/concept for managing the state in react components.
@@ -29,19 +29,15 @@ Pure function but with references to properties of the former state for stuff wh
 ## How to build a redux app
 
 1. `reducer.js`
-2. `createStore` in `index.js`
-
-	Confusing naming: The `store` is the redux `state`
-
-3.
-
+2. `createStore` in `index.js`: Confusing naming: The `store` is the redux `state`
 
 ## Methods on the store
 
-	store.getState();
+```js
+store.getState();
 
-	store.dispatch({ type: 'INCREMENT' });
-
+store.dispatch({ type: 'INCREMENT' });
+```
 
 ### Print to console vs. render to body
 
@@ -72,7 +68,7 @@ Pure function but with references to properties of the former state for stuff wh
 ## Side note: Pure functions vs. impure functions
 
 * Pure functions: No side-effects, return new objects
-* Impure functions: Can contain side-effects, e.g. write to
+* Impure functions: Can contain side-effects, e.g. calls to external APIs
 
 ## Links
 
@@ -131,7 +127,7 @@ document.addEventListener('click', () => {
 
 ## Redux blog article - Praise of Redux
 
-I'd compare the difference of a React-Redux app to e.g. a meteor app as comparing elephants (? months of pregnancy + ? years to independence) to birds (? months of pregnancy + ? years to independent life).
+>I'd compare the difference of a React-Redux app to e.g. a meteor app as comparing elephants (? months of pregnancy + ? years to independence) to birds (? months of pregnancy + ? years to independent life).
 
-If you're able to build and fully understand a [Todo App with React + Redux](https://medium.com/@rajaraodv/step-by-step-guide-to-building-react-redux-apps-using-mocks-48ca0f47f9a#.qrbuj8eqm), you're up an running to create a fully fleshed production ready web app.
-If you're able to write a todo app with meteor, there's still very much to learn to pull of something more sophisticated although it's great to get small projects running fast if you need server and client.
+>If you're able to build and fully understand a [Todo App with React + Redux](https://medium.com/@rajaraodv/step-by-step-guide-to-building-react-redux-apps-using-mocks-48ca0f47f9a#.qrbuj8eqm), you're up an running to create a fully fleshed production ready web app.
+>If you're able to write a todo app with meteor, there's still very much to learn to pull of something more sophisticated although it's great to get small projects running fast if you need server and client.

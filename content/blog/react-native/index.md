@@ -4,15 +4,18 @@ description: 'Concepts, syntax and code snippets for React Native'
 date: '2019-08-21T17:58:32.169Z'
 author: 'André Kovac'
 category: 'framework'
-tags: ['javascript', 'react-native']
+tags: ['javascript', 'react-native', 'outdated']
+draft: true
 ---
+
+**TODO: This file can be removed! --> No real value!**
 
 ## General
 
 ### Bundle
 
 ```bash
-react-native bundle --verbose --entry-file ./src/whammy.js --bundle-output ./bundle/whammy-app.bundle
+react-native bundle --verbose --entry-file ./src/myApp.js --bundle-output ./bundle/myApp-app.bundle
 ```
 
 ## Android only
@@ -20,12 +23,6 @@ react-native bundle --verbose --entry-file ./src/whammy.js --bundle-output ./bun
 ### Custom changes in build.gradle
 
 - [gradle file syntax](https://docs.gradle.org/current/userguide/writing_build_scripts.html)
-
-see proxipedia
-
-```groovy
-
-```
 
 ### Explicitly remove android permission:
 

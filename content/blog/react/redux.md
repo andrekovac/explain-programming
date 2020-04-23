@@ -1,11 +1,23 @@
 ---
 title: 'Redux'
 description: 'Introductory and interesting things about redux - the state management library of React'
-date: '2016-03-20T21:06:00.000Z'
+date: '2016-03-20'
+updated: '2020-04-23'
 author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react']
 ---
+
+## Modern React + Redux
+
+- **Hooks**: [Decouple from Redux using hooks](https://www.bussieck.com/decouple-from-redux-using-hooks/)
+- **Context**
+
+  >If you're only using Redux to avoid passing down props, context could replace Redux - but then you probably didn't need Redux in the first place.
+  >
+  >Context also doesn't give you anything like the Redux DevTools, the ability to trace your state updates, middleware to add centralized application logic, and other powerful capabilities that Redux enables.
+
+  [from this SO discussion](https://stackoverflow.com/questions/49568073/react-context-vs-react-redux-when-should-i-use-each-one)
 
 ## New Action
 
@@ -125,6 +137,14 @@ export default connect(
 ```
 
 ## Middleware
+
+### Redux Middlewares
+
+- [Redux Toolkit](https://redux.js.org/redux-toolkit/overview)
+  - Recommended by the [Redux Styleguide](https://redux.js.org/style-guide/style-guide/)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+- [Redux Saga](https://redux-saga.js.org/)
+- [Redux Loop](https://github.com/redux-loop/redux-loop)
 
 ### applyMiddleware()
 
@@ -292,10 +312,14 @@ export function mapDispatchToProps(actions = []) {
 }
 ```
 
+## React guides
+
+- **Typescript**: [Redux usage with TypeScript](https://redux.js.org/recipes/usage-with-typescript/)
+- **[immer.js](https://immerjs.github.io/immer/docs/introduction)**: [Usage with immer.js](https://immerjs.github.io/immer/docs/example-setstate)
+
 ## Initial state
 
 Set an initial state of a single entity with a `Record`. Then in the reducer map multiple of that entity.
-
 
 ## mergeProps
 
