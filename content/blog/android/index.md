@@ -1,7 +1,7 @@
 ---
 title: 'Android'
 description: 'Android sdk, adb commands'
-date: '2015-12-11T00:00:00.121Z'
+date: '2015-12-11'
 author: 'André Kovac'
 category: 'framework'
 tags: ['android', 'mobile', 'outdated']
@@ -51,7 +51,7 @@ adb logcat | grep „MY_ERROR_CODE“
 
 In Code, e.g. in `MainActivity.java`:
 
-```java
+```java:title=MainActivity.java
 Log.i("Write debug text");
 ```
 

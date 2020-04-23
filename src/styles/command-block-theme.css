@@ -34,7 +34,7 @@ pre[class*='language-'] {
 pre[class*='language-'] {
   padding: 1em;
   margin-top: 10px;
-  /* Make it stand out on the sides */
+  /* Make it stand out on the sides with margin */
   overflow: auto;
   margin-right: -30px;
   margin-left: -30px;
@@ -241,4 +241,28 @@ pre[class*='language-'].line-numbers > code {
   padding-right: 1em;
   padding-left: 0.75em;
   border-left: 0.25em solid #c16d6d;
+}
+
+/**
+ * Code Title
+ */
+.gatsby-remark-code-title {
+  padding: 0.5em 1em;
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+  'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+  'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+  monospace;
+  font-size: 0.8em;
+  font-weight: bold;
+
+  background-color: black;
+  color: white;
+  z-index: 0;
+
+  margin-bottom: -0.6rem;
+  margin-right: -30px;
+  margin-left: -30px;
+
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
 }
