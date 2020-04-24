@@ -57,7 +57,7 @@ const Bio = () => {
         Useful commands collected over many years by <strong>{author}</strong> who
         creates software and speaks at events.
         {` `}
-        Visit his <a href={`https://www.andrekovac.com/`}>homepage</a> for more
+        Visit his <a className="normal" href={`https://www.andrekovac.com/`}>homepage</a> for more
         information and ways to contact him.
       </p>
     </div>

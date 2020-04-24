@@ -14,6 +14,14 @@ import {
 } from '../constants/Category';
 import { rhythm, scale } from '../utils/typography';
 
+const ArticleLink = ({ message, href }) => (
+  <a
+  className="normal"
+  href={href} target="_blank" rel="noopener noreferrer">
+    {message}
+  </a>
+);
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
@@ -71,21 +79,16 @@ class BlogPostTemplate extends React.Component {
               marginTop: rhythm(1),
             }}
           >
-            <a
-              href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Discuss on Twitter
-            </a>
+            <ArticleLink
+              message="Share on Twitter"
+              // href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
+              href={`http://twitter.com/share?text=${post.frontmatter.title}&url=${siteUrl}${slug}&via=andrekovac&hashtags=${post.frontmatter.tags.join()}`}
+            />
             <span> • </span>
-            <a
+            <ArticleLink
+              message="Edit on GitHub"
               href={`https://github.com/Andruschenko/explain-programming/edit/master/content/blog${githubSlug}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Edit on GitHub
-            </a>
+            />
           </p>
           <Footer />
         </article>
@@ -124,10 +127,9 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate;
 
 const ColorBar = styled.span`
-  border-left: 10px solid ${props => mapCategoryToColor[props.category]};
+  border-left: 10px solid ${(props) => mapCategoryToColor[props.category]};
   margin-right: 10px;
 `;
-
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

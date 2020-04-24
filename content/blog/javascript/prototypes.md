@@ -9,7 +9,7 @@ tags: ['javascript']
 
 > Only getting a property considers the complete prototype chain of an object. Setting and deleting ignores inheritance and affects only own properties.
 
-(from [this excerpt out of the book `SpeakingJS`](http://speakingjs.com/es5/ch17.html#prototype_relationship))
+(from [this excerpt out of the book **SpeakingJS**](http://speakingjs.com/es5/ch17.html#prototype_relationship))
 
 ## Create an object with properties of a prototype
 

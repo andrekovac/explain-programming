@@ -80,7 +80,7 @@ const BlogIndex = (props) => {
                   display: 'inline-block',
                 }}
               >
-                <StyledLink to={node.fields.slug}>{title}</StyledLink>
+                <Link className="main" to={node.fields.slug}>{title}</Link>
               </h3>
               <Author name={node.frontmatter.author} />
 

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { PRIMARY_HOVER } from '../constants/Colors';
+import { LINK, PRIMARY } from '../constants/Colors';
 
 const StyledLink = styled(Link)`
+  color: ${LINK};
   &:hover,
   &:active {
-    color: ${PRIMARY_HOVER};
-    background-color: white;
+    color: ${PRIMARY};
   }
 `;
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Logo from './logo';
-import StyledLink from './styledLink';
 import { rhythm, scale } from '../utils/typography';
 import './layout.css';
 
@@ -21,9 +20,7 @@ class Layout extends React.Component {
             marginTop: rhythm(1 / 4),
           }}
         >
-          <StyledLink
-            to={`/`}
-          >
+          <Link className="main" to={`/`}>
             <div
               style={{
                 display: 'flex',
@@ -35,7 +32,7 @@ class Layout extends React.Component {
               <Logo width={'2.5em'} height={'2.5em'} />
               <div style={{ marginLeft: 10, marginBottom: 20 }}>{title}</div>
             </div>
-          </StyledLink>
+          </Link>
         </h1>
       );
     } else {
@@ -46,11 +43,7 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <StyledLink
-            to={`/`}
-          >
-            {title}
-          </StyledLink>
+          <Link className="main" to={`/`}>{title}</Link>
         </h3>
       );
     }
@@ -72,19 +65,20 @@ class Layout extends React.Component {
             href="https://www.andrekovac.com"
             target="_blank"
             rel="noopener noreferrer"
+            className={'normal'}
           >
             André Kovac
           </a>
           <span> • </span>
-          <Link to={'/about'}>
+          <Link className={'normal'} to={'/about'}>
             About
           </Link>
           <span> • </span>
-          <Link to={'/imprint'}>
+          <Link className={'normal'} to={'/imprint'}>
             Imprint
           </Link>
           <span> • </span>
-          <Link to={'/privacy-policy'}>
+          <Link className={'normal'} to={'/privacy-policy'}>
             Privacy Policy
           </Link>
         </footer>

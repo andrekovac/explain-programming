@@ -15,8 +15,6 @@ tags: ['design']
 2. On the right choose the layer tab and then click on the lower botton which looks like a sand clock (i.e. `Live Filters`)
 3. Choose `Gaussian Blur...` and increase the radius.
 
-### Cut out an image
-
 ### Cut out something out of image
 
 1. Pick the `brush selection` tool.

@@ -79,6 +79,14 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `100`,
+              maintainCase: false,
+              removeAccents: true,
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               prompt: {
@@ -122,6 +130,12 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
     },
   ],
 };

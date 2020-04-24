@@ -26,7 +26,9 @@ main li ul, main li ol, nav ul, nav ol {
   margin-left: 0.5rem;
 }
 
-
+main h2 {
+  border-bottom: 1px solid #ebebeb;
+}
 
 /**
  * List elements
