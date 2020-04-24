@@ -1,7 +1,8 @@
 ---
 title: 'React Native Android Native Module'
 description: 'How to create a native Android module for React Native'
-date: '2016-07-13T17:58:32.169Z'
+date: '2016-07-13'
+updated: '20200424'
 author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react-native']
@@ -14,7 +15,6 @@ You might wonder how all of these open-source extensions to RN are created. Here
 ### Create it
 
 1. Create a project
-
   ```bash
 	react-native init myModuleInsideTestApp
   ```
@@ -32,7 +32,6 @@ You might wonder how all of these open-source extensions to RN are created. Here
 1. Create a new folder `myModule` and create an android folder within it.
 
 2. Move your code from inside the `android/app` folder into `myModule/android/`
-
   ```bash
 	cp -R my-test-app/android/app/ my-npm-module/android/
   ```
@@ -44,19 +43,14 @@ You might wonder how all of these open-source extensions to RN are created. Here
 ### Test your bundled npm package
 
 1. Create a `myModuleTestApp` folder project
-
   ```bash
 	react-native init myModuleTestApp
   ```
-
 2. Include the npm package
-
   ```bash
 	npm install --save ../path/to/folder/myModule
   ```
-
 3. Link the app as with any other external module and include all the other required things there might be..
-
 4. Test-run the app
 
 ### Publish your npm package
@@ -72,13 +66,10 @@ Idea:
 1. Make changes in the app with the local version of your module. Test it there.
 2. Copy/paste the changed Java files into the separate npm module folder.
 3. In the Test-App, do the following:
-
   ```bash
   npm uninstall --save my_module
   npm prune my_module	# Removes it from node_modules folder
   npm install ./path/to/module/my_module
   ```
-
-	Then test the app.
-
+  Then test the app.
 4. Increase the version number, push to Github and publish the updated npm module

@@ -47,7 +47,7 @@ If you explicitly set a type, you express that you know which type that function
 
 * A type cannot always be inferred. Example:
 
-	```js
+	```ts
 	const foo = { a: 3, b: 'string', c: {} };
 	const bar = _.pick(foo, ['a', 'b']);
 
@@ -60,16 +60,16 @@ More information can be found in the [type inference documentation](https://www.
 
 ## Optional types
 
-```js
+```ts
 interface PersonPartial {
-    name?: string;
-    age?: number;
+  name?: string;
+  age?: number;
 }
 ```
 
 ## Casts
 
-```js
+```ts
 myObject = <TypeA> otherObject;     // using <>
 myObject = otherObject as TypeA;    // using `as` keyword
 ```
@@ -158,7 +158,7 @@ To mimic the behavior of non-strict flow-type type definitions:
 
 * Here next to `bar` any other param is additionally allowed in the interface:
 
-	```js
+	```ts
 	interface Foo {
 		bar: string;
 		[key: string]: any;  // a string index signature
@@ -169,12 +169,12 @@ To mimic the behavior of non-strict flow-type type definitions:
 
 The first line inside the `interface` is called [the indexer](https://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types):
 
-	```js
-	interface Foo {
-		[key: string]: string | number;  // indexer
-		bar: string;
-	}
-	```
+```ts
+interface Foo {
+	[key: string]: string | number;  // indexer
+	bar: string;
+}
+```
 
 ## Tipps/Workarounds
 
@@ -182,7 +182,7 @@ The first line inside the `interface` is called [the indexer](https://www.typesc
 
 	Use `extends any` as a workaround:
 
-	```js
+	```ts
 	const f = <T1 extends any>(arg1: T1) => <T2 extends any>(arg2: T2) => {
 		return { arg1, arg2 };
 	}
@@ -192,7 +192,7 @@ The first line inside the `interface` is called [the indexer](https://www.typesc
 
 	Example
 
-	```js
+	```ts
 	interface Props = {
 		foo: number;
 		bar: string;
@@ -209,7 +209,7 @@ The first line inside the `interface` is called [the indexer](https://www.typesc
 
 * Work around `undefined`
 
-	```js
+	```ts
 	let foo: string | undefined;
 
 	// Alternative 1 - clean way
@@ -226,7 +226,7 @@ The first line inside the `interface` is called [the indexer](https://www.typesc
 
 	Be aware of async wrappers like `setTimeout`:
 
-	```js
+	```ts
 	if (foo != undefined) {
 		foo.length;  // works!
 		setTimeout(() => {
@@ -240,7 +240,7 @@ The first line inside the `interface` is called [the indexer](https://www.typesc
 
 	* Alternative 1
 
-	```js
+	```ts
 	declare module 'module-without-typings' {
 	    var noTypeInfoYet: any;
 	    export = noTypeInfoYet;
@@ -249,13 +249,13 @@ The first line inside the `interface` is called [the indexer](https://www.typesc
 
 	* Alternative 2: Use `require` instead of CommonJS way.
 
-	```js
+	```ts
 	const ModuleWithoutTypings = require('module-without-typings');
 	```
 
 	instead of
 
-	```js
+	```ts
 	import * as ModuleWithoutTypings from 'module-without-typings';
 	```
 
