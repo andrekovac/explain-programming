@@ -7,6 +7,14 @@ category: 'framework'
 tags: ['javascript', 'react', 'redux']
 ---
 
+### Redux Middlewares
+
+- [Redux Toolkit](https://redux.js.org/redux-toolkit/overview)
+  - Recommended by the [Redux Styleguide](https://redux.js.org/style-guide/style-guide/)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+- [Redux Saga](https://redux-saga.js.org/)
+- [Redux Loop](https://github.com/redux-loop/redux-loop)
+
 ## applyMiddleware()
 
 Middleware only wraps the store’s `dispatch` function.

@@ -19,7 +19,12 @@ tags: ['javascript', 'react']
 
   [from this SO discussion](https://stackoverflow.com/questions/49568073/react-context-vs-react-redux-when-should-i-use-each-one)
 
-## New Action
+## Actions and Reducers
+
+* Actions describe the fact that something happened
+* Reducers specify how the application's state changes in response to an action.
+
+### Step-by-step: Creating a new action
 
 1. Create **constant** with action type name
 2. Choose a name of the action creator function **in your component**, import the new action creator and **make a call to the action creator**.
@@ -32,10 +37,11 @@ tags: ['javascript', 'react']
 
 4. Add case of new action type to **reducer**.
 
-----
+### Step-by-step: Creating a new reducer
 
-* Actions describe the fact that something happened
-* Reducers specify how the application's state changes in response to an action.
+1. Define initial state
+1. Create reducer.js (input: state, action, output: next state) + switch-case statement for each action type.
+2. Implement reducer code for each action - this defines which new state is sent to the UI after the state has changed. The UI can then react to it accordingly. Often that will just mean to pass on the new value.
 
 ## API Calls
 
@@ -78,16 +84,10 @@ In the reducer the `SPOTIFY_ME_FAILURE` type does nothing, just returns the old 
 		return state;
 ```
 
-## Creating a new reducer
-
-1. Define initial state
-1. Create reducer.js (input: state, action, output: next state) + switch-case statement for each action type.
-2. Implement reducer code for each action - this defines which new state is sent to the UI after the state has changed. The UI can then react to it accordingly. Often that will just mean to pass on the new value.
-
 ## Role of `connect`
 
 * Lives in container --> passes stuff to component
-* Container exports the `connect` function
+* Container exports the component returned by the `connect` function.
 
 1. Passes specified parts of the redux state as props to ...
 2. Passes the action creators to ...
@@ -113,6 +113,10 @@ In the reducer the `SPOTIFY_ME_FAILURE` type does nothing, just returns the old 
 	mapDispatchToProps(globalActions)
 	```
 
+* `mergeProps`: Here you can combine results of `connectStateToProps` and `mapDispatchToProps`
+
+    [Redux Docs about mergeProps](https://github.com/reactjs/react-redux/blob/master/docs/api.md)
+
 **Example**:
 
 ```js
@@ -136,72 +140,11 @@ export default connect(
 )(App);
 ```
 
-## Middleware
+## Redux functions
 
-### Redux Middlewares
+### bindActionCreators(actionCreators, dispatch)
 
-- [Redux Toolkit](https://redux.js.org/redux-toolkit/overview)
-  - Recommended by the [Redux Styleguide](https://redux.js.org/style-guide/style-guide/)
-- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
-- [Redux Saga](https://redux-saga.js.org/)
-- [Redux Loop](https://github.com/redux-loop/redux-loop)
-
-### applyMiddleware()
-
-Middleware only wraps the store’s `dispatch` function.
-
-### Asynchronous calls with middleware `redux-saga`
-
-[Video Intro](https://www.youtube.com/watch?v=QJVdcIlqGwc)
-
-saga action queue
-
-* All async stuff happens in the saga middleware, doesn't touch action creators
-* All actions are totally pure, only return simple objects, no Promises like in `redux-thunk`.
-
-### Asynchronous calls with middleware `redux-thunk`
-
-But what do you do when you need to start an asynchronous action, such as an API call, or a router transition?
---> Meet thunks. A thunk is a function that returns a function. This is a thunk.
-
-An action creator returns an object (with type and data). A thunk returns a function which has the parameters `dispatch` and `getState` (which are themselves functions, e.g. `const state = getState();`).
-
-Usually this function dispatches actions, e.g. here an asynchronous action, dispatching other actions when promises come in.
-
-```js
-// async action does not have constant action name and does not have reducer
-export const sendImage = (image) => {
-  return (dispatch, getState) => {
-    dispatch(toggleLoading());
-    submitHandler(image)
-      .then(pieces => {
-        console.log(pieces);
-        dispatch(updatePieces(pieces));
-        dispatch(toggleLoading());
-        dispatch(changeTab(2));
-      }
-    ).catch(err => console.log('error in sendImage: ', err));
-  }
-};
-```
-
-Thunk middleware lets me dispatch thunk async actions as if they were actions!
-
-```js
-store.dispatch(sendImage('myimage.jpg');
-```
-
-Convention: Let your thunks return Promises. i.e. the `dispatch` function automatically returns a Promise.
-
---> This is very useful for server side rendering, because I can wait until data is available, then synchronously render the app.
-
-see [Redux docs section *applyMiddlewear*](file:///Users/andrekovac/dev/documentations%20docs/redux.js.org/docs/api/applyMiddleware.html)
-
-## redux functions
-
-#### bindActionCreators(actionCreators, dispatch)
-
-every action creator gets wrapped into a dispatch call so they may be invoked directly.
+Every action creator gets wrapped into a dispatch call so they may be invoked directly.
 
 If you use Redux with React, `react-redux` will provide you with the dispatch function so you can call it directly, too.
 
@@ -317,7 +260,7 @@ export function mapDispatchToProps(actions = []) {
 - **Typescript**: [Redux usage with TypeScript](https://redux.js.org/recipes/usage-with-typescript/)
 - **[immer.js](https://immerjs.github.io/immer/docs/introduction)**: [Usage with immer.js](https://immerjs.github.io/immer/docs/example-setstate)
 
-## Initial state
+## Initial state (when using `Immutable.js`)
 
 Set an initial state of a single entity with a `Record`. Then in the reducer map multiple of that entity.
 
@@ -325,6 +268,18 @@ Set an initial state of a single entity with a `Record`. Then in the reducer map
 
 [Redux Docs about mergeProps](https://github.com/reactjs/react-redux/blob/master/docs/api.md)
 
+## `createSelector`
+
+Wrap in `createSelector`. Without that, every time the root state changes the result would be recomputed.
+
+```js
+const selectIsDownloaded = (state, ownProps) =>
+  createSelector(
+    selectId,
+    selectSelectedLocaleOfAttraction,
+    (id, locale) => hasBundleForAttraction(state, { id, locale })
+  )(state, ownProps);
+```
 
 ## Offline mode
 
