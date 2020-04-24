@@ -27,12 +27,12 @@ pre.language-bash code.language-bash:before {
   background: #e1e1e1;
   color: #c2c3c4;
   width: 100%;
-  font-size: 1.4rem;
+  font-size: 22px;
   margin: 0;
   line-height: 0;
   padding: 14px 0;
   text-indent: 4px;
-  letter-spacing: -10px;
+  letter-spacing: -8px;
 }
 
  /**
@@ -316,4 +316,10 @@ pre[class*='language-'].line-numbers > code {
 
   border-top-left-radius: 0.3em;
   border-top-right-radius: 0.3em;
+}
+
+li .gatsby-remark-code-title {
+  margin-top: 0.5rem;
+  margin-right: 0;
+  margin-left: 0;
 }

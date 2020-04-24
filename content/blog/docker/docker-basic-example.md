@@ -13,7 +13,7 @@ To run a basic php app with apache:
 
 1. Create a simple Dockerfile which pulls the [tutum/apache-php image](https://hub.docker.com/r/tutum/apache-php/)
 
-	```Dockerfile
+	```Dockerfile:title=Dockerfile
 	FROM tutum/apache-php
 	RUN rm -fr /app
 	ADD . /app

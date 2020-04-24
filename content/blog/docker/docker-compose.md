@@ -13,7 +13,7 @@ Docker Compose is a tool for defining and running multi-container Docker applica
 
 1.  Define a `docker-compose.yml` file, e.g.
 
-    ```docker-compose
+    ```yml
     version: "2"
 
     services:
@@ -70,7 +70,7 @@ Docker Compose is a tool for defining and running multi-container Docker applica
       back-tier:
     ```
 
-2.  Launch your app. In the same directory as your `.yml` file:
+1.  Launch your app. In the same directory as your `.yml` file:
 
 	```bash
     docker-compose up -d
