@@ -1,12 +1,43 @@
 /**
  * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/ with many adjustments.
  *
  * Theme picked from here: https://github.com/PrismJS/prism/tree/1d5047df37aacc900f8270b1c6215028f6988eb1/themes
- *
- * @author ocodia
  */
 
+ /**
+  * Styling of command line - bash commands
+  */
+ pre.language-bash code.language-bash {
+  display: block;
+  position: relative;
+  padding: 1rem;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
+  padding-top: 45px;
+  font-size: 0.7rem;
+}
+
+pre.language-bash code.language-bash:before {
+  content: '\2022 \2022 \2022';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  background: #e1e1e1;
+  color: #c2c3c4;
+  width: 100%;
+  font-size: 1.4rem;
+  margin: 0;
+  line-height: 0;
+  padding: 14px 0;
+  text-indent: 4px;
+  letter-spacing: -10px;
+}
+
+ /**
+  * Styling of all other programming languages
+  */
 code[class*='language-'],
 pre[class*='language-'] {
   color: #f8f8f2;
@@ -40,6 +71,9 @@ pre[class*='language-'] {
   margin-left: -30px;
 }
 
+/**
+ * Don't have wide code blocks when in a list
+ */
 li pre[class*='language-'] {
   margin-right: 0;
   margin-left: 0;
@@ -49,6 +83,8 @@ li pre[class*='language-'] {
 pre[class*='language-'] {
   background: #34352f;
 }
+
+
 
 /* Inline code */
 /* :not(pre) > code[class*='language-'] {
@@ -188,13 +224,25 @@ h3 > code[class*='language-'] {
   content: attr(data-prompt);
 }
 
-/* Line numbers */
+/**
+ * Line numbers
+ */
 pre[class*='language-'].line-numbers {
   position: relative;
   padding-left: 2.8em;
   counter-reset: linenumber;
   /* Ensure text under code-block appears after an offset */
   margin-bottom: 0.5rem;
+}
+
+/* Bash - Line numbers */
+ pre.language-bash.line-numbers {
+  padding: 0;
+  border-radius: 6px;
+  border: 0;
+}
+pre.language-bash > span.line-numbers-rows {
+  display: none;
 }
 
 pre[class*='language-'].line-numbers > code {
@@ -233,6 +281,9 @@ pre[class*='language-'].line-numbers > code {
   text-align: right;
 }
 
+/**
+ * Highlight line
+ */
 .gatsby-highlight-code-line {
   background-color: rgb(111, 90, 90);
   display: block;
