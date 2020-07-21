@@ -34,12 +34,18 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 Collect files which could be relatively easily be edited to become a good quality blog article
 
 - [Javascript Custom Error and Exception](./content/blog/javascript/error.md)
+- As **copy-paste-notes**: [Docker Basic Example](./content/blog/docker/docker-basic-example.md)
 
 ## TODO
 
 * [ ] Copy button in code box
 * [ ] Special tags: how-to, starter - in different colors
 
+* [ ] This is similar to what I imagine for explain-programming: https://www.taniarascia.com/
+  * [ ] Copy the good parts, e.g. how she uses tags (should link to filtered page!)
+  * [ ] Her use of nice icons next to article
+  * [ ] Her GitHub: https://github.com/taniarascia/taniarascia.com
+  * [ ] Different bash layout
 
 * [ ] Search
 
