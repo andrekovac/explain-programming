@@ -29,3 +29,7 @@ draft: true
 - [Ukrainian company to get keyword data - use free tier with several email addresses](https://dataforseo.com/apis/keyword-data-api)
 
     - Search for different locations, e.g. Munich, Berlin or countries: Germany, USA, UK
+
+## Market research
+
+- [Answerthepublic.com - Discover what people are asking about](https://answerthepublic.com/)

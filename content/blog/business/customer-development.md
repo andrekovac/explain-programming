@@ -4,7 +4,8 @@ description: 'Tools and tipps which help a start up with customer development'
 date: '2019-10-15T23:46:37.121Z'
 author: 'André Kovac'
 category: 'business'
-tags: ['customer-development']
+tags: ['business']
+draft: true
 ---
 
 ## Tools

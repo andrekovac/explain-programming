@@ -7,7 +7,12 @@ category: 'other'
 tags: ['film']
 ---
 
+[Great overview about royality free to use media (photos, audio, video) sources](https://github.com/bradtraversy/design-resources-for-developers)
+
+
 ## Video
+
+[Excessive overview](https://github.com/bradtraversy/design-resources-for-developers#stock-videos)
 
 | What | Details |
 |---|---|
@@ -15,6 +20,8 @@ tags: ['film']
 | [Videvo](https://www.videvo.net/video/) | Free video footage - also have sound effects and motion graphics |
 
 ## Audio
+
+[Excessive overview](https://github.com/bradtraversy/design-resources-for-developers#stock-music--sound-effects)
 
 ### Free
 
@@ -25,15 +32,24 @@ tags: ['film']
 | [Jamendo](https://www.jamendo.com/track/1465273/hard-rock) | Music (as seen in [this video of Hazel Bruger](https://www.youtube.com/watch?v=TqNLjy5PnPA&t=1955s)) |
 | [YouTube Audio library](https://www.youtube.com/channel/UCht8qITGkBvXKsR1Byln-wA) | Music |
 
+Sound Effects
+
+| What | Details |
+|---|---|
+| [freesoundslibrary](https://www.freesoundslibrary.com/) | Good search |
+
+
+
 ### Paid
 
 | What | Details |
 |---|---|
 | [Premium Beat](https://www.premiumbeat.com/account/orders/1966014) | Good quality music - costs money |
 
-## Images
+## Photos / Images
+
+[Excessive overview](https://github.com/bradtraversy/design-resources-for-developers#stock-photos)
 
 | What | Details |
 |---|---|
-| [STOCK UP](http://www.sitebuilderreport.com/stock-up) | Searching 11,233 free stock photos across 25 websites |
-| [sitebuilderreport](https://www.sitebuilderreport.com/stock-up) | Free, well searchable stock images |
+| [sitebuilderreport - STOCK UP](http://www.sitebuilderreport.com/stock-up) | Free, well searchable stock images - Searching 11,233 free stock photos across 25 websites |

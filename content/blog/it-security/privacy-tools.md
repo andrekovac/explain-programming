@@ -12,6 +12,7 @@ tags: ['security']
 Useful tools to do things in privacy
 
 - [Overview of tools which preserve privacy](https://www.privacytools.io/)
+- [Jitsi - More secure, more flexible, and completely free video conferencing](https://jitsi.org/)
 
 ### Tracking
 
@@ -55,7 +56,6 @@ VPNs are good, but they also bare a risk. All your internet traffic is routed th
 - [Write and share files with **Privatebin**](https://privatebin.net/)
 
 
-
 ### Search
 
 - [Privacy-respecting metasearch engine **searx**](https://www.searx.me/)
@@ -65,7 +65,6 @@ VPNs are good, but they also bare a risk. All your internet traffic is routed th
 - [**KeeWeb**: Free cross-platform password manager compatible with KeePass](https://keeweb.info/)
 - [**PassBolt**: The password manager your team was waiting for. Free, open source, self-hosted, extensible, OpenPGP based. ](https://www.passbolt.com/)
 - [**TeamPass** is a Passwords Manager dedicated for managing passwords in a collaborative way by sharing them among team members.](https://teampass.net/)
-
 
 
 ## Storage

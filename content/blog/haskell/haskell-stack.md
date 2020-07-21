@@ -5,7 +5,12 @@ date: '2019-01-01'
 author: 'André Kovac'
 category: 'programming-language'
 tags: ['functional', 'basic']
+draft: true
 ---
+
+## Play with haskell online
+
+- Use the [online haskell editor repl.it](https://repl.it/languages/haskell)
 
 ## ghci console
 
@@ -18,7 +23,7 @@ tags: ['functional', 'basic']
 	:set -ddump-deriv
 	```
 
-	dann `:r`
+	then `:r`
 
 ## stack
 
@@ -28,7 +33,7 @@ tags: ['functional', 'basic']
 stack --resolver lts-13.0 exec ghci
 ```
 
-Add a file `stack.yaml` to your project:
+Add a file `stack.yaml` to your project and write the following into it:
 
 ```yaml
 resolver: lts-13.0

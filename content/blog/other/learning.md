@@ -1,5 +1,5 @@
 ---
-title: 'Learning - How to do it best'
+title: 'Learning to learn - How to learn most effectively'
 description: 'Great tips on how to learn to learn'
 date: '2017-09-12'
 author: 'André Kovac'
@@ -9,7 +9,7 @@ tags: ['learning']
 
 ## Learning hacks
 
-1. Exploration vs. exploitation dilemma (reinforcement learning)
+1. **Exploration** vs. **exploitation** dilemma (reinforcement learning)
 
 	Watch videos at 3x speed ([Chrome plugin](https://chrome.google.com/webstore/detail/youtube-playback-speed-co/hdannnflhlmdablckfkjpleikpphncik/related) or [podcasts](https://overcast.fm/))
 
@@ -26,4 +26,18 @@ tags: ['learning']
 4. Let your curiosity guide your learning plan.
 
 
->Tipps taken from [this video](https://youtu.be/hKBZjH7Ot2g) from Siraj Raval
+> Tips taken from [this video](https://youtu.be/hKBZjH7Ot2g) from Siraj Raval
+
+## Further tips for learning
+
+1. Learn in public
+
+	- [Egghead tips](https://howtoegghead.com/instructor/getting-started/get-invited/)
+	- [Learn in public - the fastest way to learn](https://www.swyx.io/writing/learn-in-public/)
+
+
+## Reciprocal Learning Networks - The Future of Education
+
+- Learning has to be practical: **Making** - build it into your everyday activities.
+
+	e.g. create a website to explain others how to program!

@@ -7,7 +7,7 @@ category: 'shell'
 tags: ['bash']
 ---
 
-## youtube-dl
+## Commands
 
 1. Get list of all formats
 
@@ -32,3 +32,17 @@ Try best audio + video (didn't work for me yet..)
 ```bash
 youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 'http://www.youtube.com/watch?v=P9pzm5b6FFY'
 ```
+
+## Error fixes
+
+In case you get `ERROR: unable to download video data: HTTP Error 403: Forbidden` try the following:
+
+1. Update `youtube-dl`, e.g. with `brew upgrade youtube-dl`.
+
+2. Clear cache
+
+	```bash
+	youtube-dl --rm-cache-dir
+	```
+
+	Solution found [here](https://www.ostechnix.com/fix-unable-to-download-video-data-http-error-403-forbidden-error/).

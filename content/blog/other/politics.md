@@ -8,6 +8,10 @@ tags: ['politics']
 draft: true
 ---
 
+Content mainly in German
+
 ## Tools to use my rights as a citizen
 
 - [Frag den Staat - Offizielle Anfragen leichter machen](https://fragdenstaat.de/kampagnen/lebensmittelkontrolle/app/)
+- [Mehr Demokratie - Bürgerbeteiligung und Direkte Demokratie](https://www.mehr-demokratie.de/)
+- [JEF - Junge Europäische Föderalisten](https://www.jef.de/)

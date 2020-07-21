@@ -47,3 +47,9 @@ Dashboard tool
 
 - [Chrome Extension: Data Scraper - Easy Web Scraping](https://chrome.google.com/webstore/detail/data-scraper-easy-web-scr/nndknepjnldbdbepjfgmncbggmopgden)
 - [Web scraping with Javascript](https://www.youtube.com/watch?v=TzZ3YOUhCxo)
+
+## Data wrangling / cleaning
+
+- [OpenRefine](https://openrefine.org/) from Google
+- [OwlDQ](https://owldq.com/)
+- Outsource to junior data scientist from [Kweri](https://kweri.nl/what-it-costs/).

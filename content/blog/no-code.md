@@ -5,7 +5,6 @@ date: '2020-03-05T21:22:00.169Z'
 author: 'André Kovac'
 category: 'tool'
 tags: ['design']
-draft: true
 ---
 
 ## Visual programming
@@ -14,13 +13,15 @@ draft: true
 - [Webflow](https://webflow.com/)
 - [Create a Mobile App from a Google Sheet in five minutes, for free.](https://www.glideapps.com/)
 
-## Rapid website development
+## No code rapid website development
+
+- [Carrd](https://carrd.co/build): Very nice templates
+
+- [Click Funnels](https://www.clickfunnels.com/) : [Here a video showing how it works in German](https://www.youtube.com/watch?v=F_WI_0vWFaw)
 
 - [Kickoflabs - Easily Create Landing Page Campaigns That Go Viral](https://kickofflabs.com/)
 
-- [Square Space - PERFECT WEBSITES](http://www.squarespace.com/)
-
-- [Squarespace](http://www.squarespace.com/)
+- [Square Space - NICE WEBSITES](http://www.squarespace.com/)
 
 - [InstaBuilder - Easy-To-Use Drag and Drop Software Creates All Your Landing Pages In Mere Minutes... Without Expensive Fees!](http://instabuilder.com/v2.0/launch/)
 
@@ -39,3 +40,7 @@ draft: true
 ## Low code tools
 
 - [Semantic - UI - enhanced templating](https://semantic-ui.com/)
+
+## No-code machine learning tool
+
+- [Deep Cognition](https://deepcognition.ai/)

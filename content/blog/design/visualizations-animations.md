@@ -76,6 +76,10 @@ visualization/infographics designer](http://vizwiz.blogspot.de/2013/01/alberto-c
 
 	[http://process.studio/]()
 
+## CSS Animation Libraries
+
+- [GreenSock](https://greensock.com/)
+  - Look at these tweets for some nice examples: https://twitter.com/jh3yy
 
 ## Discussions about good visualizations
 

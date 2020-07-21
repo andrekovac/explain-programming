@@ -125,3 +125,7 @@ A nice machine learning graphic:
 * [The 100 page machine learning book](https://github.com/aburkov/theMLbook)
 * [Deep Learning for Natural Language Processing](https://www.slideshare.net/sawjd/deep-learning-for-natural-language-processing-by-roopal-garg)
 * [Oxford Machine Learning Course](https://github.com/oxford-cs-ml-2015)
+
+## How to run it
+
+- [Colab](https://colab.research.google.com/)

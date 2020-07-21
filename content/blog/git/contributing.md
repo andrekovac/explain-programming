@@ -12,6 +12,8 @@ draft: true
 
 ### Via GitHub UI + command line:
 
+#### Alternative A
+
 1. Fork the repository
 2. Clone the repository into a new folder
 3. Create a new branch and add a commit with your change there
@@ -20,11 +22,28 @@ draft: true
    message which you can click on to file a pull request with your change to the
    `master` branch of the original repository.
 
-### Via command line
+#### Alternative B
 
-**TODO: Test this!!!**
+1. Clone the original repo
+2. Create a local branch and commit changes to it.
+3. Fork the repository
+4. Add your fork as a new remote
+   1. On the GitHub page of your remote copy the SSH link (hidden behind the `Clone or download` button)
+   2. In the original repo run `git remote add <your GitHub user name or anything you want> <ssh url of your fork>`, e.g. `git remote add andrekovac git@github.com:andrekovac/react-native-track-player.git`
+   3. Check that the remote was added with `git remote -v`
 
-1. Clone
+	You should see the following:
+
+	```
+	andrekovac	git@github.com:andrekovac/react-native-track-player.git (fetch)
+	andrekovac	git@github.com:andrekovac/react-native-track-player.git (push)
+	origin	git@github.com:react-native-kit/react-native-track-player.git (fetch)
+	origin	git@github.com:react-native-kit/react-native-track-player.git (push)
+	```
+
+
+   4. Run `git push <your GitHub user> <remote branch name you want to have>`, e.g. `git push andrekovac update-hooks`
+5. On Github.com on the site of your fork or on the site of the original repo a `Compare & Pull Request` button will have appeared with a yellow background - press the button to begin the process of filing a PR.
 
 ## How to update a forked repository on Github
 

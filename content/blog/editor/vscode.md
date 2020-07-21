@@ -23,18 +23,31 @@ code .
 
 ## Shortcuts
 
+Jumping
+
 | Command  | Result  |
 | -------- | ------- |
 | `F 8` | [Move to next typescript error](https://johnpapa.net/refactoring-with-visual-studio-code/) |
 | `Ctrl + -` | Jump back to last cursor position |
 | `Ctrl + _` | Jump forward to next cursor position |
-|||
+
+Selection
+
+| Command  | Result  |
+| -------- | ------- |
 | `Cmd + d`  | Select next occurance of the same word |
 | `Option + Cmd + Down Arrow`  | Add cursor directly on line below |
 | `Option + Mouse Click`  | Add another cursor at the position of the mouse click |
 | `Shift + Option + Down Arrow`  | Mark something + duplicate the marked lines |
-|||
-| `Option + Shift + Down Arrow`  | Copy line |
+
+Other
+
+| Command  | Result  |
+| -------- | ------- |
+| `Option + Shift + Down Arrow / Up Arrow`  | Copy line |
+| Press `Left` key  | Close very long `node_modules` folder inside the bar |
+| `Cmd + b` | Toggle left menu bar (when not in a Markdown file) |
+| `Cmd + Shift + k` | Delete line without copying it (i.e. no cut via `Shift + x`) |
 
 ## Great Packages
 

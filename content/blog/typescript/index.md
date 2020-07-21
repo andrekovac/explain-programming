@@ -69,10 +69,14 @@ interface PersonPartial {
 
 ## Casts
 
+Two different ways to cast:
+
 ```ts
 myObject = <TypeA> otherObject;     // using <>
 myObject = otherObject as TypeA;    // using `as` keyword
 ```
+
+Read about [why you shouldn't cast often](https://books.google.de/books?id=5EZsDwAAQBAJ&pg=PA100&lpg=PA100&dq=typescript+avoid+cast&source=bl&ots=A4D-zyJBXY&sig=ACfU3U1juPM6qd79-QooA_MvFQQtPvVUBw&hl=en&sa=X&ved=2ahUKEwi69aL8lJjqAhURwcQBHZAvDuUQ6AEwAnoECAoQAQ#v=onepage&q=typescript%20avoid%20cast&f=false).
 
 ## Assure that type is defined
 

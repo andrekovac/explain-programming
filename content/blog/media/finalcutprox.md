@@ -22,6 +22,9 @@ draft: true
 | Shortcut | What? |
 |---|---|
 | `s` | skimming |
+| `n` ? **TODO**: Check this! | clip while skimming |
+
+
 ## Sync Audio + Video
 
 ### Synchronizing single clips - audio and video
