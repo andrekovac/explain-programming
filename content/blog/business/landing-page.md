@@ -5,6 +5,7 @@ date: '2020-02-06T13:41:00.000Z'
 author: 'André Kovac'
 category: 'business'
 tags: ['marketing', 'website']
+draft: true
 ---
 
 ## Simple website builders
@@ -43,3 +44,6 @@ And some more examples:
 
 * [Hubspot](https://www.hubspot.com/)
 * [Convertkit](https://convertkit.com/)
+  * [API: Add subscriber to a form](https://developers.convertkit.com/#add-subscriber-to-a-form)
+* [MailChimp](https://mailchimp.com/)
+  * [Set up own signup forms](https://mailchimp.com/help/host-your-own-signup-forms/)
