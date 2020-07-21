@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { rhythm } from '../utils/typography';
-import { OUTDATED, BASIC, STUB } from '../constants/Tag';
+import { OUTDATED, BASIC, STUB, COPY_PASTE_NOTES } from '../constants/Tag';
 
 const Tags = (props) => (
   <span style={{ verticalAlign: 'text-bottom' }}>
@@ -17,6 +17,9 @@ const Tags = (props) => (
           break;
         case STUB:
           backgroundColor = '#e4b464';
+          break;
+        case COPY_PASTE_NOTES:
+          backgroundColor = '#7f5ae7';
           break;
         default:
           backgroundColor = 'rgb(14, 28, 128)';
