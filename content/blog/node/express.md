@@ -11,9 +11,7 @@ Build a node.js server with **Express.js**
 
 ## How to create a basic server
 
-*server.js*
-
-```js
+```js:title=server.js
 var express = require('express');
 
 module.exports = function() {
@@ -32,9 +30,7 @@ module.exports = function() {
 };
 ```
 
-*index.js*
-
-```js
+```js:title=index.js
 var server = require('./server');
 
 server().listen(3000);
