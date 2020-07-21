@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-class ImprintPage extends React.Component {
+class AboutPage extends React.Component {
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
@@ -19,6 +19,10 @@ class ImprintPage extends React.Component {
           Since I'm working as a developer, I made notes about syntax and topics
           I find difficult and about commands I found useful or suspected that I
           will need them again at some point.
+        </p>
+        <h3>Is this all done?</h3>
+        <p>
+          No. This is a living document. Since I learn more, I'm gradually adding information to each file. I hope it's helpful for one or the other nevertheless. It are my personal notes which help me understand the concepts.
         </p>
         <h3>Why did I put this online?</h3>
         <p>
@@ -48,7 +52,7 @@ class ImprintPage extends React.Component {
   }
 }
 
-export default ImprintPage;
+export default AboutPage;
 
 export const pageQuery = graphql`
   query {
