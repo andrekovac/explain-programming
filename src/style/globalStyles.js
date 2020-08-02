@@ -195,9 +195,9 @@ pre[class*='language-'] {
   padding: 1em;
   margin-top: 10px;
   /* Make it stand out on the sides with margin */
-  overflow: auto;
+  /* overflow: auto;
   margin-right: -30px;
-  margin-left: -30px;
+  margin-left: -30px; */
 }
 
 /**
@@ -446,8 +446,8 @@ pre.language-bash-output > span.line-numbers-rows
   z-index: 0;
 
   margin-bottom: -0.6rem;
-  margin-right: -30px;
-  margin-left: -30px;
+  /* margin-right: -30px;
+  margin-left: -30px; */
 
   border-top-left-radius: 0.3em;
   border-top-right-radius: 0.3em;
