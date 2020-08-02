@@ -132,8 +132,10 @@ article footer {
 
  /**
   * Styling of command line - bash commands
+  * Taken and adapted from node_modules/prismjs/plugins/command-line/prism-command-line.css
   */
-pre.language-bash code.language-bash {
+pre.language-bash code.language-bash,
+pre.language-bash-output code.language-bash-output {
   display: block;
   position: relative;
   padding: 1rem;
@@ -160,10 +162,10 @@ pre.language-bash code.language-bash {
   }
 }
 
- /**
-  * Styling of all other programming languages
-  */
- code[class*='language-'],
+/**
+ * Styling of all other programming languages
+ */
+code[class*='language-'],
 pre[class*='language-'] {
   color: #f8f8f2;
   background: none;
@@ -184,6 +186,8 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+
+  white-space: pre-wrap;
 }
 
 /* Code blocks */
@@ -211,7 +215,9 @@ pre[class*='language-'] {
 
 
 
-/* Inline code */
+/**
+ * Uncomment for different color inline code
+ */
 /* :not(pre) > code[class*='language-'] {
   padding: 0.2em 0.3em;
   border-radius: 0.3em;
@@ -219,13 +225,15 @@ pre[class*='language-'] {
   background: #f0e4bf;
   color: black;
   text-shadow: none;
-}
-*/
+} */
 
-h2 > code[class*='language-'] {
+
+h1 > code[class*='language-'] {
   font-size: 1.3rem;
 }
-
+h2 > code[class*='language-'] {
+  font-size: 1.2rem;
+}
 h3 > code[class*='language-'] {
   font-size: 1rem;
 }
@@ -303,11 +311,20 @@ h3 > code[class*='language-'] {
   cursor: help;
 }
 
-/*
- * Adapting the styling of the prompt.
+/**
+ * Adapting styling of the prompt.
  * See https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
  * for more information.
+ *
+ * Taken and adapted from node_modules/prismjs/plugins/command-line/prism-command-line.css
+ * Can also be imported via
+ *  import 'prismjs/plugins/command-line/prism-command-line.css'
  */
+.command-line-prompt {
+	float: left;
+	letter-spacing: -1px;
+}
+
 .command-line-prompt > span {
   &:before {
     color: rgb(201, 201, 201);
@@ -316,24 +333,6 @@ h3 > code[class*='language-'] {
     padding-right: 0.8em;
   }
 }
-
-.command-line-prompt {
-  border-right: none;
-  margin-right: 0;
-}
-
-/* .command-line-prompt {
-  border-right: none;
-  display: block;
-  float: left;
-  font-size: 100%;
-  letter-spacing: -1px;
-  margin-right: 0;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-} */
 
 /* Prompt for all users */
 .command-line-prompt > span[data-user]:before {
@@ -353,6 +352,9 @@ h3 > code[class*='language-'] {
 
 /**
  * Line numbers
+ *
+ * Taken and adapted from node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css
+ *
  */
 pre[class*='language-'].line-numbers {
   position: relative;
@@ -360,16 +362,6 @@ pre[class*='language-'].line-numbers {
   counter-reset: linenumber;
   /* Ensure text under code-block appears after an offset */
   margin-bottom: 0.5rem;
-}
-
-/* Bash - Line numbers */
- pre.language-bash.line-numbers {
-  padding: 0;
-  border-radius: 6px;
-  border: 0;
-}
-pre.language-bash > span.line-numbers-rows {
-  display: none;
 }
 
 pre[class*='language-'].line-numbers > code {
@@ -387,25 +379,41 @@ pre[class*='language-'].line-numbers > code {
   letter-spacing: -1px;
   margin-left: 0.5em;
   border-right: none;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .line-numbers-rows > span {
   pointer-events: none;
   display: block;
   counter-increment: linenumber;
+
+  &:before {
+    content: counter(linenumber);
+    color: rgb(126, 126, 126); /* Line number color */
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+  }
 }
 
-.line-numbers-rows > span:before {
-  content: counter(linenumber);
-  color: rgb(126, 126, 126); /* Line number color */
-  display: block;
-  padding-right: 0.8em;
-  text-align: right;
+/* Bash - Line numbers */
+pre.language-bash.line-numbers,
+pre.language-bash-output.line-numbers
+ {
+  padding: 0;
+  border-radius: 6px;
+  border: 0;
+}
+pre.language-bash.line-numbers,
+pre.language-bash-output.line-numbers
+ {
+  padding: 0;
+  border-radius: 6px;
+  border: 0;
+}
+pre.language-bash > span.line-numbers-rows,
+pre.language-bash-output > span.line-numbers-rows
+{
+  display: none;
 }
 
 /**
@@ -430,7 +438,7 @@ pre[class*='language-'].line-numbers > code {
   'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
   'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
   monospace;
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: bold;
 
   background-color: black;

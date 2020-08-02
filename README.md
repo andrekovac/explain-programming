@@ -29,6 +29,23 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
+## Syntax for code blocks in Markdown
+
+1. Bash
+
+Use `bash` or `bash-output`
+
+2. Title
+
+Use `js:title=server.js`
+
+3. Line highlighting
+
+  - Use `js {3}` or `js {3-5}` to highlight one or several lines
+  - Use `js {3-4,6}` to highlight different areas where **empty lines** are in-between.
+
+
+
 ## Almost ready for a blog post
 
 Collect files which could be relatively easily be edited to become a good quality blog article

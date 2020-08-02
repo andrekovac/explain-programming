@@ -41,7 +41,7 @@ Typescript: Under `strictNullChecks` option, using `concat` in order to build an
 
 Why is `[node.getData().name]` inferred to be of type `never[]`?
 
-```
+```bash-output
 No overload matches this call.
   Overload 1 of 2, '(...items: ConcatArray<never>[]): never[]', gave the following error.
     Type 'string' is not assignable to type 'never'.
@@ -51,7 +51,7 @@ No overload matches this call.
 
 In older Typescript versions (earlier than 2.8.1 - that's how long ago I first encountered this! 😬) you might have gotten this similar error:
 
-```
+```bash-output
 Argument of type 'string[]' is not assignable to parameter of type 'ConcatArray<never>'.
   Types of property 'slice' are incompatible.
     Type '(start?: number | undefined, end?: number | undefined) => string[]' is not assignable to type '(start?: number | undefined, end?: number | undefined) => never[]'.
