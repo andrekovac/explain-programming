@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 
+import GlobalStyle from '../style/globalStyles';
+import theme from '../style/theme';
 import Logo from './logo';
 import { rhythm, scale } from '../utils/typography';
-import './layout.css';
 
 class Layout extends React.Component {
   render() {
@@ -43,46 +44,51 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <Link className="main" to={`/`}>{title}</Link>
+          <Link className="main" to={`/`}>
+            {title}
+          </Link>
         </h3>
       );
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(28),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          {new Date().getFullYear()}, Built by
-          {` `}
-          <a
-            href="https://www.andrekovac.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={'normal'}
-          >
-            André Kovac
-          </a>
-          <span> • </span>
-          <Link className={'normal'} to={'/about'}>
-            About
-          </Link>
-          <span> • </span>
-          <Link className={'normal'} to={'/imprint'}>
-            Imprint
-          </Link>
-          <span> • </span>
-          <Link className={'normal'} to={'/privacy-policy'}>
-            Privacy Policy
-          </Link>
-        </footer>
-      </div>
+      <Fragment>
+        <GlobalStyle theme={theme} />
+        <div
+          style={{
+            marginLeft: `auto`,
+            marginRight: `auto`,
+            maxWidth: rhythm(28),
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}
+        >
+          <header>{header}</header>
+          <main>{children}</main>
+          <footer>
+            {new Date().getFullYear()}, Built by
+            {` `}
+            <a
+              href="https://www.andrekovac.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={'normal'}
+            >
+              André Kovac
+            </a>
+            <span> • </span>
+            <Link className={'normal'} to={'/about'}>
+              About
+            </Link>
+            <span> • </span>
+            <Link className={'normal'} to={'/imprint'}>
+              Imprint
+            </Link>
+            <span> • </span>
+            <Link className={'normal'} to={'/privacy-policy'}>
+              Privacy Policy
+            </Link>
+          </footer>
+        </div>
+      </Fragment>
     );
   }
 }

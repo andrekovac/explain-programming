@@ -1,4 +1,129 @@
+import { createGlobalStyle } from 'styled-components';
+
 /**
+ * https://dev.to/mikewheaton/theming-with-styled-components-19ce
+ */
+const GlobalStyles = createGlobalStyle`
+
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,600'); */
+
+main p {
+  margin-bottom: 0.5rem;
+}
+
+main blockquote {
+  margin-top: 1rem;
+}
+
+/**
+ * Border around ordered and unordered lists
+ */
+main ul,
+main ol {
+  border: 1px solid #4f4f4f;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0 0 10px 0;
+}
+
+main li ul, main li ol, nav ul, nav ol {
+  border: none;
+  margin-left: 0.5rem;
+}
+
+main h2 {
+  border-bottom: 1px solid #ebebeb;
+}
+
+/**
+ * List elements
+ */
+
+main li {
+  margin-top: 0.6rem;
+  margin-bottom: 0.1rem;
+}
+
+main ul {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+main li > p {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul > li {
+  margin-bottom: 5px;
+}
+ul > li {
+  &:before {
+    content: '▶︎';
+    color: rgb(193, 109, 109);
+    margin-right: 0.3rem;
+  }
+
+}
+
+ul ul > li {
+  &:before {
+    content: '●';
+    color: rgb(193, 109, 109);
+    margin-right: 0.3rem;
+  }
+
+}
+
+ol > li {
+  counter-increment: step-counter;
+  margin-bottom: 5px;
+}
+
+ol > li > p,
+ul > li > p {
+  display: inline;
+}
+ol > li {
+  &:before {
+    content: counter(step-counter);
+    margin-right: 0.6rem;
+    font-size: 80%;
+    background-color: rgb(193, 109, 109);
+    color: white;
+    font-weight: bold;
+    border-radius: 30%;
+    text-align: center;
+
+    display: inline-block;
+    width: 1.2rem;
+  }
+
+}
+
+/**
+ * Table
+ */
+article td {
+  padding: 2px;
+}
+
+footer {
+  margin-top: 3rem;
+}
+
+article footer {
+  margin-bottom: 2rem;
+}
+
+ /**
+ * CODE Syntax highlighting
+ *
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/ with many adjustments.
  *
@@ -8,7 +133,7 @@
  /**
   * Styling of command line - bash commands
   */
- pre.language-bash code.language-bash {
+pre.language-bash code.language-bash {
   display: block;
   position: relative;
   padding: 1rem;
@@ -16,29 +141,29 @@
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
   padding-top: 45px;
   font-size: 0.7rem;
-}
 
-pre.language-bash code.language-bash:before {
-  content: '\2022 \2022 \2022';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  background: #e1e1e1;
-  color: #c2c3c4;
-  width: 100%;
-  font-size: 22px;
-  margin: 0;
-  line-height: 0;
-  padding: 14px 0;
-  text-indent: 4px;
-  letter-spacing: -8px;
+  &:before {
+    content: '●  ●  ●';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    background: #e1e1e1;
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 24px;
+    margin: 0;
+    line-height: 0;
+    padding: 10px 0 10px 10px;
+    text-indent: 4px;
+    letter-spacing: -8px;
+  }
 }
 
  /**
   * Styling of all other programming languages
   */
-code[class*='language-'],
+ code[class*='language-'],
 pre[class*='language-'] {
   color: #f8f8f2;
   background: none;
@@ -183,11 +308,13 @@ h3 > code[class*='language-'] {
  * See https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
  * for more information.
  */
-.command-line-prompt > span:before {
-  color: rgb(201, 201, 201);
-  content: ' ';
-  display: block;
-  padding-right: 0.8em;
+.command-line-prompt > span {
+  &:before {
+    color: rgb(201, 201, 201);
+    content: ' ';
+    display: block;
+    padding-right: 0.8em;
+  }
 }
 
 .command-line-prompt {
@@ -323,3 +450,8 @@ li .gatsby-remark-code-title {
   margin-right: 0;
   margin-left: 0;
 }
+
+
+`;
+
+export default GlobalStyles;
