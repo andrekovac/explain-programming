@@ -13,6 +13,17 @@ draft: true
 | Name | What? |
 | --- | --- |
 | [Diclaro](https://www.diclaro.org/) | Homeschooling |
+| [Anton](https://anton.app/de/) | Playful learning for young school kids |
+
+### Learn to code
+
+| Name | What? |
+| --- | --- |
+| [Code](https://code.org/) | Hour of code |
+| [MIT App Inventor](http://appinventor.mit.edu/) | Build mobile apps with Scratch |
+| [Thunkable](https://thunkable.com/home/) | The fastest way from idea to mobile app without coding - created by the **MIT App Inventor** people |
+| [Thunkable](https://thunkable.com/home/) | The fastest way from idea to mobile app without coding - created by the **MIT App Inventor** people |
+
 
 ## Electronic Gadgets
 
