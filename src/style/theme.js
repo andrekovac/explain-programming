@@ -1,4 +1,4 @@
-// import { darken, lighten } from 'polished';
+import { darken, lighten } from 'polished';
 // import { fonts } from '../src/utils/typography';
 
 const brand = {
@@ -7,14 +7,14 @@ const brand = {
 };
 
 const colors = {
-  // primary_light: `${lighten(0.55, brand.primary)}`,
+  primary_light: `${lighten(0.55, brand.primary)}`,
   gray: '#D3D3D3',
   black: '#000',
   white: '#fff',
   bg_color: '#fafafa',
   body_color: '#222426',
   link_color: brand.primary,
-  // link_color_hover: `${darken(0.07, brand.primary)}`,
+  link_color_hover: `${darken(0.07, brand.primary)}`,
   red: '#E75248',
   green: '#17A974',
   blue: '#327CDC',

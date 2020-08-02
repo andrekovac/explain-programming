@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 import { rhythm } from '../utils/typography';
 import { OUTDATED, BASIC, STUB, COPY_PASTE_NOTES } from '../constants/Tag';
@@ -10,10 +11,10 @@ const Tags = (props) => (
       let backgroundColor = '';
       switch (tag) {
         case OUTDATED:
-          backgroundColor = '#bf4040';
+          backgroundColor = '#910707';
           break;
         case BASIC:
-          backgroundColor = 'green';
+          backgroundColor = '#118011';
           break;
         case STUB:
           backgroundColor = '#e4b464';
@@ -37,16 +38,18 @@ const Tags = (props) => (
 );
 
 const Tag = styled.span`
-  padding: ${rhythm(1 / 6)};
+  padding: ${rhythm(1 / 6)} ${rhythm(1 / 3)};
   margin-right: ${rhythm(1 / 4)};
-  border-radius: 5px;
-  color: white;
+  border-radius: 3rem;
+  color: black;
   font-size: 0.8rem;
   cursor: pointer;
-  background-color: ${props => props.backgroundColor};
+  background-color: ${props => lighten(0.6, props.backgroundColor)};
 
   &:hover {
     opacity: 0.9;
+    color: white;
+    background-color: ${props => props.backgroundColor};
   }
 `;
 
