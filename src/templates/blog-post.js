@@ -86,7 +86,7 @@ class BlogPostTemplate extends React.Component {
             <span> • </span>
             <ArticleLink
               message="Edit on GitHub"
-              href={`https://github.com/Andruschenko/explain-programming/edit/master/content/blog${githubSlug}`}
+              href={`https://github.com/andrekovac/explain-programming/edit/master/content/blog${githubSlug}`}
             />
           </p>
           <Footer />
