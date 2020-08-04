@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
+
+import { Flex, Box, Badge, Image, PseudoBox, Text } from '@chakra-ui/core';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -8,6 +10,7 @@ import SEO from '../components/seo';
 import Tags from '../components/tags';
 import Author from '../components/author';
 import StyledLink from '../components/styledLink';
+import Link from '../components/link';
 
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import {
@@ -16,7 +19,7 @@ import {
 } from '../constants/Category';
 import { NONE } from '../constants/Tag';
 import { PRIMARY, PRIMARY_HOVER } from '../constants/Colors';
-import { rhythm } from '../utils/typography';
+import { rhythm } from '../style/typography';
 
 const BlogIndex = (props) => {
   const [selectedTag, setSelectedTag] = useState(NONE);
@@ -36,6 +39,17 @@ const BlogIndex = (props) => {
 
   const onTagSelect = (tag) =>
     tag !== selectedTag ? setSelectedTag(tag) : setSelectedTag(NONE);
+
+  const property = {
+    imageUrl: 'https://bit.ly/2Z4KKcF',
+    imageAlt: 'Rear view of modern home with pool',
+    beds: 3,
+    baths: 2,
+    title: 'Modern home in city center in the heart of historic Los Angeles',
+    formattedPrice: '$1,900.00',
+    reviewCount: 34,
+    rating: 4,
+  };
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -60,6 +74,130 @@ const BlogIndex = (props) => {
         const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`;
 
         return (
+          <Article key={node.fields.slug} category={node.frontmatter.category}>
+            <Link to={node.fields.slug}>
+              <PseudoBox
+                borderWidth="4px"
+                // rounded="lg"
+                overflow="hidden"
+                // borderColor="gray.200"
+                _hover={{
+                  bg: 'gray.200',
+                }}
+              >
+                <Box p={{ base: '3', md: '5' }}>
+                  <Box display={{ md: 'flex' }}>
+                    <Flex direction="row">
+                      <Flex
+                        align="center"
+                        justify="center"
+                        px="3"
+                        fontSize="2xl"
+                      >
+                        {mapCategoryToShortHand[node.frontmatter.category]}
+                      </Flex>
+                      <Flex direction="column">
+                        <Box
+                          fontWeight="semibold"
+                          // as="h4"
+                          // lineHeight="tight"
+                          // isTruncated
+                        >
+                          <Text>{title}</Text>
+                        </Box>
+                        <Box
+                          fontSize="xs"
+                          color="gray.600"
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              node.frontmatter.description ||
+                              defaultDescription,
+                          }}
+                        />
+                      </Flex>
+                    </Flex>
+
+                    <Flex
+                      mt={{ base: '2', md: '0' }}
+                      align="center"
+                      justify="left"
+                      pl="3"
+                    >
+                      <Tags
+                        tags={node.frontmatter.tags}
+                        onTagSelect={onTagSelect}
+                      />
+                    </Flex>
+                  </Box>
+                </Box>
+              </PseudoBox>
+            </Link>
+          </Article>
+        );
+
+        return (
+          <Article key={node.fields.slug} category={node.frontmatter.category}>
+            <Link to={node.fields.slug}>
+              <PseudoBox
+                borderWidth="1px"
+                rounded="lg"
+                overflow="hidden"
+                _hover={{
+                  borderColor: 'gray.200',
+                  bg: 'gray.200',
+                }}
+              >
+                <Box p="6">
+                  <Box d="flex" alignItems="baseline">
+                    <Badge rounded="full" px="2" variantColor="teal">
+                      New
+                    </Badge>
+                    <Box
+                      color="gray.500"
+                      fontWeight="semibold"
+                      letterSpacing="wide"
+                      fontSize="xs"
+                      textTransform="uppercase"
+                      ml="2"
+                    >
+                      {property.beds} beds &bull; {property.baths} baths
+                    </Box>
+                  </Box>
+
+                  <Box
+                    mt="1"
+                    fontWeight="semibold"
+                    as="h4"
+                    lineHeight="tight"
+                    isTruncated
+                  >
+                    <Link>Hello</Link>
+                  </Box>
+
+                  <Box>
+                    {property.formattedPrice}
+                    <Box as="span" color="gray.600" fontSize="sm">
+                      / wk
+                    </Box>
+                  </Box>
+
+                  <Box d="flex" mt="2" alignItems="center">
+                    {Array(5)
+                      .fill('')
+                      .map((_, i) => (
+                        <div>Hello</div>
+                      ))}
+                    <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                      {property.reviewCount} reviews
+                    </Box>
+                  </Box>
+                </Box>
+              </PseudoBox>
+            </Link>
+          </Article>
+        );
+
+        return (
           <ArticleElement
             key={node.fields.slug}
             category={node.frontmatter.category}
@@ -80,10 +218,10 @@ const BlogIndex = (props) => {
                   display: 'inline-block',
                 }}
               >
-                <Link className="main" to={node.fields.slug}>{title}</Link>
+                <Link className="main" to={node.fields.slug}>
+                  {title}
+                </Link>
               </h3>
-              <Author name={node.frontmatter.author} />
-
               <Tags tags={node.frontmatter.tags} onTagSelect={onTagSelect} />
             </header>
             <section>
@@ -107,6 +245,10 @@ const BlogIndex = (props) => {
 };
 
 export default BlogIndex;
+
+const Article = styled.article`
+  /* background-color: yellow; */
+`;
 
 const ArticleElement = styled.article`
   border-left: 10px solid ${(props) => mapCategoryToColor[props.category]};

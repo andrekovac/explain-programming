@@ -12,12 +12,10 @@ import {
   mapCategoryToShortHand,
   mapCategoryToWord,
 } from '../constants/Category';
-import { rhythm, scale } from '../utils/typography';
+import { rhythm, scale } from '../style/typography';
 
 const ArticleLink = ({ message, href }) => (
-  <a
-  className="normal"
-  href={href} target="_blank" rel="noopener noreferrer">
+  <a className="normal" href={href} target="_blank" rel="noopener noreferrer">
     {message}
   </a>
 );
@@ -81,7 +79,9 @@ class BlogPostTemplate extends React.Component {
             <ArticleLink
               message="Share on Twitter"
               // href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
-              href={`http://twitter.com/share?text=${post.frontmatter.title}&url=${siteUrl}${slug}&via=andrekovac&hashtags=${post.frontmatter.tags.join()}`}
+              href={`http://twitter.com/share?text=${
+                post.frontmatter.title
+              }&url=${siteUrl}${slug}&via=andrekovac&hashtags=${post.frontmatter.tags.join()}`}
             />
             <span> • </span>
             <ArticleLink

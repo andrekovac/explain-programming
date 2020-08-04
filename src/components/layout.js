@@ -2,9 +2,8 @@ import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 
 import GlobalStyle from '../style/globalStyles';
-import theme from '../style/theme';
 import Logo from './logo';
-import { rhythm, scale } from '../utils/typography';
+import { rhythm, scale } from '../style/typography';
 
 class Layout extends React.Component {
   render() {
@@ -52,7 +51,7 @@ class Layout extends React.Component {
     }
     return (
       <Fragment>
-        <GlobalStyle theme={theme} />
+        <GlobalStyle />
         <div
           style={{
             marginLeft: `auto`,

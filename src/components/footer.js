@@ -8,7 +8,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import { rhythm } from '../utils/typography';
+import { rhythm } from '../style/typography';
 import Bio from './bio';
 
 const Footer = () => {
@@ -25,8 +25,7 @@ const Footer = () => {
 
   const { title } = data.site.siteMetadata;
   return (
-    <footer
-    >
+    <footer>
       <hr
         style={{
           marginTop: rhythm(1.5),
@@ -42,10 +41,7 @@ const Footer = () => {
           marginBottom: rhythm(0.8),
         }}
       >
-        <Link
-          className={'main'}
-          to={`/`}
-        >
+        <Link className={'main'} to={`/`}>
           {title}
         </Link>
       </h3>

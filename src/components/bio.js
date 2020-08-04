@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../style/typography';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -30,9 +30,9 @@ const Bio = () => {
         }
       }
     }
-  `)
+  `);
 
-  const { author } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata;
   return (
     <div
       style={{
@@ -54,14 +54,17 @@ const Bio = () => {
         }}
       />
       <p>
-        Useful commands collected over many years by <strong>{author}</strong> who
-        creates software and speaks at events.
+        Useful commands collected over many years by <strong>{author}</strong>{' '}
+        who creates software and speaks at events.
         {` `}
-        Visit his <a className="normal" href={`https://www.andrekovac.com/`}>homepage</a> for more
-        information and ways to contact him.
+        Visit his{' '}
+        <a className="normal" href={`https://www.andrekovac.com/`}>
+          homepage
+        </a>{' '}
+        for more information and ways to contact him.
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;

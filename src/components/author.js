@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { rhythm } from '../utils/typography';
+import { rhythm } from '../style/typography';
 import { mapNameToInitials } from '../constants/Author';
 
 const Author = ({ name }) => (

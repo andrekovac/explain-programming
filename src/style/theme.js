@@ -1,49 +1,44 @@
-import { darken, lighten } from 'polished';
-// import { fonts } from '../src/utils/typography';
+import { theme } from '@chakra-ui/core';
 
-const brand = {
-  primary: '#573EDE',
-  secondary: '#EEF4F2',
-};
+/**
+ * Breakpoints always defined as great equal value
+ */
+const breakpoints = ['360px', '768px', '1024px', '1440px'];
+// const breakpoints = ["30em", "48em", "62em", "80em"];
 
-const colors = {
-  primary_light: `${lighten(0.55, brand.primary)}`,
-  gray: '#D3D3D3',
-  black: '#000',
-  white: '#fff',
-  bg_color: '#fafafa',
-  body_color: '#222426',
-  link_color: brand.primary,
-  link_color_hover: `${darken(0.07, brand.primary)}`,
-  red: '#E75248',
-  green: '#17A974',
-  blue: '#327CDC',
-  yellow: '#FFB700',
-  purple: '#8242F6',
-  purple_dark: '#231c42',
-};
+breakpoints.sm = breakpoints[0]; // greater than 360px
+breakpoints.md = breakpoints[1]; // greater than 768px
+breakpoints.lg = breakpoints[2]; // greater than 1024px
+breakpoints.xl = breakpoints[3]; // greater than 1440px
 
-const theme = {
-  colors,
-  // fonts,
-  brand,
-  breakpoints: {
-    xs: '400px',
-    s: '600px',
-    m: '900px',
-    l: '1200px',
+const customTheme = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    // Generated with https://smart-swatch.netlify.app/#c16d6d
+    brand: {
+      50: '#ffe9e9',
+      100: '#eec7c7',
+      200: '#dca5a5',
+      300: '#cb8182',
+      400: '#bb5e5e',
+      500: '#a14444',
+      600: '#7e3435',
+      700: '#5b2525',
+      800: '#391515',
+      900: '#1b0404',
+    },
+    // brand: {
+    //   900: '#1a365d',
+    //   800: '#153e75',
+    //   700: '#2a69ac',
+    // },
   },
-  container: {
-    base: '100rem',
-    text: '55rem',
-  },
-  spacer: {
-    horizontal: '2rem',
-    vertical: '3rem',
-  },
-  transition: {
-    ease: 'all 100ms ease',
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'Georgia, serif',
+    mono: 'Menlo, monospace',
   },
 };
 
-export default theme;
+export default customTheme;

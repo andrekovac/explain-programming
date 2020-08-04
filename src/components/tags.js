@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { lighten } from 'polished';
+import { Flex, Box, Badge, StarIcon, Image, PseudoBox } from '@chakra-ui/core';
 
-import { rhythm } from '../utils/typography';
+import { rhythm } from '../style/typography';
 import { OUTDATED, BASIC, STUB, COPY_PASTE_NOTES } from '../constants/Tag';
 
 const Tags = (props) => (
-  <span style={{ verticalAlign: 'text-bottom' }}>
+  <div style={{ verticalAlign: 'text-bottom' }}>
     {props.tags.map((tag, index) => {
       let backgroundColor = '';
       switch (tag) {
@@ -17,10 +18,10 @@ const Tags = (props) => (
           backgroundColor = '#118011';
           break;
         case STUB:
-          backgroundColor = '#e4b464';
+          backgroundColor = '#996000';
           break;
         case COPY_PASTE_NOTES:
-          backgroundColor = '#7f5ae7';
+          backgroundColor = '#106e79';
           break;
         default:
           backgroundColor = 'rgb(14, 28, 128)';
@@ -34,7 +35,7 @@ const Tags = (props) => (
         </Tag>
       );
     })}
-  </span>
+  </div>
 );
 
 const Tag = styled.span`
@@ -44,12 +45,12 @@ const Tag = styled.span`
   color: black;
   font-size: 0.8rem;
   cursor: pointer;
-  background-color: ${props => lighten(0.6, props.backgroundColor)};
+  background-color: ${(props) => lighten(0.6, props.backgroundColor)};
 
   &:hover {
     opacity: 0.9;
     color: white;
-    background-color: ${props => props.backgroundColor};
+    background-color: ${(props) => props.backgroundColor};
   }
 `;
 
