@@ -8,9 +8,13 @@
     "url": "https://github.com/andrekovac/explain-programming/issues"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
     "babel-plugin-styled-components": "^1.11.1",
+    "emotion-theming": "^10.0.27",
     "gatsby": "^2.24.23",
     "gatsby-image": "^2.4.14",
     "gatsby-plugin-anchor-links": "^1.1.1",
