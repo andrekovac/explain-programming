@@ -8,6 +8,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
+import { Flex } from '@chakra-ui/core';
 
 import { rhythm } from '../style/typography';
 
@@ -16,7 +17,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -34,36 +35,31 @@ const Bio = () => {
 
   const { author } = data.site.siteMetadata;
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(0),
-      }}
-    >
+    <Flex align="center">
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
           marginRight: rhythm(0.5),
           marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
+          minWidth: 100,
+          borderRadius: '1rem',
         }}
         imgStyle={{
-          borderRadius: `50%`,
+          borderRadius: '5px',
         }}
       />
       <p>
         Useful commands collected over many years by <strong>{author}</strong>{' '}
-        who creates software and speaks at events.
+        who creates software, teaches coding and speaks at events.
         {` `}
         Visit his{' '}
         <a className="normal" href={`https://www.andrekovac.com/`}>
           homepage
         </a>{' '}
-        for more information and ways to contact him.
+        to find out what he is up to and for ways to get in touch.
       </p>
-    </div>
+    </Flex>
   );
 };
 

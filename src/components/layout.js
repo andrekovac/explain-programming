@@ -1,8 +1,12 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
+import { Flex, Box, Badge, Image, PseudoBox, Text } from '@chakra-ui/core';
 
 import GlobalStyle from '../style/globalStyles';
 import Logo from './logo';
+import Header from './header';
+import Footer from './footerMain';
+
 import { rhythm, scale } from '../style/typography';
 
 class Layout extends React.Component {
@@ -52,41 +56,25 @@ class Layout extends React.Component {
     return (
       <Fragment>
         <GlobalStyle />
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: rhythm(28),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          <header>{header}</header>
-          <main>{children}</main>
-          <footer>
-            {new Date().getFullYear()}, Built by
-            {` `}
-            <a
-              href="https://www.andrekovac.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={'normal'}
+        <Box>
+          <Header />
+          <Flex justify="center">
+            <Box
+              maxW="2xl"
+              py="1.5rem"
+              // style={{
+              //   marginLeft: `auto`,
+              //   marginRight: `auto`,
+              //   maxWidth: rhythm(28),
+              //   padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+              // }}
             >
-              André Kovac
-            </a>
-            <span> • </span>
-            <Link className={'normal'} to={'/about'}>
-              About
-            </Link>
-            <span> • </span>
-            <Link className={'normal'} to={'/imprint'}>
-              Imprint
-            </Link>
-            <span> • </span>
-            <Link className={'normal'} to={'/privacy-policy'}>
-              Privacy Policy
-            </Link>
-          </footer>
-        </div>
+              {/* <header>{header}</header> */}
+              {children}
+            </Box>
+          </Flex>
+          <Footer />
+        </Box>
       </Fragment>
     );
   }

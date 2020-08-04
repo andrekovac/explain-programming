@@ -6,8 +6,12 @@ import theme from './theme';
  * https://dev.to/mikewheaton/theming-with-styled-components-19ce
  */
 const GlobalStyles = createGlobalStyle`
+  h1 {
+    margin: 0 0 2rem 0;
+  }
   h2 {
-    border-bottom: ${theme.borders['1px']} solid ${theme.colors.gray[200]};
+    /* border-bottom: ${theme.borders['1px']} solid ${theme.colors.gray[200]}; */
+    /* background: linear-gradient(transparent 80%, #cb8182 0); */
   }
   p {
     color: ${theme.colors.gray[900]};
@@ -101,7 +105,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  li ul, li ol, nav ul, nav ol {
+  li ul, li ol {
     border: none;
     margin-left: 0.5rem;
   }

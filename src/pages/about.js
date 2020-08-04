@@ -11,7 +11,7 @@ class AboutPage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="About" />
+        <SEO title="Explain Programming | About" />
         <h1>About</h1>
 
         <h3>Why did I create this?</h3>
@@ -22,14 +22,17 @@ class AboutPage extends React.Component {
         </p>
         <h3>Is this all done?</h3>
         <p>
-          No. This is a living document. Since I learn more, I'm gradually adding information to each file. I hope it's helpful for one or the other nevertheless. It are my personal notes which help me understand the concepts.
+          No. This is a living document. Since I learn more, I'm gradually
+          adding information to each file. I hope it's helpful for one or the
+          other nevertheless. It are my personal notes which help me understand
+          the concepts.
         </p>
         <h3>Why did I put this online?</h3>
         <p>
-          I had all my notes in <b>Markdown</b> files anyway and I sometimes had a
-          hard time finding them because they are all somewhere on my computer.
-          I used <b>Spotlight</b> as my search tool, but want to improve it by having
-          them all in one place.
+          I had all my notes in <b>Markdown</b> files anyway and I sometimes had
+          a hard time finding them because they are all somewhere on my
+          computer. I used <b>Spotlight</b> as my search tool, but want to
+          improve it by having them all in one place.
         </p>
         <p>I also hope that other people might find my notes helpful.</p>
         <h3>Information about the content</h3>
