@@ -16,66 +16,19 @@ class Layout extends React.Component {
     let header;
 
     if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.2),
-            marginBottom: rhythm(1),
-            marginTop: rhythm(1 / 4),
-          }}
-        >
-          <Link className="main" to={`/`}>
-            <div
-              style={{
-                display: 'flex',
-                flex: 1,
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}
-            >
-              <Logo width={'2.5em'} height={'2.5em'} />
-              <div style={{ marginLeft: 10, marginBottom: 20 }}>{title}</div>
-            </div>
-          </Link>
-        </h1>
-      );
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link className="main" to={`/`}>
-            {title}
-          </Link>
-        </h3>
-      );
+      //
     }
     return (
-      <Fragment>
+      <Flex direction="column" minHeight="100vh">
         <GlobalStyle />
-        <Box>
-          <Header />
-          <Flex justify="center">
-            <Box
-              maxW="2xl"
-              py="1.5rem"
-              // style={{
-              //   marginLeft: `auto`,
-              //   marginRight: `auto`,
-              //   maxWidth: rhythm(28),
-              //   padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-              // }}
-            >
-              {/* <header>{header}</header> */}
-              {children}
-            </Box>
-          </Flex>
-          <Footer />
-        </Box>
-      </Fragment>
+        <Header />
+        <Flex justify="center" flexGrow="1">
+          <Box maxW="2xl" py="1.5rem">
+            {children}
+          </Box>
+        </Flex>
+        <Footer />
+      </Flex>
     );
   }
 }

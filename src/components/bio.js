@@ -8,9 +8,10 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { Flex } from '@chakra-ui/core';
+import { Flex, Box, PseudoBox } from '@chakra-ui/core';
 
 import { rhythm } from '../style/typography';
+import theme from '../style/theme';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -36,19 +37,28 @@ const Bio = () => {
   const { author } = data.site.siteMetadata;
   return (
     <Flex align="center">
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: rhythm(0.5),
-          marginBottom: 0,
-          minWidth: 100,
-          borderRadius: '1rem',
-        }}
-        imgStyle={{
-          borderRadius: '5px',
-        }}
-      />
+      <PseudoBox
+        transition="all 300ms"
+        _hover={{ transform: 'rotate(5deg) scale(1.1)' }}
+      >
+        <Image
+          fixed={data.avatar.childImageSharp.fixed}
+          alt={author}
+          style={{
+            borderColor: theme.colors.brand[500],
+            borderStyle: 'solid',
+            borderWidth: 5,
+            borderRadius: 15,
+            marginRight: rhythm(0.5),
+            marginBottom: 0,
+            minWidth: 100,
+          }}
+          imgStyle={{
+            borderRadius: '5px',
+          }}
+        />
+      </PseudoBox>
+
       <p>
         Useful commands collected over many years by <strong>{author}</strong>{' '}
         who creates software, teaches coding and speaks at events.

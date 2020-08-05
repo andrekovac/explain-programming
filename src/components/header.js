@@ -4,10 +4,8 @@ import { Box, Heading, Flex, Text, Button, PseudoBox } from '@chakra-ui/core';
 import LogoWhite from './logoWhite';
 import Link from './link';
 import ProfileLinks from './profileLinks';
+import { PROJECTS, BLOG } from '../constants/Page';
 
-// <Box bg="tomato" w="100%" p={4} color="white" mt={{ base: 4, md: 0 }} mr={6}>
-// This is the Box
-// </Box>
 
 const MenuItems = ({ children }) => (
   <Link to="/">
@@ -92,9 +90,9 @@ const Header = (props) => {
           flexGrow={1}
           transition="all 2s"
         >
-          <MenuItems>Blog</MenuItems>
+          <MenuItems to={BLOG}>Blog</MenuItems>
           <MenuItems>Talks</MenuItems>
-          <MenuItems>Projects</MenuItems>
+          <MenuItems to={PROJECTS}>Projects</MenuItems>
         </Box>
 
         {/* <Box

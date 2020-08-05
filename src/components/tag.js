@@ -29,7 +29,7 @@ const Tag = ({ tag, isClickable, onTagSelect, onClick }) => {
       backgroundColor = '#106e79';
       break;
     case SHOW_ALL:
-      backgroundColor = theme.colors.brand[500];
+      backgroundColor = theme.colors.brand[700];
       break;
     default:
       backgroundColor = 'rgb(14, 28, 128)';

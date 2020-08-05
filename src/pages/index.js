@@ -61,7 +61,11 @@ const BlogIndex = (props) => {
         </Flex>
         <Flex align="center">
           <Box mr="2">Or</Box>
-          <Tag tag={SHOW_ALL} onClick={() => setSelectedTag(NONE)} />
+          <Tag
+            tag={SHOW_ALL}
+            onClick={() => setSelectedTag(NONE)}
+            isClickable
+          />
           <Box>articles.</Box>
         </Flex>
       </Flex>
