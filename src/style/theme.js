@@ -36,7 +36,8 @@ const customTheme = {
   },
   fonts: {
     body: 'system-ui, sans-serif',
-    heading: 'Georgia, serif',
+    heading: 'Roboto, sans-serif',
+    // heading: 'Georgia, serif',
     mono: 'Menlo, monospace',
   },
 };

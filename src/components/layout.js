@@ -23,7 +23,7 @@ class Layout extends React.Component {
         <GlobalStyle />
         <Header />
         <Flex justify="center" flexGrow="1">
-          <Box maxW="2xl" py="1.5rem">
+          <Box maxW="2xl" pt="0" pb="1rem">
             {children}
           </Box>
         </Flex>

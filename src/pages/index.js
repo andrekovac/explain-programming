@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import { Flex, Box, Badge, Image, PseudoBox, Text } from '@chakra-ui/core';
+import {
+  Flex,
+  Box,
+  Badge,
+  Image,
+  PseudoBox,
+  Text,
+  Heading,
+} from '@chakra-ui/core';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -45,6 +53,7 @@ const BlogIndex = (props) => {
     <Layout location={props.location} title={siteTitle}>
       <SEO title="Home | Explain Programming" />
       <Box px="1.5rem">
+        <Heading color="brand.500">Explain Programming</Heading>
         <Bio />
       </Box>
       <Flex
