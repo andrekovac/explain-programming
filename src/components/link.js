@@ -47,6 +47,9 @@ const Link = ({
 
 const DefaultLink = styled(ChakraLink)`
   background: none;
+  &:hover {
+    background: none;
+  }
 `;
 
 const TextLink = styled(ChakraLink)`

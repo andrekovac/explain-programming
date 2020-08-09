@@ -13,6 +13,8 @@ import { Flex, Box, PseudoBox } from '@chakra-ui/core';
 import { rhythm } from '../style/typography';
 import theme from '../style/theme';
 
+import Link from './link';
+
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -45,27 +47,29 @@ const Bio = () => {
       padding="5"
       align="center"
     >
-      <PseudoBox
-        transition="all 300ms"
-        _hover={{ transform: 'rotate(5deg) scale(1.1)' }}
-      >
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author}
-          style={{
-            borderColor: theme.colors.brand[500],
-            borderStyle: 'solid',
-            borderWidth: 5,
-            borderRadius: 15,
-            marginRight: rhythm(0.5),
-            marginBottom: 0,
-            minWidth: 100,
-          }}
-          imgStyle={{
-            borderRadius: '5px',
-          }}
-        />
-      </PseudoBox>
+      <Link to={'https://www.andrekovac.com'}>
+        <PseudoBox
+          transition="all 300ms"
+          _hover={{ transform: 'rotate(5deg) scale(1.1)' }}
+        >
+          <Image
+            fixed={data.avatar.childImageSharp.fixed}
+            alt={author}
+            style={{
+              borderColor: theme.colors.brand[500],
+              borderStyle: 'solid',
+              borderWidth: 5,
+              borderRadius: 15,
+              marginRight: rhythm(0.5),
+              marginBottom: 0,
+              minWidth: 100,
+            }}
+            imgStyle={{
+              borderRadius: '5px',
+            }}
+          />
+        </PseudoBox>
+      </Link>
 
       <p>
         Useful commands collected over many years by <strong>{author}</strong>{' '}
