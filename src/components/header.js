@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Heading, Flex, Text, Button, PseudoBox } from '@chakra-ui/core';
+import { Box, Flex, Text, Button, PseudoBox } from '@chakra-ui/core';
 
 import LogoWhite from './logoWhite';
 import Link from './link';
 import ProfileLinks from './profileLinks';
 import { PROJECTS, BLOG } from '../constants/Page';
 
-
-const MenuItems = ({ children }) => (
-  <Link to="/">
+const MenuItems = ({ children, to }) => (
+  // <Link to={to ? `${__PATH_PREFIX__}/${to}` : `${__PATH_PREFIX__}/`}>
+  <Link to={to || `/`}>
     <Button
       w={{ base: '100%', md: 'inherit' }}
       size="md"
@@ -45,17 +45,37 @@ const Header = (props) => {
         flexGrow="1"
         {...props}
       >
-        <Link to="/">
+        <Flex direction="row" align="center">
+          <Link to="/">
+            <PseudoBox
+              display="flex"
+              align="center"
+              mr={5}
+              transition="all 300ms"
+              _hover={{ transform: 'rotate(-5deg) scale(1.1)' }}
+            >
+              <LogoWhite />
+            </PseudoBox>
+          </Link>
+
           <PseudoBox
-            display="flex"
-            align="center"
-            mr={5}
+            display={{ base: 'flex', md: 'none' }}
             transition="all 300ms"
-            _hover={{ transform: 'rotate(-5deg) scale(1.1)' }}
+            justify="center"
+            _hover={{
+              transform: 'rotate(5deg) scale(1.05)',
+            }}
           >
-            <LogoWhite />
+            <Flex direction="column">
+              <Text color="white" fontWeight="bold">
+                Explain
+              </Text>
+              <Text color="white" fontWeight="bold">
+                Programming
+              </Text>
+            </Flex>
           </PseudoBox>
-        </Link>
+        </Flex>
 
         <PseudoBox
           display={{ base: 'flex', md: 'none' }}
