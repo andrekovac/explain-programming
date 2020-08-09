@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import theme from '../../style/theme';
 
 export const Link = styled.a`
-  font-size: 1.5em;
   color: ${theme.colors.white};
   background: none;
 
