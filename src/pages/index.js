@@ -43,7 +43,7 @@ const BlogIndex = (props) => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO title="Explain Programming | Home" />
+      <SEO title="Home | Explain Programming" />
       <Box px="1.5rem">
         <Bio />
       </Box>

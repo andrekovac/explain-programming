@@ -12,7 +12,7 @@ class Projects extends Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Explain Programming | Projects" />
+        <SEO title="Projects | Explain Programming" />
         <Project />
         <Project />
         <Project />

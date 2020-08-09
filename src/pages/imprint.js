@@ -11,7 +11,7 @@ class ImprintPage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Explain Programming | Imprint" />
+        <SEO title="Imprint | Explain Programming" />
         <h1>Imprint</h1>
         <p>
           Owner of this site and responsible for the content of this website
