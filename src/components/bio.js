@@ -36,7 +36,15 @@ const Bio = () => {
 
   const { author } = data.site.siteMetadata;
   return (
-    <Flex align="center">
+    <Flex
+      backgroundColor={theme.colors.gray[50]}
+      borderColor={theme.colors.gray[200]}
+      borderStyle="solid"
+      borderWidth="1"
+      borderRadius="1rem"
+      padding="5"
+      align="center"
+    >
       <PseudoBox
         transition="all 300ms"
         _hover={{ transform: 'rotate(5deg) scale(1.1)' }}
