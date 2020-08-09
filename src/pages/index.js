@@ -91,10 +91,7 @@ const BlogIndex = (props) => {
             >
               <Link to={node.fields.slug}>
                 <PseudoBox
-                  borderWidth="4px"
-                  // rounded="lg"
                   overflow="hidden"
-                  // borderColor="gray.200"
                   _hover={{
                     bg: 'gray.200',
                   }}
@@ -132,10 +129,12 @@ const BlogIndex = (props) => {
                       </Flex>
 
                       <Flex
-                        mt={{ base: '2', md: '0' }}
+                        flexGrow="1"
                         align="center"
-                        justify="left"
-                        pl="3"
+                        justify={{ base: 'left', md: 'right' }}
+                        mt={{ base: '2', md: '0' }}
+                        ml="3"
+                        w={{ base: '100%', md: '30%' }}
                       >
                         <Tags
                           tags={node.frontmatter.tags}
