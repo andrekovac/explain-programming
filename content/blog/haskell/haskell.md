@@ -173,20 +173,29 @@ class Functor f where
 
 # Monad
 
+## Media about Monads
+
+- [A nice video intro to Monads](https://youtu.be/t1e8gqXLbsU)
+- [A Javascript intro to Monads](https://blog.kabir.sh/inventing-monads)
+
+## Course notes
+
 Famous monads: `Maybe`, `Either`, `IO`
 
-Because of monads error handling can be deferred to the monads and code is nicely imperative with the do-notation.
+Because of **monads** error handling can be deferred to the monads and code is nicely **imperative** with the do-notation.
 
-`m b` darf ich binden mit `<-`
+`m b` I can bind with `<-`
 
 C komma operator ~ `>>` operator
 
-* Imperatives if-else:
+* Imperative if-else:
 
 	```haskell
 	when :: (Monad m) => Bool => m () -> m ()
 	when condition action = if condition then action else ()
 	```
+
+	`()` is no action like `void`.
 
 * `pure` = `return` (syntactic sugar)
 
@@ -294,7 +303,7 @@ import ProejctX.Module2 (SomeType
 ```
 
 * `import Foo hiding (myMap)` : Import all but `myMap`
-* In many packagea `.internal`
+* In many packages `.internal`
 
 ## Records & Accessors
 

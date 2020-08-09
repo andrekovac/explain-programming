@@ -1,10 +1,10 @@
 ---
 title: 'Fastlane'
 description: 'Fastlane commands'
-date: '2015-11-10T00:00:00.000Z'
+date: '2015-11-10'
 author: 'André Kovac'
 category: 'tool'
-tags: ['mobile']
+tags: ['mobile', 'react-native']
 draft: true
 ---
 
@@ -14,11 +14,15 @@ draft: true
 
 To call `fastlane <PLATFORM> <LANE> <OPTION-Key>:<OPTION-value>`:
 
-	fastlane ios alpha flavor:bmf
+```bash
+fastlane ios alpha flavor:bmf
+```
 
 or
 
-	fastlane ios push_certs flavor:bmf environment:development
+```bash
+fastlane ios push_certs flavor:bmf environment:development
+```
 
 See other PROXPIPEDIA examples below.
 
@@ -113,6 +117,7 @@ See the [fastlane github repo](https://github.com/fastlane/fastlane)
 
 	$ sudo gem install fastlane --verbose
 
+Or via `homebrew`: `brew install fastlane`.
 
 ## Other example calls of fastlane cli
 

@@ -7,8 +7,8 @@ category: 'programming-language'
 tags: ['javascript', 'functional programming']
 ---
 
-* Don't mutate objects
-* Don't cause side effects - Your callback can only modify the new value you're returning from that callback.
+- Don't mutate objects
+- Don't cause side effects - Your callback can only modify the new value you're returning from that callback.
 
 [An Introduction to Functional JavaScript](http://www.sitepoint.com/introduction-functional-javascript/)
 
@@ -25,12 +25,12 @@ Don't mutate an object, but create a new one with the change, i.e. create a new 
 
 - Vanilla JS
 
-      	```js
-      	// objects
-      	var yourCarRepainted = Object.assign({}, yourCar, { color: 'red' });
-      	// array
-      	var changedList = [].concat(list);
-      	```
+  ```js
+  // objects
+  var yourCarRepainted = Object.assign({}, yourCar, { color: 'red' });
+  // array
+  var changedList = [].concat(list);
+  ```
 
 - Or use libraries like immutable.js
 
@@ -40,121 +40,114 @@ Array operations without having to write loops explicitly. [This is a great arti
 
 **Examples** for most common use cases:
 
-* [reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) and [reduceRight()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight)
+- [reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) and [reduceRight()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight)
 
-	The `reduce()` callback always expects the new total value to be returned, even if that value is an array, and even if it's the same one as before.
+  The `reduce()` callback always expects the new total value to be returned, even if that value is an array, and even if it's the same one as before.
 
-	* `reduce()`
+  - `reduce()`
 
-		Successively apply function to pairs of values, e.g.:
+    ```js
+    [0, 1, 2, 3, 4].reduce((prev, curr) => prev + curr);
+    ```
 
-		```js
-		[0, 1, 2, 3, 4].reduce( (prev, curr) => prev + curr );
-		```
+    or with initial value `{}` for `total`:
 
-		or with initial value `{}` for `total`:
+    ```js
+    [0, 1, 2, 3, 4].reduce((total, curr) => total + curr, 0);
+    ```
 
-		```js
-		[0, 1, 2, 3, 4].reduce( (total, curr) => total + curr, 0 );
-		```
+    Add stuff to an array with reduce:
 
-		Add stuff to an array with reduce:
+    ```js
+    var newNumbers = numbers.reduce(function (newArray, number) {
+      newArray.push(number);
 
-		```js
-		var newNumbers = numbers.reduce(function(newArray, number){
-		    newArray.push(number);
+      if (number % 2 == 0) {
+        /* Add it a second time. */
+        newArray.push(number);
+      }
 
-		    if(number % 2 == 0) {
-		        /* Add it a second time. */
-		        newArray.push(number);
-		    }
+      return newArray; /* This is important! */
+    }, []);
+    ```
 
-		    return newArray; /* This is important! */
-		}, []);
-		```
+  - `reduceRight()`: `reduce()` but from right to left instead of left to right.
 
-	* `reduceRight()`: `reduce()` but from right to left instead of left to right.
+- [map()]() vs. [forEach()]() vs. [every()]()
 
-* [map()]() vs. [forEach()]() vs. [every()]()
+  - `map()`: Apply function to each element in Array and return new array with altered values.
 
-	* `map()`: Apply function to each element in Array and return new array with altered values.
+    ```
+    [0, 1, 2, 3, 4].map( (value) => value + 2 );
+    ```
 
-		```js
-		[0, 1, 2, 3, 4].map( (value) => value + 2 );
-		```
+  - `forEach()`:
 
-	* `forEach()`:
+    ````
 
-		For introducing side effects
+    Loop through **array**. Callback function does not return anything as `map()` does.
 
-		Loop through **array**. Callback function does not return anything as `map()` does.
+    Loop through **object**:
 
-		Loop through **object**:
+    ```js
+    var numbers = {one: 1, two: 2, three: 3, four: 4};
 
-		```js
-		var numbers = {one: 1, two: 2, three: 3, four: 4};
+    Object.keys(numbers).forEach(function(key){
+        var value = numbers[key];
+        doSomethingWith(value);
+        /* For example, key == "one" and value == 1 */
+    });
+    ```
+    ````
 
-		Object.keys(numbers).forEach(function(key){
-		    var value = numbers[key];
-		    doSomethingWith(value);
-		    /* For example, key == "one" and value == 1 */
-		});
-		```
+    - `every()`:
 
-	* `every()`:
+- [filter()]()
+  Filter the array according to the provided filter function.
 
+  ```js
+  [0, 1, 2, 3, 4].filter((value) => value > 0);
+  ```
 
-* [filter()]()
+- [sort()]()
 
-	Filter the array according to the provided filter function.
+  Sort the **current array** according to a sort callback function which returns a boolean
 
-	```js
-	[0, 1, 2, 3, 4].filter( (value) => value > 0 );
-	```
+  ```js
+  [0, 1, 2, 3, 4].sort((a, b) => a < b);
+  ```
 
-* [sort()]()
+- [join()]()
 
-	Sort the **current array** according to a sort callback function which returns a boolean
+  ```js
+  myArray.join(',');
+  ```
 
-	```js
-	[0, 1, 2, 3, 4].sort( (a, b) => a < b );
-	```
+- [slice()]() vs. [splice()]()
 
-* [join()]()
+      - `slice()`:
 
-	```js
-	myArray.join(',');
-	```
+        - Pass by value, i.e. a new copy of the array is created instead of just a new reference.
+        - Shallow copy: It copies by value if it's an array of primitive types, like Strings or Integers. If it's an array of arrays or array of objects, the elements of the array will only by copied by reference, not by value.
 
-* [slice()]() vs. [splice()]()
+          ```js
+          newArray = myArray.slice();
+          ```
 
-	* `slice()`:
-		* Pass by value, i.e. a new copy of the array is created instead of just a new reference.
-		* Shallow copy: It copies by value if it's an array of primitive types, like Strings or Integers. If it's an array of arrays or array of objects, the elements of the array will only by copied by reference, not by value.
+- [every()]()
 
-		```js
-		newArray = myArray.slice();
-		```
-
-* [every()]()
-
-* [fill()]()
-
+- [fill()]()
 
 ## Stack, Queue
 
-* [push()]()
+- [push()]()
+  Push new element to end of stack/queue
 
-	Push new element to end of stack/queue
+- [pop()]()
+  Pop last object in stack
 
-* [pop()]()
-
-	Pop last object in stack
-
-* [shift()]()
-
-	Enqueue first object in queue
-
+- [shift()]()
+  Enqueue first object in queue
 
 ## Immutable.js
 
@@ -162,15 +155,15 @@ Array operations without having to write loops explicitly. [This is a great arti
 
 #### [Map()](https://facebook.github.io/immutable-js/docs/#/Map)
 
-* `mergeDeep()`Example:
+- `mergeDeep()`Example:
 
-	```js
-	var x = Immutable.fromJS({a: { x: 10, y: 10 }, b: { x: 20, y: 50 } });
-	var y = Immutable.fromJS({a: { x: 2 }, b: { y: 5 }, c: { z: 3 } });
-	x.mergeDeep(y) // {a: { x: 2, y: 10 }, b: { x: 20, y: 5 }, c: { z: 3 } }
-	```
+  ```js
+  var x = Immutable.fromJS({ a: { x: 10, y: 10 }, b: { x: 20, y: 50 } });
+  var y = Immutable.fromJS({ a: { x: 2 }, b: { y: 5 }, c: { z: 3 } });
+  x.mergeDeep(y); // {a: { x: 2, y: 10 }, b: { x: 20, y: 5 }, c: { z: 3 } }
+  ```
 
-* `setIn()`, `getIn()`
+- `setIn()`, `getIn()`
 
 #### `Lazy Seq`
 
@@ -179,17 +172,21 @@ Array operations without having to write loops explicitly. [This is a great arti
 Efficient chaining:
 
 ```js
-var seq = Immutable.Map({a:1, b:1, c:1}).toSeq();
+var seq = Immutable.Map({ a: 1, b: 1, c: 1 }).toSeq();
 
-seq.flip().map(key => key.toUpperCase()).flip().toObject();
+seq
+  .flip()
+  .map((key) => key.toUpperCase())
+  .flip()
+  .toObject();
 // Map { A: 1, B: 1, C: 1 }
 ```
 
 ```js
 Immutable.Range(1, Infinity)
   .skip(1000)
-  .map(n => -n)
-  .filter(n => n % 2 === 0)
+  .map((n) => -n)
+  .filter((n) => n % 2 === 0)
   .take(2)
   .reduce((r, n) => r * n, 1);
 // 1006008
@@ -198,7 +195,7 @@ Immutable.Range(1, Infinity)
 #### Batching mutations
 
 ```js
-var list1 = Immutable.List.of(1,2,3);
+var list1 = Immutable.List.of(1, 2, 3);
 var list2 = list1.withMutations(function (list) {
   list.push(4).push(5).push(6);
 });
@@ -232,7 +229,7 @@ const edited = post.set('title', 'bar');
 
 ```js
 const data = new Map({
-  somePost: new Post({ title: 'some post' })
+  somePost: new Post({ title: 'some post' }),
 });
 
 console.log(data.getIn(['somePost', 'title'])); // === 'some post';
@@ -242,13 +239,12 @@ console.log(data.getIn(['somePost', 'title'])); // === 'some post';
 
 ```js
 class StateRecord extends Record({
-	names: List([]),
-	isLoading: false,
+  names: List([]),
+  isLoading: false,
 }) {
-
-	get is_empty() {
-		return (StateRecord.names.size === 0)
-	}
+  get is_empty() {
+    return StateRecord.names.size === 0;
+  }
 }
 ```
 

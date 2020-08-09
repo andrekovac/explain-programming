@@ -235,7 +235,7 @@ For example for the following command
 * `$@` would give you the array `{"-yes", "-no", "/home/username"}`
 * And `$0` = **./command**, `$1` = **-yes** etc.
 
-## Background jobs
+## Background jobs (new threads / processes)
 
 * Append `&` to run command/script as background job
 
@@ -243,10 +243,15 @@ For example for the following command
 	sleep 5 && ls | grep "foo" &
 	```
 
-* View all currently running background jobs
+* View all currently running background jobs (`-p` add more information)
 
 	```bash
-	jobs
+	jobs -p
+	```
+* Kill job
+
+	```bash
+	kill %1
 	```
 
 ## Screens
