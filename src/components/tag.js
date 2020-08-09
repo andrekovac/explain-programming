@@ -34,40 +34,44 @@ const Tag = ({ tag, isClickable, onTagSelect, onClick }) => {
     default:
       backgroundColor = 'rgb(14, 28, 128)';
   }
+
+  const handleClick = (event) => {
+    // Prevent parent event (route to article) from being called.
+    event.preventDefault();
+
+    if (onClick) {
+      onClick(event);
+    } else {
+      if (onTagSelect) {
+        onTagSelect(tag);
+      }
+    }
+  };
+
   return (
     <StyledTag
       backgroundColor={backgroundColor}
       isClickable={isClickable}
-      onClick={(event) => {
-        // Prevent parent event (route to article) from being called.
-        event.preventDefault();
-
-        if (onClick) {
-          onClick(event);
-        } else {
-          if (onTagSelect) {
-            onTagSelect(tag);
-          }
-        }
-      }}
+      onClick={handleClick}
     >
-      <small>{tag}</small>
+      {tag}
     </StyledTag>
   );
 };
 
-const StyledTag = styled.span`
+const StyledTag = styled.div`
   padding: ${rhythm(1 / 6)} ${rhythm(1 / 3)};
-  margin-right: ${rhythm(1 / 4)};
   border-radius: 3rem;
   color: ${(props) => (props.isClickable ? 'black' : 'white')};
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   cursor: ${(props) => (props.isClickable ? 'pointer' : 'inherit')};
   background-color: ${(props) =>
     props.isClickable
       ? lighten(0.6, props.backgroundColor)
       : props.backgroundColor};
   z-index: ${theme.zIndices.docked};
+
+  margin: 3px ${rhythm(1 / 4)} 3px 0;
 
   &:hover {
     color: white;
