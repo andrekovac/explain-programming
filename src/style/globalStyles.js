@@ -434,6 +434,13 @@ const GlobalStyles = createGlobalStyle`
   }
 
   /**
+   * Ensure correct width of code block on narrow screens
+   */
+  .gatsby-highlight {
+    display: grid;
+  }
+
+  /**
   * Highlight line
   */
   .gatsby-highlight-code-line {
