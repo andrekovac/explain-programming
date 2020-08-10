@@ -48,11 +48,11 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               <ArticleLink
-                message="Share on Twitter"
+                message="Discuss on Twitter"
                 // href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
-                href={`http://twitter.com/share?text=${
+                href={`http://twitter.com/share?text=@andrekovac I just read your post about ${
                   post.frontmatter.title
-                }&url=${siteUrl}${slug}&via=andrekovac&hashtags=${post.frontmatter.tags.join()}`}
+                } and was wondering [...]&url=${siteUrl}${slug}&hashtags=${post.frontmatter.tags.join()}`}
               />
               <span> ● </span>
               <ArticleLink
