@@ -72,8 +72,9 @@ const Bio = () => {
       </Link>
 
       <p>
-        Useful commands collected over many years by <strong>{author}</strong>{' '}
-        who creates software, teaches coding and speaks at events.
+        Useful commands and knowledge collected over many years by{' '}
+        <strong>{author}</strong> who creates software, teaches coding and
+        speaks at events.
         {` `}
         Visit his{' '}
         <a className="normal" href={`https://www.andrekovac.com/`}>
