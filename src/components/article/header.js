@@ -18,8 +18,14 @@ const Header = ({ category, title, tags }) => {
     <header>
       <Box mb="5">
         <Title>{title}</Title>
-        <Flex>
-          <Box mr="5">
+        <Flex align="center">
+          <Flex
+            align="center"
+            backgroundColor={theme.colors.gray[100]}
+            mr="5"
+            p="1"
+            borderRadius={theme.radii.md}
+          >
             <span>{mapCategoryToShortHand[category]}</span>
             <span
               style={{
@@ -29,7 +35,7 @@ const Header = ({ category, title, tags }) => {
             >
               {mapCategoryToWord[category]}
             </span>
-          </Box>
+          </Flex>
           <Tags tags={tags} />
         </Flex>
       </Box>

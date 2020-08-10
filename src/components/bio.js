@@ -39,13 +39,13 @@ const Bio = () => {
   const { author } = data.site.siteMetadata;
   return (
     <Flex
+      align="center"
       backgroundColor={theme.colors.gray[50]}
       borderColor={theme.colors.gray[200]}
       borderStyle="solid"
-      borderWidth="1"
+      borderWidth={theme.borders['4px']}
       borderRadius="1rem"
       padding="5"
-      align="center"
     >
       <Link to={'https://www.andrekovac.com'}>
         <PseudoBox
