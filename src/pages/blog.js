@@ -53,7 +53,7 @@ const BlogIndex = (props) => {
     <Layout location={props.location} title={siteTitle}>
       <SEO title="Home | Explain Programming" />
       <Box px="1.5rem">
-        <Heading color="brand.500">Explain Programming</Heading>
+        <Heading color="brand.500">Explain Programming Blog</Heading>
         <Bio />
       </Box>
       <Flex
@@ -64,7 +64,7 @@ const BlogIndex = (props) => {
         display={selectedTag !== NONE ? 'flex' : 'none'}
       >
         <Flex align="center">
-          <Box mr="2">These are articles with the</Box>
+          <Box mr="2">These are all articles with the</Box>
           <Tag tag={selectedTag} />
           <Box mr="1">tag.</Box>
         </Flex>
@@ -183,7 +183,7 @@ const ShowAllButton = styled.span`
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { draft: { ne: true }, ready: { eq: true } } }
+      filter: { frontmatter: { draft: { ne: true } } }
       sort: { fields: [frontmatter___category], order: ASC }
     ) {
       edges {

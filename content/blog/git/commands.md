@@ -5,6 +5,7 @@ date: '2016-01-07T02:30:00.169Z'
 author: 'André Kovac'
 category: 'tool'
 tags: ['git']
+ready: true
 ---
 
 ## Recover lost file
@@ -50,11 +51,11 @@ To replace a list of words/passwords with `***REMOVED***`, do the following:
     - Run `git push -f` to force push your locally changed files to the remote.
     - It will prompt you to run the following command which prunes older `reflog` entries:
 
-		```bash
-		git reflog expire --expire=now --all && git gc --prune=now --aggressive
-		```
+          	```bash
+          	git reflog expire --expire=now --all && git gc --prune=now --aggressive
+          	```
 
-		If this command is not run, the deleted information might still be available in the `reflog`.
+          	If this command is not run, the deleted information might still be available in the `reflog`.
 
 ## Random
 
