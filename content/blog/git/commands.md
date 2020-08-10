@@ -5,7 +5,7 @@ date: '2016-01-07T02:30:00.169Z'
 author: 'André Kovac'
 category: 'tool'
 tags: ['git']
-ready: true
+ready: false
 ---
 
 ## Recover lost file
@@ -24,38 +24,28 @@ Thereafter take a sha value of a `dangling blob` entry and run `git show` to obs
 git show 8f72c7d79f964b8279da93ca8c05bd685e892756 > restored_file.js
 ```
 
-## Delete lines in git history
+## Recover popped stash
 
-Use [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/).
+With `git stash pop` the stash is gone. With `git stash apply` it remains on the stash stack.
 
-### Steps
+1. Run
 
-To replace a list of words/passwords with `***REMOVED***`, do the following:
+   Be sure `gitk` is installed. On OSX you can install it with `brew install git-gui` (not `brew install gitk`).
 
-1.  Download the `.jar` file (perhaps `bfg-1.13.0.jar`) from the homepage and place is somewhere, e.g. in the folder `~/bin/` and change its name to `bfg.jar` so that it is easier.
-2.  Copy/backup your files/git repo (i.e. `.git/` folder)!!!
-3.  Create a file `words.txt` with words/passwords you want to remove from all of history. One line for each word. You can delete this file right after you finished these steps.
-4.  Inside the folder of the repository, i.e. inside the folder with the `.git/` folder run the following command:
+   ```bash
+   gitk --all $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )
+   ```
 
-    ```bash
-    java -jar ~/bin/bfg.jar --replace-text words.txt .git
-    ```
+   1. This will open a git gui.
+   2. Copy the hash of the stash.
 
-5.  What has happened?
+2. Run
 
-    - The values of each line in `words.txt` will be replaced with the string `***REMOVED***` in your local repository.
-    - A `.git.bfg-report` folder with information about the deletion is created.
+   ```bash
+   git stash apply $stash_hash
+   ```
 
-6.  To do now
-
-    - Run `git push -f` to force push your locally changed files to the remote.
-    - It will prompt you to run the following command which prunes older `reflog` entries:
-
-          	```bash
-          	git reflog expire --expire=now --all && git gc --prune=now --aggressive
-          	```
-
-          	If this command is not run, the deleted information might still be available in the `reflog`.
+Solution taken from [this SO answer](https://stackoverflow.com/a/91795/3210677).
 
 ## Random
 
