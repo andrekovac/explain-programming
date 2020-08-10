@@ -125,6 +125,16 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: 2rem;
   }
 
+  @media only screen and (max-width:480px) {
+    blockquote {
+      border-color: ${theme.colors.brand[500]};
+      border-width: 0.6rem;
+
+      margin-left: 0;
+      padding: ${theme.space[5]};
+    }
+  }
+
   /**
   * CODE Syntax highlighting
   *
