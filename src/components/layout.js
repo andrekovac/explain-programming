@@ -21,7 +21,7 @@ class Layout extends React.Component {
     return (
       <Flex direction="column" minHeight="100vh">
         <GlobalStyle />
-        <Header />
+        <Header location={location} />
         <Flex justify="center" flexGrow="1">
           <Box maxW="2xl" py="1rem">
             {children}

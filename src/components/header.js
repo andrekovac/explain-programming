@@ -6,7 +6,7 @@ import Link from './link';
 import ProfileLinks from './profileLinks';
 import { PROJECTS, BLOG } from '../constants/Page';
 
-const MenuItems = ({ children, to }) => (
+const MenuItems = ({ children, to, currentPathname }) => (
   // <Link to={to ? `${__PATH_PREFIX__}/${to}` : `${__PATH_PREFIX__}/`}>
   <Link to={to || `/`}>
     <Button
@@ -15,8 +15,8 @@ const MenuItems = ({ children, to }) => (
       // size={{ base: 'sm', md: 'md' }}
       variant="ghost"
       variantColor="brand"
-      // bg="transparent"
-      color="white"
+      color={currentPathname === to ? 'brand.500' : 'white'}
+      backgroundColor={currentPathname === to ? 'white' : 'inherit'}
       mt={{ base: 2, md: 0 }}
       mr={3}
       border="none"
@@ -33,6 +33,8 @@ const MenuItems = ({ children, to }) => (
 const Header = (props) => {
   const [show, setShow] = React.useState(false);
   const handleToggle = () => setShow(!show);
+
+  const pathname = props.location.pathname;
 
   return (
     <Flex justify="center" bg="brand.500">
@@ -110,9 +112,13 @@ const Header = (props) => {
           flexGrow={1}
           transition="all 2s"
         >
-          <MenuItems to={BLOG}>Blog</MenuItems>
-          <MenuItems>Talks</MenuItems>
-          <MenuItems to={PROJECTS}>Projects</MenuItems>
+          <MenuItems to={BLOG} currentPathname={pathname}>
+            Blog
+          </MenuItems>
+          <MenuItems currentPathname={pathname}>Talks</MenuItems>
+          <MenuItems to={PROJECTS} currentPathname={pathname}>
+            Projects
+          </MenuItems>
         </Box>
 
         {/* <Box
