@@ -60,10 +60,10 @@ const Tag = ({ tag, isClickable, onTagSelect, onClick }) => {
 };
 
 const StyledTag = styled.div`
-  padding: ${rhythm(1 / 6)} ${rhythm(1 / 3)};
-  border-radius: 3rem;
+  padding: 1px 10px;
+  border-radius: 15px;
   color: ${(props) => (props.isClickable ? 'black' : 'white')};
-  font-size: 0.6rem;
+  font-size: ${theme.fontSizes.xs};
   cursor: ${(props) => (props.isClickable ? 'pointer' : 'inherit')};
   background-color: ${(props) =>
     props.isClickable
