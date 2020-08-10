@@ -16,16 +16,16 @@ Two ways to do the same thing:
 
 1. Being explicit with `new`:
 
-	```js
-	const obj = new Object();
-	obj.name = 'Michael';
-	```
+   ```js
+   const obj = new Object();
+   obj.name = 'Michael';
+   ```
 
 2. Simple alternative without `new`:
 
-	```js
-	obj = { name: 'Michael' };
-	```
+   ```js
+   obj = { name: 'Michael' };
+   ```
 
 ---
 
