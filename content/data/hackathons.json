@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Travel Hackathon with Beacons by Deutsche Telekom & Lufthansa",
+    "date": "2015-09-04",
+    "location": "Berlin, Germany",
+    "project": {
+      "name": "On way",
+      "url": "https://github.com/andrekovac/OnWay",
+      "devpost": null
+    },
+    "description": "<p>App which helps you to navigate an airport offline with the help of bluetooth beacon technology.</p>",
+    "tech": ["Java", "Android", "BLE"],
+    "image": "/assets/images/hackathon/01_berlin_travel_hack.jpg"
+  },
+  {
+    "title": "Travel Hackathon with Beacons by Deutsche Telekom & Lufthansa",
+    "date": "2015-09-04",
+    "location": "Berlin, Germany",
+    "project": {
+      "name": "On way",
+      "url": "https://github.com/andrekovac/OnWay",
+      "devpost": null
+    },
+    "description": "<p>App which helps you to navigate an airport offline with the help of bluetooth beacon technology.</p>",
+    "tech": ["Java", "Android", "BLE"],
+    "image": "/assets/images/hackathon/01_berlin_travel_hack.jpg"
+  }
+]
