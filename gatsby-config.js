@@ -105,9 +105,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
-        trackingId: `UA-81014342-3`,
+        googleAnalytics: {
+          trackingId: process.env.GATSBY_GOOGLE_TRACKING_ID,
+          cookieName: 'gatsby-gdpr-google-analytics',
+          anonymize: true,
+        },
+        environments: ['production'],
       },
     },
     `gatsby-plugin-feed`,
