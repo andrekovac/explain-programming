@@ -14,6 +14,7 @@ const Link = ({
   activeClassName,
   partiallyActive,
   isText,
+  solid,
   ...other
 }) => {
   // Tailor the following test to your environment.
@@ -35,7 +36,13 @@ const Link = ({
     );
   }
   return isText ? (
-    <TextLink href={to} target="_blank" rel="noopener noreferrer" {...other}>
+    <TextLink
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      solid={solid}
+      {...other}
+    >
       {children}
     </TextLink>
   ) : (
@@ -53,12 +60,14 @@ const DefaultLink = styled(ChakraLink)`
 `;
 
 const TextLink = styled(ChakraLink)`
-  color: ${theme.colors.white};
+  color: ${(props) =>
+    props.solid ? theme.colors.brand[500] : theme.colors.white};
   background: linear-gradient(transparent 80%, white 0);
   text-decoration: none;
 
   &:hover {
-    color: ${theme.colors.brand[500]};
+    color: ${(props) =>
+      props.solid ? theme.colors.brand[300] : theme.colors.brand[500]};
     background: linear-gradient(transparent 0, white 5%);
   }
 `;

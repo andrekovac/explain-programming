@@ -34,7 +34,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <Box px="1.5rem">
+        <Box>
           <article>
             <Header
               category={post.frontmatter.category}

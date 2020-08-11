@@ -11,6 +11,9 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import { rhythm } from '../style/typography';
 import Bio from './bio';
 
+/**
+ * Footer on blog pages
+ */
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query FooterQuery {
