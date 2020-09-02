@@ -161,7 +161,7 @@ To mimic the behavior of non-strict flow-type type definitions:
   }
   ```
 
-- Unions in index signatures
+- Unions in **index signatures**
 
   Use the `in` command:
 

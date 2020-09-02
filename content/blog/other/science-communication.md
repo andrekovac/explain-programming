@@ -10,6 +10,7 @@ draft: true
 
 ## Organizations
 
-| Name | What? |
-| --- | --- |
+| Name                                                     | What?                                               |
+| -------------------------------------------------------- | --------------------------------------------------- |
 | [Lecturers without borders](https://scied.network/page/) | Give a lecture while traveling to a foreign country |
+| [JugendHackt](https://jugendhackt.org/)                  | Mentor kids while they build something              |

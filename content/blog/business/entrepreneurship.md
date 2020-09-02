@@ -18,13 +18,14 @@ Some takeaways from **Peter Thiel**'s book.
 
 ### Secrets
 
-* What secrets are people not telling you?
-  * Secrets, people don't know about themselves
-  * Secrets, they **hide** because they don't want others to know.
+- What secrets are people not telling you?
+  - Secrets, people don't know about themselves
+  - Secrets, they **hide** because they don't want others to know.
 
 Ask yourself
-* What is forbidden or taboo?
-* What are people not allowed to talk about?
+
+- What is forbidden or taboo?
+- What are people not allowed to talk about?
 
 > Best place to look for secrets is where no one else is **looking** 👀.
 
@@ -39,12 +40,12 @@ Gary Vaynerchuk said on Instagram: Go **acyclical**! If they don't do things a c
 - [What makes Entrepreneurs entrepreneurial](./what-makes-entrepreneurs-entrepreneurial-sarasvathy.pdf) shared by Besiana Bella from the EF Berlin team
 
 - Sales
-    > "If you didn't make 10 sales, you're not an entrepreneur"
 
-    Quote from Sales advisor *Sander Bohlen* (Berlin)
+  > "If you didn't make 10 sales, you're not an entrepreneur"
 
+  Quote from Sales advisor _Sander Bohlen_ (Berlin)
 
-## Business tools and helpful tipps
+## Business tools and helpful tips
 
 ### Pitch Decks
 
@@ -61,8 +62,11 @@ Gary Vaynerchuk said on Instagram: Go **acyclical**! If they don't do things a c
 
 [Burnout - Connected Apps to run your startup](https://burnout.so/)
 
-
 ## Entrepreneurship Programs and Opportunities
+
+### International
+
+- [Entrepreneurs Organization](https://www.eonetwork.org/) is a network for entrepreneurs (with a good community in Berlin I heard)
 
 ### Germany
 

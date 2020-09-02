@@ -1,10 +1,10 @@
 ---
 title: 'Unit tests, integrations tests, e2e tests and advanced testing concepts'
-date: '2016-02-15T00:00:00.000Z'
+date: '2016-02-15'
 author: 'André Kovac'
 description: 'Discussing the different types of testing and some concepts around testing'
 category: 'theory'
-tags: ['test']
+tags: ['test', 'javascript']
 draft: true
 ---
 
@@ -41,14 +41,37 @@ Most often via code-coverage, e.g. via Jest
 
 Use [JSON Schema](http://json-schema.org/)
 
+For JS create a JSON schema yourself or use [one of these tools](https://stackoverflow.com/questions/7341537/tool-to-generate-json-schema-from-json-data#answer-30294535).
+
+For typescript generate a schema with the following tool: [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
+
 ```js
 import { validate, ValidationError } from 'jsonschema';
 
-const generatedJSONSchema = { "type": "object", "properties": { "id": { "type": ["null", "number"] }, "name": { "type": ["null", "string"] }, "description": { "type": ["null", "string"] }, "pictureFileName": { "type": ["null", "string"] }, "instituteName": { "type": ["null", "string"] }, "instituteLogoFileName": { "type": ["null", "string"] } }, "required": ["description", "id", "instituteLogoFileName", "instituteName", "name", "pictureFileName"], "$schema": "http://json-schema.org/draft-04/schema#" };
+const generatedJSONSchema = {
+  type: 'object',
+  properties: {
+    id: { type: ['null', 'number'] },
+    name: { type: ['null', 'string'] },
+    description: { type: ['null', 'string'] },
+    pictureFileName: { type: ['null', 'string'] },
+    instituteName: { type: ['null', 'string'] },
+    instituteLogoFileName: { type: ['null', 'string'] },
+  },
+  required: [
+    'description',
+    'id',
+    'instituteLogoFileName',
+    'instituteName',
+    'name',
+    'pictureFileName',
+  ],
+  $schema: 'http://json-schema.org/draft-04/schema#',
+};
 
 export const validateFeaturedAuthor = (obj: {}): ValidationError[] => {
-    const { errors } = validate(obj, generatedJSONSchema);
-    return errors;
+  const { errors } = validate(obj, generatedJSONSchema);
+  return errors;
 };
 ```
 
@@ -57,9 +80,6 @@ export const validateFeaturedAuthor = (obj: {}): ValidationError[] => {
 ...
 const errors = validateFeaturedAuthor(parsedJSONFile);
 ```
-
-For JS create a JSON schema yourself or use [one of these tools](https://stackoverflow.com/questions/7341537/tool-to-generate-json-schema-from-json-data#answer-30294535). For typescript generate a schema with the following tool: [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
-
 
 ### Property Based Testing
 

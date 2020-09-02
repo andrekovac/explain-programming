@@ -25,7 +25,7 @@ tags: ['learning']
 
 4. Let your curiosity guide your learning plan.
 
-> Tips taken from [this video](https://youtu.be/hKBZjH7Ot2g) from Siraj Raval
+> Tips taken from [this video of Siraj Raval](https://youtu.be/hKBZjH7Ot2g)
 
 ## Further tips for learning
 
@@ -50,3 +50,11 @@ Take education to the next level via a journey through these four steps:
 2. **Reflective observation**: Reflecting
 3. **Abstract conceptualization**: Thinking
 4. **Active experimentation**: Acting - So what? How can I apply this.
+
+## Learning approaches
+
+Learning by doing, constructive Struggling, problem-based learning, Flipped Learning, Just in Time Learning
+
+See https://www.teachthought.com/pedagogy/modern-trends-education-50-different-approaches-learning/
+
+### Just in time learning

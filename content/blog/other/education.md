@@ -26,12 +26,15 @@ Educational software I collect
 | [Code](https://code.org/)                       | Hour of code                                                                                        |
 | [MIT App Inventor](http://appinventor.mit.edu/) | Build mobile apps with Scratch                                                                      |
 | [Thunkable](https://thunkable.com/home/)        | The fastest way from idea to mobile app without coding - created by the **MIT App Inventor** people |
-| [Thunkable](https://thunkable.com/home/)        | The fastest way from idea to mobile app without coding - created by the **MIT App Inventor** people |
 
 ## Virtual learning spaces
 
 - [Tricat](https://www.tricat.net/): Virtual offices etc.
 - [MineTest](http://www.minetest.net/): Open source MineCraft
+
+## Methods to engage an audience (e.g. in a workshop)
+
+- [Aha slides](https://ahaslides.com/): Nice multiple choice questions etc.
 
 ## Electronic Gadgets
 
