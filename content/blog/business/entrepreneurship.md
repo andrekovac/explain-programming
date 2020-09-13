@@ -71,3 +71,35 @@ Gary Vaynerchuk said on Instagram: Go **acyclical**! If they don't do things a c
 ### Germany
 
 - [Erasmus für junge Unternehmer/innen](https://europa.eu/youreurope/business/running-business/start-ups/erasmus-young-entrepreneurs/index_de.htm)
+
+## Fundraising
+
+### Glossary
+
+- **Accreditation**: An investor is “accredited” according to the SEC if she either A), has a personal net worth of over $1M, not including real estate (it’s unclear whether stock you hold counts toward your net worth), or B), has made a salary of over $200k over the past two years individually, or over \$300k over the past two years jointly with a spouse. Technically you have to be accredited to make angel investments, although those requirements become fuzzier when you’re investing other people’s money. Accreditation is designed to protect investors from investing money that they aren’t wealthy enough to afford to lose, and does not take into account how knowledgeable or experienced investors are.
+
+- **Common stock** A class of stock belonging to the founders and the employees of a startup. The most basic unit of equity ownership.
+
+- **Convertible note or debt** A form of short-term debt that converts into equity, typically in conjunction with a future financing round; in effect, the investor is loaning money to a startup and instead of a return in the form of principal plus interest, the investor expects to get equity in the company.
+
+- **Debt** A loan from investors that is never meant to be paid back. It is intended to convert into stock at a future date, based on some to-be-determined price. It assumes that you’re investing in a fast-growing company that will raise subsequent financing rounds quickly.
+
+- **Dilution** As companies grow and become more valuable, they take in more outside funding. The new investors take equity in the company, reducing the amount that current shareholders own. If a new investor buys 20% of the company, the existing shareholders get diluted 20%. Even though founders generally want to avoid dilution, it’s inevitable and it means they have a smaller piece of a more valuable whole.
+
+- **Equity** Stock and an ownership stake in a company. An ownership position.
+
+- **Equity round / priced round** An offering and sale of newly-created stock in a company at an agreed-upon per share price.
+
+- **Post-money valuation** The value of a company after a fundraising round, calculated by adding the amount raised to the pre-money valuation.
+
+- **Preferred shareholder** A class of shareholders that have greater claim to the company’s assets than common stockholders and have additional rights. They are first in line to collect a payout if an exit that’s lower than the company’s valuation occurs (i.e., bankruptcy or mergers/acquisitions).
+
+- **Pre-money valuation** The value of a company before a fundraising round.
+
+- **Pro rata** A right to invest more capital to preserve your ownership stake in a company as it raises additional rounds.
+
+- **SAFE** Stands for Simple Agreement for Future Equity. A simple mechanism to make an investment in an early-stage startup. With a SAFE, you are buying the right to buy into a future equity round at a cheaper price.
+
+- **Term sheet** An agreement in principle that outlines the terms of an investment deal. It is not a contract or a promise to invest, and thus is not binding and does not mean that the investment deal is completed. Think of it as a signal that investors are interested. Some investors only offer term sheets if they’re committed and certain they want to invest (like us at Accomplice); others offer term sheets more freely.
+
+Taken from [here](https://medium.com/@sarahadowney/how-to-angel-invest-part-9-example-exit-scenarios-glossary-and-further-reading-6f8002687213).

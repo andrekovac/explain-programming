@@ -19,11 +19,13 @@ tags: ['javascript', 'react']
 
 ## Wrong example of `useEffect` hook usage and how to fix it
 
+### `useRef`
+
 ### Error
 
 The following code leads to a `max update depth exceeded` error because the dependency `editOrganisation` will always be reset again:
 
-```js
+```js {14,16}
 const MyComponent = () => {
   const [editOrganisation, setEditOrganisation] = useState({
     name: '',
@@ -47,7 +49,7 @@ const MyComponent = () => {
 
 Add callback function to hook setter:
 
-```js
+```js {10,12}
 const MyComponent = () => {
   const [editOrganisation, setEditOrganisation] = useState({
     name: '',
@@ -57,7 +59,7 @@ const MyComponent = () => {
   const { data: organisation } = useSWR('/organisations');
   useEffect(() => {
     if (organisation) {
-      setEditOrganisation(prevState => ({ ...prevState, ...organization }));
+      setEditOrganisation((prevState) => ({ ...prevState, ...organization }));
     }
   }, [organisation]);
 };
@@ -68,38 +70,40 @@ const MyComponent = () => {
 In comparison to the clasical way of writing stateful components in React, with hooks we can abstract away the API request into the custom hook `useRequestHandler`:
 
 ```js
-import {useState} from 'react';
+import { useState } from 'react';
 
 const useRequestHandler = () => {
-    const [isLoading, setLoading] = useState(false);
-    const [hasError, setError] = useState(false);
-    const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+  const [hasError, setError] = useState(false);
+  const [data, setData] = useState(null);
 
-    const handleRequest = (request) => {
-        setLoading(true);
-        setError(false);
+  const handleRequest = (request) => {
+    setLoading(true);
+    setError(false);
 
-        return api.get(request)
-            .then(setData)
-            .catch(() => setError(true))
-            .finally(() => setLoading(false))
-    };
+    return api
+      .get(request)
+      .then(setData)
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  };
 
-    return {isLoading, hasError, data, handleRequest};
+  return { isLoading, hasError, data, handleRequest };
 };
 
-
 const UserList = () => {
-    const {data, isLoading, hasError, handleRequest} = useRequestHandler();
+  const { data, isLoading, hasError, handleRequest } = useRequestHandler();
 
-    const searchUsers = (value) => handleRequest(`/users?searchKey=${value}`);
+  const searchUsers = (value) => handleRequest(`/users?searchKey=${value}`);
 
-    return (
-        <React.Fragment>
-            {data.map(u => <p>{u.name}</p>)}
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      {data.map((u) => (
+        <p>{u.name}</p>
+      ))}
+    </React.Fragment>
+  );
+};
 ```
 
 [Example taken from here](https://medium.com/better-programming/react-state-management-in-2020-719d10c816bf)
@@ -116,15 +120,19 @@ const UserList = () => {
 ### Javascript React (Web) example
 
 ```js
-import React from "react"
-import {useDispatch, useSelector} from "react-redux"
-import {toggleAction} from "./store/toggleActions"
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleAction } from './store/toggleActions';
 
 const Toggle = () => {
-  const on = useSelector(state => state.toggle.on)
-  const dispatch = useDispatch()
-  return <button onClick={() => dispatch(toggleAction())}>{on ? 'on' : 'off'}</button>
-}
+  const on = useSelector((state) => state.toggle.on);
+  const dispatch = useDispatch();
+  return (
+    <button onClick={() => dispatch(toggleAction())}>
+      {on ? 'on' : 'off'}
+    </button>
+  );
+};
 ```
 
 ### Typescript React Native (mobile) complete example
@@ -206,14 +214,14 @@ export const INCREASE = 'INCREASE';
 import { INCREASE } from '../actionTypes/counter';
 
 export type CounterActionT = {
-    type: typeof INCREASE
-}
+  type: typeof INCREASE,
+};
 
 export const increase = (): CounterActionT => {
-    return {
-        type: INCREASE,
-    }
-}
+  return {
+    type: INCREASE,
+  };
+};
 ```
 
 ## Limitations of hooks (vs. state management libraries)

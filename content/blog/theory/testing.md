@@ -5,8 +5,11 @@ author: 'André Kovac'
 description: 'Discussing the different types of testing and some concepts around testing'
 category: 'theory'
 tags: ['test', 'javascript']
-draft: true
+draft: false
+ready: true
 ---
+
+What is out there in the world of testing. This article categorizes them briefly and introduces you to some advanced testing concepts you might not have yet heard about.
 
 ## Different types of testing
 
@@ -85,7 +88,10 @@ const errors = validateFeaturedAuthor(parsedJSONFile);
 
 [What is Property Based Testing?](https://hypothesis.works/articles/what-is-property-based-testing/)
 
-Randomly generated test cases based on defined properties (like [QuickCheck](https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html) does for Haskell).
+> Randomly generated test cases based on defined properties (like [QuickCheck](https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html) does for Haskell).
+
+- [fast-check](https://github.com/dubzzz/fast-check) is a property based testing framework for JavaScript/TypeScript.
+- [Hypothesis](https://github.com/HypothesisWorks/hypothesis) is also a big framework in the space of property based testing which has a bit of a different philosophy as compared to QuickCheck.
 
 ### Snapshot testing
 

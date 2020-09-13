@@ -13,6 +13,7 @@ Useful tools to do things in privacy
 
 - [Overview of tools which preserve privacy](https://www.privacytools.io/)
 - [Jitsi - More secure, more flexible, and completely free video conferencing](https://jitsi.org/)
+- [Signal](https://www.signal.org/)
 
 ### Tracking
 
@@ -49,12 +50,10 @@ VPNs are good, but they also bare a risk. All your internet traffic is routed th
 - [Tails is a Live-Operating system](https://www.privacytools.io/operating-systems/#live_os) - It can boot on almost any computer from a DVD, USB stick, or SD card you control.
 - Install the [Tails operating system](https://tails.boum.org/) on a USB-thumb-drive
 
-
 ### File Exchange
 
 - [Send files up to 1GB with **Firefox Send**](https://send.firefox.com/)
 - [Write and share files with **Privatebin**](https://privatebin.net/)
-
 
 ### Search
 
@@ -66,7 +65,6 @@ VPNs are good, but they also bare a risk. All your internet traffic is routed th
 - [**PassBolt**: The password manager your team was waiting for. Free, open source, self-hosted, extensible, OpenPGP based. ](https://www.passbolt.com/)
 - [**TeamPass** is a Passwords Manager dedicated for managing passwords in a collaborative way by sharing them among team members.](https://teampass.net/)
 
-
 ## Storage
 
 - [**openmediavault**: Next generation network attached storage (NAS) solution based on Debian Linux](https://www.openmediavault.org/)
@@ -77,6 +75,6 @@ Simulate phishing attack to train employees to be more sensitive towards such me
 
 **Tools**:
 
-* [MailHog](https://github.com/mailhog/MailHog)
-* [Gophish](https://getgophish.com/)
-  * [Sending Profiles](https://docs.getgophish.com/user-guide/documentation/sending-profiles)
+- [MailHog](https://github.com/mailhog/MailHog)
+- [Gophish](https://getgophish.com/)
+  - [Sending Profiles](https://docs.getgophish.com/user-guide/documentation/sending-profiles)
