@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 import { Box } from '@chakra-ui/core';
 
 import Footer from '../components/footer';
@@ -8,7 +7,6 @@ import Header from '../components/article/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import { mapCategoryToColor } from '../constants/Category';
 import { rhythm } from '../style/typography';
 
 const ArticleLink = ({ message, href }) => (
@@ -17,56 +15,80 @@ const ArticleLink = ({ message, href }) => (
   </a>
 );
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark;
-    const { title: siteTitle, siteUrl } = this.props.data.site.siteMetadata;
-    const slug = post.fields.slug;
+const BlogPostTemplate = (props) => {
+  const post = props.data.markdownRemark;
+  const { title: siteTitle, siteUrl } = props.data.site.siteMetadata;
+  const slug = post.fields.slug;
 
-    const githubSlug =
-      slug.split('/').length > 3
-        ? `${slug.slice(0, -1)}.md`
-        : `${slug}index.md`;
+  const commentBox = React.createRef();
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <Box>
-          <article>
-            <Header
-              category={post.frontmatter.category}
-              title={post.frontmatter.title}
-              tags={post.frontmatter.tags}
-            />
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-            <p
-              style={{
-                marginTop: rhythm(1),
-              }}
-            >
-              <ArticleLink
-                message="Discuss on Twitter"
-                // href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
-                href={`http://twitter.com/share?text=@andrekovac I just read your post about ${
-                  post.frontmatter.title
-                } and was wondering [...]&url=${siteUrl}${slug}&hashtags=${post.frontmatter.tags.join()}`}
-              />
-              <span> ● </span>
-              <ArticleLink
-                message="Edit on GitHub"
-                href={`https://github.com/andrekovac/explain-programming/edit/master/content/blog${githubSlug}`}
-              />
-            </p>
-            <Footer />
-          </article>
-        </Box>
-      </Layout>
+  const githubSlug =
+    slug.split('/').length > 3 ? `${slug.slice(0, -1)}.md` : `${slug}index.md`;
+
+  useEffect(() => {
+    const commentScript = document.createElement('script');
+
+    commentScript.src = 'https://utteranc.es/client.js';
+    commentScript.async = true;
+
+    commentScript.setAttribute(
+      'repo',
+      'andrekovac/explain-programming-comments'
     );
-  }
-}
+    commentScript.setAttribute('issue-term', 'pathname');
+    commentScript.setAttribute('theme', 'github-light');
+    commentScript.setAttribute('crossorigin', 'anonymous');
+    commentScript.setAttribute('id', 'utterances');
+
+    if (commentBox && commentBox.current) {
+      commentBox.current.appendChild(commentScript);
+    } else {
+      console.log(`Error adding utterances comments on: ${commentBox}`);
+    }
+  }, []);
+
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <Box>
+        <article>
+          <Header
+            category={post.frontmatter.category}
+            title={post.frontmatter.title}
+            tags={post.frontmatter.tags}
+          />
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <p>
+            <h2>Discussion</h2>
+            <div ref={commentBox} />
+          </p>
+          <p
+            style={{
+              marginTop: rhythm(1),
+            }}
+          >
+            <ArticleLink
+              message="Discuss on Twitter"
+              // href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
+              href={`http://twitter.com/share?text=@andrekovac I just read your post about ${
+                post.frontmatter.title
+              } and was wondering [...]&url=${siteUrl}${slug}&hashtags=${post.frontmatter.tags.join()}`}
+            />
+            <span> ● </span>
+            <ArticleLink
+              message="Improve this article: Edit on GitHub"
+              href={`https://github.com/andrekovac/explain-programming/edit/master/content/blog${githubSlug}`}
+            />
+          </p>
+          <Footer />
+        </article>
+      </Box>
+    </Layout>
+  );
+};
 
 export default BlogPostTemplate;
 
