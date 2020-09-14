@@ -33,16 +33,36 @@ Currently the site is available [here](https://quizzical-jang-fb6dca.netlify.com
 
 1. Bash
 
-   Use `bash` or `bash-output`
+   - Use `bash` or `bash-output`.
+   - This will lead to a special code-block design.
 
 2. Title
 
-   Use `js:title=server.js`
+   Set a file title with `js:title=server.js`.
 
 3. Line highlighting
 
    - Use `js {3}` or `js {3-5}` to highlight one or several lines
-   - Use `js {3-4,6}` to highlight different areas where **empty lines** are in-between.
+   - Use `js {3-4,6}` to highlight different areas where **empty lines** are in-between. Note that there is no space after the comma!
+
+## Article meta data
+
+Each article contains the following meta data at the top:
+
+```js
+---
+title: <string> The blog title
+date: <string> Date at which writing of this article began, e.g. '1999-01-01'
+datePublished: <string> Date at which article got published
+author: <string>
+description: <string> Used as preview text in list
+category: <string> See available categories in `src/constants/Category.js`
+tags: <Array<string>> See available tags in `src/constants/Tag.js`
+draft: <boolean> Whether to display in `blog` page in __DEV__ mode
+ready: <boolean> Release candidate - article ready to be released
+published: <boolean> Whether article got published
+---
+```
 
 ## Almost ready for a blog post
 
