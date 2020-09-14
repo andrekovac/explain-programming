@@ -15,7 +15,13 @@ const GlobalStyles = createGlobalStyle`
   }
   p {
     color: ${theme.colors.gray[900]};
-    margin-bottom: ${theme.space[1]};
+    margin-top: ${theme.space[2]};
+    margin-bottom: ${theme.space[2]};
+  }
+  hr {
+    margin-top: ${theme.space[6]};
+    margin-bottom: ${theme.space[4]};
+    height: 2px;
   }
 
   @keyframes example {
