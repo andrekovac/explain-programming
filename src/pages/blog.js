@@ -22,6 +22,21 @@ const BlogIndex = (props) => {
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
 
+  const isDevelopment = process.env.NODE_ENV === 'development';
+
+  const getItemBackgroundColor = (node) => {
+    const ready = node.frontmatter.ready;
+    const published = node.frontmatter.published;
+
+    if (published) {
+      return 'yellow.200';
+    }
+    if (ready) {
+      return 'green.200';
+    }
+    return 'none';
+  };
+
   const filterBySelectedTag = ({ node }) => {
     const tags = node.frontmatter.tags;
     if (selectedTag === NONE) {
@@ -31,6 +46,9 @@ const BlogIndex = (props) => {
     }
   };
 
+  const filterInDevMode = ({ node }) =>
+    node.frontmatter.published || isDevelopment;
+
   const onTagSelect = (tag) =>
     tag !== selectedTag ? setSelectedTag(tag) : setSelectedTag(NONE);
 
@@ -38,8 +56,7 @@ const BlogIndex = (props) => {
     <Layout location={props.location} title={siteTitle}>
       <SEO title="Home | Explain Programming" />
       <Box>
-        <Heading color="brand.500">Explain Programming Blog</Heading>
-        <Bio />
+        <Heading color="brand.500">All articles</Heading>
       </Box>
       <Flex
         my="5"
@@ -65,76 +82,81 @@ const BlogIndex = (props) => {
       </Flex>
 
       <Box my="5">
-        {posts.filter(filterBySelectedTag).map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`;
+        {posts
+          .filter(filterInDevMode)
+          .filter(filterBySelectedTag)
+          .map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`;
 
-          return (
-            <Article
-              key={node.fields.slug}
-              category={node.frontmatter.category}
-            >
-              <Link to={node.fields.slug}>
-                <PseudoBox
-                  overflow="hidden"
-                  _hover={{
-                    bg: 'gray.200',
-                  }}
-                >
-                  <Box p={{ base: '3', md: '5' }}>
-                    <Box display={{ md: 'flex' }}>
-                      <Flex direction="row">
-                        <Flex
-                          align="center"
-                          justify="center"
-                          px="3"
-                          fontSize="2xl"
-                        >
-                          {mapCategoryToShortHand[node.frontmatter.category]}
-                        </Flex>
-                        <Flex direction="column">
-                          <Box
-                            fontWeight="semibold"
-                            // as="h4"
-                            // lineHeight="tight"
-                            // isTruncated
+            return (
+              <Article
+                key={node.fields.slug}
+                category={node.frontmatter.category}
+              >
+                <Link to={node.fields.slug}>
+                  <PseudoBox
+                    overflow="hidden"
+                    bg={getItemBackgroundColor(node)}
+                    _hover={{
+                      bg: 'gray.200',
+                    }}
+                  >
+                    <Box p={{ base: '3', md: '5' }}>
+                      <Box display={{ md: 'flex' }}>
+                        <Flex direction="row">
+                          <Flex
+                            align="center"
+                            justify="center"
+                            px="3"
+                            fontSize="2xl"
                           >
-                            <Text>{title}</Text>
-                          </Box>
-                          <Box
-                            fontSize="xs"
-                            color="gray.600"
-                            dangerouslySetInnerHTML={{
-                              __html:
-                                node.frontmatter.description ||
-                                defaultDescription,
-                            }}
+                            {mapCategoryToShortHand[node.frontmatter.category]}
+                          </Flex>
+                          <Flex direction="column">
+                            <Box
+                              fontWeight="semibold"
+                              // as="h4"
+                              // lineHeight="tight"
+                              // isTruncated
+                            >
+                              <Text>{title}</Text>
+                            </Box>
+                            <Box
+                              fontSize="xs"
+                              color="gray.600"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  node.frontmatter.description ||
+                                  defaultDescription,
+                              }}
+                            />
+                          </Flex>
+                        </Flex>
+
+                        <Flex
+                          flexGrow="1"
+                          align="center"
+                          justify={{ base: 'left', md: 'right' }}
+                          mt={{ base: '2', md: '0' }}
+                          ml="3"
+                          w={{ base: '100%', md: '30%' }}
+                        >
+                          <Tags
+                            tags={node.frontmatter.tags}
+                            onTagSelect={onTagSelect}
+                            isClickable
                           />
                         </Flex>
-                      </Flex>
-
-                      <Flex
-                        flexGrow="1"
-                        align="center"
-                        justify={{ base: 'left', md: 'right' }}
-                        mt={{ base: '2', md: '0' }}
-                        ml="3"
-                        w={{ base: '100%', md: '30%' }}
-                      >
-                        <Tags
-                          tags={node.frontmatter.tags}
-                          onTagSelect={onTagSelect}
-                          isClickable
-                        />
-                      </Flex>
+                      </Box>
                     </Box>
-                  </Box>
-                </PseudoBox>
-              </Link>
-            </Article>
-          );
-        })}
+                  </PseudoBox>
+                </Link>
+              </Article>
+            );
+          })}
       </Box>
+      <Bio />
     </Layout>
   );
 };
@@ -165,8 +187,9 @@ export const pageQuery = graphql`
             category
             tags
             list
-            ready
             draft
+            ready
+            published
           }
           timeToRead
         }

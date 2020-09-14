@@ -160,7 +160,7 @@ const Article = styled.article`
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { draft: { ne: true }, ready: { eq: true } } }
+      filter: { frontmatter: { draft: { ne: true }, published: { eq: true } } }
       sort: { fields: [frontmatter___category], order: ASC }
     ) {
       edges {
