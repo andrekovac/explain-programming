@@ -9,6 +9,8 @@ import {
 } from 'react-icons/fa';
 import { IoIosMail as Mail } from 'react-icons/io';
 
+import DevpostLogo from './devpostLogo';
+
 const iconSize = 32;
 
 const links = [
@@ -21,6 +23,11 @@ const links = [
     name: 'Stack Overflow',
     renderLink: () => <StackOverflow size={iconSize} />,
     url: 'http://stackoverflow.com/users/3210677/andru',
+  },
+  {
+    name: 'Devpost (Hackathons)',
+    renderLink: () => <DevpostLogo size={`${iconSize}px`} />,
+    url: 'https://devpost.com/Andrusch',
   },
   {
     name: 'LinkedIn',
