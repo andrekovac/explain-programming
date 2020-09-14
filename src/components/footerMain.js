@@ -1,35 +1,24 @@
 import React from 'react';
-import { Box, Heading, Flex, Text, Button } from '@chakra-ui/core';
-import Link from './link';
+import { Box, Flex, Text } from '@chakra-ui/core';
 import Newsletter from './newsletter';
 import ProfileLinks from './profileLinks';
 import RoundedLinkInternal from './roundedLinkInternal';
-import RoundedLinkExternal from './RoundedLinkExternal';
+import RoundedLinkExternal from './roundedLinkExternal';
 
 import LogoWhite from './logoWhite';
-
-const MenuItems = ({ children }) => (
-  <Text mt={{ base: 4, md: 0 }} mr={6} display="block" color="white">
-    {children}
-  </Text>
-);
 
 /**
  * Footer on main pages
  */
 const FooterMain = (props) => {
-  const [show, setShow] = React.useState(false);
-  const handleToggle = () => setShow(!show);
-
   return (
     <Flex
       direction="column"
       padding="1rem"
       bg="brand.500"
       minHeight={{ base: 0, md: '300px' }}
-      align={{ base: 'center', md: 'end' }}
-      justify="center"
       align="center"
+      justify="center"
     >
       <Flex direction={{ base: 'column', md: 'row' }} maxW="2xl">
         {props.hideNewsletter ? null : <Newsletter />}

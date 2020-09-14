@@ -1,14 +1,10 @@
-import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
-import { Flex, Box, Badge, Image, PseudoBox, Text } from '@chakra-ui/core';
+import React from 'react';
+import { Flex, Box } from '@chakra-ui/core';
 import CookieConsent from 'react-cookie-consent';
 
 import GlobalStyle from '../style/globalStyles';
-import Logo from './logo';
 import Header from './header';
 import Footer from './footerMain';
-
-import { rhythm, scale } from '../style/typography';
 
 const Layout = (props) => {
   const { location, title, children, hideNewsletter } = props;

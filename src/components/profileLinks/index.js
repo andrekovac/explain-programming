@@ -5,7 +5,7 @@ import { Box, Flex } from '@chakra-ui/core';
 import * as S from './styles';
 import links from './links';
 
-export default () => (
+const ProfileLinks = () => (
   <>
     <S.IconsWrapper>
       {links.map((link, key) => (
@@ -22,3 +22,5 @@ export default () => (
     <ReactTooltip place="bottom" type="dark" effect="solid" />
   </>
 );
+
+export default ProfileLinks;

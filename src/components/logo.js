@@ -1,8 +1,14 @@
-import React from "react";
+import React from 'react';
 
-const Logo = props => (
-  <svg width={props.width || "1em"} height={props.height || "1em"} viewBox="0 0 390 345" fill="none" {...props}>
-    <g filter="url(#Logo_svg__filter0_d)" fill="#9C590B">
+const Logo = (props) => (
+  <svg
+    width={props.width || '1em'}
+    height={props.width || '1em'}
+    viewBox="0 0 390 345"
+    fill="none"
+    {...props}
+  >
+    <g filter="url(#Logo_svg__filter0_d)" fill="#C16D6D">
       <path d="M69.62 328.538c-1.87 2.391.588 5.729 3.427 4.653l60.855-23.071a2.993 2.993 0 001.241-.885L177.9 257.92c1.628-1.954.239-4.92-2.305-4.92H89.123c-2.29 0-3.736 2.463-2.619 4.462l15.153 27.141a3 3 0 01-.256 3.311l-31.78 40.624z" />
       <rect x={4} y={3} width={376} height={264} rx={132} />
     </g>
