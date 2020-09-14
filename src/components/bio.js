@@ -10,6 +10,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { Flex, Box, PseudoBox } from '@chakra-ui/core';
 
+import RoundedLinkExternal from '../components/roundedLinkExternal';
+
 import { rhythm } from '../style/typography';
 import theme from '../style/theme';
 
@@ -65,22 +67,20 @@ const Bio = () => {
               minWidth: 100,
             }}
             imgStyle={{
-              borderRadius: '5px',
+              borderRadius: '0.25rem',
             }}
           />
         </PseudoBox>
       </Link>
 
       <p>
-        Useful commands and knowledge collected over many years by{' '}
-        <strong>{author}</strong> who creates software, teaches coding and
-        speaks at events.
+        <RoundedLinkExternal
+          message={'André Kovac'}
+          href={`https://www.andrekovac.com/`}
+        />
         {` `}
-        Visit his{' '}
-        <a className="normal" href={`https://www.andrekovac.com/`}>
-          homepage
-        </a>{' '}
-        to find out what he is up to and for ways to get in touch.
+        builds products, creates software, teaches coding, communicates science
+        and speaks at events.
       </p>
     </Flex>
   );

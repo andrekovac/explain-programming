@@ -10,6 +10,7 @@ import SEO from '../components/seo';
 import Tags from '../components/tags';
 import Link from '../components/link';
 import Tag from '../components/tag';
+import RoundedLinkExternal from '../components/roundedLinkExternal';
 
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { mapCategoryToShortHand } from '../constants/Category';
@@ -39,7 +40,13 @@ const BlogIndex = (props) => {
       <SEO title="Home | Explain Programming" />
       <Box>
         <Heading color="brand.500">Explain Programming</Heading>
-        <Bio />
+        <Box>
+          Commands and coding experience collected over several years by{' '}
+          <RoundedLinkExternal
+            message={'André Kovac'}
+            href={`https://www.andrekovac.com/`}
+          />
+        </Box>
       </Box>
       <Flex
         my="5"
@@ -50,7 +57,11 @@ const BlogIndex = (props) => {
       >
         <Flex align="center">
           <Box mr="2">These are articles with the</Box>
-          <Tag tag={selectedTag} />
+          <Tag
+            tag={selectedTag}
+            onClick={() => setSelectedTag(NONE)}
+            isClickable
+          />
           <Box mr="1">tag.</Box>
         </Flex>
         <Flex align="center">
@@ -135,6 +146,7 @@ const BlogIndex = (props) => {
           );
         })}
       </Box>
+      <Bio />
     </Layout>
   );
 };

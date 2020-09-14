@@ -19,9 +19,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   @keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
-}
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
 
   a {
     color: ${theme.colors.gray[900]};
@@ -31,6 +31,18 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       color: ${theme.colors.white};
       background-image: linear-gradient(transparent 0, #a14444 5%);
+    }
+  }
+
+  /*
+   * Disable anchor tag style on links which appear to left of headers
+   */
+  h1 > a, h2 > a, h3 > a, h4 > a, h5 > a {
+    background: none;
+
+    &:hover {
+      color: ${theme.colors.brand[500]};
+      background-image: none;
     }
   }
 

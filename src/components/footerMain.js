@@ -3,6 +3,8 @@ import { Box, Heading, Flex, Text, Button } from '@chakra-ui/core';
 import Link from './link';
 import Newsletter from './newsletter';
 import ProfileLinks from './profileLinks';
+import RoundedLinkInternal from './roundedLinkInternal';
+import RoundedLinkExternal from './RoundedLinkExternal';
 
 import LogoWhite from './logoWhite';
 
@@ -51,28 +53,26 @@ const FooterMain = (props) => {
         <Flex color="white" display="inline">
           <Text display={{ base: 'block', md: 'inline' }} color="white">
             {`${new Date().getFullYear()}, Built by `}
-            <Link to={'https://www.andrekovac.com'} isText>
-              André Kovac
-            </Link>
+            <RoundedLinkExternal
+              message={'André Kovac'}
+              href={'https://www.andrekovac.com'}
+              hasBorder
+            />
           </Text>
           <Text display={{ base: 'none', md: 'inline' }} color="white" px="2">
             ●
           </Text>
-          <Link to={'/about'} isText>
-            About
-          </Link>
+          <RoundedLinkInternal to={'/about'}>About</RoundedLinkInternal>
           <Text color="white" display="inline" px="2">
             ●
           </Text>
-          <Link to={'/imprint'} isText>
-            Imprint
-          </Link>
+          <RoundedLinkInternal to={'/imprint'}>Imprint</RoundedLinkInternal>
           <Text color="white" display="inline" px="2">
             ●
           </Text>
-          <Link to={'/privacy-policy'} isText>
+          <RoundedLinkInternal to={'/privacy-policy'}>
             Privacy Policy
-          </Link>
+          </RoundedLinkInternal>
         </Flex>
       </Flex>
     </Flex>

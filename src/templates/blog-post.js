@@ -6,14 +6,9 @@ import Footer from '../components/footer';
 import Header from '../components/article/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import RoundedLinkExternal from '../components/roundedLinkExternal';
 
 import { rhythm } from '../style/typography';
-
-const ArticleLink = ({ message, href }) => (
-  <a className="normal" href={href} target="_blank" rel="noopener noreferrer">
-    {message}
-  </a>
-);
 
 const BlogPostTemplate = (props) => {
   const post = props.data.markdownRemark;
@@ -70,7 +65,7 @@ const BlogPostTemplate = (props) => {
               marginTop: rhythm(1),
             }}
           >
-            <ArticleLink
+            <RoundedLinkExternal
               message="Discuss on Twitter"
               // href={`https://mobile.twitter.com/search?q=${siteUrl}${slug}`}
               href={`http://twitter.com/share?text=@andrekovac I just read your post about ${
@@ -78,7 +73,7 @@ const BlogPostTemplate = (props) => {
               } and was wondering [...]&url=${siteUrl}${slug}&hashtags=${post.frontmatter.tags.join()}`}
             />
             <span> ● </span>
-            <ArticleLink
+            <RoundedLinkExternal
               message="Improve this article: Edit on GitHub"
               href={`https://github.com/andrekovac/explain-programming/edit/master/content/blog${githubSlug}`}
             />
