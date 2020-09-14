@@ -49,21 +49,6 @@ class AboutPage extends React.Component {
             again which is a nice ( and sometimes emberrassing 🙈) exercise.
           </li>
         </ul>
-        <h3>Information about the content 🐫</h3>
-        <ul>
-          <li>
-            I'm gradually adding more of the files I have on my computer,
-            cleaning, checking and revising them beforehand (sometimes more,
-            sometimes less).
-          </li>
-          <li>Main future features will be a search and a better look.</li>
-          <li>
-            Some pages only contain very basic information for the simple tasks
-            I mostly used it for or just wanted to remember whereas some pages
-            are more elaborate. Other pages contain more in depth discussions
-            and theory.
-          </li>
-        </ul>
         <h3>Who's behind this? 🌱</h3>
         <ul>
           <li>

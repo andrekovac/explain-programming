@@ -15,6 +15,7 @@ import RoundedLinkExternal from '../components/roundedLinkExternal';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { mapCategoryToShortHand } from '../constants/Category';
 import { NONE, SHOW_ALL } from '../constants/Tag';
+import { isTabletOrMobile } from '../utils/device';
 
 const BlogIndex = (props) => {
   const [selectedTag, setSelectedTag] = useState(NONE);
@@ -88,6 +89,7 @@ const BlogIndex = (props) => {
               <Link to={node.fields.slug}>
                 <PseudoBox
                   overflow="hidden"
+                  bg={isTabletOrMobile ? 'gray.200' : 'none'}
                   _hover={{
                     bg: 'gray.200',
                   }}

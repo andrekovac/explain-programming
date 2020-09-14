@@ -14,6 +14,7 @@ import Tag from '../components/tag';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { mapCategoryToShortHand } from '../constants/Category';
 import { NONE, SHOW_ALL } from '../constants/Tag';
+import { isTabletOrMobile } from '../utils/device';
 
 const BlogIndex = (props) => {
   const [selectedTag, setSelectedTag] = useState(NONE);
@@ -31,8 +32,11 @@ const BlogIndex = (props) => {
     if (isDevelopment && published) {
       return 'yellow.200';
     }
-    if (ready) {
+    if (isDevelopment && ready) {
       return 'green.200';
+    }
+    if (isTabletOrMobile) {
+      return 'gray.200';
     }
     return 'none';
   };
