@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import { Text, Link as ChakraLink } from '@chakra-ui/core';
+import { Link as ChakraLink } from '@chakra-ui/core';
 import styled from 'styled-components';
 
 import theme from '../style/theme';
@@ -13,7 +13,6 @@ const Link = ({
   to,
   activeClassName,
   partiallyActive,
-  isText,
   solid,
   ...other
 }) => {
@@ -28,24 +27,13 @@ const Link = ({
         to={to}
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
-        isText={isText}
         {...other}
       >
         {children}
       </EmptyLink>
     );
   }
-  return isText ? (
-    <TextLink
-      href={to}
-      target="_blank"
-      rel="noopener noreferrer"
-      solid={solid}
-      {...other}
-    >
-      {children}
-    </TextLink>
-  ) : (
+  return (
     <DefaultLink href={to} target="_blank" rel="noopener noreferrer" {...other}>
       {children}
     </DefaultLink>
@@ -60,28 +48,23 @@ const DefaultLink = styled(ChakraLink)`
 `;
 
 const TextLink = styled(ChakraLink)`
-  color: ${(props) =>
-    props.solid ? theme.colors.brand[500] : theme.colors.white};
+  color: ${theme.colors.white};
   background: linear-gradient(transparent 80%, white 0);
   text-decoration: none;
 
   &:hover {
-    color: ${(props) =>
-      props.solid ? theme.colors.brand[300] : theme.colors.brand[500]};
+    color: ${theme.colors.brand[500]};
     background: linear-gradient(transparent 0, white 5%);
   }
 `;
 
 const EmptyLink = styled(GatsbyLink)`
   color: ${theme.colors.white};
-  background: ${(props) =>
-    props.isText ? 'linear-gradient(transparent 80%, white 0)' : 'none'};
+  background: none;
   text-decoration: none;
 
   &:hover {
-    background: ${(props) =>
-      props.isText ? 'linear-gradient(transparent 0, white 5%)' : 'none'};
-    color: ${(props) => (props.isText ? theme.colors.brand[500] : 'inherit')};
+    background: none;
   }
 `;
 
