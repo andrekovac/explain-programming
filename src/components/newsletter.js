@@ -8,10 +8,10 @@ import { rhythm } from '../style/typography';
 
 const WHITE = theme.colors.white;
 const PRIMARY = theme.colors.brand[500];
-const SECONDARY = theme.colors.brand[200];
 
 const Newsletter = () => {
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
   const { register, handleSubmit, errors } = useForm();
@@ -65,6 +65,7 @@ const Newsletter = () => {
         if (!res.error) {
           // set local state
           setIsSuccess(true);
+          setIsError(false);
           setIsDone(true);
 
           // set cookies
@@ -78,8 +79,9 @@ const Newsletter = () => {
         if (process.env.NODE_ENV === 'development') {
           console.error('Error while sending data to ConvertKit', error);
         }
-        setIsSuccess(false);
         setIsDone(true);
+        setIsError(true);
+        setIsSuccess(false);
       });
   };
 
@@ -89,14 +91,14 @@ const Newsletter = () => {
       error = errors.email.message;
     }
     if (errors.email && errors.email.type === 'required') {
-      error = 'Pflichtfeld';
+      error = 'required field';
     }
     return error;
   };
 
   const getFirstNameError = () =>
     errors.firstName && errors.firstName.type === 'required'
-      ? 'Pflichtfeld'
+      ? 'required field'
       : null;
 
   return (
@@ -136,22 +138,40 @@ const Newsletter = () => {
           error={!!errors.email}
         />
 
-        <SubmitWrapper row={isDone && isSuccess}>
-          {isDone && isSuccess ? (
-            <>
-              <SuccessText>{`Perfect!\nCheck your mail and confirm your email address!`}</SuccessText>
-              <Box>
-                <Text>Didn't receive anything?</Text>
-                <ButtonRepeat
-                  onClick={() => {
-                    setIsSuccess(false);
-                    setIsDone(false);
-                  }}
-                >
-                  Try again
-                </ButtonRepeat>
-              </Box>
-            </>
+        <SubmitWrapper row={isDone && (isSuccess || isError)}>
+          {isDone ? (
+            isSuccess ? (
+              <>
+                <SuccessText>{`Perfect!\nCheck your mail and confirm your email address!`}</SuccessText>
+                <Box>
+                  <Text>Didn't receive anything?</Text>
+                  <ButtonRepeat
+                    onClick={() => {
+                      setIsSuccess(false);
+                      setIsError(false);
+                      setIsDone(false);
+                    }}
+                  >
+                    Try again
+                  </ButtonRepeat>
+                </Box>
+              </>
+            ) : (
+              <>
+                <ErrorTextSubmit>{`Something went wrong!\nPlease try again or check your internet connection!`}</ErrorTextSubmit>
+                <Box>
+                  <ButtonRepeat
+                    onClick={() => {
+                      setIsSuccess(false);
+                      setIsError(false);
+                      setIsDone(false);
+                    }}
+                  >
+                    Try again
+                  </ButtonRepeat>
+                </Box>
+              </>
+            )
           ) : (
             <Button type="submit">Sign up</Button>
           )}
@@ -229,6 +249,12 @@ const ErrorText = styled.span`
 
 const SuccessText = styled.div`
   color: #ffcc34;
+  font-weight: bold;
+  margin-bottom: ${rhythm(1)};
+`;
+
+const ErrorTextSubmit = styled.div`
+  color: ${theme.colors.red[200]};
   font-weight: bold;
   margin-bottom: ${rhythm(1)};
 `;

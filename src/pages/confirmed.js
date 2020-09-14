@@ -48,7 +48,7 @@ const Confirmed = (props) => {
       </p>
       <h4>
         <Link href={`/`}>
-          Back to the Explain Programming Hompage{' '}
+          Back to the Homepage{' '}
           <span role="img" aria-label="House Icon">
             🏠
           </span>
