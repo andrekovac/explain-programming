@@ -7,7 +7,7 @@ export const onServiceWorkerUpdateReady = () => window.location.reload();
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider theme={theme}>
-    {/* <CSSReset /> */}
+    <CSSReset />
     {element}
   </ThemeProvider>
 );

@@ -28,7 +28,7 @@ const BlogIndex = (props) => {
     const ready = node.frontmatter.ready;
     const published = node.frontmatter.published;
 
-    if (published) {
+    if (isDevelopment && published) {
       return 'yellow.200';
     }
     if (ready) {

@@ -11,35 +11,35 @@ breakpoints.md = breakpoints[1]; // greater than 768px
 breakpoints.lg = breakpoints[2]; // greater than 1024px
 breakpoints.xl = breakpoints[3]; // greater than 1440px
 
-const customTheme = {
-  ...theme,
-  colors: {
-    ...theme.colors,
-    // Generated with https://smart-swatch.netlify.app/#c16d6d
-    brand: {
-      50: '#ffe9e9',
-      100: '#eec7c7',
-      200: '#dca5a5',
-      300: '#cb8182',
-      400: '#bb5e5e',
-      500: '#a14444',
-      600: '#7e3435',
-      700: '#5b2525',
-      800: '#391515',
-      900: '#1b0404',
-    },
-    // brand: {
-    //   900: '#1a365d',
-    //   800: '#153e75',
-    //   700: '#2a69ac',
-    // },
+const customTheme = theme;
+
+customTheme.colors = {
+  ...theme.colors,
+  // Generated with https://smart-swatch.netlify.app/#c16d6d
+  brand: {
+    50: '#ffe9e9',
+    100: '#eec7c7',
+    200: '#dca5a5',
+    300: '#cb8182',
+    400: '#bb5e5e',
+    500: '#a14444',
+    600: '#7e3435',
+    700: '#5b2525',
+    800: '#391515',
+    900: '#1b0404',
   },
-  fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'Roboto, sans-serif',
-    // heading: 'Georgia, serif',
-    mono: 'Menlo, monospace',
-  },
+  // brand: {
+  //   900: '#1a365d',
+  //   800: '#153e75',
+  //   700: '#2a69ac',
+  // },
+};
+
+customTheme.fonts = {
+  body: 'system-ui, sans-serif',
+  heading: 'Roboto, sans-serif',
+  // heading: 'Georgia, serif',
+  mono: 'Menlo, monospace',
 };
 
 export default customTheme;

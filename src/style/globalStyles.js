@@ -7,11 +7,28 @@ import theme from './theme';
  */
 const GlobalStyles = createGlobalStyle`
   h1 {
-    margin: 0 0 2rem 0;
+    font-size: ${theme.fontSizes['3xl']};
+    font-weight: ${theme.fontWeights.medium};
+    margin: ${theme.space[4]} 0 ${theme.space[4]} 0;
   }
   h2 {
+    font-size: ${theme.fontSizes['2xl']};
+    font-weight: ${theme.fontWeights.medium};
+    margin-top: ${theme.space[4]};
+    margin-bottom: ${theme.space[2]};
     /* border-bottom: ${theme.borders['1px']} solid ${theme.colors.gray[200]}; */
     /* background: linear-gradient(transparent 80%, #cb8182 0); */
+  }
+  h3 {
+    font-size: ${theme.fontSizes['xl']};
+    font-weight: ${theme.fontWeights.bold};
+    margin-top: ${theme.space[4]};
+    margin-bottom: ${theme.space[2]};
+  }
+  h4 {
+    font-size: ${theme.fontSizes['lg']};
+    margin-top: ${theme.space[2]};
+    margin-bottom: ${theme.space[2]};
   }
   p {
     color: ${theme.colors.gray[900]};
@@ -223,6 +240,7 @@ const GlobalStyles = createGlobalStyle`
   code[class*='language-'] {
     /* Wrap inline code blocks */
     white-space: pre-wrap;
+    font-size: 0.8rem;
   }
 
   /* Code blocks */
@@ -264,13 +282,13 @@ const GlobalStyles = createGlobalStyle`
 
 
   h1 > code[class*='language-'] {
-    font-size: 1.3rem;
+    font-size: ${theme.fontSizes['2xl']};
   }
   h2 > code[class*='language-'] {
-    font-size: 1.2rem;
+    font-size: ${theme.fontSizes['xl']};
   }
   h3 > code[class*='language-'] {
-    font-size: 1rem;
+    font-size: ${theme.fontSizes['lg']};
   }
 
   .token.comment,
