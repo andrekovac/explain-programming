@@ -4,7 +4,7 @@ import { Box, Flex, Text, Button, PseudoBox } from '@chakra-ui/core';
 import LogoWhite from './logoWhite';
 import Link from './link';
 import ProfileLinks from './profileLinks';
-import { PROJECTS, BLOG } from '../constants/Page';
+import { ABOUT, BLOG } from '../constants/Page';
 
 const MenuItem = ({ children, to, currentPathname }) => (
   // <Link to={to ? `${__PATH_PREFIX__}/${to}` : `${__PATH_PREFIX__}/`}>
@@ -131,9 +131,8 @@ const Header = (props) => {
             <MenuItem to={BLOG} currentPathname={pathname}>
               Blog
             </MenuItem>
-            <MenuItem currentPathname={pathname}>Talks</MenuItem>
-            <MenuItem to={PROJECTS} currentPathname={pathname}>
-              Projects
+            <MenuItem to={ABOUT} currentPathname={pathname}>
+              About
             </MenuItem>
           </Box>
 
