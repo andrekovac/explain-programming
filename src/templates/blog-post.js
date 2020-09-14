@@ -45,7 +45,7 @@ const BlogPostTemplate = (props) => {
     } else {
       console.log(`Error adding utterances comments on: ${commentBox}`);
     }
-  }, []);
+  }, [commentBox]);
 
   return (
     <Layout location={props.location} title={siteTitle}>

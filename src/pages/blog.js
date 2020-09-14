@@ -2,33 +2,18 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import {
-  Flex,
-  Box,
-  Badge,
-  Image,
-  PseudoBox,
-  Text,
-  Heading,
-} from '@chakra-ui/core';
+import { Flex, Box, PseudoBox, Text, Heading } from '@chakra-ui/core';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Tags from '../components/tags';
-import Author from '../components/author';
-import StyledLink from '../components/styledLink';
 import Link from '../components/link';
 import Tag from '../components/tag';
 
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
-import {
-  mapCategoryToShortHand,
-  mapCategoryToColor,
-} from '../constants/Category';
+import { mapCategoryToShortHand } from '../constants/Category';
 import { NONE, SHOW_ALL } from '../constants/Tag';
-import { PRIMARY, PRIMARY_HOVER } from '../constants/Colors';
-import { rhythm } from '../style/typography';
 
 const BlogIndex = (props) => {
   const [selectedTag, setSelectedTag] = useState(NONE);
@@ -158,26 +143,6 @@ export default BlogIndex;
 
 const Article = styled.article`
   /* background-color: yellow; */
-`;
-
-const ArticleElement = styled.article`
-  border-left: 10px solid ${(props) => mapCategoryToColor[props.category]};
-  padding-left: 10px;
-`;
-
-const ShowAllButton = styled.span`
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-  cursor: ${(props) => (!props.disabled ? 'inherit' : 'pointer')};
-  color: white;
-  background-color: ${PRIMARY};
-  opacity: ${(props) => (!props.disabled ? 0 : 1)};
-
-  &:hover,
-  &:active {
-    background-color: ${PRIMARY_HOVER};
-  }
 `;
 
 export const pageQuery = graphql`
