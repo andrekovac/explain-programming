@@ -60,6 +60,8 @@
     "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.20.6",
     "lodash": "^4.17.19",
     "prettier": "^2.0.5"
   },
