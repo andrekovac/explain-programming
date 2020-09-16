@@ -46,6 +46,7 @@ const GlobalStyles = createGlobalStyle`
     to {background-color: yellow;}
   }
 
+  /* a:not(.gatsby-resp-image-link) { */
   a {
     color: ${theme.colors.gray[900]};
     background: linear-gradient(transparent 80%, #cb8182 0);

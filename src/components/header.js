@@ -84,11 +84,11 @@ const Header = (props) => {
                 }
               }
             >
-              <Flex direction="column" justify="end">
-                <Text color="white" fontWeight="bold">
+              <Flex direction="column">
+                <Text color="white" fontWeight="bold" mb="0">
                   Explain
                 </Text>
-                <Text color="white" fontWeight="bold" mb="-9px">
+                <Text color="white" fontWeight="bold" mb="-9px" my="0">
                   Programming
                 </Text>
               </Flex>
@@ -140,14 +140,14 @@ const Header = (props) => {
             display={{ base: show ? 'flex' : 'none', md: 'flex' }}
             flexGrow="1"
             align="center"
-            justify={{ base: 'center', md: 'end' }}
+            justify={{ base: 'center', md: 'flex-end' }}
             mt={{ base: 4, md: 0 }}
           >
             <ProfileLinks />
           </Flex>
         </Flex>
 
-        <Flex justify="end" flexGrow="1" display={{ base: 'none', md: 'flex' }}>
+        <Flex justify="space-between" flexGrow="1" display={{ base: 'none', md: 'flex' }}>
           <PseudoBox
             transition="all 300ms"
             color="white"
@@ -159,6 +159,19 @@ const Header = (props) => {
             }}
           >
             Explain Programming
+          </PseudoBox>
+          <PseudoBox
+            transition="all 300ms"
+            color="brand.500"
+            fontWeight="bold"
+            mb="-9px"
+            transform="translateY(0.7rem)"
+            _hover={{
+              color: 'white',
+              transform: 'translateY(0rem)',
+            }}
+          >
+            Andrés online footprint
           </PseudoBox>
         </Flex>
       </Flex>

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Heading, Flex, Text, Button, PseudoBox } from '@chakra-ui/core';
+import { Box, Flex } from '@chakra-ui/core';
 
-import { rhythm, scale } from '../../style/typography';
+import { rhythm } from '../../style/typography';
 import theme from '../../style/theme';
 
 import {
@@ -44,13 +44,8 @@ const Header = ({ category, title, tags }) => {
 };
 
 const Title = styled.h1`
-  margin-bottom: ${theme.sizes[5]};
-  margin-top: ${theme.sizes[1]};
-`;
-
-const ColorBar = styled.span`
-  border-left: 10px solid ${(props) => mapCategoryToColor[props.category]};
-  margin-right: 10px;
+  margin-bottom: ${theme.space[6]};
+  margin-top: ${theme.space[8]};
 `;
 
 export default Header;

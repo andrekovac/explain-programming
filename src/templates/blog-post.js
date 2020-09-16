@@ -56,10 +56,6 @@ const BlogPostTemplate = (props) => {
             tags={post.frontmatter.tags}
           />
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <p>
-            <h2>Discussion</h2>
-            <div ref={commentBox} />
-          </p>
           <p
             style={{
               marginTop: rhythm(1),
@@ -77,6 +73,10 @@ const BlogPostTemplate = (props) => {
               message="Improve this article: Edit on GitHub"
               href={`https://github.com/andrekovac/explain-programming/edit/master/content/blog${githubSlug}`}
             />
+          </p>
+          <p>
+            <h2>Discussion</h2>
+            <div ref={commentBox} />
           </p>
           <Footer />
         </article>
