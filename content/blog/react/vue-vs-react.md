@@ -1,6 +1,6 @@
 ---
 title: 'Vue vs React (+ TypeScript) vs React Native vs Vue Native'
-description: 'The same tiny app in five different forms'
+description: 'Compare the same tiny app in five different forms'
 date: '2020-09-07'
 datePublished: '2020-09-15'
 author: 'André Kovac'
@@ -11,25 +11,39 @@ ready: true
 published: true
 ---
 
-> A pure-code comparison of [Vue](https://vuejs.org/), [React](https://reactjs.org/), [React Native](https://reactnative.dev/) and [Vue Native](https://vue-native.io/).
+Let's compare [Vue](https://vuejs.org/), [React](https://reactjs.org/), React with [TypeScript](https://www.typescriptlang.org/), [React Native](https://reactnative.dev/) and [Vue Native](https://vue-native.io/) by taking a look at a tiny app.
 
-I also add an example of React with Typescript.
+This is the tiny app: An ordered list of three grocery items (as used in the [Vue.js beginners guide](https://vuejs.org/v2/guide/)):
 
-- [Vue.js (Web)](#vuejs-web)
-- [React (Web)](#react-web)
-- [React with TypeScript (Web)](#react-with-typescript-web)
-- [React Native (Mobile)](#react-native-mobile)
-- [Vue Native (Mobile)](#vue-native-mobile)
+<p align="center">
+    <img alt="Example Web App Result" src="./vue-vs-react-01.png" width="100" />
+</p>
 
-There are a lot of comparisons online which compare Vue and React.
+All (but the Vue Native) examples include links to playground environments where you can play around with the code.
 
-- They usually have click-bait titles like [Is Vue.js going to take over React in 2020?](https://medium.com/swlh/is-vue-js-going-to-take-over-react-in-2020-929c19806ac) or [Vue vs React in 2020: Which Framework to Choose and When](https://www.monterail.com/blog/vue-vs-react-2020)
-- Almost all of the articles compare metrics not code, in fact comparisons of GitHub starts, StackOverflow survey results and other stuff you can put into charts.
-- [This article](https://sunilsandhu.com/posts/i-created-the-exact-same-app-in-react-and-vue-2020-edition) compares the code of a React and a Vue.js ToDo List App but doesn't include their mobile frameworks **React Native** and **Vue Native**
+- Jump straight to one of the five code examples:
 
-Mobile frameworks are super relevant because [as of 2019 the majority of internet traffic comes from mobile devices](https://www.broadbandsearch.net/blog/mobile-desktop-internet-usage-statistics).
+  - [Vue.js (Web)](#vuejs-web)
+  - [React (Web)](#react-web)
+  - [React with TypeScript (Web)](#react-with-typescript-web)
+  - [React Native (Mobile)](#react-native-mobile)
+  - [Vue Native (Mobile)](#vue-native-mobile)
 
-As an example I picked a simple List component used in the [Vue.js beginners guide](https://vuejs.org/v2/guide/):
+## Why should I read this? 👋
+
+The code samples are meant to give you a feeling of **Vue**, **React**, **React Native** and **Vue Native** - writing the article definitely helped me in this regard since I didn't really work with Vue.js before.
+
+## Why did you write this? 👀
+
+In a workshop I taught React Native to people with experience in Vue.js and some skepticism towards React. I was asked to contrast Vue.js to React which led to this article.
+
+There are a lot of articles on the web which compare Vue and React. But they either [have click-bait titles](https://medium.com/swlh/is-vue-js-going-to-take-over-react-in-2020-929c19806ac) and usually [compare metrics (like number of GitHub stars) whose significance is questionable](https://www.monterail.com/blog/vue-vs-react-2020). If an [article does compare code](https://sunilsandhu.com/posts/i-created-the-exact-same-app-in-react-and-vue-2020-edition), it doesn't include the mobile frameworks **React Native** and **Vue Native**.
+
+That's why I decided to implement a tiny example in five different forms myself which resulted in this article.
+
+## A pure-code comparison 💻
+
+Let's start with Vue. It's **App7** of the [Vue.js beginners guide](https://vuejs.org/v2/guide/)) ported into CodeSandBox:
 
 ### Vue.js (Web)
 
@@ -185,7 +199,13 @@ Play around with this code in this [CodeSandBox](https://codesandbox.io/s/grocer
 
 ### React Native (Mobile)
 
-How this could look like in `React Native`:
+How this looks like in `React Native`:
+
+<p align="center">
+    <img alt="Example Mobile App Result" src="./vue-vs-react-02.png" width="60" />
+</p>
+
+Since no styles are applied the list starts at the top (being partly covered by the phone's status-bar).
 
 ```jsx:title=App.js
 import React from 'react';
@@ -259,7 +279,7 @@ Implementation in `Vue Native`:
 </script>
 ```
 
-An **alternative** with Vue component but without FlatList:
+An **alternative** with Vue component `item.vue` but without React Native's `FlatList`:
 
 ```html:title=App.vue
 <template>
@@ -310,10 +330,10 @@ An **alternative** with Vue component but without FlatList:
 </script>
 ```
 
-In this article we implemented a simple list of items (including an API call) in the following languages:
+In case of a large list (filled with photos for example) this would not be feasible because we miss out on lazy loading which React Native's `FlatList` provides.
 
-- [Vue.js (Web)](#vuejs-web)
-- [React (Web)](#react-web)
-- [React with TypeScript (Web)](#react-with-typescript-web)
-- [React Native (Mobile)](#react-native-mobile)
-- [Vue Native (Mobile)](#vue-native-mobile)
+---
+
+## That's it
+
+Most Frontend developers I meet usually have a clear preference for either **Vue** or **React**. Perhaps this article helps you to explore your own preference more. 🌱
