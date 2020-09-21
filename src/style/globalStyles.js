@@ -426,8 +426,7 @@ const GlobalStyles = createGlobalStyle`
   .line-numbers .line-numbers-rows {
     position: absolute;
     pointer-events: none;
-    top: 1em;
-    font-size: 100%;
+    top: 1.1em;
     left: 2em;
     width: 3em; /* works for line-numbers below 1000 lines */
     letter-spacing: -1px;
@@ -482,6 +481,7 @@ const GlobalStyles = createGlobalStyle`
   */
   .gatsby-highlight-code-line {
     background-color: rgb(111, 90, 90);
+    line-height: 1.9;
     display: block;
     margin-right: -1em;
     margin-left: -1em;

@@ -2,7 +2,7 @@
 title: 'Vue vs React (+ TypeScript) vs React Native vs Vue Native'
 description: 'Compare the same tiny app in five different forms'
 date: '2020-09-07'
-datePublished: '2020-09-15'
+datePublished: '2020-09-21'
 author: 'André Kovac'
 category: 'framework'
 tags: ['react', 'vue', 'react-native', 'javascript', 'typescript']
@@ -43,11 +43,23 @@ That's why I decided to implement a tiny example in five different forms myself 
 
 ## A pure-code comparison 💻
 
-Let's start with Vue. It's **App7** of the [Vue.js beginners guide](https://vuejs.org/v2/guide/)) ported into CodeSandBox:
+### The App
+
+Every implementation will try to display this array of three elements in an ordered list:
+
+```js
+const groceryList = [
+  { id: 0, text: 'Vegetables' },
+  { id: 1, text: 'Cheese' },
+  { id: 2, text: 'Whatever else humans are supposed to eat' },
+];
+```
+
+Let's start with **Vue**. It's basically **App7** of the [Vue.js beginners guide](https://vuejs.org/v2/guide/)) (adjusted a bit so it directly runs [in this CodeSandBox](https://codesandbox.io/s/grocery-list-vue-jh6r6)):
 
 ### Vue.js (Web)
 
-```html:title=App.vue
+```html:title=App.vue {5-7,22-25,29-31}
 <template>
   <div id="app">
     <ol>
@@ -55,7 +67,7 @@ Let's start with Vue. It's **App7** of the [Vue.js beginners guide](https://vuej
         v-for="item in groceryList"
         v-bind:item="item"
         v-bind:key="item.id"
-      ></Item>
+      />
     </ol>
   </div>
 </template>
@@ -102,7 +114,7 @@ Play around with it [in this CodeSandBox](https://codesandbox.io/s/grocery-list-
 
 The same implementation using `React`:
 
-```jsx:title=App.js
+```jsx:title=App.js {9,11,15-17}
 import React from 'react';
 
 const groceryList = [
@@ -207,7 +219,7 @@ How this looks like in `React Native`:
 
 Since no styles are applied the list starts at the top (being partly covered by the phone's status-bar).
 
-```jsx:title=App.js
+```jsx:title=App.js {2,16-20}
 import React from 'react';
 import { FlatList, Text } from 'react-native';
 
@@ -245,7 +257,7 @@ from [Vue Native docs](https://vue-native.io/docs/index.html#What-is-Vue-Native)
 
 Implementation in `Vue Native`:
 
-```html:title=App.vue
+```html:title=App.vue {3,21-29}
 <template>
   <view class="container">
     <flat-list :data="groceryList" :render-item="(item) => renderList(item)" />
@@ -279,9 +291,11 @@ Implementation in `Vue Native`:
 </script>
 ```
 
+### Alternative
+
 An **alternative** with Vue component `item.vue` but without React Native's `FlatList`:
 
-```html:title=App.vue
+```html:title=App.vue {5-7,25-28}
 <template>
   <view class="container">
     <item
@@ -314,7 +328,7 @@ An **alternative** with Vue component `item.vue` but without React Native's `Fla
 </script>
 ```
 
-```html:title=components/item.vue
+```html:title=components/item.vue {2,8-10}
 <template>
   <text> {{item.id}}. {{item.text}} </text>
 </template>
