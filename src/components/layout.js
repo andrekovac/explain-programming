@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Box } from '@chakra-ui/core';
 import CookieConsent from 'react-cookie-consent';
 
-import GlobalStyle from '../style/globalStyles';
+import GlobalStyles from '../style/globalStyles';
 import Header from './header';
 import Footer from './footerMain';
 
@@ -16,7 +16,7 @@ const Layout = (props) => {
   // }
   return (
     <Flex direction="column" minHeight="100vh">
-      <GlobalStyle />
+      <GlobalStyles />
       <Header location={location} />
       <Flex justify="center" flexGrow="1" mb="5">
         <Box maxW="2xl" py="1rem" px={props.noPadding ? '0' : '1.5rem'}>

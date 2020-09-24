@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, CSSReset } from '@chakra-ui/core';
+import { ThemeProvider } from '@chakra-ui/core';
 import theme from './src/style/theme';
 
 // Trigger an immediate page refresh when an update is found
@@ -7,7 +7,7 @@ export const onServiceWorkerUpdateReady = () => window.location.reload();
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider theme={theme}>
-    <CSSReset />
+    {/* <CSSReset /> */}
     {element}
   </ThemeProvider>
 );

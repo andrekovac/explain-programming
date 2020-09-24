@@ -481,7 +481,7 @@ const GlobalStyles = createGlobalStyle`
   */
   .gatsby-highlight-code-line {
     background-color: rgb(111, 90, 90);
-    line-height: 1.9;
+    line-height: 1.6em;
     display: block;
     margin-right: -1em;
     margin-left: -1em;

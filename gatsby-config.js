@@ -11,7 +11,6 @@ const siteMetadata = {
 module.exports = {
   siteMetadata: siteMetadata,
   plugins: [
-    `gatsby-plugin-styled-components`,
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-mdx`,
@@ -149,6 +148,22 @@ module.exports = {
         color: `tomato`,
         // Disable the loading spinner.
         showSpinner: false,
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-chakra-ui",
+      options: {
+        /**
+         * @property {boolean} [isResettingCSS=true]
+         * if false, this plugin will not use `<CSSReset />
+         */
+        isResettingCSS: false,
+        /**
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
+         */
+        isUsingColorMode: false,
       },
     },
   ],
