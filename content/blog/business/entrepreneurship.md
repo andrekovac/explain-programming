@@ -74,6 +74,9 @@ Gary Vaynerchuk said on Instagram: Go **acyclical**! If they don't do things a c
 
 ## Fundraising
 
+- [A Guide to Seed Fundraising](https://www.ycombinator.com/library/4A-a-guide-to-seed-fundraising)
+- [The equity equation](http://paulgraham.com/equity.html)
+
 ### Glossary
 
 - **Accreditation**: An investor is “accredited” according to the SEC if she either A), has a personal net worth of over $1M, not including real estate (it’s unclear whether stock you hold counts toward your net worth), or B), has made a salary of over $200k over the past two years individually, or over \$300k over the past two years jointly with a spouse. Technically you have to be accredited to make angel investments, although those requirements become fuzzier when you’re investing other people’s money. Accreditation is designed to protect investors from investing money that they aren’t wealthy enough to afford to lose, and does not take into account how knowledgeable or experienced investors are.

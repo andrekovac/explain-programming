@@ -73,6 +73,8 @@ Collect files which could be relatively easily be edited to become a good qualit
 
 ## TODO
 
+- [ ] Add RSS feed. See <https://www.gatsbyjs.com/plugins/gatsby-plugin-feed/>
+
 - [ ] Consolidate style
   - [ ] Move styles to Chakra UI theme and define all styles there!
     - [ ] `blockquote` style from `node_modules/typography-theme-fairy-gates/dist/index.js`
@@ -90,21 +92,22 @@ Collect files which could be relatively easily be edited to become a good qualit
 
 * [ ] Search
 
-      	* Look at [https://github.com/greglobinski/gatsby-starter-hero-blog]() for an example
-      	* See [https://www.gatsbyjs.org/docs/adding-search/]()
-      	* [ ] Search for name + description
-      	* [ ] Search which includes every word in every page
+	* Look at [https://github.com/greglobinski/gatsby-starter-hero-blog]() for an example
+	* See [https://www.gatsbyjs.org/docs/adding-search/]()
+	* [ ] Search for name + description
+	* [ ] Search which includes every word in every page
 
 * [ ] Host on my programming url
 * [ ] Javascript: Write out examples instead of using screenshots
 * [ ] Check _ALL_ files - whether draft or not and decide whether it looks good to be published!
 * [ ] Styles: Switch to styled-components
-      See [https://www.gatsbyjs.org/docs/creating-global-styles/#how-to-add-global-styles-in-gatsby-with-standard-css-files]()
+
+  See [https://www.gatsbyjs.org/docs/creating-global-styles/#how-to-add-global-styles-in-gatsby-with-standard-css-files]()
 
 * [ ] Check out gatsby example site
 
-      	* See [https://github.com/prichey/prestonrichey.com/tree/master/src]()
-      	* See [https://prestonrichey.com/blog/react-in-markdown/]()
+	* See [https://github.com/prichey/prestonrichey.com/tree/master/src]()
+	* See [https://prestonrichey.com/blog/react-in-markdown/]()
 
 * [ ] Design
 
@@ -128,8 +131,8 @@ Collect files which could be relatively easily be edited to become a good qualit
 * [x] Trace back creation dates of original **commands** files and add in `date` field.
 * [x] Restyle inline code block
 
-      	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
-      	* See [https://using-remark.gatsbyjs.org/code-and-syntax-highlighting/#inline-code]()
+	* See [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/]()
+	* See [https://using-remark.gatsbyjs.org/code-and-syntax-highlighting/#inline-code]()
 
 * [x] Categories
 * [x] Clickable tags
@@ -146,7 +149,7 @@ Collect files which could be relatively easily be edited to become a good qualit
 * [x] Javascript: Include other command files
 * [x] Remove description from preview
 * [x] Think of how to use mdx
-      See [https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/#installation]()
+  See [https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/#installation]()
 
 * [x] Draft option
-      See [https://github.com/wonism/gatsby-advanced-blog]()
+  See [https://github.com/wonism/gatsby-advanced-blog]()

@@ -1,31 +1,31 @@
 ---
 title: 'How to delete lines from your git repository (local + remote)'
-description: 'How to delete certain lines in your entire git history'
+description: 'How to delete certain lines in your entire git history, locally and remote. This article describes how to use the BFG Repo-Cleaner.'
 date: '2020-08-10'
+datePublished: '2020-10-01'
 author: 'André Kovac'
 category: 'tool'
 tags: ['git']
 draft: false
 ready: true
+published: false
 ---
 
-Oh no, you're using [git](https://git-scm.com/) and you accidentally committed things you shouldn't have (e.g. a password) to your public GitHub repository!
-
-#### TL;DR
-
-[Skip the intro and show me how I fix this!](#step-by-step)
+Oh no 🙈, you're using [git](https://git-scm.com/) and you accidentally committed things you shouldn't have (e.g. a password) to your public GitHub repository! 😱
 
 Unfortunately just deleting it and pushing your new changes won't delete it from your **git history**.
 
-##### Git keeps copies of changes
+- **TL;DR** [Skip the intro and show the step-by-step instructions](#step-by-step)
 
-Every time you make a small change to a file a new copy of that file is created in your `.git` folder.
+## Git keeps copies of changes
 
-So if your password is part of a file which was changed 10 times, there are 10 copies of that password in git history which can for example be viewed on GitHub in case you pushed your code there.
+When you use **git** as your version control system, each time you make a small change to a file and commit that change, **git** creates a new copy of the changed files somewhere inside the `.git` folder.
 
-##### Delete every single occurrence
+So if your password is part of a file which was changed and committed 10 times, there are **10 copies of that password** in git history which can for example be viewed on GitHub in case you pushed your code there.
 
-This post shows you how to delete every single occurrence of a password (or any other word or sentence) which might be hidden in your git history, locally and in your remote repository (for example [GitHub](https://github.com/)).
+## Delete every single occurrence
+
+This post shows you how to delete every single occurrence of a password (or any other word or sentence) which might be hidden in your git history, locally as well as in the remote repository (for example on [GitHub](https://github.com/)).
 
 > In general this entire deletion procedure should be avoided if possible. It can have unexpected results for your team-members since you are **changing the remote code** they are relying on.
 
@@ -83,6 +83,8 @@ To replace a list of words (or passwords) with the string `***REMOVED***` (or an
     - If this command is not run, the deleted information might still be available in the `reflog`.
     - If you never heard about `git reflog` you might have heard about `git log`. The `git reflog` command shows you a kind of history of git actions which you undertook. Given that it contains some last leftover information of your deleted data and `git gc` (git cleanup) removes these last traces.
 
-In this post I used the tool [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) here. It contains instructions on how to use it but here I try to explain every step without skipping anything.
+---
+
+In this post I used the tool [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/). Its homepage contains instructions on how to use it but in this post I explain every step without skipping anything.
 
 Last but certainly not least I thank [Robert Tyley](https://github.com/rtyley) for creating the tool!
