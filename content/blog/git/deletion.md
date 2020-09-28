@@ -27,7 +27,7 @@ So if your password is part of a file which was changed and committed 10 times, 
 
 This post shows you how to delete every single occurrence of a password (or any other word or sentence) which might be hidden in your git history, locally as well as in the remote repository (for example on [GitHub](https://github.com/)).
 
-> In general this entire deletion procedure should be avoided if possible. It can have unexpected results for your team-members since you are **changing the remote code** they are relying on.
+> In general this entire deletion procedure is a thing you should only do it absolutely necessary. It can have unexpected results for your team-members since you are **changing the remote code** they are relying on.
 
 ## Step by step
 

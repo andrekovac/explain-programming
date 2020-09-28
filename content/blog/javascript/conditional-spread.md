@@ -2,37 +2,63 @@
 title: 'Conditional spread syntax'
 description: 'Understand how the spread operator works in combination with the conditional (ternary) operator'
 date: '2019-10-15'
+datePublished: '2020-10-06'
 author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'react-native', 'react-navigation']
 ready: true
+published: false
 ---
 
-**Problem**: Depending on whether a given condition is met, I want to add different values to an object.
+Recently I faced this issue while manipulating a [JavaScript object](https://www.w3schools.com/js/js_objects.asp):
 
-**Solution**: Use [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) (new in ECMAScript 2018) together with the [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+- **Problem**: Depending on whether a given condition is met, I want to add different values to an object.
+- **Solution** with `if else`:
 
-[TLDR - skip the quiz and show me a usage example in React Native!](#use-case-react-navigation)
+    ```js
+    // animals object initially only contains a monkey
+    let animals = { monkey: '🐒' };
 
-## Quiz
+    // check condition
+    if ('circus' === 'animal friendly') {
+      animals.panda = '🐼';
+    } else {
+      animals.duck = '🐏';
+    }
 
-Look at this example. What is the output of line 6?
+    console.log(animals); // prints: { monkey: "🐒", duck: "🐏" };
+    ```
+
+This solution is somehow to verbose. I wanted a more elegant solution.
+
+- **Solution** which uses the [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) (the three dots `...`) together with the [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) (The `? :` syntax):
+
+    ```js
+    const animals = {
+      monkey: '🐒',
+      ...('circus' === 'animal friendly' ? { panda: '🐼' } : { duck: '🐏' }),
+    };
+
+    console.log(animals); // prints: { monkey: "🐒", duck: "🐏" };
+    ```
+
+  - Note the **round brackets in front of the spread operator `...`**.
+  - This code is equivalent to the above code.
+
+You can play around with this code in [this JSFiddle](https://jsfiddle.net/Andruschenko/kwh87a6n/).
+
+### How does this work?
+
+Let's transform this object by first resolving the ternary expression.
 
 ```js
 const animals = {
   monkey: '🐒',
   ...('circus' === 'animal friendly' ? { panda: '🐼' } : { duck: '🐏' }),
 };
-
-console.log(animals);
 ```
 
-You can play around with the [JSFiddle here](https://jsfiddle.net/Andruschenko/kwh87a6n/).
-
-**Solution**:
-
-In a world in which a circus were animal friendly, we'd get a different result.
-Since the string `circus` is not equal to `animal friendly`, the second expression is executed and we get
+Since the string `circus` is not equal to `animal friendly`, resolving the ternary expression results in:
 
 ```js
 const animals = {
@@ -41,57 +67,90 @@ const animals = {
 };
 ```
 
-which leads to the following `console.log(animals)` output:
+Executing the spread operator `...` finally leads to:
 
 ```js:title=output
-{
+const animals = {
   monkey: '🐒',
-  duck: '🐏'
-}
+  duck: '🐏',
+};
 ```
 
-...of course you spotted the semantic error 😉
+...did you spot the semantic error in this object 😉
 
 ## Use case: `react-navigation`
 
-My usage in **React Native** when setting default options for a **Stack Navigator** with `react-navigation`:
+I actually came across this problem while working on a **React Native** app.
+When setting the ScreenOptions for modals in a **Stack Navigator** with `react-navigation`:
 
-**Problem**: I want to conditionally add values to the `defaultNavigationOptions` object.
+**Problem**: I want to conditionally add values to the `screenOptions` object.
 
 **Solution**:
 
 First I want to differentiate between **iOS** and **Android**:
 
-```js
+```tsx {13-15}
 import { Platform } from 'react-native';
 import { TransitionPresets } from 'react-navigation-stack';
 
-defaultNavigationOptions: {
-  gestureEnabled: true,
-  cardOverlayEnabled: true,
-  ...(Platform.OS === 'ios'
-    ? TransitionPresets.ModalPresentationIOS
-    : TransitionPresets.RevealFromBottomAndroid),
-},
+// ...
+
+<RootStack.Navigator
+  mode="modal"
+  headerMode="none"
+  initialRouteName="Main"
+  screenOptions={{
+    gestureEnabled: true,
+    cardOverlayEnabled: true,
+    ...(Platform.OS === 'ios'
+      ? TransitionPresets.ModalPresentationIOS
+      : TransitionPresets.RevealFromBottomAndroid),
+  }}
+/>;
 ```
 
-```js
+Then I wanted to additionally distinguish between the system version numbers for which I added ternary operators inside of the existing ternary operator:
+
+```tsx {4,16,19}
 import { Platform } from 'react-native';
 import { TransitionPresets } from 'react-navigation-stack';
 
-defaultNavigationOptions: {
-  gestureEnabled: true,
-  cardOverlayEnabled: true,
-  ...(Platform.OS === 'ios'
-    ? systemVersionAsNumber < 13
-      ? TransitionPresets.ModalSlideFromBottomIOS
-      : TransitionPresets.ModalPresentationIOS
-    : systemVersionAsNumber < 9
-    ? TransitionPresets.FadeFromBottomAndroid
-    : TransitionPresets.RevealFromBottomAndroid),
-},
+import { systemVersionAsNumber } from '../util/system';
+
+// ...
+
+<RootStack.Navigator
+  mode="modal"
+  headerMode="none"
+  initialRouteName="Main"
+  screenOptions={{
+    gestureEnabled: true,
+    cardOverlayEnabled: true,
+    ...(Platform.OS === 'ios'
+      ? systemVersionAsNumber < 13
+        ? TransitionPresets.ModalSlideFromBottomIOS
+        : TransitionPresets.ModalPresentationIOS
+      : systemVersionAsNumber < 9
+      ? TransitionPresets.FadeFromBottomAndroid
+      : TransitionPresets.RevealFromBottomAndroid),
+  }}
+/>;
+```
+
+Hereby `systemVersionAsNumber` is this helper function:
+
+```ts:title=util/system.ts
+import DeviceInfo from 'react-native-device-info';
+import { split } from 'ramda';
+
+export const systemVersion = DeviceInfo.getSystemVersion();
+
+export const getSystemVersionAsNumber = (systemVersion: string) =>
+  parseInt(split('.')(systemVersion)[0], 10);
+
+export const systemVersionAsNumber = getSystemVersionAsNumber(systemVersion);
 ```
 
 ## Credits
 
-Thanks for [StackOverflow answer](https://stackoverflow.com/questions/44908159/how-to-define-an-array-with-conditional-elements#47771259) which showed me how to do it and inspired me to write this article.
+Thanks for [StackOverflow answer](https://stackoverflow.com/questions/44908159/how-to-define-an-array-with-conditional-elements#47771259) which showed me that I forgot the rounded brackets when I first tried to combine the spread operator with the ternary operator.
