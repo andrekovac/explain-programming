@@ -90,7 +90,7 @@ const BlogIndex = (props) => {
               <Link to={node.fields.slug}>
                 <PseudoBox
                   overflow="hidden"
-                  bg={{ base: 'gray.200', md: isTabletOrMobile ? 'gray.200' : 'none' }}
+                  bg={{ base: 'gray.200', md: isTabletOrMobile ? 'gray.200' : 'white' }}
                   _hover={{
                     bg: 'gray.200',
                   }}
