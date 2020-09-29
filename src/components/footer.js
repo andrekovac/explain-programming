@@ -9,6 +9,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import { rhythm } from '../style/typography';
+import theme from '../style/theme';
 import Bio from './bio';
 
 /**
@@ -44,7 +45,7 @@ const Footer = () => {
           marginBottom: rhythm(0.8),
         }}
       >
-        <Link className={'main'} to={`/`}>
+        <Link className={'main'} to={`/`} color={theme.colors.brand[500]}>
           {title}
         </Link>
       </h3>

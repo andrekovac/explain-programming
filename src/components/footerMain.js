@@ -15,6 +15,7 @@ const FooterMain = (props) => {
     <Flex
       direction="column"
       padding="1rem"
+      marginTop="1rem"
       bg="brand.500"
       minHeight={{ base: 0, md: '300px' }}
       align="center"

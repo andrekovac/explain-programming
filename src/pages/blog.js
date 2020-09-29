@@ -94,9 +94,10 @@ const BlogIndex = (props) => {
             const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`;
 
             return (
-              <Article
+              <Box
                 key={node.fields.slug}
                 category={node.frontmatter.category}
+                marginBottom={{ base: '2', md: '0' }}
               >
                 <Link to={node.fields.slug}>
                   <PseudoBox
@@ -156,7 +157,7 @@ const BlogIndex = (props) => {
                     </Box>
                   </PseudoBox>
                 </Link>
-              </Article>
+              </Box>
             );
           })}
       </Box>
@@ -166,10 +167,6 @@ const BlogIndex = (props) => {
 };
 
 export default BlogIndex;
-
-const Article = styled.article`
-  /* background-color: yellow; */
-`;
 
 export const pageQuery = graphql`
   query {

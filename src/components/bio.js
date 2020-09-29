@@ -47,7 +47,8 @@ const Bio = () => {
       borderStyle="solid"
       borderWidth={theme.borders['4px']}
       borderRadius="1rem"
-      padding="5"
+      paddingX="5"
+      paddingY={{ base: '2', md: '5' }}
     >
       <Link to={'https://www.andrekovac.com'}>
         <PseudoBox
