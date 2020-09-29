@@ -1,8 +1,8 @@
 const siteMetadata = {
   title: `Explain Programming`,
   author: `André Kovac`,
-  description: `Find the most useful commands for a programming language or a framework fast - ready to use!`,
-  siteUrl: `https://quizzical-jang-fb6dca.netlify.com/`,
+  description: `Thoughts about programming languages and frameworks, problems/questions I find interesting and useful commands - collected over several years by André Kovac`,
+  siteUrl: `https://www.explainprogramming.com/`,
   social: {
     twitter: `andrekovac`,
   },

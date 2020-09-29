@@ -38,7 +38,7 @@ const BlogIndex = (props) => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO title="Home | Explain Programming" />
+      <SEO title="Explain Programming" />
       <Box>
         <Heading color="brand.500">Explain Programming</Heading>
         <Box>
