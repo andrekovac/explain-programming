@@ -122,7 +122,7 @@ module.exports = {
         short_name: `ExplainProgramming`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#9C590B`,
+        theme_color: `#a14444`,
         display: `minimal-ui`,
         icon: `content/assets/explain-programming-icon.png`,
       },
