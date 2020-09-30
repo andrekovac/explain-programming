@@ -78,6 +78,10 @@ function SEO({ description, lang, meta, title }) {
           content: title,
         },
         {
+          name: `twitter:site`,
+          content: `@${site.siteMetadata.social.twitter}`,
+        },
+        {
           name: `twitter:description`,
           content: metaDescription,
         },
