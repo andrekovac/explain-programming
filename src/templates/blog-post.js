@@ -71,7 +71,7 @@ const BlogPostTemplate = (props) => {
             <span> ● </span>
             <RoundedLinkExternal
               message="Improve this article: Edit on GitHub"
-              href={`https://github.com/andrekovac/explain-programming/edit/master/content/blog${githubSlug}`}
+              href={`https://github.com/andrekovac/explain-programming/edit/main/content/blog${githubSlug}`}
             />
           </p>
           <p>
