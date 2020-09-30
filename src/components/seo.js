@@ -63,7 +63,7 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:card`,
           // The card type, which will be one of “summary”, “summary_large_image”, “app”, or “player”.
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:image`,
@@ -71,7 +71,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.social.twitter,
+          content: `@${site.siteMetadata.social.twitter}`,
         },
         {
           name: `twitter:title`,
