@@ -21,6 +21,9 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            social {
+              twitter
+            }
           }
         }
       }
@@ -59,6 +62,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:card`,
+          // The card type, which will be one of “summary”, “summary_large_image”, “app”, or “player”.
           content: `summary`,
         },
         {
@@ -67,7 +71,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.social.twitter,
         },
         {
           name: `twitter:title`,

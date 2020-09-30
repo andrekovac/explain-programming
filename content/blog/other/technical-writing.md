@@ -12,8 +12,15 @@ draft: true
 
 - Create and share beautiful images of your source code.
 
+  Create code-blocks to highlight code.
+
   - [Carbon - Tool to create screenshots of code snippets for blogs](https://carbon.now.sh/)
 
 - CHANGELOGS
 
   - [Great CHANGELOGS](https://headwayapp.co/)
+
+- Gifs
+
+  - OSX App `Gifski` (Con: Gifs get quite big)
+  - node tool `gifify`: `gifify -o my_gif.gif my_video.mp4`

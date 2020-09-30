@@ -7,6 +7,16 @@ category: 'framework'
 tags: ['javascript', 'react']
 ---
 
+## How the `react` framework works under the hood
+
+> Using DOM API, HTML elements can be created or cloned in memory and manipulated without affecting the rendered DOM tree
+
+Taken from [this article about the DOM](https://medium.com/jspoint/how-the-browser-renders-a-web-page-dom-cssom-and-rendering-df10531c9969)
+
+The DOM Web API exposed by the browsers, allows UI frameworks (**Vue** and **React** alike) to efficiently create or clone html elements in memory and manipulate the DOM without affecting the actually rendered DOM tree - thereby realizing faster render times and a better user experience.
+
+> Reactivity: Automatic synchronization between the app's state and the browser's rendered Document Object Model (DOM).
+
 ## `state` vs. `props`
 
 Two types of **model** data in React: `state` vs. `props`

@@ -36,6 +36,10 @@ const Layout = (props) => {
           color: '#f77',
           backgroundColor: 'inherit',
           fontSize: '0.8rem',
+          // '&:hover': {
+          //   color: 'white',
+          //   backgroundColor: '#f77',
+          // },
         }}
       >
         To know which blog posts are the most popular I added Google Analytics

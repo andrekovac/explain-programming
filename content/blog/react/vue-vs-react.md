@@ -1,8 +1,8 @@
 ---
 title: 'Vue vs React (+ TypeScript) vs React Native vs Vue Native'
-description: 'Compare the same tiny app in five different forms'
+description: 'A pure-code comparison: Compare the same tiny app using Vue, React and their mobile frameworks Vue Native and React Native'
 date: '2020-09-07'
-datePublished: '2020-09-29'
+datePublished: '2020-09-30'
 author: 'André Kovac'
 category: 'framework'
 tags: ['react', 'vue', 'react-native', 'javascript', 'typescript']
