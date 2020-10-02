@@ -172,7 +172,8 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { draft: { ne: true } } }
-      sort: { fields: [frontmatter___category], order: ASC }
+      # TODO: Create ordering by published date
+      sort: { fields: [frontmatter___category], order: DESC }
     ) {
       edges {
         node {
