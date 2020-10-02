@@ -2,13 +2,13 @@
 title: 'How to delete lines from your git repository (local + remote)'
 description: 'How to delete certain lines in your entire git history, locally and remote. This article describes how to use the BFG Repo-Cleaner.'
 date: '2020-08-10'
-datePublished: '2020-10-01'
+datePublished: '2020-10-02'
 author: 'André Kovac'
 category: 'tool'
 tags: ['git']
 draft: false
 ready: true
-published: false
+published: true
 ---
 
 Oh no 🙈, you're using [git](https://git-scm.com/) and you accidentally committed things you shouldn't have (e.g. a password) to your public GitHub repository! 😱
