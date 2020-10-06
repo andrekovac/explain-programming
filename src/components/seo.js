@@ -66,8 +66,17 @@ function SEO({ description, lang, meta, title }) {
           content: `summary_large_image`,
         },
         {
+          // Use twitter card validator to validate Twitter image:
+          // https://cards-dev.twitter.com/validator
+          // Type 'summary_large_image': Image has to have an aspect ratio of 2:1
+          // Type 'summary': Image has to have an aspect ratio of 1:1
           name: `twitter:image`,
           content: metaImage,
+        },
+        {
+          // Alt text for the visually impaired
+          name: `twitter:image:alt`,
+          content: `Image about what the "Explain programming" website is about - commands and knowledge about programming languages and frameworks. Collected over several years by André Kovac`,
         },
         {
           name: `twitter:creator`,
