@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import metaImage from '../../static/images/explain-programming-meta.jpg';
+import image from '../../static/images/explain-programming-meta-image.jpg';
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -58,7 +58,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: metaImage,
+          content: image,
         },
         {
           name: `twitter:card`,
@@ -71,7 +71,7 @@ function SEO({ description, lang, meta, title }) {
           // Type 'summary_large_image': Image has to have an aspect ratio of 2:1
           // Type 'summary': Image has to have an aspect ratio of 1:1
           name: `twitter:image`,
-          content: metaImage,
+          content: image,
         },
         {
           // Alt text for the visually impaired
