@@ -160,7 +160,7 @@ const Header = (props) => {
           >
             Explain Programming
           </PseudoBox>
-          <PseudoBox
+          {/* <PseudoBox
             transition="all 300ms"
             color="brand.500"
             fontWeight="bold"
@@ -172,7 +172,7 @@ const Header = (props) => {
             }}
           >
             Andrés online footprint
-          </PseudoBox>
+          </PseudoBox> */}
         </Flex>
       </Flex>
     </Flex>

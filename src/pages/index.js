@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
-
-import { Flex, Box, PseudoBox, Text, Heading } from '@chakra-ui/core';
+import { Flex, Box, PseudoBox, Text } from '@chakra-ui/core';
+import * as dayjs from 'dayjs';
+import * as localizedFormat from 'dayjs/plugin/localizedFormat';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -16,6 +16,9 @@ import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { mapCategoryToShortHand } from '../constants/Category';
 import { NONE, SHOW_ALL } from '../constants/Tag';
 import { isTabletOrMobile } from '../utils/device';
+
+// day.js plugins
+dayjs.extend(localizedFormat);
 
 const BlogIndex = (props) => {
   const [selectedTag, setSelectedTag] = useState(NONE);
@@ -40,14 +43,18 @@ const BlogIndex = (props) => {
     <Layout location={props.location} title={siteTitle}>
       <SEO title="Explain Programming" />
       <Box>
-        <Heading color="brand.500">Explain Programming</Heading>
-        <Box>
+        {/* <Text
+        color="brand.500"
+        fontSize="3xl"
+        fontWeight="700"
+        >Explain Programming</Text> */}
+        {/* <Box>
           Commands and coding experience collected over several years by{' '}
           <RoundedLinkExternal
             message={'André Kovac'}
             href={`https://www.andrekovac.com/`}
           />
-        </Box>
+        </Box> */}
       </Box>
       <Flex
         my="5"
@@ -81,21 +88,31 @@ const BlogIndex = (props) => {
           const title = node.frontmatter.title || node.fields.slug;
           const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`;
 
+          const datePublishedFormatted = dayjs(
+            node.frontmatter.datePublished
+          ).format('LL');
+
           return (
             <Box
               key={node.fields.slug}
               category={node.frontmatter.category}
-              marginBottom={{ base: '2', md: '0' }}
+              marginBottom="2"
+              borderColor="brand.500"
+              borderRadius="1rem"
+              borderStyle="solid"
+              borderWidth="3px"
+              position="relative"
             >
               <Link to={node.fields.slug}>
                 <PseudoBox
                   overflow="hidden"
-                  bg={{ base: 'gray.200', md: isTabletOrMobile ? 'gray.200' : 'white' }}
+                  borderRadius="1rem"
+                  bg="white"
                   _hover={{
                     bg: 'gray.200',
                   }}
                 >
-                  <Box p={{ base: '3', md: '5' }}>
+                  <Box paddingX={{ base: '4', md: '5' }} paddingBottom="3" paddingTop="8">
                     <Box display={{ md: 'flex' }}>
                       <Flex direction="row">
                         <Flex
@@ -145,6 +162,24 @@ const BlogIndex = (props) => {
                   </Box>
                 </PseudoBox>
               </Link>
+              <Box
+                position="absolute"
+                borderTopRightRadius="1rem"
+                borderBottomLeftRadius="1rem"
+                backgroundColor="brand.500"
+                top="-3px"
+                right="0"
+              >
+                <Text
+                  marginY="1"
+                  marginX="3"
+                  fontSize="xs"
+                  color="white"
+                  fontWeight="200"
+                >
+                  {datePublishedFormatted}
+                </Text>
+              </Box>
             </Box>
           );
         })}
@@ -178,6 +213,7 @@ export const pageQuery = graphql`
             list
             ready
             draft
+            datePublished
           }
           timeToRead
         }

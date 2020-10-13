@@ -196,7 +196,7 @@ const Wrapper = styled.div`
   margin-top: -50px;
 `;
 
-const Title = styled.h3`
+const Title = styled.div`
   color: ${WHITE};
   margin-top: 0;
   line-height: 1.5;

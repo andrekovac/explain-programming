@@ -16,19 +16,28 @@ const GlobalStyles = createGlobalStyle`
     font-weight: ${theme.fontWeights.medium};
     margin-top: ${theme.space[4]};
     margin-bottom: ${theme.space[2]};
-    /* border-bottom: ${theme.borders['1px']} solid ${theme.colors.gray[200]}; */
-    /* background: linear-gradient(transparent 80%, #cb8182 0); */
+    /* border-bottom: 5px solid ${theme.colors.brand[500]}; */
+    border-left: 20px solid ${theme.colors.brand[500]};
+    padding: 10px 5px;
+    margin: ${theme.space[6]} 0 ${theme.space[4]} 0;
   }
   h3 {
     font-size: ${theme.fontSizes['xl']};
     font-weight: ${theme.fontWeights.bold};
     margin-top: ${theme.space[4]};
     margin-bottom: ${theme.space[2]};
+    border-left: 10px solid ${theme.colors.brand[500]};
+    background-color: ${theme.colors.brand[50]};
+    padding: 7px 5px;
+    margin: ${theme.space[6]} 0 ${theme.space[4]} 0;
   }
   h4 {
-    font-size: ${theme.fontSizes['lg']};
+    font-size: ${theme.fontSizes['md']};
     margin-top: ${theme.space[2]};
     margin-bottom: ${theme.space[2]};
+    border-left: 5px solid ${theme.colors.brand[500]};
+    padding: 5px 3px;
+    margin: ${theme.space[4]} 0 ${theme.space[3]} 0;
   }
   p {
     color: ${theme.colors.gray[900]};
@@ -128,9 +137,10 @@ const GlobalStyles = createGlobalStyle`
   ol > li {
     &:before {
       content: counter(step-counter);
-      margin-right: 0.6rem;
+      margin-right: 4px;
+      margin-bottom: 10px;
       font-size: 80%;
-      background-color: rgb(193, 109, 109);
+      background-color: ${theme.colors.brand[500]};
       color: white;
       font-weight: bold;
       border-radius: 30%;
@@ -159,6 +169,10 @@ const GlobalStyles = createGlobalStyle`
 
   article footer {
     margin-bottom: 2rem;
+  }
+
+  blockquote p {
+      lineHeight: 1.5;
   }
 
   @media only screen and (max-width:480px) {
