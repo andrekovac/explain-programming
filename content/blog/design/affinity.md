@@ -25,6 +25,30 @@ tags: ['design']
 6. In the `Layer` tab on the right, select your layer and in the bottom row click on the `Mask Layer` button.
 7. Go to `File` > `Export` as **png** and use it later.
 
+### Remove complex background
+
+1. Duplicate image
+2. Apply high-pass filter
+3. Adjust radius
+4. Layer > Merge visible
+5. Selection Brush Tool -> Rough selection
+6. `Refine`
+   - Increase border width
+   - Output > New layer with mask
+7. Roughly go over border area between image and background
+
+#### Export front image only with transparent background
+
+8. File > Edit in Publisher...
+9. Export to PNG
+
+#### Export with other background image
+
+8. File > Place...
+9. Pick image, drag and move layer behind created front image with mask.
+
+- [This YouTube video](https://www.youtube.com/watch?v=uPTpELVAh88) explains it perfectly. It additionally contains haze removal which I omitted here.
+
 ### Add into other image
 
 1. Go to `File` > `New` to create a new Image window

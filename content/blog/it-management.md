@@ -8,6 +8,11 @@ tags: ['management']
 draft: true
 ---
 
+## Performance
+
+- [Basecamp - Shape Up](https://basecamp.com/shapeup) - [different parts](https://basecamp.com/shapeup)
+- **KPI**s
+
 # How to report bugs (Issue Style Guide)
 
 ## Bugs

@@ -17,10 +17,6 @@ tags: ['language']
 
   - [How to better learn languages in real life situations](http://www.mezzoguild.com/negotiation-in-language-learning/)
 
-- Languages spoken in the world
-
-  ![Languages of the world](./languages-of-the-world.png)
-
 - Most popular last names per country
 
   ![Last names of the world](./last-names-world.jpg)
@@ -28,6 +24,14 @@ tags: ['language']
 - [Learn your target language now!](https://www.linkedin.com/pulse/learn-your-target-language-now-melanie-gierszal?trk=hp-feed-article-title-comment)
 
 - [Memrise - language learning with fun hints and tips](https://www.memrise.com/)
+
+### Linguistics
+
+- Languages spoken in the world
+
+  ![Languages of the world](./languages-of-the-world.png)
+
+-
 
 ## Language specific
 
@@ -105,7 +109,7 @@ Here are all the possible pinyin letters:
 
 #### Loosing your accent
 
-[Nice video with tipps](https://youtu.be/oUD2gUmdzeI)
+[Nice video with tips](https://youtu.be/oUD2gUmdzeI)
 
 **Methods**:
 
@@ -114,18 +118,69 @@ Here are all the possible pinyin letters:
 
 ## Tools
 
-### Learning pronounciation
-
-- [Audacity](https://www.audacityteam.org/)
-- [**Forvo**: The pronunciation dictionary](https://forvo.com/) - Have native speakers pronounce words for you.
-- [**how to pronounce**](https://www.howtopronounce.com/chinese/%E5%BE%88%E4%B9%90%E6%84%8F%E5%9B%9E%E7%AD%94) also offers native pronunciations.
-
-### I have experience with
+### Language learning apps
 
 - [Duolingo - Great to learn the basics](https://www.duolingo.com/)
+
+  Learn by translating back and forth
+
 - [Fluentu - Learn with real videos - it's fun and a good way to learn real expressions from daily life](https://www.fluentu.com/)
 
-### Not tried
+  Learn with real videos (ads, youtube videos, children language learning shows etc.)
 
-- [Tatoeba is a collection of sentences and translations - some with audio --> Sentence mining](https://tatoeba.org/eng/)
-- [Glossika - using smart technology, adaptive learning algorithm and structured content.](https://ai.glossika.com/)
+- [Memrise](https://www.memrise.com/)
+
+  Learn with mnemonics (Eselsbrücken)
+
+- [Rosetta Stone](https://www.rosettastone.de/)
+
+  Learn like kids do.
+
+### Learning pronunciation
+
+- [**Forvo**: The pronunciation dictionary](https://forvo.com/)
+
+  Native speakers pronounce words for you (often with different dialects to choose from).
+
+- [Speechling](https://speechling.com/app)
+
+  - Repeat phrases, see your sound wave pattern and compare it to native speakers' pronunciation.
+  - Listen to native speakers and send up to 10 phrases a month for them to give you feedback (more phrases in paid version).
+
+- [**how to pronounce**](https://www.howtopronounce.com/chinese/%E5%BE%88%E4%B9%90%E6%84%8F%E5%9B%9E%E7%AD%94)
+
+  Native pronunciations.
+
+- [Audacity](https://www.audacityteam.org/)
+
+  - Audio software to analyze your pronunciation via sound wave patterns
+  - Record your own audio and download native speakers' audio
+
+### Speak with natives online
+
+- [Omegle](https://www.omegle.com/)
+
+  - Talk to strangers online
+
+### 1-on-1 lessons
+
+- [Preply](https://preply.com/)
+
+  - My [referral link](https://preply.com#_prefMTM5NTIwOA==)
+
+- [iTalki](https://www.italki.com/)
+
+  - If you want to learn there use [this link](https://www.italki.com/i/Bdfb6D?hl=en-us) to support me.
+
+### Not tried yet
+
+- [Tatoeba](https://tatoeba.org/eng/)
+
+  - Collection of sentences and translations - some with audio
+  - Useful for **sentence mining**
+
+- [Glossika](https://ai.glossika.com/)
+
+  - Smart technology, adaptive learning algorithm and structured content.
+
+- [Babbel](https://www.babbel.com/)

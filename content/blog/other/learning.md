@@ -58,3 +58,5 @@ Learning by doing, constructive Struggling, problem-based learning, Flipped Lear
 See https://www.teachthought.com/pedagogy/modern-trends-education-50-different-approaches-learning/
 
 ### Just in time learning
+
+Read about just-in-time learning [here](https://www.developgoodhabits.com/just-in-time-learning/).
