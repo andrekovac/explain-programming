@@ -341,7 +341,7 @@ That's what [React's virtual DOM](https://nebulab.it/blog/virtual-dom/) does. It
 
 ## React Native example: `react-navigation`
 
-The most popular navigation library of React Native `react-navigation` moved from an **imperative** approach (version `4`) to a **declarative** approach (version `5`).
+The most popular navigation library of React Native [react-navigation](https://reactnavigation.org/) moved from an **imperative** approach (version `4`) to a **declarative** approach (version `5`).
 
 Let's look at the example of an authentication-flow. For the following examples, the login/logout status is stored in a globally accessible state variable named `isLoggedIn`.
 
@@ -396,6 +396,6 @@ I hope you now have a better grasp about the difference between **imperative** o
 
 If you want to read more, I can recommend the following articles which helped me while writing this article:
 
-- [Imperative vs. declarative](https://www.netguru.com/blog/imperative-vs-declarative).
+- [Imperative vs. declarative - Pros and Cons](https://www.netguru.com/blog/imperative-vs-declarative).
 - [Is jQuery imperative?](https://www.reddit.com/r/javascript/comments/4kim6p/is_jquery_imperative/)
 - [Complete guide to declarative programming](https://www.capitalone.com/tech/cloud/declarative-programming-guide/)

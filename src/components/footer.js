@@ -45,9 +45,7 @@ const Footer = () => {
           marginBottom: rhythm(0.8),
         }}
       >
-        <Link className={'main'} to={`/`} color={theme.colors.brand[500]}>
           {title}
-        </Link>
       </h3>
       <Bio />
     </footer>

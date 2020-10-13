@@ -72,16 +72,16 @@ const BlogIndex = (props) => {
         <Flex align="center">
           <Box mr="2">These are all articles with the</Box>
           <Tag tag={selectedTag} />
-          <Box mr="1">tag.</Box>
+          <Box mr="1">tag</Box>
         </Flex>
         <Flex align="center">
-          <Box mr="2">Or</Box>
+          <Box mr="2"> | </Box>
           <Tag
             tag={SHOW_ALL}
             onClick={() => setSelectedTag(NONE)}
             isClickable
           />
-          <Box>articles.</Box>
+          <Box>articles instead.</Box>
         </Flex>
       </Flex>
 
