@@ -15,7 +15,7 @@ published: true
 
 Many articles, tutorials, docs and books talk about **imperative** or **declarative** ways of doing things. APIs are designed in one way or the other. But what does that actually mean?
 
-In this article I contrast React's **declarative** approach with jQueries **imperative** approach, thereby explaining what **declarative** and **imperative** actually mean in this context.
+In this article I contrast [React](https://reactjs.org/)'s **declarative** approach with [jQuery](https://jquery.com/)'s **imperative** approach, thereby explaining what **declarative** and **imperative** actually mean in this context.
 
 At last I give an example of how the most popular routing library for React Native `react-navigation` moved from an imperative api to a declarative api to foster our understanding of the terms.
 
@@ -399,3 +399,5 @@ If you want to read more, I can recommend the following articles which helped me
 - [Imperative vs. declarative - Pros and Cons](https://www.netguru.com/blog/imperative-vs-declarative).
 - [Is jQuery imperative?](https://www.reddit.com/r/javascript/comments/4kim6p/is_jquery_imperative/)
 - [Complete guide to declarative programming](https://www.capitalone.com/tech/cloud/declarative-programming-guide/)
+
+As always I'm happy to hear your thoughts and comments below!
