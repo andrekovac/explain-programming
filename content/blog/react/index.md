@@ -5,6 +5,7 @@ date: '2019-08-21T17:58:32.169Z'
 author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react']
+ready: true
 ---
 
 ## How the `react` framework works under the hood
@@ -207,7 +208,13 @@ The following answers questions about `react` like:
 
 - [Chakra.ui](https://chakra-ui.com/)
 
+### React frameworks
+
+- [Blitz.js to build Web-Apps fast](https://blitzjs.com/docs/getting-started)
+
 ### Tools to check out
+
+- [Sanity - CMS built with React](https://www.sanity.io/react-cms)
 
 - [React Pose](https://medium.com/@joomiguelcunha/amazing-react-animation-with-react-pose-3b67d9eb6e07)
 - [React Concurrent Mode](https://reactjs.org/docs/concurrent-mode-adoption.html)

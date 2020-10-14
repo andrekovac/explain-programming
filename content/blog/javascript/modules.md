@@ -7,15 +7,7 @@ category: 'programming-language'
 tags: ['javascript']
 ---
 
-`Common.js` (modules)
-
-## Nice way of exporting an import
-
-From `react-navigation-tabs`, i.e. `node_modules/react-navigation-tabs/lib/typescript/src/index.d.ts`:
-
-```js
-export { default as createMaterialTopTabNavigator } from './navigators/createMaterialTopTabNavigator';
-```
+## JavaScript Modules (import/export)
 
 ## ES6+ syntax
 
@@ -42,6 +34,14 @@ There are two types of exports:
    import { foo } from './foo';
    ```
 
+## Export an import
+
+From `react-navigation-tabs`, i.e. `node_modules/react-navigation-tabs/lib/typescript/src/index.d.ts`:
+
+```js
+export { default as createMaterialTopTabNavigator } from './navigators/createMaterialTopTabNavigator';
+```
+
 ## ES5 and older syntax
 
 Use `import` and `export` statements to require modules.
@@ -59,7 +59,7 @@ var bar = function() { console.log("Amazing!" };
 module.exports = { foo: foo, bar: bar };
 ```
 
-### Import module
+### CommonJS (require/exports)
 
 ```js:title=other.js
 require('../actions/foobar.js');

@@ -5,7 +5,6 @@ author: 'André Kovac'
 description: 'What do the terms imperative and declarative mean in the context of programming languages?'
 category: 'theory'
 tags: ['concepts', 'definition', 'stub']
-ready: true
 ---
 
 - **Singleton**
@@ -27,30 +26,22 @@ ready: true
 
 - **imperative** vs. **declarative**
 
-  See also [the post which compares imperative vs. declerative in more depth](./imperative-declerative.md)
+  See [the article which compares imperative vs. declarative](./imperative-declerative.md)
 
-  - imperative:
+- literal vs statement vs expression
 
-  ```js
-  try {
-    showButton();
-  } catch (error) {
-    // ...
-  }
-  ```
+    **literals**:
 
-  Here `showButton` is an **imperative** command to do something! I **_tell_** React to "Go, show that button!"
+    Representing a value within source code.
 
-  - declarative:
+    - `"foo"` (a string)
+    - `true` (a boolean)
+    - ...
 
-  ```js
-  {
-    !isLoading && <Button />;
-  }
-  ```
+    Not **literals**:
 
-  I'm declaring that the `Button` is there. It's just there. I don't have to **_tell_** anyone (compiler/code) to do so.
+      - `std::cout` (an identifier - refer to a value in memory)
+      - `foo = 0;` (a statement)
+      - `1+2` (an expression)
 
-  - Another example is the comparison of `react-navigation` v4 (**imperative**) to v5 (**declarative**):
-    In v5 you declare which Navigator is shown dependent on the state of your App. In v4 you tell the Navigator where to route to given certain events.
-    For example "user credentials are successfully processed -> route to Home Screen" vs. user credentials are successfully processed -> change user login state -> Home Screen is shown because it was declared to be the right screen for this state.
+    [Taken from this SO answer](https://stackoverflow.com/a/485161).

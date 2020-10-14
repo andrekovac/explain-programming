@@ -5,6 +5,7 @@ date: '2020-03-09T11:58:52.169Z'
 author: 'André Kovac'
 category: 'tool'
 tags: ['security']
+ready: true
 ---
 
 ## Privacy
@@ -13,6 +14,8 @@ Useful tools to do things in privacy
 
 - [Overview of tools which preserve privacy](https://www.privacytools.io/)
 - [Jitsi - More secure, more flexible, and completely free video conferencing](https://jitsi.org/)
+  - Not very performant.
+  - My MacBook gets loud
 - [Signal](https://www.signal.org/)
 
 ### Tracking

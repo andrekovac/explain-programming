@@ -44,6 +44,8 @@ var myName = function() {
 `deep_thought` is the execution context and thus `this` is the `deep_thought` object, so it's variables are available with `this` in `ask_question` method! ([taken from this perfect explanation](http://web.archive.org/web/20110725013125/http://www.digital-web.com/articles/scope_in_javascript/) by using execution context and object oriented design in the article!))
 
 ```js
+var the_answer = 0;
+
 var deep_thought = {
   the_answer: 42,
   ask_question: function () {
