@@ -114,7 +114,13 @@ Here are all the possible pinyin letters:
 **Methods**:
 
 - Shadowing
+
+    - See [Outlier Linguists Chinese Course](https://outlier-linguistics.thinkific.com/courses/take/mandarin-pronunciation-accent-masterclass/) talking about this method.
+
 - Reading book + Audiobook -> Connection of words + sounds
+- Sentence mining
+
+    - See [Outlier Linguists Chinese Course](https://outlier-linguistics.thinkific.com/courses/take/mandarin-pronunciation-accent-masterclass/) talking about this method.
 
 ## Tools
 
@@ -122,19 +128,27 @@ Here are all the possible pinyin letters:
 
 - [Duolingo - Great to learn the basics](https://www.duolingo.com/)
 
-  Learn by translating back and forth
+    - **What?**: Learn by translating back and forth
+
+    - **PRO**: Good for starting out with a totally new language
+    - **CON**: Sentences often not really useful
+    - **CON**: Learned words don't really stick
 
 - [Fluentu - Learn with real videos - it's fun and a good way to learn real expressions from daily life](https://www.fluentu.com/)
 
-  Learn with real videos (ads, youtube videos, children language learning shows etc.)
+    - Learn with real videos (ads, youtube videos, children language learning shows etc.)
 
 - [Memrise](https://www.memrise.com/)
 
-  Learn with mnemonics (Eselsbrücken)
+    - Learn with mnemonics (Eselsbrücken)
 
 - [Rosetta Stone](https://www.rosettastone.de/)
 
-  Learn like kids do.
+    - Learn like kids do.
+
+- [Busuu](https://www.busuu.com/en/hello-new)
+
+    - Recommended by Heiki
 
 ### Learning pronunciation
 
@@ -166,11 +180,15 @@ Here are all the possible pinyin letters:
 
 - [Preply](https://preply.com/)
 
-  - My [referral link](https://preply.com#_prefMTM5NTIwOA==)
+    - My [referral link](https://preply.com#_prefMTM5NTIwOA==)
 
 - [iTalki](https://www.italki.com/)
 
-  - If you want to learn there use [this link](https://www.italki.com/i/Bdfb6D?hl=en-us) to support me.
+    - If you want to learn there use [this link](https://www.italki.com/i/Bdfb6D?hl=en-us) to support me.
+
+- [Chatterbug](https://chatterbug.com/en/)
+
+    - Where Tilman works
 
 ### Not tried yet
 

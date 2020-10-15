@@ -49,7 +49,14 @@ Gary Vaynerchuk said on Instagram: Go **acyclical**! If they don't do things a c
 
 ### Pitch Decks
 
+- [OpenDeck - 1,200+ startup slides. Searchable by category. Free forever.](https://opendeck.app/)
+
+    - Free, search for nice slides
+
 - [**Guy Kawasaki** - The Only 10 Slides You Need in Your Pitch](https://guykawasaki.com/the-only-10-slides-you-need-in-your-pitch/)
+
+    - The classic advice on how to build a good slide deck
+
 - [Great Pitch Deck Examples](https://pitchdeckexamples.com/)
 - [25+ Best Pitch Deck Examples, Tips & Templates for 2019](https://venngage.com/blog/best-pitch-decks/)
 - [Some classical pitch decks](https://piktochart.com/blog/startup-pitch-decks-what-you-can-learn/)
