@@ -10,6 +10,29 @@ draft: true
 
 **NOTE**: Very drafty!
 
+## Personal finance
+
+### ETFs
+
+### Ausschüttenden (distributing - **Dist**) vs. thesaurierend (accumulating - **Acc**)
+
+- **Dist**: Income paid as dividends or interest is sent directly to your brokerage account.
+- **Acc**: Income paid as dividends or interest is automatically reinvested back into the ETF to grow your holdings at a faster pace.
+
+### Other terms
+
+- **EM**: Emerging Markets
+- **IMI**: Small, medium sized companies
+- **ESG**: Only companies which are minimally sustainable
+- **Momentum**: Increase ratio of well performing stocks
+
+[More infos about how to decipher ETF Names](https://www.justetf.com/uk/news/etf/how-you-easily-decipher-etf-names.html)
+
+## Terms
+
+- **Limit Order**
+- **Robo-Advisor**: Expensive: **5%**
+
 ## Business
 
 - Burnrate, Runrate, Runway
