@@ -81,7 +81,7 @@ const Bio = () => {
         />
         {` `}
         builds products, creates software, teaches coding, communicates science
-        and speaks at events.
+        and sometimes speaks at events.
       </p>
     </Flex>
   );
