@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { Flex, Box, PseudoBox, Text } from '@chakra-ui/core';
 import * as dayjs from 'dayjs';

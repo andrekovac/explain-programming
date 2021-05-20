@@ -35,6 +35,7 @@ export const MARKDOWN = 'markdown';
 // OTHER
 export const OUTDATED = 'outdated';
 export const BASIC = 'basic';
+export const LIST = 'list';
 export const STUB = 'stub';
 export const NONE = 'none';
 export const COPY_PASTE_NOTES = 'copy-paste-notes';

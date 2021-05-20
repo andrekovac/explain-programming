@@ -9,6 +9,7 @@ import {
   OUTDATED,
   BASIC,
   STUB,
+  LIST,
   COPY_PASTE_NOTES,
   SHOW_ALL,
 } from '../constants/Tag';
@@ -24,6 +25,9 @@ const Tag = ({ tag, isClickable, onTagSelect, onClick }) => {
       break;
     case STUB:
       backgroundColor = '#996000';
+      break;
+    case LIST:
+      backgroundColor = '#fbec1f';
       break;
     case COPY_PASTE_NOTES:
       backgroundColor = '#106e79';

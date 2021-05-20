@@ -8,7 +8,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { Flex, Box, PseudoBox } from '@chakra-ui/core';
+import { Flex, PseudoBox } from '@chakra-ui/core';
 
 import RoundedLinkExternal from '../components/roundedLinkExternal';
 
@@ -81,7 +81,7 @@ const Bio = () => {
         />
         {` `}
         builds products, creates software, teaches coding, communicates science
-        and sometimes speaks at events.
+        and speaks at events.
       </p>
     </Flex>
   );

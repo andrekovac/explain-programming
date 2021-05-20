@@ -494,6 +494,8 @@ const GlobalStyles = createGlobalStyle`
   * Highlight line
   */
   .gatsby-highlight-code-line {
+    /* Cheap solution - Expensive solution with JavaScript: Get hold of this class and apply dynamic width of .has-highlighted-lines */
+    width: 200%;
     background-color: rgb(111, 90, 90);
     line-height: 1.6em;
     display: block;
