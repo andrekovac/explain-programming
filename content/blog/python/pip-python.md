@@ -39,7 +39,7 @@ Run `ipython` to open the interactive shell.
 
 **NOTE**: Use `venv` (NOT `virtualenv`) on **OSX** - the later has issues on OSX!
 
-1. In the project directory type `python3 -m venv ./env`
+1. In the project directory type `python -m venv ./env`
 2. Activate the virtual environment using `source env/bin/activate`
 3. Install dependencies as usual with `pip install`. Use `pip list` to see the dependencies installed in the current folder.
 4. Type `deactivate` to deactivate the current virtual environment.
@@ -58,6 +58,8 @@ Convention: Call virtualenv folder `env`.
 5. To exit virtual env: `deactivate`
 
 ### pip
+
+#### Install from existing `requirements.txt`
 
 Install all files listed in a `requirements.txt` file:
 
@@ -87,6 +89,14 @@ requests-aws4auth
 tables
 tensorflow
 keras
+```
+
+#### Create own `requirements.txt`
+
+Run
+
+```bash
+pip freeze > requirements.txt
 ```
 
 #### upgrade pip packages

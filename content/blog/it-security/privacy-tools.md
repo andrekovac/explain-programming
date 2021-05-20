@@ -4,13 +4,15 @@ description: 'Useful cyber-security and privacy tools and information about them
 date: '2020-03-09T11:58:52.169Z'
 author: 'André Kovac'
 category: 'tool'
-tags: ['security']
+tags: ['security', 'list']
 ready: true
 ---
 
 ## Privacy
 
-Useful tools to do things in privacy
+### Chat Apps
+
+Useful tools to communicate in privacy
 
 - [Overview of tools which preserve privacy](https://www.privacytools.io/)
 - [Jitsi - More secure, more flexible, and completely free video conferencing](https://jitsi.org/)
@@ -36,6 +38,12 @@ Useful tools to do things in privacy
 
 - [How to Install TOR on Android and iOS Devices](https://www.hackread.com/how-to-install-tor-on-android-and-ios-devices/)
 
+
+## Decentralized YouTube Alternatives
+
+- [LBRY](https://lbry.com/)
+- [Odysee](https://odysee.com/)
+
 #### Add blocking
 
 - [**Pi Hole** - Network-wide Ad Blocking](https://pi-hole.net/)
@@ -45,6 +53,8 @@ Useful tools to do things in privacy
 VPNs are good, but they also bare a risk. All your internet traffic is routed through them. So you really have to trust them.
 
 - [Most VPNs can leak personal data despite claims to the contrary](https://www.comparitech.com/vpn/vpn-leaks/)
+
+- More secure: Set up your own VPN Server with [Algo VPN](https://github.com/trailofbits/algo) - e.g. use Digital Ocean Server.
 
 ### Operating Systems
 

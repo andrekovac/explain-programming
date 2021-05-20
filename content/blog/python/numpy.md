@@ -1,6 +1,6 @@
 ---
 title: 'Python Numpy'
-description: 'Most important usage and commands of the python data science framework numpy - also includes matplotlib and seaborn'
+description: 'Usage and command examples of the python data science framework numpy'
 date: '2020-01-21'
 author: 'André Kovac'
 category: 'framework'
@@ -34,6 +34,13 @@ random.rand(<int>)
    - `max()`, `min()`
    - `argmax()`, `argmin()`
    - `dtype`
+
+## Visualization
+### `matplotlib`
+
+- [mplcyberpunk](https://github.com/dhaitz/mplcyberpunk) is a Python package on top of `matplotlib` to create 'cyberpunk' style plots with 3 additional lines of code.
+
+- [Bokeh](https://docs.bokeh.org/en/latest/index.html)
 
 ## Simple `numpy` and `matplotlib` example
 

@@ -36,6 +36,10 @@ This infographic contains some great tips on how and when to contact people: [Be
 
 - Use the tool [https://www.scrapestorm.com/]() to automate the collection of leads.
 
+### LinkedHelper
+
+[LinkedHelper](https://www.linkedhelper.com/) is a tool to e.g. automate LinkedIn connection requests etc.
+
 ## Mom Test
 
 Don't ask hypothetical questions! [Here's a summary](https://medium.com/@feelinspired/things-i-learnt-the-mom-test-by-rob-fitzpatrick-9d9d58ce8098).

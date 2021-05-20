@@ -10,10 +10,14 @@ draft: true
 
 ## Remote Tools
 
-[Focusmate virtual coworking helps you get things done.](https://www.focusmate.com/)
+- [Focusmate virtual coworking helps you get things done.](https://www.focusmate.com/)
 
-[Write code together](https://codecollab.io/)
+- [Write code together - CodeCollab](https://codecollab.io/)
 
+### Meetings
+
+- [MeetButter - Smooth and interactive virtual workshops](https://meetbutter.io/)
+- [Loom - Share videos with annotations](https://www.loom.com/)
 
 ## Good Working Locations
 
@@ -23,4 +27,4 @@ draft: true
 
 #### Want to go
 
-- [Bekech - AN EPICENTRE of all THINGS cultural, Social & Entrepreneurial](https://bekech.com/)
+- [Bekech - AN EPICENTRE of all THINGS cultural, Social & Entrepreneurial in Berlin](https://bekech.com/)

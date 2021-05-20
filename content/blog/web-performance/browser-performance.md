@@ -5,15 +5,24 @@ date: '2016-11-30T00:00:00.000Z'
 author: 'André Kovac'
 category: 'theory'
 tags: []
-draft: true
+draft: false
+ready: true
+published: false
 ---
+
+## Wix Workshop
 
 >File with own code from workshop is in folder `repo_from_presenter/`
 
-
 Workshop by [Noam](https://github.com/noamr) @WIX
 
-## Rendering Pipeline
+## Rendering Performance
+
+![pixel pipeline](pixel-pipeline.jpg)
+
+See [this google article](https://developers.google.com/web/fundamentals/performance/rendering/) about browser rendering.
+
+## CSS rendering Pipeline
 
 The following happens in succession
 
@@ -47,18 +56,46 @@ The following happens in succession
 
 	**Rasterization**: Take SVGs, Text, Images --> Transform it into pixels for [LCD drivers](https://en.wikipedia.org/wiki/Display_driver).
 
+
+- Some more to read [in this article](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/).
+- [An article](https://www.smashingmagazine.com/2016/12/gpu-animation-doing-it-right/) which explains composition (GPUs job)
+
+### How does style rendering work in React Native?
+
+#### React Native Animations
+
+When trying to set `useNativeDriver: true` for an Animated value which is used to change a CSS layout property, React Native gives the following error:
+
+> Style property 'width' is not supported by native animated module
+
+- Why is that?
+
+	**TODO**: Investigate better!
+
+	The RN style engine probably works similar to how CSS is processed in a browser.
+
+	Changes in the `width` property trigger layout operations which are expensive, wheres a `transform` does not. `transform` is an example of a **composite property** which is computed in the **GPU** - at least that’s how it works in the browser - I have to read more about how it’s computed in native iOS and Android.
+
+	Well, given this, I guess React Native only allows composite CSS properties to be sent to the native (iOS and Android) drivers to be performed by the GPU. I have to read up on this.
+
+	See  for more information on how browsers render CSS.
+
+##### Possible improvement
+
+- Set `width: 1` and use a **transform** (with `translateX`) to achieve the same result.
+
 ## GPU	(Graphic accelerator)
 
 * OpenGL (WebGL) (Use GPU to your liking, but uses JS main thread). Use it for sofisticated animations
 * Allows for concurrency
 
-Style, Layout rendering of DOM is all in main thread
+**Style**, **Layout rendering** of DOM is all in main thread.
 
-Layout changes are costly.
+- Layout changes are costly.
 
 Alternatives to main thread:
 
-* Compositing
+* **Compositing**
 * [Worker thread](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
 * Animations run on different thread
 * Scrolling on different process on Safari mobile
@@ -68,7 +105,7 @@ Alternatives to main thread:
 
 >Macbook pro is your enemy	(because it's faster than the average PC)
 
-##### How to test Browser Speed?
+## How to test Browser Speed?
 
 * **Testing** speed: *High-speed camera* are only reliable thing because speed testers slow down speed themselves (used by Nokia).
 * **Debugging** speed: Use Chrome Dev Tools Timeline
@@ -110,11 +147,11 @@ Alternatives to main thread:
 	--> So that scroll bar shows real length
 
 
-## Tipps
+## Tips
 
 * Position relative/absolute: No side effect -> doesn't effect other DOM nodes.
 
-* Subpixel text/layout (e.g. `text-font: 10.3`)
+* **Subpixel** text/layout (e.g. `text-font: 10.3`)
 
 * When to use layout: If inner content of element changes. Then a transform (i.e. translation) won't help.
 
@@ -127,8 +164,9 @@ Alternatives to main thread:
 
 CSS Animations only do composition, don't live in the main thread.
 
------
-**Questions**
+---
+
+**Q&A**
 
 * So absolute positioning is best performance?
 

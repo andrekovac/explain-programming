@@ -51,3 +51,7 @@ Sound Effects
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | [Unsplash](https://unsplash.com/)                                         | Free, well searchable stock images - integrated into Affinity                              |
 | [sitebuilderreport - STOCK UP](http://www.sitebuilderreport.com/stock-up) | Free, well searchable stock images - Searching 11,233 free stock photos across 25 websites |
+
+## Illustrations
+
+- [Undraw open source illustrations](https://undraw.co/illustrations)

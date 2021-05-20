@@ -99,7 +99,7 @@ Haskell’s `if` is an *expression* that must return a value, and not a *stateme
 * `null`: Check whether list is empty
 * `zip [1,2,3,4,5] [5,5,5,5,5]` creates pairs
 
-### Listy comprehension
+### List comprehension
 
 Examples:
 

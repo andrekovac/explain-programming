@@ -8,7 +8,16 @@ tags: ['javascript', 'react-native', 'outdated']
 draft: true
 ---
 
-**TODO: This file can be removed! --> No real value!**
+## Relation of React Native to React
+
+- **React** is a framework to build component based apps (or just components like in a DS)
+- **React DOM** is the React "renderer" for web apps
+- React Native is also something like a React "renderer" for native apps
+- **React Native Web** brings components build with React Native back to the Web (with using **React DOM** under the hood)
+
+# OLD - can be removed!
+
+**Attention**: The following stuff is not useful and can be removed!
 
 ## General
 

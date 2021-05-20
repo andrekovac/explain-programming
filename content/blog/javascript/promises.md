@@ -5,6 +5,8 @@ date: '2020-04-02T18:42:37.121Z'
 author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript']
+ready: true
+published: false
 ---
 
 ## Javascript Promises
@@ -148,3 +150,76 @@ const fetchData = async () => {
 ### Promise `then` and `resolve` interplay
 
 Inside a `then()` chain, `resolve()` function call let's it directly jump to next `then()`.
+
+
+### Working with Promise `resolve` function
+
+#### Example 1
+
+Save the `resolve` function as variables. Execute them whenever a process you want to wait for ends.
+
+Example in [react-native-modalview](https://github.com/Artirigo/react-native-modalview/blob/6913a8cc091e2293207dcc7501b6f0a08ad0f49c/src/components/ModalBase/index.js):
+
+1. Store `resolve` functions as local variables
+
+  ```js
+  this._layoutPromise = Promise.all([
+    new Promise((resolve: () => void) => {
+      this._contentLayoutComplete = resolve;
+    }),
+
+    new Promise((resolve: () => void) => {
+      this._containerLayoutComplete = resolve;
+    }),
+  ]);
+  ```
+
+2. Call `resolve` functions in event handlers
+
+  ```js
+  // other places in the code
+
+  _handleContainerLayout = event => {
+    // ...
+    if (this._containerLayoutComplete) this._containerLayoutComplete();
+  };
+
+  _handleContentLayout = event => {
+    // ...
+    if (this._contentLayoutComplete) this._contentLayoutComplete();
+  };
+  ```
+
+3. Wait for both promises to `resolve` and continue code execution then.
+
+  ```js
+  open = () => {
+    // ...
+
+    // wait for layout-size calculation and start animation afterwards
+    this._layoutPromise.then(() => this._animateOpenStart());
+  };
+  ```
+
+#### Example 2
+
+Implementation of a `race` condition.
+Here the promise will resolve (i.e. the `resolve` function executed) whichever process ends first.
+
+```js
+import { InteractionManager } from 'react-native';
+
+/**
+ * wrap InteractionManager.runAfterInteractions in a promise
+ * and provide a timeout prop (mainly needed as InteractionManager in RN0.39 is buggy
+ * especially on android and won't trigger sometimes)
+ */
+export const runAfterInteractions = (timeOut = 500) =>
+  new Promise(resolve => {
+    setTimeout(resolve, timeOut);
+    InteractionManager.runAfterInteractions(resolve);
+  });
+```
+
+**Question**: Would the second line in the promise (i.e. `InteractionManager.runAfterInteractions(resolve);` even be executed when the Promise already resolves in the line before?
+**Answer**: Yes, because `setTimeout` is asynchronously called.

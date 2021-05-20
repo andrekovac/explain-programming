@@ -9,9 +9,9 @@ list: true
 draft: true
 ---
 
-Educational software I collect
+## Educational software I collect
 
-## Apps
+### Apps
 
 | Name                                      | What?                                  |
 | ----------------------------------------- | -------------------------------------- |
@@ -19,7 +19,7 @@ Educational software I collect
 | [Anton](https://anton.app/de/)            | Playful learning for young school kids |
 | [Classcraft](https://www.classcraft.com/) | Great gamification                     |
 
-### Learn to code
+#### Learn to code
 
 | Name                                            | What?                                                                                               |
 | ----------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -27,19 +27,19 @@ Educational software I collect
 | [MIT App Inventor](http://appinventor.mit.edu/) | Build mobile apps with Scratch                                                                      |
 | [Thunkable](https://thunkable.com/home/)        | The fastest way from idea to mobile app without coding - created by the **MIT App Inventor** people |
 
-## Virtual learning spaces
+### Virtual learning spaces
 
 - [Tricat](https://www.tricat.net/): Virtual offices etc.
 - [MineTest](http://www.minetest.net/): Open source MineCraft
 
-## Methods to engage an audience (e.g. in a workshop)
+### Methods to engage an audience (e.g. in a workshop)
 
 - [Aha slides](https://ahaslides.com/): Nice multiple choice questions etc.
 
-## Electronic Gadgets
+### Electronic Gadgets
 
 [AV1 Robot](https://www.noisolation.com/global/av1/)
 
-## Learn Languages
+### Learn Languages
 
 [ekidz](https://ekidz.eu/en/de/FreeResources) looks quite cute.

@@ -23,11 +23,17 @@ e.g. `mocha`/`chai` or `jest`
 
 Render a certain part (e.g. component) of an app without many mocks to check that it does what it should do.
 
-### End-to-end (a.k.a `e2e`) testing - also called **functional testing**
+Mostly uses same technology as unit testing.
+
+### End-to-end (a.k.a `e2e`) testing - also called **functional testing** or acceptance testing
 
 Simulates a real app user and runs that virtual user through the entire app experience.
 
 I sometimes heard people to call integration test and end-to-end tests the same thing.
+
+### Manual testing
+
+Click through it.
 
 ### Links
 
@@ -42,11 +48,16 @@ Most often via code-coverage, e.g. via Jest
 
 ### JSON schema validation
 
-Use [JSON Schema](http://json-schema.org/)
+Use [JSON Schema](http://json-schema.org/) to e.g. validate incoming JSON form data with a library like <https://github.com/tdegrunt/jsonschema> or <https://github.com/ajv-validator/ajv>
+
+For typescript generate a schema with one of the following tools:
+
+- [QuickType](https://app.quicktype.io/)
+- [typescript-json-schema](https://github.com/YousefED/typescript-json-schema) or
 
 For JS create a JSON schema yourself or use [one of these tools](https://stackoverflow.com/questions/7341537/tool-to-generate-json-schema-from-json-data#answer-30294535).
 
-For typescript generate a schema with the following tool: [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
+
 
 ```js
 import { validate, ValidationError } from 'jsonschema';
@@ -96,3 +107,22 @@ const errors = validateFeaturedAuthor(parsedJSONFile);
 ### Snapshot testing
 
 Test and update snapshots of components. [See the docs](https://facebook.github.io/jest/docs/en/snapshot-testing.html)
+
+
+## Test driven development (TDD)
+
+> [...] in TDD, the tests tell you
+
+- what to do next
+- what to do,
+- how to do it
+- what your design is
+- how to structure your code
+- when you are done.
+
+Contrast to **Type** Driven Development (TDD)
+
+> However, "design with types first" doesn't exactly mean what you think it means.
+> The idea is that you use types to model your problem domain and **let the types drive the design and development**.
+
+Both taken from [here](https://softwareengineering.stackexchange.com/a/255417).

@@ -11,13 +11,29 @@ draft: true
 * [Great article about the pros/cons by Whereby](https://whereby.helpscoutdocs.com/article/337-progressive-web-apps-whereby)
 * [Intro to nice course about building PWAs](https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0)
 
+
+## Concepts
+
+- Shell model approach to building pwa's
+
+### Offline via Service Workers
+
+- Storage: https://developers.google.com/web/ilt/pwa/live-data-in-the-service-worker
+- Caching
+
 ## No native app?
 
 [Goodbye, Native Mobile Apps](https://atavistinsider.atavist.com/goodbye-native-mobile-apps)
 
-## Progressive Web App totorials
+## Progressive Web App tutorials
 
-[Progressive Web Apps Are the Future](https://dev.opera.com/blog/progressive-web-apps-future/)
+- [Web.dev](https://web.dev/progressive-web-apps/)
+
+    In this collection, you'll learn what makes a Progressive Web App special, how they can affect your business, and how to build them.
+
+- [Progressive Web Apps Are the Future](https://dev.opera.com/blog/progressive-web-apps-future/)
+
+- YouTube Course by **The Net Ninja**
 
 [Progressive Web Apps: Escaping Tabs Without Losing Our Soul](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)
 

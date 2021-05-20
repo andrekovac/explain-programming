@@ -173,16 +173,16 @@ A (sometimes) useful extension of matchers.
 
 - Check whether **style** exists
 
-      	```js
-      	const style = { backgroundColor: 'red' };
+	```js
+	const style = { backgroundColor: 'red' };
 
-  const wrapper = shallow(<BundleLoader show={true} />);
+	const wrapper = shallow(<BundleLoader show={true} />);
 
-      	wrapper.setProps({ show: true, style: style });
-      	expect(wrapper.first().props().style).toEqual(
-      	expect.arrayContaining([style]),
-      	);
-      	```
+	wrapper.setProps({ show: true, style: style });
+	expect(wrapper.first().props().style).toEqual(
+	expect.arrayContaining([style]),
+	);
+	```
 
 - `.findWhere()` searches the entire tree of components for something. In **React Native** you can do `.findWhere(n => n.text() === 'some text')`.
 

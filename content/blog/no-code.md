@@ -4,7 +4,7 @@ description: 'List of cool no-code, low-code and visual-code tools'
 date: '2020-03-05T21:22:00.169Z'
 author: 'André Kovac'
 category: 'tool'
-tags: ['design']
+tags: ['design', 'list']
 ---
 
 ## Visual programming
@@ -16,6 +16,8 @@ tags: ['design']
 ## No code rapid website development
 
 - [Carrd](https://carrd.co/build): Very nice templates
+
+- [Softr](https://www.softr.io/): Build powerful websites and web apps on Airtable in 10 minutes, without writing code. - Found out about it via **EF**.
 
 - [Click Funnels](https://www.clickfunnels.com/) : [Here a video showing how it works in German](https://www.youtube.com/watch?v=F_WI_0vWFaw)
 

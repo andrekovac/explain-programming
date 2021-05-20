@@ -60,13 +60,22 @@ See [this post](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-c
 
 Example for **AWS**:
 
-1. Add a new public/private key pair with `ssh-add ~/.ssh/KEY_PAIR_NAME.pem`
+1. Add a new public/private key pair with `ssh-add ~/.ssh/KEY_PAIR_NAME.pem` (or `ssh-add ~/.ssh/MY_PRIVATE_KEY`)
 2. Run `ssh [your instance name]@[amazon].[com]`
 
 **Explanation**:
 
-1. Add the `.pem` file to the `~/.ssh` directory (create it if necessary)
+1. Add the `.pem` file (i.e. private key) to the `~/.ssh` directory (create it if necessary)
 2. Use the `ssh-add` command to add the identity to the authentication agent; this means never having to specify the `.pem` file when using ssh
+
+#### Notes
+
+In case you use several ssh keys, make sure to run `ssh-add -D` to delete the cached SSH key(s).
+
+See [this elaborate article](https://coderwall.com/p/7smjkq/multiple-ssh-keys-for-different-accounts-on-github-or-gitlab) and [this SO summary](https://stackoverflow.com/a/61476756/3210677).
+
+- **Example**: Two different bitbucket accounts
+  - [This SO article](https://stackoverflow.com/questions/21139926/how-to-maintain-multiple-bitbucket-accounts-with-multiple-ssh-keys-in-the-same-s) discusses different solutions. At the bottom is one with many upvotes!
 
 ### Links
 

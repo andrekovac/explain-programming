@@ -5,6 +5,9 @@ date: '2019-08-25T23:46:37.121Z'
 author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'jQuery', 'async']
+draft: false
+ready: true
+published: false
 ---
 
 The global `fetch` function is an easier way to make web requests and handle responses compared to using an `XMLHttpRequest`.

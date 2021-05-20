@@ -9,6 +9,15 @@ tags: ['javascript']
 
 ## JavaScript Modules (import/export)
 
+### Differences
+
+- **AMD** – one of the most ancient module systems, initially implemented by the library require.js.
+- **CommonJS** – the module system created for Node.js server.
+- **UMD** – one more module system, suggested as a universal one, compatible with AMD and CommonJS.
+
+
+Read more [here](https://javascript.info/modules-intro).
+
 ## ES6+ syntax
 
 There are two types of exports:
@@ -61,6 +70,8 @@ module.exports = { foo: foo, bar: bar };
 
 ### CommonJS (require/exports)
 
+CommonJS is the module system created for Node.js server.
+
 ```js:title=other.js
 require('../actions/foobar.js');
 ```
@@ -103,3 +114,7 @@ import { pickKeys } from 'util/object';
 import styles from './styles';
 import GridItem from './components/GridItem';
 ```
+
+## Animations
+
+- `AnimatedContainer`, `TweenAnimationBuilder`

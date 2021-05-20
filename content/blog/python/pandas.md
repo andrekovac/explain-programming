@@ -41,15 +41,40 @@ my_series.value_counts()
 
 ### Data selection
 
-* Column selection: `df[['A', 'C']]`
-* Row selection: `df.loc[['A', 'C']]`
+* Column (label) selection: `df[['A', 'C']]`
 
-* Conditional selection
+  * Get **Series**: `df['A']`
+  * Get **DataFrame**: `df[['A']]`
 
-  > Broadcast Series of boolean values of a column accross the entire dataframe
+* **Row** selection: `df.loc[['A', 'C']]`
+
+* All rows of certain columns (labels)
+
+  ```python
+  df.loc[:, ['A', 'B']]
+  ```
+
+* By position (index)
+
+  ```python
+  df.iloc[3]
+  ```
+
+
+* Conditional Selection
+
+  > Broadcast Series of boolean values of a column across the entire DataFrame
 
   ```python
   df[ (df['A'] > 0) & (df['B'] == 0) ]
+  ```
+
+  > Using `isin()`
+
+  ```python
+  df2['E'] = ['one', 'one', 'two', 'three', 'four', 'three']
+
+  df2[df2['E'].isin(['two', 'four'])]
   ```
 
 #### Index
@@ -91,6 +116,12 @@ my_series.value_counts()
 
   * `df.isnull()` (alias: `df.isna()`)
   * `df.dropna()`
+  * Drop row if a certain column (label) is NaN:
+
+    ```python
+    df.dropna(subset=['label_name'])
+    ```
+
   * `df.dropna(axis=1)`
   * `df.dropna(thresh=2)`
   * `df.fillna(value='FILL VALUE')`

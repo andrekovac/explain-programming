@@ -12,3 +12,7 @@ draft: true
 
 - Recommendation to do a Three-Hour Brand Sprint [https://library.gv.com/the-three-hour-brand-sprint-3ccabf4b768a]()
 - Example of how you can destroy a brand very fast: [https://www.businessblogshub.com/2012/09/the-man-who-destroyed-his-multi-million-dollar-company-in-10-seconds/amp/]()
+
+## Personal brand
+
+- [Dr. Theo Pham - Meine eigene journey als personal brand auf LinkedIn](https://www.delta.pm/masterclasses/personal-branding-und-thought-leadership)

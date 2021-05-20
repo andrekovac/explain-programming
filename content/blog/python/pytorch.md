@@ -14,7 +14,7 @@ A generalized matrix with more than two dimensions.
 
 Useful for image data.
 
-## Converting
+### Converting
 
 Direct link
 
@@ -33,7 +33,7 @@ torch.tensor(arr)
 * `torch.tensor` will retain the original data type
 * `torch.Tensor` is equivalent to `torch.FloatTensor` and will convert integers to floats
 
-## Create tensors
+### Create tensors
 
 Placeholder
 
@@ -112,3 +112,9 @@ y = 2*x**4 + x**3 + 2*x**2 + 5*x + 1
 y.backward()    # dy/dx
 x.grad          # Get result of dy/dx(x)
 ```
+
+## Optimizer
+
+A already setup model is called an **optimizer**:
+
+e.g. `nn.Linear(28*28, 1)` for a linear optimizer with data 28x28 and bias 1

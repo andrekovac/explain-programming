@@ -71,19 +71,49 @@ Array operations without having to write loops explicitly. [This is a great arti
     }, []);
     ```
 
+    Nice code example of `reduce` usage:
+
+    Returns an object of the form
+
+    ```js
+    {
+      processId1: [assessment1, assessment2],
+      processId2: [assessment3, assessment4],
+      // ...
+    }
+    ```
+
+    ```js
+    const assessmentsByProcess = useQuery(getAssessments, {
+        orderBy: { id: "asc" },
+      })[0].assessments.reduce((accum, curr) => {
+        // if there is already at least one assessment with a certain processId, add assessments with the same processId to it.
+        if (accum[curr.processId]) {
+          return {
+            ...accum,
+            [curr.processId]: [...accum[curr.processId], curr],
+          }
+        }
+        // An assessment with a certain project id was found the first time -> just append it to the object
+        return {
+          ...accum,
+          [curr.processId]: [curr],
+        }
+      }, {})
+      ```
+
+
   - `reduceRight()`: `reduce()` but from right to left instead of left to right.
 
 - [map()]() vs. [forEach()]() vs. [every()]()
 
   - `map()`: Apply function to each element in Array and return new array with altered values.
 
-    ```
+    ```js
     [0, 1, 2, 3, 4].map( (value) => value + 2 );
     ```
 
   - `forEach()`:
-
-    ````
 
     Loop through **array**. Callback function does not return anything as `map()` does.
 
@@ -98,7 +128,6 @@ Array operations without having to write loops explicitly. [This is a great arti
         /* For example, key == "one" and value == 1 */
     });
     ```
-    ````
 
     - `every()`:
 
@@ -140,13 +169,13 @@ Array operations without having to write loops explicitly. [This is a great arti
 
 ## Stack, Queue
 
-- [push()]()
+- `push()`
   Push new element to end of stack/queue
 
-- [pop()]()
+- `pop()`
   Pop last object in stack
 
-- [shift()]()
+- `shift()`
   Enqueue first object in queue
 
 ## Immutable.js

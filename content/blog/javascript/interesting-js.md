@@ -7,9 +7,17 @@ category: 'programming-language'
 tags: ['javascript']
 ---
 
-## Interesting/Cool stuff
+## [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_Coalescing_Operator)
 
-### [Optional Chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) with the [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_Coalescing_Operator)
+Difference between `??` and `||`:
+
+The **OR** operator `||` uses the right value if left is `falsy`, while the **nullish coalescing operator** `??` uses the right value if left is `null` or `undefined`.
+
+The **OR** operator `||` can be problematic if your left value might contain `""` or `0` or `false` (because these are **falsy** values).
+
+e.g. `isHappy ?? displayConfetti()`
+
+### [Optional Chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) with the nullish coalescing operator
 
 ```js
 let customer = {
@@ -20,7 +28,22 @@ const customerCity = customer?.city ?? "Unknown city";
 console.log(customerCity); // Unknown city
 ```
 
-### `&&` call not returning boolean
+### Other nice application of the `nullish coalescing operator` ??:
+
+The last line of the `useOrientation` function is interesting.
+
+If `forceOrientation` is either `null` or `undefined`, check whether `orientation` is equal to the string `landscape`. Otherwise, compare the `forceOrientation` string.
+
+```tsx
+const useOrientation = (forceOrientation?: 'portrait' | 'landscape') => {
+  const window = useWindowDimensions();
+  const orientation = window.width > window.height ? 'landscape' : 'portrait';
+
+  return (forceOrientation ?? orientation) === 'landscape';
+}
+```
+
+## `&&` call not returning boolean
 
 If `hasClose` is false, the Button will not be shown..
 
@@ -37,7 +60,11 @@ If `hasClose` is false, the Button will not be shown..
 }
 ```
 
-### `console.log` with auto-indent
+## Use `Boolean()` to check for
+
+Like the bang operator (`!!`), `Boolean()` (not the `Boolean()` constructor) is a function which turns `falsy` values into `boolean` values.
+
+## `console.log` with auto-indent
 
 `console.log` function that auto-indents based on the depth of your call stack ([Tweet from Sophie Alpert](https://twitter.com/sophiebits/status/1058448900460138497)):
 
@@ -48,6 +75,8 @@ function log(message) {
   )
 }
 ```
+
+## switch-case
 
 ### switch-case chaining
 
@@ -62,7 +91,33 @@ case 'pop':
 		currentState;
 ```
 
-### Incorrect use of function definitions inside `for` loops:
+### `switch(true)`
+
+The `switch` statement allows matching an expression (the `switch`) against different values (the `case`).
+
+But you can match against **values** as well as **expressions**.
+
+```js
+const weekendDay = date => [0,6].includes(date.getDay());
+const restDay = date => date.getDay() === 0;
+
+const openingHours = date => {
+  switch(true) {
+    case weekendDay(date):
+      return "8:00am-12:00pm";
+
+    case restDay(date):
+      return "Closed";
+
+    default:
+      return "8:00am-20:00pm";
+  }
+}
+```
+
+Read [this article](https://medium.com/trabe/using-switch-true-in-javascript-986e8ad8ae4f) for more.
+
+## Incorrect use of function definitions inside `for` loops:
 
 **Mistake**: Incorrect use of function definitions inside `for` loops.
 
@@ -87,7 +142,7 @@ for (var i = 0; i < n; i++) {
 
 (taken from [JavaScript Not Working? Start with the 10 Most Common Mistakes JavaScript Developers Make](http://www.toptal.com/javascript/10-most-common-javascript-mistakes) - Common Mistake #6)
 
-### Ansi color in `console.log`
+## Ansi color in `console.log`
 
 ```js
 console.log('\x1b[41m\x1b[37m%s\x1b[0m', 'FAILED', result)

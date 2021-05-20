@@ -1,17 +1,102 @@
 ---
 title: 'React hooks'
-description: 'Hooks '
+description: 'Hooks - Overview and examples'
 date: '2020-04-03'
 author: 'André Kovac'
 category: 'framework'
 tags: ['javascript', 'react']
+draft: false
+ready: true
 ---
 
 ## Built-in hooks
 
 ### `useState`
 
+### `useReducer`
+
+Example from `react-navigation` docs about authentication flow:
+
+```tsx
+const [state, dispatch] = React.useReducer(
+  (prevState, action) => {
+    switch (action.type) {
+      case 'RESTORE_TOKEN':
+        return {
+          ...prevState,
+          userToken: action.token,
+          isLoading: false,
+        };
+      case 'SIGN_IN':
+        return {
+          ...prevState,
+          isSignout: false,
+          userToken: action.token,
+        };
+      case 'SIGN_OUT':
+        return {
+          ...prevState,
+          isSignout: true,
+          userToken: null,
+        };
+    }
+  },
+  {
+    isLoading: true,
+    isSignout: false,
+    userToken: null,
+  }
+);
+```
+
+Later you can use the following to dispatch an action:
+
+```ts
+dispatch({ type: 'RESTORE_TOKEN', token: userToken });
+```
+
 ### `useEffect`
+
+#### Question
+
+Could you explain the reasoning behind adding all these references to the dependency list? As I understood, the dependency list defines the objects that this useEffect depends on, i.e that trigger the useEffect. As we only want this to execute whenever the step number changes, using any other references than currentStepNumber in the dependency list seems unintuitive.
+
+Asked by Albrecht.
+
+#### Answer
+
+tl;dr: This ESLint rule is a precaution so that you don’t accidentally forget to add dynamic values needed inside useEffect. And the React Native Animated values (as well as ref values created with useRef) are built as objects so that they don’t cause unwanted executions of useEffect if added to the dependency array.
+
+---
+
+As you stated correctly the `useEffect` hook will only run if the values of the dependency array change. So it of course suffices if you only add the one value you are interested in.
+
+That being said, what is the idea behind the best practice (and **ESLint** rule) to add all dynamic values which are used inside the `useEffect` hook?
+
+Answer: It’s to ensure the UI gets always updated if new values are available. It was established with the idea in mind to prevent that the user sees some value on a screen although parts which are necessary to compute it, changed in the meantime. In such a scenario, there are no downsides to add values to the dependency array which are used inside `useEffect` because
+
+if you know that the other value doesn’t change anyways, it will not hurt to put it into the dependency array.
+
+if the other value does change, you want to make sure you use the most current version of it and rerender.
+
+This scenario here, however, is a different use-case of `useEffect`:
+
+Here the change in the dependency array triggers useEffect which runs an animation. Until the animation finished to run, the `useEffect` hook **should not be triggered again**. Crucially some of the values used inside this `useEffect` hook continuously change (i.e. the animation values) and should not trigger more executions of `useEffect`.
+
+But if I add these animated values to the dependency array, it will not increase the number of `useEffect` calls. Why?- Because the animated value is not a primitive data type, but an object which wraps a `_value` field which holds the changing value (the `Animated.View` component uses this value).A change of a field in an object does not trigger a new `useEffect` execution because the dependency array only shallowly compares (i.e. checks reference equality) the values of the dependency array, it doesn’t do a deep comparison of the entire object. Hence, the animation values which wrap the actually changing values look the same to the `useEffect` hook and adding them won’t hurt. (If you do want the dependency array to be deeply compared, there is a [corresponding hook](https://github.com/kentcdodds/use-deep-compare-effect) available.
+
+Lastly, if you add [the actually changing value](https://stackoverflow.com/questions/41932345/get-current-value-of-animated-value-react-native) to the dependency array, e.g. activeSegmentWidth.`_value` instead of activeSegmentWidth (only works with `useNativeDriver: false` option - with native driver the value .`_value` never changes), then it will hurt. In this case `useEffect` would indeed be called more often (which you don’t want).
+
+### `useLayoutEffect`
+
+Timing of effects
+
+Unlike componentDidMount and componentDidUpdate, the function passed to useEffect fires after layout and paint, during a deferred event. This makes it suitable for the many common side effects, like setting up subscriptions and event handlers, because most types of work shouldn’t block the browser from updating the screen.
+
+However, not all effects can be deferred. For example, a DOM mutation that is visible to the user must fire synchronously before the next paint so that the user does not perceive a visual inconsistency. (The distinction is conceptually similar to passive versus active event listeners.)
+For these types of effects, React provides one additional Hook called `useLayoutEffect`. It has the same signature as `useEffect`, and only differs in when it is fired.
+
+
 
 ### `useMemo` & `useCallback`
 
@@ -20,6 +105,14 @@ tags: ['javascript', 'react']
 ## Wrong example of `useEffect` hook usage and how to fix it
 
 ### `useRef`
+
+- like instance variables
+
+- [CodeSandBox with example](https://codesandbox.io/s/q-57444154-react-refs-closures-forked-also-q-60554573-xcx0x?file=/src/App.react.js)
+- [Why need useRef to contain mutable variable but not define variable outside the component function?](https://stackoverflow.com/questions/57444154/why-need-useref-to-contain-mutable-variable-but-not-define-variable-outside-the)
+- [What are the advantages of useRef() instead of just declaring a variable](https://stackoverflow.com/questions/60554573/what-are-the-advantages-of-useref-instead-of-just-declaring-a-variable)
+
+- To put it simple: variables forget their value between renders. useRef() allows you to remember the value, just like class property would be stored in a class.
 
 ### Error
 
@@ -47,7 +140,7 @@ const MyComponent = () => {
 
 ### Fix
 
-Add callback function to hook setter:
+Add callback function to hook setter. Hereby `editOrganisation` can be removed from the dependency array and its update doesn't retrigger the `useEffect` hook.
 
 ```js {10,12}
 const MyComponent = () => {
@@ -265,6 +358,8 @@ export const useFavorites = () => {
 
 - [How to test custom hooks](https://kentcdodds.com/blog/how-to-test-custom-react-hooks)
 
+##
+
 ## Custom hook libraries
 
 ### React Native
@@ -273,6 +368,7 @@ export const useFavorites = () => {
 
 ### React
 
+- [swr - React Hooks for remote data fetching](https://github.com/vercel/swr)
 - [react-use : List of many many hooks](https://github.com/streamich/react-use)
 - [useHooks](https://github.com/gragland/usehooks)
 - [react-native-community/hooks](https://github.com/react-native-community/hooks)

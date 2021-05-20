@@ -48,7 +48,16 @@ see [http://effbot.org/zone/python-with-statement.htm](http://effbot.org/zone/py
 
 ### Functions
 
-#### Lamda functions
+#### `def`
+
+```python
+def my_function(shepherd):
+  print("Shepherd {} is on duty.".format(shepherd))
+
+my_function()
+```
+
+#### Lambda functions
 
 ```python
 x = lambda a, b : a * b
@@ -59,6 +68,9 @@ print(x(5, 6))
 
 ```python
 [scalar * num for num in vector]
+
+# Other example
+[(wgt, dia) for (wgt, dia) in coins.keys()]
 ```
 
 ## Printing
@@ -68,6 +80,12 @@ print(x(5, 6))
 ```python
 name = "Tom"
 print(f"> {name}")
+```
+
+Here no name `:`
+
+```python
+display = "{:.2f}".format(value)
 ```
 
 ### Print range
@@ -99,4 +117,77 @@ Type annotations added in python 3.5
 ```python
 def greeting(name: str) -> str:
     return 'Hello ' + name
+```
+
+## Tuples
+
+### Tuple unpacking
+
+Dynamically build tuple
+
+```python
+def running_total(*coins):
+    pass
+```
+
+### Tuple as key in dictionary
+
+```python
+# Define dict
+coins = {
+  (5, 21.21): 'nickel',
+  (2.268, 17.91): 'dime',
+  (5.67, 0.955): 'quarter'
+}
+
+# Access value
+coin = coins[wgt, dia]
+
+# Access in for loop
+for wgt,dia in coins.keys():
+```
+
+```python
+# Collections
+from collections import namedtuple
+namedtuple("Coin", ["size", "weight"])
+
+# Access tuple
+Coin.size
+```
+
+## for-else loop
+
+If `for` case of `for-else` loop doesn't **break**, the `else` case is invoked:
+
+```python
+def accept_coin(weight, diameter):
+  for wgt,dia in coins.keys():
+    if ((1 - tolerance) * wgt <= weight <= (1 + tolerance) * wgt) and ((1 - tolerance) * dia <= diameter <= (1 + tolerance) * dia):
+      coin = coins[wgt, dia]
+      value = coin_values[coin]
+      break
+  else:
+    value = 0.00
+
+  display = "{:.2f}".format(value)
+  return display
+```
+
+## try-except
+
+```python
+try:
+    # do calculations...
+except KeyError:
+    value = 0.00
+```
+
+## Testing
+
+```python
+import pytest
+
+def test_sum():
+  assert running_total("nickel", "nickel", "dime") == 0.20
 ```

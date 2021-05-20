@@ -71,3 +71,74 @@ Tipp: Udemy bietet oft Angebote, bei denen du den Kurs für ungefähr 10 oder 20
 ## Theory about teaching style for coding.
 
 In her talk [**Explicit Direct Instruction in Programming Education**](https://www.youtube.com/watch?v=CgR5mSAGxtA&feature=youtu.be&t=3088) Felienne (Prof. at University Leiden) (Twitter: [@Felienne](https://twitter.com/Felienne)) talks that direct instructions are most effective when teaching programming.
+
+### [Hedy](https://hedy-beta.herokuapp.com/)
+
+- A project of Felienne
+- [Hedy GitHub](https://github.com/Felienne/hedy)
+
+
+## Mob programming
+
+- Paired programming on steroids: Read about it [here](https://www.agilealliance.org/glossary/mob-programming/).
+- [Extreme programming](https://www.agilealliance.org/glossary/xp/#q=~(infinite~false~filters~(postType~(~'post~'aa_book~'aa_event_session~'aa_experience_report~'aa_glossary~'aa_research_paper~'aa_video)~tags~(~'xp))~searchTerm~'~sort~false~sortDirection~'asc~page~1)) is another form.
+
+### My Dojo experience
+
+I took part at [Mob programming session - a dojo](https://www.meetup.com/Munchen-Social-Coding-Dojo/events/273899262/) with [this repo](https://github.com/nickdelgrosso/vending-machine-kata-bootstrap).
+
+### Tools
+
+1. [Mob timer](https://mobti.me/)
+2. [Repl.it](https://repl.it/) - Share link to collaborate on code
+
+### Start
+
+1. Install dependencies via lock file
+
+	```bash
+	python3 -m poetry lock
+	```
+
+2. Most simple test
+
+	```python
+	import pytest
+
+
+	def get_the_answer():
+	  return 10
+
+
+	def test_the_answer():
+	  assert get_the_answer() == 42
+	```
+
+### Mob developing participants
+
+- **Navigator** and **Driver** change every 5 minutes.
+- **Navigator** says what to type
+- **Driver** types (and controls speed)
+- **Mobs** watch, think and observe.
+
+### Process rules
+
+- If one test fails, go to code.
+
+### Team support
+
+After each one was a navigator once Mini Repro
+
+- How are you feeling now?
+- Something good we noticed?
+
+### Theory
+
+**Tuckman Model of Team Development**
+
+Forming and Storming at the beginning.
+
+
+## Learn by tinkering with hardware
+
+- [Any-Cubes](https://vimeo.com/473866108/1ea7b7717d)

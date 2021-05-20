@@ -8,6 +8,10 @@ tags: ['marketing']
 draft: true
 ---
 
+## Theory
+
+- Measure with [NPS - Net Promoter Score](https://de.wikipedia.org/wiki/Net_Promoter_Score)
+
 ## Email marketing
 
 ### Email design
@@ -16,6 +20,8 @@ draft: true
 - [Drag and drop tool to create nice emails - Postcards](https://designmodo.com/postcards/)
 
 ### Marketing campaign tools
+
+**Recommendations**:
 
 - [Mailchimp - easiest](https://mailchimp.com/)
 - [Hubspot](https://www.hubspot.com/)

@@ -7,9 +7,33 @@ category: 'programming-language'
 tags: ['javascript', 'typescript']
 ---
 
-# What is `never[]` when using `strictNullChecks`?
+## Definition
 
-## `never` type
+> [`never`] is a special type, the opposite of `any`. Nothing can be assigned to it.
+
+Taken from [here](https://medium.com/dailyjs/typescript-create-a-condition-based-subset-types-9d902cea5b8c).
+
+## What is `never[]` when using `strictNullChecks`?
+
+An empty Array (e.g. `[]`) which cannot be typed gets the type `never[]`. Read about the corresponding PRs [here](https://github.com/microsoft/TypeScript/pull/8944) and [here](https://github.com/microsoft/TypeScript/pull/8907).
+
+**Example**:
+
+```ts
+const [myArray, setMyArray] = setState([]);
+```
+
+Fix it by setting the type of the array with `setState`:
+
+```ts
+const [myArray, setMyArray] = setState<MyArrayType>([]);
+```
+
+In earlier TypeScript versions it used to get type `any[]` but that is not as safe as `never[]` because whereas `never` can be assigned to anything, anything can be assigned to `any`, but nothing can be assigned to `never`.
+
+Read more [here](https://blog.logrocket.com/when-to-use-never-and-unknown-in-typescript-5e4d6c5799ad/) about when to use `never` and `unknown` in TypeScript.
+
+### `never` type
 
 **[Definition](https://basarat.gitbooks.io/typescript/docs/types/never.html)**: A function that doesn't explicitly return a value implicitly returns the value `undefined` in JavaScript.
 
@@ -29,7 +53,7 @@ loop = undefined // Error: Type 'undefined' is not assignable to type 'never'.
 
 [Another article about never](https://blog.mariusschulz.com/2016/11/18/typescript-2-0-the-never-type)
 
-## Question concerning `never`
+### Question concerning `never`
 
 **The error which got me to learn more about `never`**:
 
@@ -112,7 +136,7 @@ Them calling this type `never[]` really seems a bit misleading, because `never` 
 Perhaps one day typescript will be able to contextually infer that here `[]` is inside a `reduce` function and thus `[]` will really be modified and hence can give it an implicit type of whatever the output of the second argument function is.
 Until then we now know why it's the way it is!
 
-## Open questions
+### Open questions
 
 1. How does type widening work? I.e. why is `[]` widened to `undefined` and that then further widened to `any` as I write above and as it is stated [here](https://github.com/Microsoft/TypeScript/issues/10479#issuecomment-241559296).
 
@@ -126,6 +150,6 @@ Until then we now know why it's the way it is!
 
 4. Further thoughts on this question can be found here: https://stackoverflow.com/questions/54117100/why-does-typescript-infer-the-never-type-when-reducing-an-array-with-concat/62537717#62537717
 
-## Notes
+### Notes
 
 Generally it's better to use `[ ...items ]` instead of `[].concat(items)` because it's quite inefficient. See this [GitHub reply](https://github.com/Microsoft/TypeScript/issues/10479#issuecomment-324271498).

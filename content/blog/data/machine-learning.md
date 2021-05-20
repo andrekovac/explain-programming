@@ -9,6 +9,10 @@ tags: ['data-science', 'machine-learning']
 
 ## General concepts
 
+### Papers
+
+Read about current machine learning papers: https://paperswithcode.com/
+
 ### Neural Network
 
 Last layer is usually called `L`.
@@ -26,19 +30,52 @@ Last layer is usually called `L`.
 
 - [MIT 6.S091: Introduction to Deep Reinforcement Learning (Deep RL)](https://www.youtube.com/watch?v=zR11FLZ-O9M&list=PLrAXtmErZgOeiKm4sgNOknGvNjby9efdf)
 
+- [Reinforcement Learning algorithms — an intuitive overview](https://medium.com/@SmartLabAI/reinforcement-learning-algorithms-an-intuitive-overview-904e2dff5bbc)
+
+- Article about [Hierarchical Reinforcement Learning](https://thegradient.pub/the-promise-of-hierarchical-reinforcement-learning/)
+
 #### Deep Learning
 
 - [Deep Learning course by Lex Fridman](https://deeplearning.mit.edu/)
 - [Deep Learning State of the Art (2020)](https://www.youtube.com/watch?v=0VH1Lim8gL8)
 
-#### Convolutational Neural Network
+#### Convolutional Neural Network
 
 - [Great fast.ai explanation with Excel](https://mc.ai/convolutional-neural-networks-in-10-steps-lesson-3-fast-ai/)
 
+##### Layers
+
+- **Pooling** layer: Combination of fields via a function (e.g. `MAX_POOLING`) - no parameters to learn
+- **Convolutional** layers: Applying a convolution function with weights to learn and update
+
+    - [Here](https://towardsdatascience.com/types-of-convolutions-in-deep-learning-717013397f4d) different convolutional layers are described.
+
 ### Activation function
 
+![Activation Functions](./images/activationFunctions.jpg)
+
 * The [rectifier](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) is a popular activation function - the positive part of its argument.
-> A unit employing the rectifier is also called a rectified linear unit (ReLU)
+> A unit employing the rectifier is also called a **rectified linear unit** (ReLU)
+
+    In pytorch: `res.max(tensor(0.0))` or `F.relu` (plot it: `plot_function(F.relu)`)
+
+Why **ReLU**? - **Vanishing gradient problem**. Easy to compute.
+
+**Leaky** ReLU - instead of 0 for x < 0 -> choose slightly decreasing value
+
+
+The universal approximation theorem shows that any function can be approximated as closely as needed using just one nonlinearity. So why do we normally use more?
+
+### Mindset
+
+- **Data Science** Mindset
+
+    Prefer ugly pipeline over nicely implemented pipeline
+
+- **Engineering** Mindset
+
+    Build nice pipeline
+
 
 ### [Accuracy / recall tradeoff](https://en.wikipedia.org/wiki/Precision_and_recall#Recall)
 
@@ -61,6 +98,19 @@ Last layer is usually called `L`.
 
 Compare everything in a confusion matrix.
 
+### Data Loader
+
+An iterator which collects the data and makes it ready to be trained by a neural network.
+
+
+### Understand model
+
+Show what weights are doing.. what does one of the first layers do/emphasize?
+
+```python
+show_image(w[2].view(28,28))
+```
+
 ### Classification
 
 **Exclusive** vs. **non-exclusive** classes.
@@ -82,6 +132,13 @@ How to filter the output value of a neuron before passing it on.
 
 ### Gradient descent
 
+- Metric vs. Loss
+
+    - Metric is what we really care about (to communicate result to humans)
+    - Loss is smooth function which does not have plateaus or bumps and where you can take a good derivative
+
+    e.g. ...
+
 * Cost/Loss functions
 
     * Regression problems: **Quadratic cost**
@@ -101,6 +158,8 @@ How to filter the output value of a neuron before passing it on.
 
 - [A Step by Step Backpropagation Example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
 
+**Stochastic** gradient descent: Uses random mini-batches instead of calculating the gradient of the entire dataset.
+
 ## Terms
 
 * **Hadamard Product**: Element-by-element multiplication of two vectors
@@ -108,11 +167,39 @@ How to filter the output value of a neuron before passing it on.
 
 ## Resources
 
-A nice machine learning graphic:
+- A nice machine learning graphic:
 
-![Machine Learning Graphic](./machine-learning-graphic.jpg)
+    ![Machine Learning Graphic](./machine-learning-graphic.jpg)
 
 - [Machine Learning Explained: Algorithms Are Your Friend](https://blog.dataiku.com/machine-learning-explained-algorithms-are-your-friend)
+
+## Tools
+
+- [Lobe.ai](https://lobe.ai/) - Upload a few tagged samples - it creates ML model for you.
+
+## Computer Vision
+
+### Up-and down Movement detection algorithm
+
+1. An area of interest in the center of the image between `0.45` and `0.55` percent of the height is defined.
+2. The image data comes in as a long array (height x width) and it's overall (sampled at every third pixel) grayscale values (Hex values between `#000` and `#fff`) are averaged.
+
+    Android: Inside a for loop over all pixels these grayScaleValues are summed up:
+
+    ```java
+    grayScaleValue = data[i] & 0xFF;
+    ```
+
+3. Additionally, grayscale values of a small area (less than `0.025` percent) at the top of the image is also recorded and used to normalize the values of the center (e.g. for cases in which the phone moves and thus the background changes)
+4. The overall grayscale values of this area are moved around the mean value so that traversals of objects through the center of the screen are detected via detecting changes from negative to positive (and vice versa) values between subsequent frames.
+5. The final result is `innerZeroCrossings` - `outerZeroCrossings`. In fact the object which traverses the center (`innerZeroCrossings`) has to be more prominent than the grayscale changes in the background (`outerZeroCrossings`). Otherwise, the center (inner) grayscale change is just a copy of the grayscale changes in the periphery of the image.
+
+### Detect unusual sound
+
+1. Collect baseline sound pressure level
+2. Compare sound to baseline
+
+## Links
 
 ### Good reads
 
@@ -126,6 +213,21 @@ A nice machine learning graphic:
 * [Deep Learning for Natural Language Processing](https://www.slideshare.net/sawjd/deep-learning-for-natural-language-processing-by-roopal-garg)
 * [Oxford Machine Learning Course](https://github.com/oxford-cs-ml-2015)
 
+### Links from Daniel Wessel (Motius)
+
+- <https://www.reddit.com/r/learnmachinelearning/> usually has a lot of good and interesting content for beginners
+- <https://developers.google.com/machine-learning/guides/rules-of-ml> a set of best practices for doing ML at google which can be applied to our own projects
+- <https://github.com/mercari/ml-system-design-pattern>
+- <https://github.com/chiphuyen/machine-learning-systems-design>
+- <https://github.com/AMAI-GmbH/AI-Expert-Roadmap/>
+- <https://github.com/EthicalML/awesome-production-machine-learning>
+
+
+## Universal approximation theorem
+
+Adding non-linearity -> You can approximate any function if weights and bias are big enough.
+
 ## How to run it
 
 - [Colab](https://colab.research.google.com/)
+  - Use a graphics card for free for ~12 hours

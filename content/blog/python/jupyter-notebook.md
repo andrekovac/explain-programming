@@ -19,10 +19,10 @@ pip install --upgrade ipython jupyter
 ## Open notebook in browser
 
 ```bash
-yupiter notebook
+jupyter notebook
 ```
 
-#### Keyboard shortcuts
+## Keyboard shortcuts
 
 | Command | Usage |
 |---|---|
@@ -32,7 +32,18 @@ yupiter notebook
 | Shift + Enter | Run row and go to next one |
 | a | Insert row above |
 | b | Insert row below |
+| h | keyboard shortcut help |
 | m | Change into Markdown mode |
 | d + d | Delete row |
+| x | Cut |
+| v | Paste |
 
 [More commands](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/)
+
+## Commands
+
+- See function definition of `linear1` function:
+
+```python
+linear1??
+```

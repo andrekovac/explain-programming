@@ -65,7 +65,7 @@ interface PersonPartial {
 }
 ```
 
-## Casts
+## Type assertions (aka type casts)
 
 Two different ways to cast:
 
@@ -191,17 +191,9 @@ interface Foo {
 }
 ```
 
-## Tipps/Workarounds
+## Tips/Workarounds
 
-- Generics with fat arrow functions
-
-  Use `extends any` as a workaround:
-
-  ```ts
-  const f = <T1 extends any>(arg1: T1) => <T2 extends any>(arg2: T2) => {
-    return { arg1, arg2 };
-  };
-  ```
+### Casts with `as any`
 
 - Cast to any with `as any`
 
@@ -221,47 +213,83 @@ interface Foo {
   } as any)
   ```
 
+### How to deal with `undefined`
+
 - Work around `undefined`
 
-  ```ts
-  let foo: string | undefined;
+  In case you have a type of the sort
 
-  // Alternative 1 - clean way
+  ```ts
+  let foo: string[] | undefined;
+  ```
+
+  or
+
+  ```ts
+  const bar: {
+    foo?: string[];
+  }
+  ```
+
+  TypeScript will force you to deal with the possibility that `foo` might not be defined, i.e. that it is `undefined`.
+
+  Here are three ways of how you can deal with them:
+
+  ```ts
+  const { foo } = bar   // foo might be undefined
+
+  // Alternative 1 - clean modern JS (Optional chaining)
+  const myLength = foo?.length
+
+  // Alternative 2 - clean way via type guard
   if (foo != undefined) {
-    foo.length;
+    const myLength = foo.length;
   }
 
-  // Alternative 2 - elaborate way
-  (foo as string).length;
+  // Alternative 3 - elaborate way via type cast (more dangerous)
+  const myLength = (foo as string).length;
 
-  // Alternative 3 - dirty way
-  foo!.length;
+  // Alternative 4 - dirty way (via non-null assertion -> can't be null or undefined)
+  const myLength = foo!.length;
   ```
+
+  Discussion of all three alternatives
+
+  1. [Optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+  2. Type Guard
+  3. Type Cast
+  4. Non-null assertion
+
 
   Be aware of async wrappers like `setTimeout`:
 
+  They open a new scope.
+
   ```ts
   if (foo != undefined) {
-    foo.length; // works!
+    const myLenght = foo.length; // works!
     setTimeout(() => {
-      foo.length; // foo is a let, so it could've changed in the meantime!
+      const myLength = foo.length; // foo is a let, so it could've changed in the meantime!
     }, 500);
   }
   ```
 
 - Trick to refrain from using type definitions for a module (which e.g. has none)
 
+  You get the error that the module has no type definitions.
 
-    * Alternative 1
+  1. Try to run `yarn add --dev @types/module-without-typings`. Perhaps types for it already exist.
+
+  2. Declare `any` module
 
     ```ts
     declare module 'module-without-typings' {
-        var noTypeInfoYet: any;
-        export = noTypeInfoYet;
+      var noTypeInfoYet: any;
+      export = noTypeInfoYet;
     }
     ```
 
-    * Alternative 2: Use `require` instead of CommonJS way.
+  3. Use `require` instead of CommonJS way.
 
     ```ts
     const ModuleWithoutTypings = require('module-without-typings');
@@ -269,11 +297,207 @@ interface Foo {
 
     instead of
 
-    ```ts
-    import * as ModuleWithoutTypings from 'module-without-typings';
-    ```
+  ```ts
+  import * as ModuleWithoutTypings from 'module-without-typings';
+  ```
 
 - Great for refactoring!
 
   1. Make a change to a variable/prop
-  2. Press `F 8` in **vscode** to jump from error to error to fix them
+  2. Press `F 8` in **VSCode** to jump from TS error to error to fix them
+
+## Data Type: `Record<K, T>`
+
+**Definition**: Construct an object type with `key`s of type `K` and `value`s of type `T`
+
+`Record` creates the type of an object where the entries of `EntryName` are possible keys and the values are of type `number | null | undefined`
+
+```ts
+export type EntryName = typeof entryNames[number]
+export const entryNames = [
+  "connections"
+  "views",
+  "likes",
+  "favorites",
+] as const
+
+type Values = Record<EntryName, number | null | undefined>
+```
+
+### More complex example from `react-navigation`
+
+This is the type definition of [ParamListBase](https://github.com/react-navigation/react-navigation/blob/b19f76bfffe623759e67d925bfd067c753a453bf/packages/routers/src/types.tsx#L93):
+
+```ts
+export declare type ParamListBase = Record<string, object | undefined>;
+```
+
+- `object` can be typed as `{ [key: string]: any }`
+- Hence, the `Record` is an **object of objects** or `undefined`, i.e. either
+
+```ts
+{ [key: string]: { [key: string]: any } }
+```
+
+or
+
+```ts
+{ [key: string]: undefined }
+```
+
+See https://stackoverflow.com/questions/51936369/what-is-the-record-type-in-typescript
+
+## TypeScript implements **Duck Typing**
+
+- [This blog article](https://ajay-bhosale.medium.com/typescript-and-duck-typing-7b3d7bb6f03c) talks about TypeScript and Duck Typing.
+
+- **Duck Typing**: Check whether it is a duck by checking whether it **quacks** like a duck and **walks** like a duck. In contrast to checking its DNA.
+
+```ts
+// types
+interface IItem {
+  id: number;
+  title: string;
+}
+interface IProduct {
+  id: number;
+  title: string;
+  author: string;
+}
+
+// print function
+function print(item: IItem) {
+  console.log(item.id + ' > ' + item.title);
+}
+
+// book
+var book: IProduct = {
+  id: 1,
+  title: 'C# in Depth',
+  author: 'Jon Skeet',
+};
+
+print(book); // No type error since it's
+```
+
+## Constrained generics
+
+Here type `P` gets constraint to `object` which signifies a non-primitive type, i.e. not `string`, `number`, `boolean`, `bigint`, `symbol`, `undefined` or `null`.
+
+```ts
+<P extends object>
+```
+
+**Similar** but different (see [here](https://stackoverflow.com/a/65945966/3210677) for more infos):
+
+```ts
+<P extends {}>
+```
+
+Unconstrained generics are given the implicit constraints of `unknown`, i.e.
+
+```ts
+<P extends unknown>
+```
+
+Read more about it in this nice [SO answer](https://stackoverflow.com/a/65945966/3210677).
+
+## Interfaces as function types
+
+[This blog post covers the topic](https://www.logicbig.com/tutorials/misc/typescript/interface-describing-function.html).
+
+I encountered this type:
+
+```ts
+export interface CreateStyledComponent<
+  P extends {},
+  ComponentProps extends {} = {},
+  JSXProps extends {} = {},
+  StyleType extends NativeStyle = NativeStyle
+> {
+  <AdditionalProps extends {} = {}>(
+    ...styles: Interpolation<P & ComponentProps & AdditionalProps & { theme: Theme }, StyleType>[]
+  ): StyledComponent<P & AdditionalProps, ComponentProps, JSXProps>;
+
+  <AdditionalProps extends {} = {}>(
+    template: TemplateStringsArray,
+    ...styles: Interpolation<P & ComponentProps & AdditionalProps & { theme: Theme }, StyleType>[]
+  ): StyledComponent<P & AdditionalProps, ComponentProps, JSXProps>;
+}
+```
+
+A whole lot is happening here!
+
+- An interface which describes a generic type with **4** input parameters (types) and as return values functions.
+- Function overloading
+- Many constrained generics with default types
+- Many type intersections
+
+
+### Other example from lodash
+
+Its `filter` function heavily uses function overloading inside an interface which defines a function:
+
+```ts
+interface LoDashStatic {
+    /**
+      * Iterates over elements of collection, returning an array of all elements predicate returns truthy for. The
+      * predicate is invoked with three arguments: (value, index|key, collection).
+      *
+      * @param collection The collection to iterate over.
+      * @param predicate The function invoked per iteration.
+      * @return Returns the new filtered array.
+      */
+    filter(collection: string | null | undefined, predicate?: StringIterator<boolean>): string[];
+    /**
+      * @see _.filter
+      */
+    filter<T, S extends T>(collection: List<T> | null | undefined, predicate: ListIteratorTypeGuard<T, S>): S[];
+    /**
+      * @see _.filter
+      */
+    filter<T>(collection: List<T> | null | undefined, predicate?: ListIterateeCustom<T, boolean>): T[];
+    /**
+      * @see _.filter
+      */
+    filter<T extends object, S extends T[keyof T]>(collection: T | null | undefined, predicate: ObjectIteratorTypeGuard<T, S>): S[];
+    /**
+      * @see _.filter
+      */
+    filter<T extends object>(collection: T | null | undefined, predicate?: ObjectIterateeCustom<T, boolean>): Array<T[keyof T]>;
+}
+```
+
+## Utility types
+
+- Utility types are built-in conditional types.
+
+**TODO**: What are conditional types?
+
+
+## Lookup types
+
+- [`keyof`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#keyof-and-lookup-types) to get a `key`.
+
+- And `T[keyof T]` to get a **value** of object `T`:
+
+```ts
+T[keyof T]
+```
+
+### Examples
+
+#### [Partial type](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#mapped-types) implementation
+
+```ts
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+};
+type PartialPerson = Partial<Person>;
+```
+
+#### `filter` function:
+
+```tsx
+filter<T extends object, S extends T[keyof T]>(collection: T | null | undefined, predicate: ObjectIteratorTypeGuard<T, S>): S[];
+```

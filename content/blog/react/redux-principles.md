@@ -121,8 +121,65 @@ render(); // get initial count of 0
 // Using naive event handler (not react or similar)
 document.addEventListener('click', () => {
   store.dispatch({ type: 'INCREMENT' });
-});
+  });
 ```
+
+## Redux error handling
+
+Different ways of handling errors in Redux
+
+### Errors object which gets filled with all occurring errors
+
+```js
+const INITIAL_STATE = { loading: {}, errors: {} };
+
+const photosReducer = (state = INITIAL_STATE, action = {}) => {
+  switch (action.type) {
+    case "PHOTOS_FETCH_ERROR":
+      return {
+        ...state,
+        error: { ...state.error, photosFetch: action.error },
+        loading: { ...state.loading, photosFetch: false },
+      };
+      // ...
+  }
+};
+```
+
+### Each error gets its own state value
+
+```js
+const photosFetchError = (error) => ({ type: "PHOTOS_FETCH_ERROR", error });
+
+// redux-thunk
+const photosFetch = () => (dispatch) => {
+  dispatch(photosFetchStart());
+  return fetch("https://some.url")
+    .then((response) => response.json())
+    .then((photos) => dispatch(photosFetchSuccess(photos)))
+    .catch((error) => dispatch(photosFetchError(error)));
+};
+```
+
+### Error message reducer
+
+```js
+const errorMessage = (state = null, action) => {
+  const { type, error } = action
+
+  if (type === ActionTypes.RESET_ERROR_MESSAGE) {
+    return null
+  } else if (error) {
+    return error
+  }
+
+  return state
+}
+```
+
+See more about this  [in this code snippet](https://github.com/reduxjs/redux/blob/master/examples/real-world/src/reducers/index.js#L16-L27)
+
+See [this lesson from Dan Abramov](https://egghead.io/lessons/javascript-redux-displaying-error-messages) for more on the topic of error messages in Redux.
 
 ## Redux blog article - Praise of Redux
 

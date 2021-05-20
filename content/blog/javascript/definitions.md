@@ -92,3 +92,7 @@ _UNDER_CONSTRUCTION_
 Call function with certain value set as `this` value
 
 [apply() docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+
+### ASI - Automatic semicolon insertion
+
+See [this SO thread](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi) and [how prettier deals with it](https://prettier.io/docs/en/rationale.html#semicolons).

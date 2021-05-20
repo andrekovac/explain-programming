@@ -53,6 +53,9 @@ In case you do want to catch all events, a good fix would be to use `takeEvery`.
 - Async stuff not related to redux actions etc.
 - Other listeners!
 
+## TypeScript
+
+Great article about [redux-saga + TypeScript](https://tech.lalilo.com/redux-saga-and-typescript-doing-it-right).
 
 ### Image
 

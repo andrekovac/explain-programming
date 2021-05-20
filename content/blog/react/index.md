@@ -107,6 +107,13 @@ var app = React.createElement(
 );
 ```
 
+## React Low-level API
+
+### `cloneElement`?
+
+- To change props of of elements which are already rendered, e.g. `<Icon />` in `<ButtonIcon />`
+- Look at `_renderGroupedChildren()` in `Button.js`
+
 ## Mixins
 
 * In component `CameraAction.js`: What is a React mixin? How does the `_mixinFrameStyle()` thing work?

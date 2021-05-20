@@ -154,3 +154,37 @@ export const systemVersionAsNumber = getSystemVersionAsNumber(systemVersion);
 ## Credits
 
 Thanks for [StackOverflow answer](https://stackoverflow.com/questions/44908159/how-to-define-an-array-with-conditional-elements#47771259) which showed me that I forgot the rounded brackets when I first tried to combine the spread operator with the ternary operator.
+
+
+## Another example
+
+The syntax makes it a bit hard to grasp what's happening without round brackets:
+
+```js
+const color = initialColor === 'primary' ? theme.colors.primary[500] : (
+  initialColor === 'secondary' ? theme.colors.secondary[500] : (
+    initialColor === 'tertiary' ? theme.colors.tertiary[500] : (
+      initialColor === 'black' ? theme.colors.grey[900] : (
+        initialColor === 'white' ? theme.colors.white: initialColor
+      )
+    )
+  )
+);
+```
+
+Formatted:
+
+```js
+const color =
+  initialColor === "primary"
+    ? theme.colors.primary[500]
+    : initialColor === "secondary"
+    ? theme.colors.secondary[500]
+    : initialColor === "tertiary"
+    ? theme.colors.tertiary[500]
+    : initialColor === "black"
+    ? theme.colors.grey[900]
+    : initialColor === "white"
+    ? theme.colors.white
+    : initialColor;
+```

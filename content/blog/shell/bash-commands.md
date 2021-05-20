@@ -33,6 +33,12 @@ or
 chmod +x my_script.sh`
 ```
 
+##
+
+```bash
+touch {1,2,3,4}.md
+```
+
 ## Navigate
 
 Create directory and cd to it right away

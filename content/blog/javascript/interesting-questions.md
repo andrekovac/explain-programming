@@ -641,11 +641,6 @@ NEW QUESTIONS
 
     ES6 syntax shortcut let's it appear so, but via default export it works.
 
-19. Why `cloneElement`?
-
-    -> To change props of of elements which are already rendered, e.g. `<Icon />` in `<ButtonIcon />`
-    Look at `_renderGroupedChildren()` in `Button.js`
-
 20. How could I get information about the current POI inside an action creator which I build like `actions/menu.js`? i.e. `story.js` in commit `bcfb7f86e2ed4c21435353dd1821c2838668ef82`
 
 21. Why start with return statement within action creator with `Promise.resolve()`?

@@ -1,22 +1,33 @@
 ---
 title: 'CSS'
 description: 'Some CSS commands I found worth to remember'
-date: '2016-01-08T12:26:00.000Z'
+date: '2016-01-08'
 author: 'André Kovac'
 category: 'tool'
 tags: ['design', 'css']
-draft: true
 ---
+
+## How does CSS get rendered in the browser?
+
+Read about it in the [browser-performance](../browser-performance.md) article.
 
 ## CSS
 
-Compute a value with `calc`:
+### Compute a value with `calc`:
 
 ```css
 height: calc(100% - 60px);
 ```
 
 [Summary of some important basic CSS commands](./css_commands.pdf)
+
+### Important difference: `width` vs. `min-width`
+
+According the w3c spec height refers to the height of the viewable area e.g. on a 1280x1024 pixel resolution monitor 100% height = 1024 pixels.
+
+min-height refers to the total height of the page including content so on a page where the content is bigger than 1024px min-height:100% will stretch to include all of the content.
+
+Taken from [here](https://stackoverflow.com/a/485872/3210677).
 
 ## CSS3
 
@@ -114,7 +125,33 @@ margin: 0 auto;
 
 ## Flexbox
 
-#### Flexbox + media queries
+### Intro
+
+[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+flexible alignment of items in container
+
+```css
+.item {
+	flex: 0 1 auto;
+	flex-direction: row;
+}
+```
+
+### `flex-shrink`
+
+- `flex-shrink` is the opposite of `flex-grow`, determining how much a square is allowed to shrink.
+- **It only comes into play if the elements must shrink to fit into their container** — i.e. when the container is just too small.
+  - Its main use is to specify which items you want to shrink, and which items you don't.
+
+- **Use case**: Long text field overflows container.
+- **Solution**: Set `flex-shrink: 1;` on an item. The item will shrink so that all elements fit into the container.
+
+> If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
+
+from [flex-shrink docs](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink).
+
+### Flexbox + media queries
 
 Example: With `width < 500`, only two `a` fit on screen, width `width > 500`, four `a` fit on screen.
 
@@ -137,45 +174,118 @@ Example: With `width < 500`, only two `a` fit on screen, width `width > 500`, fo
 }
 ```
 
-#### Intro
-
-[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-
-flexible alignment of items in container
-
-```css
-.item {
-	flex: 0 1 auto;
-	flex-direction: row;
-}
-```
-
 ## `em` vs. `rem` (Root EM)
 
 > An EM is a unit of typography, equal to the currently specified point-size
 
-* Default browser font size is 16px, i.e. `html { font-size: 100% } /* This means 16px by default*/`
+* Default browser **font size** is 16px, i.e. `html { font-size: 100% } /* This means 16px by default*/`
 * So using `font-size: 62.5%` reduces default to 10px which is much easier to scale.
 
-[REM vs EM – The Great Debate](https://zellwk.com/blog/rem-vs-em/)
+	```css
+	html,
+	body {
+		font-size: 62.5%;  /* 1em = 10px */
+	}
+
+	html {
+		font-size: 1.6rem; /* =16px */
+	}
+
+	body {
+		font-size: 1.4rem; /* =14px */
+	}
+	```
+
+* Bad idea to set font-size in the <html> to a pixel value because it overrides the user’s browser settings!
+* Next to `font-size`, `margin` and `padding` can also use `em`.
+
+- [REM vs EM – The Great Debate](https://zellwk.com/blog/rem-vs-em/)
+
+	- `em`: An `EM` is a unit of typography, equal to the currently specified **point-size**. In the web **point-size** equals **font-size**. And the standard `font-size` is `16px`.
+
+		`1em` is equal to its **current** `font-size`.
+
+		```css
+		h1 {
+			font-size: 2em; /* 1em = 16px */
+			margin-bottom: 1em; /* 1em = 32px */
+		}
+
+		p {
+			font-size: 1em; /* 1em = 16px */
+			margin-bottom: 1em; /* 1em = 16px */
+		}
+		```
+
+		- `font-size` in <h1> gets set to `2em`. Other properties computed with `em` in <h1> see that `1em = 32px`.
+
+	- `rem`: **root** `em`. It is a unit of typography equal to the **root font-size**. This means `1rem` is always equal to the `font-size` defined in <html>.
+
+## CSS Box Model
+
+### Box Sizing: Content box (web default) vs. Border box
+
+Given this `html`:
+
+```html
+<div class="wrapper">
+  <div class="element">Element 1</div>
+  <div class="element">Element 2</div>
+  <div class="element">Element 3</div>
+</div>
+```
 
 ```css
-html,
-body {
-  font-size: 62.5%;  /* 1em = 10px */
+.wrapper {
+  width: 100%;
 }
 
-html {
-  font-size: 1.6rem; /* =16px */
-}
-
-body {
-  font-size: 1.4rem; /* =14px */
+.element {
+  box-sizing: content-box;
+  display: inline-block;
+  height: 150px;
+  width: 33%;
+  background-color: red;
 }
 ```
 
-* Bad idea to set font-size in the <html> to a pixel value because it overrides the user’s browser settings!
-* `margin` and `padding` can also use `em`.
+If adding a border, the three elements would not fit in a row anymore. But when setting `box-sizing: border-box` they do:
+
+```css
+.element {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 150px;
+  width: 33%;
+  background-color: red;
+  border: 5px solid grey;
+}
+```
+
+
+
+
+`box-sizing: border-box;`
+
+## Specificity
+
+`*` vs. `html`.
+
+`*` breaks the cascade.
+
+And the trick with `inherit`:
+
+```css
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+```
+
+This way all styles have `border-box` by default, but still have the ability to be overridden, e.g. by some elements which come from a library
 
 ## SASS / SCSS
 
@@ -223,3 +333,10 @@ From SASS 3.2 on it works as you'd expect! Works "inline"!
 ## Compass
 
 ???
+
+
+## Links
+
+- [Pro CSS and HTML Design Patterns](http://cssdesignpatterns.com/)
+
+	- Recommended in a StackOverflow Issue

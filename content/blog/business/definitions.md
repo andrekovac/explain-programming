@@ -9,5 +9,9 @@ draft: true
 ---
 
 - [Value proposition](https://www.investopedia.com/terms/v/valueproposition.asp)
-- **KPI - Key performance indicator**
 - **Customer development** vs. **User development**: The former is used in the B2B context, the later in B2C.
+
+### Assessment measures
+
+- **KPI**: Key performance indicator
+- **OKR**: Objectives and Key Results
