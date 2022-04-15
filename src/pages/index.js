@@ -88,6 +88,11 @@ const BlogIndex = (props) => {
           const title = node.frontmatter.title || node.fields.slug;
           const defaultDescription = `Concepts, syntax and code snippets for ${node.frontmatter.title}`;
 
+          if (!node.frontmatter.datePublished) {
+            throw Error(
+              `Did you forget to add a "datePublished" field to article "${title}"?`
+            );
+          }
           const datePublishedFormatted = dayjs(
             node.frontmatter.datePublished
           ).format('LL');
@@ -112,7 +117,11 @@ const BlogIndex = (props) => {
                     bg: 'gray.200',
                   }}
                 >
-                  <Box paddingX={{ base: '4', md: '5' }} paddingBottom="3" paddingTop="8">
+                  <Box
+                    paddingX={{ base: '4', md: '5' }}
+                    paddingBottom="3"
+                    paddingTop="8"
+                  >
                     <Box display={{ md: 'flex' }}>
                       <Flex direction="row">
                         <Flex

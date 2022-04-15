@@ -7,6 +7,9 @@
   "bugs": {
     "url": "https://github.com/andrekovac/explain-programming/issues"
   },
+  "engines": {
+    "node": "14"
+  },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.35",
