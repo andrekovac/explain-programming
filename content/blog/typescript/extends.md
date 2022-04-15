@@ -7,7 +7,56 @@ category: 'programming-language'
 tags: ['javascript', 'typescript']
 ---
 
-## `extends`
+### Definition for object types
+
+- `K extends keyof T` "extends" means a type with covariant relationship with `keyof T`
+
+**Exercise**: https://stackoverflow.com/questions/45546159/type-test-cannot-be-used-to-index-type-t
+
+```js
+interface Animal {
+  fur: 'colored';
+}
+interface Lion extends Animal {
+  bites: true
+}
+```
+
+
+`extends` in e.g. `Lion extends Animal` says that `Lion` is a sub-type of `Animal` like with classes if `Ferrari extends Car`, `Ferrari` is a child of a `Car`.
+
+`Lion` is more special than `Animal`.
+
+### `extends` for union types
+
+Let's look at
+
+```ts
+let foo: string | number = "hello"
+```
+
+- **Question**:  Why does this type assertion work?
+- **Answer**: It's because of these equivalent statements:
+  - The literal type `"hello"` is *narrower* than `string | number`.
+  - "hello" is a **subtype** of string | number
+  - "hello" extends `string | number`
+
+Although it's called `extends`, in `A extends B`
+
+
+```ts
+
+```
+
+### TS Error: Type '"test"' cannot be used to index type 'T'
+
+> For type inference to work, you'll need to pass a parameter to the function that uses one or more of the generic type parameters.
+
+Nice example [here](https://stackoverflow.com/questions/45546159/type-test-cannot-be-used-to-index-type-t).
+
+### Widening type assertion vs. type annotation
+
+Excellent explanation in [this SO answer](https://stackoverflow.com/a/68289470/3210677).
 
 ### Narrowing down a field
 
@@ -29,7 +78,7 @@ export interface QuestionField extends Field {
 }
 ```
 
-#### Mimicking `extends` with type aliases
+#### Mimicking `extends` with type aliases via intersection type
 
 ```tsx
 interface LogoProps extends SvgProps {
@@ -152,7 +201,7 @@ function useCallback<T extends (...args: any[]) => any>(callback: T, deps: Depen
 
 ## Type cast of React node
 
-Cast as a React component
+Type assertion for a React component
 
 ```tsx
 export const CardStack = React.forwardRef<View, CardStackProps>(

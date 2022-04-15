@@ -18,7 +18,7 @@ Jenkins Projects are saved in `~/.jenkins/workspace/` on your Continuous Integra
 
 	e.g. here it's only executing a script which is in version control.
 
-	```
+	```bash
 	#!/bin/bash -l
 
 	./internals/scripts/build-cms.sh

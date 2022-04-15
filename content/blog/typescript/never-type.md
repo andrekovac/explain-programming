@@ -17,7 +17,11 @@ Taken from [here](https://medium.com/dailyjs/typescript-create-a-condition-based
 
 An empty Array (e.g. `[]`) which cannot be typed gets the type `never[]`. Read about the corresponding PRs [here](https://github.com/microsoft/TypeScript/pull/8944) and [here](https://github.com/microsoft/TypeScript/pull/8907).
 
-**Example**:
+In earlier TypeScript versions it used to get type `any[]` but that is not as safe as `never[]` because whereas `never` (and `any`) can be assigned to anything, anything can be assigned to `any`, but nothing can be assigned to `never`.
+
+It indeed is a weird thing to see the `never` type here (see [this TS Playground](https://www.typescriptlang.org/play?ssl=2&ssc=19&pln=1&pc=1#code/DYUwLgBARgXBB2IBuIBOBuAsAKFJAhnAM5ioCW8A5hALzRbY5A)). `never` marks a value which never exists. But since no value can be assigned `never`, the type `never[]` prevents you from assigning a value to the array elements later - which in turn forces you to add a type assignment (or type assertion) to define the array type so one can finally assign values to it!
+
+### Example and fix
 
 ```ts
 const [myArray, setMyArray] = setState([]);
@@ -29,11 +33,9 @@ Fix it by setting the type of the array with `setState`:
 const [myArray, setMyArray] = setState<MyArrayType>([]);
 ```
 
-In earlier TypeScript versions it used to get type `any[]` but that is not as safe as `never[]` because whereas `never` can be assigned to anything, anything can be assigned to `any`, but nothing can be assigned to `never`.
-
 Read more [here](https://blog.logrocket.com/when-to-use-never-and-unknown-in-typescript-5e4d6c5799ad/) about when to use `never` and `unknown` in TypeScript.
 
-### `never` type
+## Functions which return the `never` type
 
 **[Definition](https://basarat.gitbooks.io/typescript/docs/types/never.html)**: A function that doesn't explicitly return a value implicitly returns the value `undefined` in JavaScript.
 
@@ -57,7 +59,11 @@ loop = undefined // Error: Type 'undefined' is not assignable to type 'never'.
 
 **The error which got me to learn more about `never`**:
 
-Here Typescript says `Argument of type 'string[]' is not assignable to parameter of type 'never[]'. Type 'string' is not assignable to type 'never'`.
+Here Typescript says
+
+```bash
+Argument of type 'string[]' is not assignable to parameter of type 'never[]'. Type 'string' is not assignable to type 'never'
+```
 
 **Question**:
 
@@ -65,7 +71,7 @@ Typescript: Under `strictNullChecks` option, using `concat` in order to build an
 
 Why is `[node.getData().name]` inferred to be of type `never[]`?
 
-```bash-output
+```bash
 No overload matches this call.
   Overload 1 of 2, '(...items: ConcatArray<never>[]): never[]', gave the following error.
     Type 'string' is not assignable to type 'never'.
@@ -75,7 +81,7 @@ No overload matches this call.
 
 In older Typescript versions (earlier than 2.8.1 - that's how long ago I first encountered this! 😬) you might have gotten this similar error:
 
-```bash-output
+```bash
 Argument of type 'string[]' is not assignable to parameter of type 'ConcatArray<never>'.
   Types of property 'slice' are incompatible.
     Type '(start?: number | undefined, end?: number | undefined) => string[]' is not assignable to type '(start?: number | undefined, end?: number | undefined) => never[]'.
@@ -149,6 +155,12 @@ Until then we now know why it's the way it is!
 3. Difference between `String[]` and `string[]`. See this discussion: https://stackoverflow.com/questions/14727044/typescript-difference-between-string-and-string
 
 4. Further thoughts on this question can be found here: https://stackoverflow.com/questions/54117100/why-does-typescript-infer-the-never-type-when-reducing-an-array-with-concat/62537717#62537717
+
+## `never` to conditionally allow properties of an object
+
+This could also be called "use `never` to prune conditional types". See the section named like this in [this article about `never` and `unknown`](https://blog.logrocket.com/when-to-use-never-and-unknown-in-typescript-5e4d6c5799ad/).
+
+Also see my SO question
 
 ### Notes
 

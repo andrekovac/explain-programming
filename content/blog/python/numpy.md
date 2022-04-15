@@ -35,34 +35,6 @@ random.rand(<int>)
    - `argmax()`, `argmin()`
    - `dtype`
 
-## Visualization
-### `matplotlib`
-
-- [mplcyberpunk](https://github.com/dhaitz/mplcyberpunk) is a Python package on top of `matplotlib` to create 'cyberpunk' style plots with 3 additional lines of code.
-
-- [Bokeh](https://docs.bokeh.org/en/latest/index.html)
-
-## Simple `numpy` and `matplotlib` example
-
-```python
-from numpy.random import randint
-import matplotlib.pyplot as plt
-
-# Sample 1000 random values to create a scatterplot
-x = randint(low=1, high=1000, size=100)
-y = randint(low=1, high=1000, size=100)
-
-# This will show nothing in a Jupyter Notebook
-plt.scatter(x, y)
-plt.show()
-```
-
-## Plotting
-
-```python
-import seaborn as sns
-```
-
 ## Learning materials
 
 - [100 Numpy Puzzles](https://github.com/rougier/numpy-100)

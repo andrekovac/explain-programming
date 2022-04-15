@@ -69,7 +69,9 @@ var functionOne = function () {
 
 ### Named function expressions
 
-Instead of an **anonymous** function a **named** function can be used. Then it's called a **named** function expression:
+Instead of an **anonymous** function a **named** function can be used. Then it's called a **named** function expression.
+
+**Attention**: This one is very easily mistaken with function declarations!
 
 ```js
 var functionOne = function functionOne() {
@@ -93,7 +95,7 @@ Defined globally if `xyz` was not defined anywhere in the chain of scopes:
 xyz = function () {};
 ```
 
-## Function **declaration**:
+## Function **declaration** (aka **function statement**):
 
 ```js
 function functionTwo() {
@@ -101,7 +103,7 @@ function functionTwo() {
 }
 ```
 
-- Function is hoisted to top of script or function (even if `return` occurs in between).
+- Function is **hoisted** to top of script or function (even if `return` occurs in between).
 - Has name: `console.log(functionTwo.name)` prints `functionTwo`.
 - In `strict` mode, a function cannot be nested within non-function statements, e.g. in conditionals:
 
@@ -227,3 +229,7 @@ httpGet('/post/2', renderPost);”
 **Answer**: You don't have to wrap the function `renderPost` into an anonymous function as it was done in the first piece of code. In both cases the equivalent of the function `renderPost` is passed to `httpGet` and `httpGet` will know what to do with it.
 
 > Example taken from the book `most-adequate-guide` to functional programming in which the author uses the second version in the first-class functions examples (e.g. on page 38).
+
+## Cases where you still have to use function declarations (instead of arrow functions)
+
+- e.g. generator functions

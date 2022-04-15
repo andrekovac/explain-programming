@@ -11,6 +11,8 @@ tags: ['javascript', 'typescript']
 
 ([taken from this blog article](https://medium.freecodecamp.org/its-time-to-give-typescript-another-chance-2caaf7fabe61))
 
+## `tsc` (compiler) vs. [IDE language service](https://code.visualstudio.com/docs/typescript/typescript-compiling#_compiler-versus-language-service)
+
 ## How does it work?
 
 - Typescript compiler compiles `.ts` and `.tsx` files to `.js` files + `js.map` minified files.
@@ -71,10 +73,40 @@ Two different ways to cast:
 
 ```ts
 myObject = <TypeA>otherObject; // using <>
+// Recommended:
 myObject = otherObject as TypeA; // using `as` keyword
 ```
 
-Read about [why you shouldn't cast often](https://books.google.de/books?id=5EZsDwAAQBAJ&pg=PA100&lpg=PA100&dq=typescript+avoid+cast&source=bl&ots=A4D-zyJBXY&sig=ACfU3U1juPM6qd79-QooA_MvFQQtPvVUBw&hl=en&sa=X&ved=2ahUKEwi69aL8lJjqAhURwcQBHZAvDuUQ6AEwAnoECAoQAQ#v=onepage&q=typescript%20avoid%20cast&f=false).
+- Read about [why you shouldn't cast often](https://books.google.de/books?id=5EZsDwAAQBAJ&pg=PA100&lpg=PA100&dq=typescript+avoid+cast&source=bl&ots=A4D-zyJBXY&sig=ACfU3U1juPM6qd79-QooA_MvFQQtPvVUBw&hl=en&sa=X&ved=2ahUKEwi69aL8lJjqAhURwcQBHZAvDuUQ6AEwAnoECAoQAQ#v=onepage&q=typescript%20avoid%20cast&f=false).
+
+### Scenarios where you might want a type assertion
+
+1. Sometimes TS can't automatically infer the correct type. In this case it's ok to use a type assertion.
+
+2. **Control flow analysis** when assigning to a union type
+
+```ts
+let baz: string | number = "baz" // this might be a number sometime but for testing it's "baz"
+
+if (typeof baz === "number") {
+    baz.toFixed(); // error?! toFixed() doesn't exist on type 'never'
+}
+```
+
+The type is `never` here because TypeScript narrowed the type to `string` in the line with the `if` statement.
+
+With a type assertion there will be no error.
+
+```ts
+let qux = "qux" as string | number;
+
+if (typeof qux === "number") {
+    qux.toFixed(); // okay
+}
+```
+
+
+**TODO**: Example
 
 ## Assure that type is defined
 
@@ -84,7 +116,7 @@ Read about [why you shouldn't cast often](https://books.google.de/books?id=5EZsD
 const myName = data!.name!;
 ```
 
-Use with caution!
+Don't use it! Eliminates type safety.
 
 ## Pass on responsibility to type
 
@@ -138,12 +170,6 @@ I still don't understand:
 2. How `require.js` automatically does some kind of async stuff? as mentioned in comments of the question [here](https://stackoverflow.com/questions/2274695/new-function-with-lower-case-f-in-javascript)?
 3. Why do I have to use `export =` in order to use the above `require(['app/foo'], ...)` syntax?
 
-## Type Widening
-
-Type widening is the default behavior for many literal types. So e.g. a string `foo` becomes the `string type`.
-
-[Marius Schulz writes](https://blog.mariusschulz.com/2017/02/04/typescript-2-1-literal-type-widening) why non-widening _literal_ types might be useful.
-
 ## Comparison to flow
 
 [Comparison with Facebook Flow Type System](https://github.com/Microsoft/TypeScript/issues/1265)
@@ -161,13 +187,20 @@ To mimic the behavior of non-strict flow-type type definitions:
   }
   ```
 
-- Unions in **index signatures**
+- **Unions** in **index signatures**
 
-  Use the `in` command:
+  The `in` keyword is used in mapped type definitions as part of the syntax to iterate over all the items in a union of keys:
 
   ```ts
   type Foo = 'a' | 'b';
-  type Bar = { [key in Foo]: any };
+  type Bar = { [key in Foo]: any };   // { a: any, b: any }
+  ```
+
+  This code will not do what you expect. It will allow **anything** in the object. It won't restrict keys
+
+  ```ts
+  type Foo = 'a' | 'b';
+  type Bar = { [key: Foo]: any };
   ```
 
   The following code causes this error `An index signature parameter type cannot be a union type. Consider using a mapped object type instead`:
@@ -215,11 +248,14 @@ interface Foo {
 
 ### How to deal with `undefined`
 
+- Attention: `age?: number;` is not the same as `age?: number | undefined;`
+
+  - Read more about it [here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#exact-optional-property-types) where **Exact Optional Property Types** are discussed.
+
 - Work around `undefined`
 
   In case you have a type of the sort
 
-  ```ts
   let foo: string[] | undefined;
   ```
 
@@ -297,9 +333,9 @@ interface Foo {
 
     instead of
 
-  ```ts
-  import * as ModuleWithoutTypings from 'module-without-typings';
-  ```
+    ```ts
+    import * as ModuleWithoutTypings from 'module-without-typings';
+    ```
 
 - Great for refactoring!
 
@@ -472,8 +508,87 @@ interface LoDashStatic {
 
 - Utility types are built-in conditional types.
 
-**TODO**: What are conditional types?
+### Examples from `styled-components-react-native`:
 
+```ts
+type AnyIfEmpty<T extends object> = keyof T extends never ? any : T;
+```
+
+e.g.
+
+```ts
+export const ThemeProvider: ThemeProviderComponent<AnyIfEmpty<DefaultTheme>>;
+```
+
+### `Omit`
+
+```ts
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+```
+
+### `Pick`
+
+Implementation of `Pick`:
+
+```ts
+type Pick<T, K extends keyof T> = {
+    [P in K]: T[P];
+};
+```
+
+- The second argument of Pick has to be a union because `keyof` creates a union of keys as string literals.
+
+### `Partial`
+
+Implementation of `Partial`:
+
+```ts
+type Partial<T> = {
+    [P in keyof T]?: T[P];
+};
+```
+
+## Discriminated unions
+
+Unions of objects that share a property of string literals
+
+- [This answer](https://stackoverflow.com/a/68307382/3210677) is worth reading in this regard.
+- Also [my answer](https://stackoverflow.com/a/68581065/3210677) about the fact that today a discriminant is not always necessary.
+
+TODO: Solve with adapted solution from here: https://artsy.github.io/blog/2018/11/21/conditional-types-in-typescript/
+
+### `isDirty`: Union without discriminant
+
+- Here `id` just has different types. No type literal is here which works as discriminant.
+- This works at least since TS 3.3.3
+
+```ts
+type LectureT = LectureIdT & {
+  title: string;
+};
+
+/**
+ * Lecture can only have isDirty field if id is of type number.
+ */
+type LectureIdT =
+  | { id: string; isDirty: boolean }
+  | { id: number; isDirty?: never };
+
+
+const lectureMockWithNumberId: LectureT = {
+  id: 1,
+  title: 'Lecture 1',
+  // isDirty: false, // Uncomment to see error
+};
+
+const lectureMockWithStringId: LectureT = {
+  id: "1",
+  title: 'Lecture 2',
+  isDirty: false,
+};
+```
+
+Can be played around with in this [TS Playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAMhDGwCuAnCAVKBeWDloEkATTAMigG8AoKKYAS2ABsIAuKAZ2BXoDsBzANxUAvsKoB6AFRSaU3IlTR4AQ15QA9ryYgoACxUA3aPQ4AReilBQAZvQhMiUejedPTm16EhReSALYARhAoAHRyElTe0HCKhCTYNFAAPpRu7Fw8AoLO5pag7IEaGixqUCJJqRTpvgHBKDmmFlYgAPzsvBDGKOXCtFRU8FpcUCxxEACyGvAA1gDqjHoAcnUhxOyx+BjYlEn0ROwAjAA0SQzMbFAA5JtKUIdXp7QSErnNBbYqTBwQx1AvUAAqrwhv5-BBeMA6BpOBBoCEUBoUKJxENeCMxlsprMFsA9ABlbh8fjrBRbTA4ai0fbsABEh1pTzojBY7BueDuACZHns8i12DYvj9TmIqEA).
 
 ## Lookup types
 
@@ -489,10 +604,14 @@ T[keyof T]
 
 #### [Partial type](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#mapped-types) implementation
 
+The `Partial` utility type is implemented via a mapped type.
+
 ```ts
 type Partial<T> = {
   [P in keyof T]?: T[P];
 };
+
+// Usage
 type PartialPerson = Partial<Person>;
 ```
 
@@ -500,4 +619,132 @@ type PartialPerson = Partial<Person>;
 
 ```tsx
 filter<T extends object, S extends T[keyof T]>(collection: T | null | undefined, predicate: ObjectIteratorTypeGuard<T, S>): S[];
+```
+
+## Mapped Types
+
+e.g.
+
+```ts
+type ContactDetails = { [K in "name" | "email"]: string };
+```
+
+See for example [this article about mapped types](https://learntypescript.dev/08/l2-mapped-type) for more.
+
+### For objects
+
+See `Pick` or `Partial` above in the utility type section
+
+### For unions
+
+- See [the section about mapped types in the old TS docs](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types).
+
+- [Very interesting dive into TypeScript](https://medium.com/dailyjs/typescript-create-a-condition-based-subset-types-9d902cea5b8c) to explore the type system.
+
+### `as` in mapped types to redefine object
+
+## Structural vs. Nominal typing
+
+- **Structural**: Has to be the same type - does not have to be the same instance
+- **Nominal**: Has to be the same instance
+
+## Interesting
+
+- `(string & {})`
+
+  To allow auto-completion of some strings but still allow all string values.
+
+  **Example**:
+
+  ```ts
+  color: 'inherit' | 'primary' | 'secondary' | 'tertiary' | 'black' | 'white' | (string & {});
+  ```
+
+  See [this TS Playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAYg9nKBeKBvAUFKBjOAbOAJwC4oByASwDsALCQi4MqAH3LAYFsBDQkZtmQDOEXFQAmvfq3LB6wClIHkARnm7YA1srIB3GowjKAFEOAMqAcygAyNAF8AlAG5099OjFmoAMwSl4RBQMLFwCEigAIjhgOkJIt1cgA).
+
+  Here the given strings are theme colors and all other provided colors will be used as CSS color -> in a different manner.
+
+## Template Literal Types
+
+- [This article](https://dev.to/phenomnominal/i-need-to-learn-about-typescript-template-literal-types-51po) introduces them nicely.
+- TS 4.4 will introduce template literal types as dynamic object keys. See [this SO reply](https://stackoverflow.com/a/65879197/3210677) for more.
+
+## `infer`
+
+With `infer` you declare a new variable in the scope of a conditional type.
+
+### Why do we need `infer`?
+
+You sometimes have to declare new variables there if it has no matching counterpart on the left-hand side of the type declaration.
+
+> `infer` is there to say you know you are declaring a new type (in the conditional type's scope) - much like you have to write `var`, `let` or `const` to tell the compiler you know you're declaring a new variable.
+
+See this great example to explain `infer` from this [answer in SO](https://stackoverflow.com/a/60067851/3210677):
+
+**Example to show why we need infer:**
+
+```ts
+type R = { a: number }
+
+type MyType<T> = T extends infer R ? R : never; // infer new variable R from T
+type MyType2<T> = T extends R ? R : never; // compare T with above type R
+type MyType3<T> = T extends R2 ? R2 : never; // error, R2 undeclared
+
+type T1 = MyType<{b: string}> // T1 is { b: string; }
+type T2 = MyType2<{b: string}> // T2 is never
+```
+
+**Explanation**: `type MyType2<T> = ...` is a **type alias declaration**, in which generic type variable/parameter `T` cannot be resolved yet. Later on we instantiate `T` with `{b: string}` by using the **type reference** `MyType2<{b: string}>` inside the type alias declaration `type T2 = ....`
+Now, the actual type can be resolved. As `{b: string}` (instance of `T`) is **not assignable** to `R` - which is `{a: number}` -, `T2` resolves to `never`.
+
+
+### Example: Implementation of `ReturnType` utility type
+
+```ts
+// Own implementation of `ReturnType` (have to choose different name so that name doesn't clash)
+type ReturnTypeNew<T> = T extends (...args: any[]) => infer R ? R : any;
+
+type f1 = () => "hello"
+
+type inter = { a: string, b: number } | boolean;
+
+const foo: inter = { a: "one", b: 2 };
+```
+
+See [this TS Playground](https://www.typescriptlang.org/play?ssl=9&ssc=1&pln=1&pc=1#code/C4TwDgpgBAShwFcBOA7AKuCA5CB3APGgHxQC8UaUEAHsBCgCYDOUAFAHScCGSA5kwC4oXFCADaAXQCUZEgEsUAMwhJYUAPxqhIkAG4AsACgjoSFEUBGMmxmkSAIgAWEADYuA9vaMnMUBXVVyAG9hISZgJAVeABooACMhFAQAWziVKABfKAAfePd3FwgRA2NDAGN3FHDzfKF-dODQqHtKiHtYhKgAJkySoyA).
+
+## Type Unions and Intersections
+
+### Type Intersections
+
+#### Implicit type intersections
+
+- When overwriting fields via intersections the types of the fields intersect as well.
+- **Attention**: Given primitive data types this can quickly yield unwanted `never` values.
+
+See this [TS Playground](https://www.typescriptlang.org/play?#code/PTAEEkFsAcBsEsDG8AuoUE9oFNTwHYrYBOAztoivAPb6kCwAUE5jqAIKgC8oA3qAEMAXH1CIR+AK6QARiVABfADSgZE6XOKKA3Cyy4AQtw6gAZKOGiAJiNIpiBAOaKdoEBZH9xoKbJIqbUDsHfGdlVXU-LQUmJkRaO1BsAA8BGFhsAEYRIx5+Sy8RACYAkQByKzLFFTVQAGYdWMZ3AAUHSFR4ADdcVmxScvxsHuIq+FIkgVJ4WAxQaGJqK0lEbCsmvtAAYWN8yM0a23snRsZNgBFjHfM9oOPQ07iEtBS0uGwikUu8wXLabDKh1AZRQAHdqFUFNo3GAAKLERbEEQAFX0wN8mjGE3w1DQU2mjnwAhkGXQ1HQaLKQxGZQAdE13ABlaiwSRUWgiSTkUAAeQ6aDZM1Qcz6GzRsOMfNQAB4tioygIygA+MweO4hMK6ZiMeJ0F6pdLYOoiCU-Sxlf6AiLAsEQ1zueGIlGUjEkLE+XGCUgEokk3rkzZU4Zu+mMIA).
+
+```ts
+// Implicit type intersections
+
+type A = { a: { c: number }, b: number };
+type B = A & { a: { d: string } }; // { a: { c: number, d: string }, b: number }
+
+const example1: B = { a: { c: 2, d: 'd' }, b: 3 };
+
+// Primitive types: 'never' is easily produced via intersections of something impossible.
+
+type C = { a: number, b: string };
+type D = C & { a: string };
+
+// Why never?
+type CandD = number & string; // type `never` - can't be number and string at the same time.
+
+const example2: D = { a: 'one', b: 'two' }; // Error: Type 'string' is not assignable to type 'never'.
+
+// Solution: use Omit utility type
+
+type E = Omit<C, 'a'> & { a: string };
+
+const example3: E = { a: 'one', b: 'two' }; // Works fine!
 ```

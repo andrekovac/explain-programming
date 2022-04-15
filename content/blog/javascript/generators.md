@@ -24,3 +24,14 @@ let arr = [...bla()]
 ```
 
 (from [ES6 generators explained](http://2ality.com/2015/03/es6-generators.html))
+
+## Return statement in a generator
+
+It's possible to [return prematurely inside of a generator function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*#return_statement_in_a_generator).
+
+**Example**: This will still execute a `put` effect and then go to the next iteration of the generator function, yielding the value returned by `put(revokeTokenStart())` which probably is `undefined`:
+
+```ts
+if (isOnline && isSignOutNeeded(error))
+  return yield put(revokeTokenStart());
+```

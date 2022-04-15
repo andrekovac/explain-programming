@@ -15,7 +15,7 @@ ready: false
 
 ### Main differences in a nutshell
 
-- Type alias is more flexible, for example a conditional type `type info = string | { name: string };` is not possible with an interface which can only represent object-like data structures.
+- Type alias is more flexible, for example a union type `type info = string | { name: string };` is not possible with an interface which can only represent object-like data structures.
 
 
 #### Computed Properties

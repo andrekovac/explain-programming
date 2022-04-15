@@ -260,6 +260,20 @@ For example for the following command
 	kill %1
 	```
 
+* Kill application
+
+	**Example**: To kill `Docker` application on Mac OS X:
+
+	```bash
+	killall Docker
+	```
+
+	Restart `Docker` Application:
+
+	```bash
+	killall Docker && open /Applications/Docker.app
+	```
+
 ## Screens
 
 ```bash
@@ -271,6 +285,25 @@ xrandr
 Build a CLI
 
 [A nice guide from Twilio](https://www.twilio.com/blog/how-to-build-a-cli-with-node-js)
+
+## Auto completion
+
+How to add bash auto completion:
+
+1. To activate completions for zsh you need to have `bashcompinit` enabled in zsh:
+
+	```bash
+	autoload -U bashcompinit
+	bashcompinit
+	```
+
+2. Afterwards you can enable completion for pipx:
+
+	```bash
+	eval "$(register-python-argcomplete pipx)"
+	```
+
+taken from instructions printed to screen when running `pipx completions`
 
 ## Links
 

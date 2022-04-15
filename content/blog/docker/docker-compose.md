@@ -7,9 +7,19 @@ category: 'tool'
 tags: ['docker', 'dev-ops', 'stub']
 ---
 
-## `docker compose`
+## Definition
 
-Docker Compose is a tool for defining and running multi-container Docker applications.
+**Docker Compose** is a tool that was developed to help define and share multi-container **applications**.
+
+- **Docker Desktop** will group running containers in tabs of different **applications** (same as folder name in which `docker-compose.yml` is located).
+
+## resources
+
+- [awesome-compose](https://github.com/docker/awesome-compose/tree/master/spring-postgres) collects great `docker-compose` files for common App setups.
+
+## `docker compose` file
+
+Docker Compose is a tool for defining and running **multi-container** Docker **applications**.
 
 1.  Define a `docker-compose.yml` file, e.g.
 
@@ -76,4 +86,11 @@ Docker Compose is a tool for defining and running multi-container Docker applica
     docker-compose up -d
 	```
 
-`-d` run in deamon mode in background.
+  - `-d` run in **detached mode** in background.
+
+## `profiles`
+
+1. Add certain containers in your `docker-compose.yml` file to a `profile`.
+2. When running `docker-compose` that container will only be launched if `--profile {profile_name}` is added.
+
+  e.g. `docker-compose --profile my_profile up`

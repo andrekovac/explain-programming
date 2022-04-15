@@ -34,7 +34,7 @@ Don't mutate an object, but create a new one with the change, i.e. create a new 
 
 - Or use libraries like immutable.js
 
-## Array Functions
+## Array Functions (collection functions)
 
 Array operations without having to write loops explicitly. [This is a great article about map(), reduce() and filter()](http://cryto.net/~joepie91/blog/2015/05/04/functional-programming-in-javascript-map-filter-reduce/)
 
@@ -288,3 +288,15 @@ const newMap = map.withMutations(
 ### Redux
 
 Have a function to to create `immutableReducers` and custom `combineImmutableReducers` util function and custom `createStore`.
+
+## Currying and partial function application
+
+- [Javascript- Currying VS Partial Application](https://towardsdatascience.com/javascript-currying-vs-partial-application-4db5b2442be8)
+
+## Referential transparency
+
+Point 1 in [this article](https://techaffinity.com/blog/functional-programming-in-javascript-part1/) explains **referential transparency**.
+
+## Idempotence
+
+Point 2 in [this article](https://techaffinity.com/blog/functional-programming-in-javascript-part1/) explains **idempotence**.

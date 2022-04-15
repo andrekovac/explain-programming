@@ -7,6 +7,18 @@ category: 'data'
 tags: ['nlp', 'artificial-intelligence', 'machine-learning']
 ---
 
+## [Tokenization](https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/)
+
+First step in NLP: Tokenize words!
+
+A text (collection/sentences of words) has to be broken down into tokens.
+
+- Word tokens (i.e. splitting sentence by space character)
+- Character tokens: `school`: `s` + `c` + `h` + `o` + `o` + `l`
+- Subword tokens: `likelihood`: `like` + `li` + `hood`
+
+**Vocabulary** refers to the set of unique tokens in the corpus.
+
 ## Word embeddings
 
 ### Definition

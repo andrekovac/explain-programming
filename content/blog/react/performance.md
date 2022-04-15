@@ -7,6 +7,28 @@ category: 'framework'
 tags: ['javascript', 'react', 'performance']
 ---
 
+## React profiler
+
+[Good video](https://www.youtube.com/watch?v=00RoZflFE34)
+
+### Profiler
+
+Gives you per component
+
+* duration of load
+* amount of renders
+
+### Performance Improvement Solutions
+
+* Wrap component in `React.memo`
+
+  - **Shallow compare** does check for equality. When comparing scalar values (numbers, strings) it compares their values. When comparing objects, it does not compare their attributes - only their references are compared (e.g. "do they point to same object?")
+  - Therefore you should not **mutate** objects but always create new instances to assure a component gets updated! See [this section in the React docs](https://reactjs.org/docs/optimizing-performance.html#the-power-of-not-mutating-data)
+
+* Use `useMemo` hook for values which don't have to be recomputed in every render
+* Use **lazy loading** if a lot of things are rendered on a page and not everything is needed at once.
+
+
 ## Problem: Rerendering issue
 
 Rerendering issue (i.e. slow performance) of children with lots of data if only a small part of shared state changes.
@@ -61,10 +83,12 @@ const handleResetPassword = () => {
   };
 
   useEffect(() => {
+    // use error here as well...
+    handleResetPassword();
   }, [error, handleResetPassword]);
 ```
 
-Wrapping `handleResetPassword` in a `useCallback` hook fixes the warning:
+**Solution**: Wrapping `handleResetPassword` in a `useCallback` hook fixes the warning:
 
 ```tsx
   const handleResetPassword = useCallback(() => {
@@ -99,3 +123,13 @@ Wrapping `handleResetPassword` in a `useCallback` hook fixes the warning:
 ## Data Type Conversion
 
 > The data type conversion is all handled in the branch (already reviewed and merged) where we wrote the implementation of the audio analysis service. Interestingly, we were able to manipulate the data quite effectively using the `buffer` class which supports manipulating byte arrays into a fairly wide variety of different data types, however this `buffer` lacked support for **16 bit floats**. **16 bit floats** appear to be a pretty common format for recording audio data, and not very widely used outside of that.
+
+
+## Not-visble views being updated
+
+- In React Native navigation views are pushed to the Stack but still remain mounted.
+- Via Redux they may be updated then.
+
+https://twitter.com/kzzzf/status/1454087372895883266?s=12
+
+- Library [react-freeze](https://github.com/software-mansion-labs/react-freeze)

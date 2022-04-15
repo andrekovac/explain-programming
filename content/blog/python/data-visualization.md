@@ -30,6 +30,14 @@ draft: true
 
 - [Bokeh](https://docs.bokeh.org/en/latest/index.html)
 
+### plotly
+
+[Plotly](https://plotly.com/) is a matplotlib alternative.
+
+### General exploratory data analysis
+
+- [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling)
+
 ## Simple `numpy` and `matplotlib` example
 
 ```python

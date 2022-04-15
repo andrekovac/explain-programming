@@ -11,7 +11,7 @@ tags: ['javascript']
 
 * If a variable is called it's definition is searched for in current scope, then parent scope, then grandparent scope and so on until it is found (a.k.a lexical scope)
 * In function definitions which are *not* arrow functions `this` value is defined for me `implicitly` (as `execution context`, see more below in the `this` section!).
-* In arrow functions, this retains the value  of the enclosing lexical context's this.
+* In arrow functions, this retains the value of the enclosing lexical context's this.
 
 - [Everything you wanted to know about JavaScript scope](https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/)
 
@@ -19,7 +19,9 @@ tags: ['javascript']
 
 #### Local scopes are only
 
-New functions = new scope - that’s the rule.
+> New functions = new scope
+
+- that’s the rule.
 
 #### `setTimeout`
 

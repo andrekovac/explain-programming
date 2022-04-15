@@ -1,5 +1,5 @@
 ---
-title: 'Jest - Unit Tests in Javascript'
+title: 'Jest - Unit Tests in Javascript applications'
 description: 'Some interesting things about unit testing with Jest'
 date: '2016-01-14T11:46:37.121Z'
 author: 'André Kovac'
@@ -87,6 +87,39 @@ jest.mock('components/CachedImage', () => jest.fn(() => null));
 ```js
 // Another workaround
 jest.mock('react-native-sound', () => 'Sound');
+```
+
+### Mocking dates
+
+Dates can cause annoying problems.
+
+In case you have such a mock:
+
+```js
+{
+	valueId: 1,
+	reminderId: 1,
+	valueType: 'PEF',
+	personalBest: 200,
+	isCompleted: false,
+	timeScheduled: '13:00',
+	recordedAt: '2021-08-10T12:00:00.466Z',
+},
+```
+
+the line `recordedAt: '2021-08-10T12:00:00.466Z',` can cause millisecond missmatches in tests on some machines (not all).
+
+To resolve the issue add the following to your test file:
+
+```js
+beforeAll(() => {
+  // Set date of "today"
+  MockDate.set(new Date('2021-08-17T12:00:00.466Z'));
+});
+
+afterAll(() => {
+  MockDate.reset();
+});
 ```
 
 ## Jest config

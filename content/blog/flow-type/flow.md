@@ -91,7 +91,7 @@ type Props = React.ElementProps<typeof SectionList>;`
 
 ### Thunk
 
-`redux-thunk` actions can be types as follows:
+`redux-thunk` actions can be typed as follows:
 
 ```js
 declare type ThunkAction = (
@@ -172,6 +172,43 @@ declare module 'react-native-background-geolocation-android' {
 }
 ```
 
-## Contribute
+## Differences between TypeScript and Flow
 
-[https://github.com/flow-typed/flow-typed/blob/master/CONTRIBUTING.md]()
+[This article](https://github.com/niieani/typescript-vs-flowtype) summarizes it nicely.
+
+### Companion Object Pattern
+
+- **type** and **value** have different namespaces and can e.g. be imported at once.
+
+See also **Programming TypeScript** book on page 140.
+
+### (TS only) Refining the type of an array
+#### Example: `filter` function
+
+[`filter` definition in Flow](https://github.com/facebook/flow/blob/78defb50dc2be6313bb158dfd3e8db76d717583f/lib/core.js#L258):
+
+```js
+filter(callbackfn: (value: T, index: number, array: Array<T>) => any, thisArg?: any): Array<T>;
+```
+
+`filter` definition in TypeScript:
+
+```ts
+interface Array<T> {
+  filter<S extends T>(callbackfn: (value: T, index: number) => value is S): S[];
+}
+```
+
+- In TS you can refine the type of an array (i.e. narrow type `T` to `S`) by filtering it. [Here](https://2ality.com/2020/06/type-guards-assertion-functions-typescript.html#the-array-method-.filter()-produces-arrays-with-narrower-types) it is described even more.
+- Flow can't model this. The output there is `Array<T>` -> The same as the type at the beginning.
+- This is being discussed [in this thread](https://github.com/niieani/typescript-vs-flowtype/pull/51).
+
+
+### (Flow only) Relationship between types
+
+- covariance vs. contravariance vs. invariance
+
+	- e.g. **extends**: In `K extends keyof T`, `"extends" means a type with **covariant** relationship with `keyof T`.
+
+- Flow has specific syntax for programmers to specify **variance** for own data types.
+- TS found a balance between type-safety and practicability.

@@ -96,3 +96,8 @@ Call function with certain value set as `this` value
 ### ASI - Automatic semicolon insertion
 
 See [this SO thread](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi) and [how prettier deals with it](https://prettier.io/docs/en/rationale.html#semicolons).
+
+
+### Dynamic typing
+
+- Dynamic typing (JS) vs. static typing (TS)

@@ -9,11 +9,20 @@ tags: ['javascript', 'server']
 
 ## Update node
 
+Use node version manager (`nvm`) to manage node versions:
+
 ```bash
 nvm install --lts
 ```
 
 Different options are discussed [here](https://stackoverflow.com/questions/34810526/how-to-properly-upgrade-node-using-nvm).
+
+### Install stable `lts` version and set it as default
+
+```bash
+nvm install stable
+nvm alias default stable
+```
 
 ## Web Server
 

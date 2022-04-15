@@ -10,6 +10,9 @@ draft: true
 
 ## How to run python scripts
 
+**Attention**: Always use `python3` (or `python3.9`) command. `python` command will point to OSX system python **2.7**!
+
+
 ```bash
 python3 run.py
 ```
@@ -17,7 +20,7 @@ python3 run.py
 Run as module
 
 ```bash
-python -m run.py
+python3 -m run.py
 ```
 
 ### files
@@ -32,6 +35,52 @@ if __name__ == "__main__":
 
 
 ## Syntax
+
+### Arithmetic
+
+The `//` operator gives us a result that's rounded down to the next integer:
+
+```py
+division = 5 // 2
+```
+
+### Booleans
+
+Boolean values in python are capitalized: **True** and **False** (not **true** and **false**)
+
+```py
+(4 > 3) == False
+```
+
+### Tuples
+
+- Can be written without round brackets: `my_tuple = a, type(a)`
+- Use for swapping values:
+
+  ```py
+  a = [1, 2, 3]
+  b = [3, 2, 1]
+
+  # swap variables a and b
+  a, b = b, a
+  ```
+
+### Combining types
+
+Surprising example:
+
+```py
+a = 'Hallo'
+b = 3
+print (a,b)
+print(a*b)
+```
+
+Will print the string `a` `b` times. 🤯😳
+
+### Strings
+
+- **String concatenation** does not work with string + integer, e.g. `'name' + 3` doesn't work.
 
 ### with ... as ...
 
@@ -130,6 +179,45 @@ def running_total(*coins):
     pass
 ```
 
+## Dictionary
+
+### Basic methods on dictionaries
+
+```python
+my_list.keys()
+my_list.values()
+my_list.items()   # since python 3
+```
+
+### Dictionary comprehension
+
+**Example**: Swapping a list
+
+```python
+list_swapped = { value: key for key, value in list_normal.items() }
+```
+
+### Dictionary unpacking
+
+Similar to **spread operator** in javascript.
+
+`**` syntax
+
+Pandas **Example**:
+
+```py
+animals.groupby("kind").agg(
+    **{
+        "total weight": pd.NamedAgg(column="weight", aggfunc=sum)
+    }
+)
+```
+
+- `**kwargs` aka **keyword arguments**: dictionary of keyword arguments
+- `*args`: non-keyworded variable length argument list
+
+Example taken from [here](https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#named-aggregation).
+
 ### Tuple as key in dictionary
 
 ```python
@@ -141,7 +229,7 @@ coins = {
 }
 
 # Access value
-coin = coins[wgt, dia]
+coin = coins[wgt, dia] # wgt : weight, dia: diameter
 
 # Access in for loop
 for wgt,dia in coins.keys():
@@ -191,3 +279,50 @@ import pytest
 def test_sum():
   assert running_total("nickel", "nickel", "dime") == 0.20
 ```
+
+## Comments
+
+### Docstring
+
+Convention to add code examples with interactive shell prompt `>>>` inside docstring
+
+```py
+def least_difference(a, b, c):
+    """Return the smallest difference between any two numbers
+    among a, b and c.
+
+    >>> least_difference(1, 5, -5)
+    4
+    """
+    diff1 = abs(a - b)
+    diff2 = abs(b - c)
+    diff3 = abs(a - c)
+    return min(diff1, diff2, diff3)
+```
+
+See also this [numpy np.eye function](https://github.com/numpy/numpy/blob/v1.14.2/numpy/lib/twodim_base.py#L140-L194).
+
+## Special words in python
+
+- `None`: The `null` of python
+- `pass`: Do nothing. Useful when you don't want to have anything in your function body (as a temporary value)
+
+## Higher order functions
+
+**Example**: When passing a function for the `key` parameter to the `max` function, it returns the `argmax`, i.e. the value which maximizes the call of the `key` function.
+
+```py
+# Which number is the biggest modulo 5?
+max(100, 51, 14, key=mod_5)
+```
+
+## Partial function application
+
+- `partial()` let's you partially apply arguments to a function.
+
+## Python Keyword Arguments `kwargs`
+
+- `args` are positional arguments and `kwargs` are keyword arguments (named arguments)
+- [Python Keyword Arguments](https://www.pythontutorial.net/python-basics/python-keyword-arguments/)
+
+- Usage of `*args` and `**kwargs` described in [this article](https://book.pythontips.com/en/latest/args_and_kwargs.html).

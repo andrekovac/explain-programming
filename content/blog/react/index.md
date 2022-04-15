@@ -8,6 +8,54 @@ tags: ['javascript', 'react']
 ready: true
 ---
 
+**React**: UI is a function of state and props.
+**React Render**: Render phase + commit phase
+
+## Mounting vs. Rerendering
+
+- **Mounting**
+
+  - The first render is called a mount -> element is put into the DOM
+  - If `key` prop changes, element is unmounted and mounted again. See [this article from Nik Graf](https://www.nikgraf.com/blog/using-reacts-key-attribute-to-remount-a-component).
+  - Element gets unmounted if removed from the return value of a functional component.
+
+- **Rerendering**
+
+  - element in the DOM changes
+  - triggered by changing `props` and `state` - unless the prop is used as default value of a `useState` hook.
+
+    Here a changed `contact` prop will not update the shown `name` after a rerender. Only a remount will trigger a change from the outside. The `name` value is protected by the `useState` hook and cannot be changed.
+
+    ```jsx
+    const Detail = (props) => {
+      const [name, setName] = useState(props.contact.name);
+      return (
+        <form>
+          <input
+            value={name}
+            onChange={(evt) => setName(evt.target.value)}
+          />
+        </form>
+      );
+    };
+    ```
+
+  - child elements always rerender if their parent element rerender.
+  - The following will cause a rerender, not an unmount and remount:
+
+    ```jsx
+    {name === "A" ? <Counter name="A" /> : <Counter name="B" />}
+    ```
+
+    React will see that it's the same `Counter` component and not remount, but just rerender.
+    If `Counter` has some internal state (via `useState`) this state will not be resetted (what one may expect).
+
+    The following will, however, trigger a rerender because the components are not the same:
+
+    ```jsx
+    {name === "A" ? <Counter name="A" /> : <p>EMPTY</p>}
+    ```
+
 ## How the `react` framework works under the hood
 
 > Using DOM API, HTML elements can be created or cloned in memory and manipulated without affecting the rendered DOM tree
@@ -156,6 +204,9 @@ var app = React.createElement(
 	* Mixins can be chained, one for each functionality.
 	* If the orientation were just written in the state here, the orientation frame would also change if we are in the child component `PhotoDecide` in which we don't want the frame to change. When going back to the camera from here, we again want the frame to change, so the mixin is called here, when the state is set.
 
+## React Code Organization
+
+![How to organize React UI code](./images/HowToOrganizeUICode.png)
 
 ## React tips and tricks
 
@@ -172,7 +223,6 @@ Note that native HTML element names start with a lowercase letter, while custom 
 ### setState()
 
 Only use `setState()` if you use that part of state in `render()` function. Otherwise it's a performance waste!
-
 
 ## Manual setup
 

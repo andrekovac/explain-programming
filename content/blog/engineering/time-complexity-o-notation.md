@@ -5,35 +5,47 @@ date: '2021-04-21'
 author: 'André Kovac'
 category: 'theory'
 tags: ['definition']
+ready: true
+published: false
 ---
 
 ## What is time complexity?
 
-- TODO: Wiki definition
-- It's the worst case. You can also add **best case** and **average case** scenarios to get a more fine-grained comparison.
+Wikipedia defines [time complexity](https://en.wikipedia.org/wiki/Time_complexity) as
 
-## Why should I care?
+> [...] the computational complexity that describes the amount of computer time it takes to run an algorithm.
 
-**Large difference with large numbers (i.e. long arrays)**
+Usually this describes the **worst case** scenario. You can also add **best case** and **average case** scenarios to get a more fine-grained comparison.
 
-One operation: `1ms`
+## Why should I care about time complexity?
 
-1. objA.length und objB.length be **10**:
+Time complexity calculations are irrelevant if your array contains a handful of elements.
+But it can make a huge difference with a **large number of elements**. It's relevance increases exponentially.
+
+As an example let's say one operation takes `1ms`. Here's how the computation time explodes for an `O(n * m)` algorithm as compared to an `O(n)` algorithm:
+
+1. `objA.length` und `objB.length` be **10**:
 
   O(n) = 10ms
   O(n * m) = 100ms
 
-2. objA.length und objB.length be **1000**:
+  **Difference**: 10 fold
+
+2. `objA.length` und `objB.length` be **1000**:
 
   O(n) = 1s
-  O(n * m) = 1000s
+  O(n * m) = 1000s (over 16 minutes!)
 
-3. objA.length und objB.length be **10000**:
+  **Difference**: 1000 fold
+
+3. `objA.length` und `objB.length` be **10000**:
 
   O(n) = 10s
-  O(n * m) = 100000s
+  O(n * m) = 100000s (over 27 hours!)
 
-**Verdict**: A huge difference!
+  **Difference**: 10000 fold
+
+**Verdict**: Time complexity is a very important topic for large arrays.
 
 ## Example
 
@@ -123,7 +135,7 @@ function normalize(arr) {
   }, {});
 }
 
-// Hier the objB array is made to an object. The transformation costs O(n).
+// Here the objB array is made to an object. The transformation costs O(n).
 const _objB = normalize(objB);
 
 // Here I run through array A in time complexity 0(m) because accessing _objB
@@ -135,7 +147,7 @@ const computed = objA.map(value => {
 
 - The complexity calculation of this solution:
 
-  It's `O(n) + O(m * 1)`, i.e. `O(m + n)` which can be reduced to `O(n)`.
+  `O(n) + O(m * 1)`, i.e. `O(m + n)` which can be reduced to `O(n)` because `m` is a constant (fixed size).
 
 It's performance is much better as compared to the other algorihms when testing performance with [JSBench](https://jsbench.me/) for long arrays:
 

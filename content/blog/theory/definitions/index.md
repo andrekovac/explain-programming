@@ -48,12 +48,20 @@ Not **literals**:
 
 ### Statement vs. Expression
 
+- Statements are everything that can make up a line (or several lines) of Python code. Note that expressions are statements as well.
+- Expressions can be reduced to some kind of "value"
+
+Taken from this [excellent answer concerning python](https://stackoverflow.com/a/4728147/3210677).
+
 #### Examples
 
 ##### Expressions
 
-- `yield*` is an **expression**, not a **statement** — so it evaluates to a value.
+Something that evaluates to a value.
 
+- `3 + 5`
+- `function() {}` because every function will return something. With no return specified, a function expression will return `undefined`.
+- `yield*` is an **expression**, not a **statement** — so it evaluates to a value.
 - In the [haskell article](../haskell/haskell.md) I read the following line:
   > Haskell’s `if` is an *expression* that must return a value, and not a *statement*.
 
@@ -65,7 +73,6 @@ Not **literals**:
 - `return`
 - `import` and `export`
 - `with`
-
 
 See [this article from Axel Rauschmayer](https://2ality.com/2012/09/expressions-vs-statements.html) for more details.
 

@@ -8,6 +8,12 @@ tags: ['docker', 'dev-ops']
 draft: true
 ---
 
+## What?
+
+Orchestrate many micro services.
+
+Alternative for front-end micro services: [single-spa](https://single-spa.js.org/).
+
 ## Workflow
 
 ### gcloud

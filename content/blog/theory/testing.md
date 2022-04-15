@@ -126,3 +126,14 @@ Contrast to **Type** Driven Development (TDD)
 > The idea is that you use types to model your problem domain and **let the types drive the design and development**.
 
 Both taken from [here](https://softwareengineering.stackexchange.com/a/255417).
+
+
+### React Component TDD
+
+#### Advantages
+
+1. Reduced friction: Stay in editor (no need to constantly look at browser/app)
+2. Confidence
+3. Think of all edge-cases
+
+See: https://www.jetbrains.com/webstorm/guide/tutorials/react_typescript_tdd/testing/

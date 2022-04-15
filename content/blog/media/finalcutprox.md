@@ -10,18 +10,18 @@ draft: true
 
 ## Useful shortcuts
 
-| Shortcut | What? |
-|---|---|
-| `e` | append clip |
-| `shift + b` | split speed |
+| Shortcut    | What?        |
+| ----------- | ------------ |
+| `e`         | append clip  |
+| `shift + b` | split speed  |
 | `shift + h` | freeze frame |
 
 
 ## Useful settings
 
-| Shortcut | What? |
-|---|---|
-| `s` | skimming |
+| Shortcut                    | What?               |
+| --------------------------- | ------------------- |
+| `s`                         | skimming            |
 | `n` ? **TODO**: Check this! | clip while skimming |
 
 
@@ -64,3 +64,18 @@ draft: true
 * At `音频增强`
 	1. Choose `人声增强`
 	2. Hit right arrow to analyze sound and choose the upper one if it is green after analysis. Don't choose the middle one.
+
+
+## Video
+
+### Greenscreen
+
+1. Search for **Video Effects** -> **Keyer**
+2. Drag and Drop Effect onto clip in timeline.
+
+### Special Splitscreen: Picture-in-picture
+
+1. Effect **Draw Mask**
+2. Effect **Drop Shadow**
+
+See [this video](https://www.youtube.com/watch?v=vb-QgPWBzJg) for more details.

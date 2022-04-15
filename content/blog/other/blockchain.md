@@ -7,7 +7,6 @@ category: 'other'
 tags: ['blockchain', 'crypto', 'bitcoin']
 ready: true
 ---
-
 ## Simple definitions
 
 - Blockchain
@@ -23,6 +22,26 @@ ready: true
     from [Merriam-Webster](https://www.merriam-webster.com/dictionary/utility%20token)
 
 - Consensus
+
+- Consensus methods
+
+    **TODO**: IMPROVE!
+
+    - Proof of work: Miners earn rewards by using a lot of computational power to add new blocks to the blockchain.
+
+    - Proof of stake: Members with largest stakes vote on new blocks. Trust based on stake. No incentive to let fake blocks in.
+
+- **Mining**: What is it?
+
+    **Reply**: Finding a **nonce** which creates a new block with a hash which is **smaller** than a block with 17 zeros.
+
+        > The **SHA-256 hash algorithm** generates a **64-digit** hexadecimal hash value. The current Bitcoin blockchain requirement is to find a **nonce** that creates a block-hash with **17 leading zeros**.
+
+        Example of a block (Block 720906): https://www.blockchain.com/btc/block/00000000000000000007512e9a3b53c984484b68e09601e659c417a70e30bae8
+
+        taken from [here](http://blog.geveo.com/Blockchain-Mining-Difficulty)
+
+- Blockchain: Why is it called a chain? - hash of previous block is inside current block.
 
 ### Crypto Currencies Business Ideas
 

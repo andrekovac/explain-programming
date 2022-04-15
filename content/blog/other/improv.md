@@ -5,7 +5,7 @@ date: '2020-10-05'
 author: 'André Kovac'
 category: 'other'
 tags: ['learning']
-ready: false
+ready: true
 published: false
 ---
 
@@ -47,7 +47,7 @@ published: false
 
     Alternative: Also replace the 7 and multiples of 7.
 
-- **Smart Fellas**: "one smart fella HE felt smart.", if its a multiple of 3 or with a 3 in it: "two smart fellas THEY felt smart.", if it's a multiple of 3 or with a 3 in it: "3 smart fellas THEY ALL felt smart" ...after last one all together say "and they all felt smart together".
+- **Smart Fellas**: "one smart fella HE felt smart.", if its NOT multiple of 3 or with a 3 in it: "two smart fellas THEY felt smart.", if it's a multiple of 3 or with a 3 in it: "3 smart fellas THEY ALL felt smart" ...after last one all together say "and they all felt smart together".
 - **Blink** (*no language*): Form circle with two rows. Each person has a person standing behind them. One standing person has no one sitting in front of them. This person blinks to another sitting person which has to run to the empty chair. The person standing behind her has to try to stop her from getting to the other spot.
 - **Ha Soh Kah**: Put index and middle finger together horizontally on your forehead and says "Ha". The next player (left or right - where fingers of first player point to) puts index and middle finger near chin and says "Ha". Last person says "Kah", pointing to another player with both hands. If someone makes a mistake they are out "Ha Soh Kah - you're out!".
 - **You - remembering patterns**: Everyone in a circle. Everyone raises their right hand. Point to person in circle and continue. Remember pattern (order) of people and repeat. Then switch places in the circle. Repeat the pattern. Close your eyes, and repeat the pattern. Now this is repeated with favorite animal/food ...

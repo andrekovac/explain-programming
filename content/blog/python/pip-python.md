@@ -7,6 +7,12 @@ category: 'tool'
 tags: ['python', 'data-science', 'machine-learning']
 ---
 
+## Python install
+
+Follow [this guide](https://mnzel.medium.com/how-to-activate-python-venv-on-a-mac-a8fa1c3cb511).
+
+**Attention**: Always use `python3` (or `python3.9`) command. `python` command will point to OSX system python **2.7**!
+
 ## VSCode workflow
 
 So far graphics do not show when running virtual env versions
@@ -39,9 +45,9 @@ Run `ipython` to open the interactive shell.
 
 **NOTE**: Use `venv` (NOT `virtualenv`) on **OSX** - the later has issues on OSX!
 
-1. In the project directory type `python -m venv ./env`
-2. Activate the virtual environment using `source env/bin/activate`
-3. Install dependencies as usual with `pip install`. Use `pip list` to see the dependencies installed in the current folder.
+1. In the project directory type `python3 -m venv ./env` (or `python3 -m venv venv`)
+2. Activate the virtual environment using `source env/bin/activate` (or `source venv/bin/activate`)
+3. Install dependencies as usual with `pip install` (or `pip install -r requirements.txt`). Use `pip list` to see the dependencies installed in the current folder.
 4. Type `deactivate` to deactivate the current virtual environment.
 
 ### virtualenv
@@ -99,6 +105,8 @@ Run
 pip freeze > requirements.txt
 ```
 
+to create a `requirements.txt` file from the currently installed packages.
+
 #### upgrade pip packages
 
 Use the tool [https://github.com/achillesrasquinha/pipupgrade]()
@@ -140,7 +148,35 @@ Options:
 * pip + virtualenv
 * docker + pip (with auto-generated requirements file from *pycharm*)
 
-
 ## Pycharm
 
 Use `evaluate` window to quickly run things (like **matlab**)
+
+## Poetry
+
+- [poetry](https://python-poetry.org/) is an alternative package manager for python
+
+### Create project
+
+1. `poetry new`
+
+    ```bash
+    poetry new my-project
+    ```
+
+2. `poetry init`
+
+    1. Create folder and navigate to it
+    2. Run `poetry init` <-- Running the `init` command will take you into an interactive session to define the parameters of your new project. Just hit **enter** on each question - this will use the defaults (in the `[]`).
+
+    See [this tutorial](https://davebaker.me/2020/07/19/setting-up-django-project-with-poetry/) to start poetry with `django`.
+
+### Add dependencies
+
+```bash
+poetry add name-of-dependency
+```
+
+### Environment
+
+- Run `poetry shell` to start a virtual environment. Type `exit` to exit.

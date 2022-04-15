@@ -96,3 +96,25 @@ jqxhr.always(function() {
   alert('second complete')
 })
 ```
+
+## Concepts
+
+### Interceptors
+
+#### Axios
+
+> Interceptors are a feature that allows an application to intercept requests or responses before they are handled by the . then() or the . ... Well, as I mentioned above, suppose every HTTP request needs a header property attached to it, in order to verify the application requesting data is allowed to access that data.
+
+taken from [this article](https://blog.bitsrc.io/setting-up-axios-interceptors-for-all-http-calls-in-an-application-71bc2c636e4e).
+
+#### `fetch`
+
+- [fetch-intercept](https://github.com/werk85/fetch-intercept) is a library to implement intercepts with the fetch API.
+
+  - It's idea is to attach an intercept function to the global `fetch` object. See [this code of the library](https://github.com/werk85/fetch-intercept/blob/develop/src/attach.js).
+
+  - [This article](https://ckgrafico.medium.com/aborting-and-intercepting-requests-using-fetch-api-60ffa7619e80) also mentions the lib.
+
+## Authentication with auth0
+
+[Universal login - Secure login infrastructure to authenticate users to your apps](https://auth0.com/universal-login)

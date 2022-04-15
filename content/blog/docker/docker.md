@@ -124,69 +124,7 @@ This runs the `Dockerfile` for sure even if stuff is cached in the case of `dock
 
 ### Create own images (containers)
 
-#### Basic process:
-
-1. Create **Dockerfile**
-2. Run
-
-	```bash
-	docker build .
-	```
-
-	which creates an image based on the `Dockerfile` in `.` with context `.`.
-
-	With file flag:
-
-	```bash
-	docker build -f /path/to/a/Dockerfile .
-	```
-
-#### In Detail:
-
-1. Create Dockerfile, e.g here an example `Dockerfile`:
-
-	```docker
-	# our base image
-	FROM alpine:latest
-
-	# Install python and pip
-	RUN apk add --update py-pip
-
-	# install Python modules needed by the Python app
-	COPY requirements.txt /usr/src/app/
-	RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
-
-	# copy files required for the app to run
-	COPY app.py /usr/src/app/
-	COPY templates/index.html /usr/src/app/templates/
-
-	# tell the port number the container should expose
-	EXPOSE 5000
-
-	# run the application
-	CMD ["python", "/usr/src/app/app.py"]
-
-	```
-
-	`WORKDIR` sets the directory from which all following commands will be exectued by default.
-
-2. Build
-
-		docker build -t andrusch/myfirstapp .
-
-3. Run
-
-		docker run -p 8888:5000 --name myfirstapp andrusch/myfirstapp
-
-Here in `8888:5000`, `8888` stands for the **external por**t you can use in your browser and `5000` for the **internal port** which is open in the container.
-
-4. Visit `http://192.168.99.100:8888/`, `192.168.99.100` was found using `$ docker-machine ip docker-default`.
-
-5. Stop and remove container when done
-
-		$ docker stop myfirstapp
-		$ docker rm myfirstapp
-
+See [docker-basic-example file](./docker-basic-example.md)
 
 ## Further docker commands
 
@@ -239,6 +177,13 @@ volumes:
 
 Running `$ docker-osx-dev` after starting `Docker Quickstart Terminal` is not necessary in OSX. Files are synced as long as `volumes` is set in `docker-compose`.
 
+
+
+### Anonymous volumes
+
+An anonymous volume will guarantee that a certain subfolders (e.g. `node_modules`) will be present in your **container** folder which is bounded outside the container but you do not have to have it in your bound folder on the host machine (e.g. your laptop) at all.
+
+Node_modules folder will be present in the container all the time even if you do not have it on the host machine in your working folder.
 
 ## Docker Workflows
 
@@ -312,7 +257,7 @@ your `docker-compose` file:
 
 **Live**
 
-```docker
+```yaml
 services:
   my_app:
   	image: my_dockerhub_account/my_app
@@ -321,7 +266,7 @@ services:
 
 **Dev** on `localhost`
 
-```docker
+```yaml
 services:
   my_app:
   	build: .
@@ -369,8 +314,10 @@ Send logs to `stdout`, see [this Dockerfile](https://github.com/docker-library/p
 
 i.e. in `php-fpm.conf`
 
-	error_log = /proc/self/fd/2
-	access.log = /proc/self/fd/2
+```
+error_log = /proc/self/fd/2
+access.log = /proc/self/fd/2
+```
 
 ## Other commands
 
@@ -412,3 +359,7 @@ exec "$@"
 ```
 
 see also [the docker docs](https://docs.docker.com/engine/reference/builder/)
+
+## Multi-stage builds
+
+*TODO*

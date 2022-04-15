@@ -336,3 +336,9 @@ import ProejctX.Module2 (SomeType
 
 > Be aware that reduce is actually a foldl, in Haskell terms. There is no special syntax to perform folds, there's no builtin foldr, and actually using reduce with non-associative operators is considered bad style.
 > [Source](https://stackoverflow.com/questions/10366374/what-is-the-pythonic-equivalent-to-the-fold-function-from-functional-program#10366417)
+
+
+## Links
+
+- [Learn Haskell fast and hard](http://yannesposito.com/Scratch/en/blog/Haskell-the-Hard-Way/#fnref1)
+- [Real World Haskell](http://book.realworldhaskell.org/read/)

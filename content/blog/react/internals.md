@@ -13,6 +13,11 @@ tags: ['javascript', 'react', 'internals']
 
 Let's take a small look at React under the hood
 
+## Reconciliation algorithm
+
+- [keys](https://kentcdodds.com/blog/understanding-reacts-key-prop) play an important role here.
+- Read [this old React docs entry](https://react-cn.github.io/react/docs/reconciliation.html) for more or [this article](https://medium.com/@coolram2104/digging-deeper-inside-the-reconciliation-algorithm-of-react-f0d428ba4ae9).
+
 ## Understand React-Native ListView
 
 In `react-native/Libraries/CustomComponents/ListView/ListView.js`, we find:

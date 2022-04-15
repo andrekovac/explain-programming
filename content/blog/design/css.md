@@ -263,15 +263,11 @@ If adding a border, the three elements would not fit in a row anymore. But when 
 ```
 
 
-
-
 `box-sizing: border-box;`
 
 ## Specificity
 
-`*` vs. `html`.
-
-`*` breaks the cascade.
+- `*` vs. `html`: `*` breaks the cascade.
 
 And the trick with `inherit`:
 
@@ -285,13 +281,65 @@ html {
 }
 ```
 
-This way all styles have `border-box` by default, but still have the ability to be overridden, e.g. by some elements which come from a library
+This way all styles have `border-box` by default, but still have the ability to be overridden, e.g. by some elements which come from a library.
 
 ## SASS / SCSS
 
 - CSS has difficulties to nest `&:hover` and `::after`
 - Problems with `&:active`. Doesn’t seem to work —> `:active` is generally deprecated!
 - Functions are so called `@mixins`
+
+### `&` symbol advanced usages
+
+```css
+input {
+	&:read-only {
+		&,
+		~ label {
+			background-color: ${theme.colors.grey[50]};
+			pointer-events: none;
+		}
+	}
+}
+```
+
+should compile to
+
+```css
+input:read-only, input:read-only ~ label {
+	background-color: ${theme.colors.grey[50]};
+	pointer-events: none;
+}
+```
+
+So `&,` leads to not only the `~ label` sibling, but also the `input:read-only` itself to get the style.
+
+Similarly, the following
+
+```css
+input, textarea {
+	&:disabled {
+		&,
+		~ label,
+		~ .icon {
+			opacity: 0.45;
+		}
+	}
+}
+```
+
+compiles to
+
+```css
+input:disabled, input:disabled ~ label, input:disabled ~ .icon,
+textarea:disabled, textarea:disabled ~ label, textarea:disabled ~ .icon, {
+	opacity: 0.45;
+}
+```
+
+because `&,` leads to the style being applied to the element itself as well.
+
+[This article](https://css-tricks.com/the-sass-ampersand/) explains all usages.
 
 ### Media queries (responsive design)
 
@@ -320,6 +368,18 @@ From SASS 3.2 on it works as you'd expect! Works "inline"!
 }
 ```
 
+## CSS Dynamic rounded corners
+
+```css
+.feed-item {
+	border-radius: max(0px, min(8px, ((100vw - 4px) - 100%) * 9999)) / 8px;
+}
+```
+
+See these tweets discussing it: https://twitter.com/frankyan/status/1444786549426556933
+
+This touches on the [fab4 in CSS](https://www.freecodecamp.org/news/the-fab-four-technique-to-create-responsive-emails-without-media-queries-baf11fdfa848/).
+
 ## CSS Modules
 
 ???
@@ -334,9 +394,27 @@ From SASS 3.2 on it works as you'd expect! Works "inline"!
 
 ???
 
+## BEM
+
+Block, Element, Modifier
+
+### Block
+
+`header`
+
+### Element
+
+`header__icon`
+
+### Modifier
+
+`header--disabled`
+`header__icon--disabled`
 
 ## Links
 
 - [Pro CSS and HTML Design Patterns](http://cssdesignpatterns.com/)
 
 	- Recommended in a StackOverflow Issue
+
+- [Create soft border shadow objects](https://neumorphism.io/#55b9f3)

@@ -11,30 +11,39 @@ tags: ['editor', 'shortcuts']
 
 ### Jumping around in a file
 
-| Command  | Result  |
-| -------- | ------- |
-| `Ctrl + -` | (dash) Jump back to last cursor position |
-| `Ctrl + _` | (underscore) Jump forward to next cursor position |
-| `F 8` | [Move to next typescript error](https://johnpapa.net/refactoring-with-visual-studio-code/) |
+| Command             | Result                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------------------ |
+| `Ctrl + -`          | (dash) Jump back to last cursor position                                                   |
+| `Ctrl + _`          | (underscore) Jump forward to next cursor position                                          |
+| `F8` (`Fn` -> `F8`) | [Move to next typescript error](https://johnpapa.net/refactoring-with-visual-studio-code/) |
 
-### Selection
+### Selection + Replace
 
-| Command  | Result  |
-| -------- | ------- |
-| `Cmd + d`  | Select next occurance of the same word |
-| `Option + Cmd + Down Arrow`  | Add cursor directly on line below |
-| `Option + Mouse Click`  | Add another cursor at the position of the mouse click |
-| `Shift + Option + Down Arrow`  | Mark something + duplicate the marked lines |
+| Command                       | Result                                                |
+| ----------------------------- | ----------------------------------------------------- |
+| `Cmd + d`                     | Select next occurance of the same word                |
+| `Option + Cmd + Down Arrow`   | Add cursor directly on line below                     |
+| `Option + Mouse Click`        | Add another cursor at the position of the mouse click |
+| `Shift + Option + Down Arrow` | Mark something + duplicate the marked lines           |
+| F2                            | Change variable everywhere                            |
+
+### Code hints
+
+| Command        | Result                                     |
+| -------------- | ------------------------------------------ |
+| `option + esc` | Open code-hints at current cursor position |
 
 ### Other
 
-| Command  | Result  |
-| -------- | ------- |
-| `Option + Shift + Down Arrow / Up Arrow`  | Copy line |
-| Press `Left` key  | Close very long `node_modules` folder inside the bar |
-| `Cmd + b` | Toggle left menu bar (when not in a Markdown file) |
-| `Cmd + Shift + k` | Delete line without copying it (i.e. no cut via `Shift + x`) |
-| `Cmd + i` or `option + esc` | Trigger auto-complete suggestion |
+| Command                                  | Result                                                       |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| `Option + Shift + Down Arrow / Up Arrow` | Copy line                                                    |
+| Press `Left` key                         | Close very long `node_modules` folder inside the bar         |
+| `Cmd + b`                                | Toggle left menu bar (when not in a Markdown file)           |
+| `Cmd + Shift + k`                        | Delete line without copying it (i.e. no cut via `Shift + x`) |
+| `Cmd + i` or `option + esc`              | Trigger auto-complete suggestion                             |
+| `Cmd + Shift + y`                        | Toggle view of terminal/debug console                        |
+| Click + `control`                        | Open file in split view                                      |
 
 ## Notable VSCode extensions
 
@@ -92,6 +101,16 @@ Enforce rules by checking `.svcode/settings.json` into the codebase:
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true
 }
+```
+
+## `launch.json`
+
+Add field `console` to redefine console. Default is `"internalConsole"`.
+
+Change to `"integratedTerminal"` so that you get syntax highlighting
+
+```json
+"console": "integratedTerminal",
 ```
 
 ## Other

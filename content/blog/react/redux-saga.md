@@ -62,3 +62,9 @@ Great article about [redux-saga + TypeScript](https://tech.lalilo.com/redux-saga
 Redux-saga visually explained:
 
 ![redux-saga-circle](./redux-saga-graphic.png)
+
+## redux-saga and TypeScript
+
+- [This article](https://tech.lalilo.com/redux-saga-and-typescript-doing-it-right) explains it well.
+
+- The hardest part to type are the return values inside of Generators. The article only advises to write shorter sagas so that this error doesn't occur.

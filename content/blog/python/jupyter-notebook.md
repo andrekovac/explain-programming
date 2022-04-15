@@ -8,7 +8,6 @@ tags: ['python', 'data-science', 'machine-learning']
 draft: true
 ---
 
-
 ## Installation
 
 ```bash
@@ -24,26 +23,83 @@ jupyter notebook
 
 ## Keyboard shortcuts
 
-| Command | Usage |
-|---|---|
-| Esc | Get into command mode |
+### Modes
+
+| Command | Usage                                                              |
+| ------- | ------------------------------------------------------------------ |
+| Esc     | Get into **command** mode (blue bar on the left-hand side of cell) |
+| Enter   | Get into **edit** mode (green bar on the left-hand side of cell)   |
+
+### Cell Types
+
+| Command | Usage                              |
+| ------- | ---------------------------------- |
+| m       | Change cell type into **Markdown** |
+| y       | Change cell type into **Code**     |
+
+### Function definition
+
+| Command     | Usage                    |
+| ----------- | ------------------------ |
 | Shift + Tab | Show function definition |
-| Control + Enter | Run row |
-| Shift + Enter | Run row and go to next one |
-| a | Insert row above |
-| b | Insert row below |
-| h | keyboard shortcut help |
-| m | Change into Markdown mode |
-| d + d | Delete row |
-| x | Cut |
-| v | Paste |
 
-[More commands](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/)
+Also via **python** commands:
 
-## Commands
+- **?**: View function definition of `linear1` function:
 
-- See function definition of `linear1` function:
 
-```python
-linear1??
+  **Example**:
+
+  ```python
+  linear1??
+
+  print?
+  ```
+
+- `help()`
+
+  **Example**:
+
+  ```python
+  help(type)
+  ```
+
+### Run cell (code or markdown)
+
+| Command         | Usage                      |
+| --------------- | -------------------------- |
+| Control + Enter | Run row                    |
+| Shift + Enter   | Run row and go to next one |
+
+### Cell Insertion
+
+| Command | Usage                  |
+| ------- | ---------------------- |
+| a       | Insert row above       |
+| b       | Insert row below       |
+| h       | keyboard shortcut help |
+
+
+### Deletion + Copy/Paste
+
+| Command | Usage              |
+| ------- | ------------------ |
+| d + d   | Delete row         |
+| z       | Undo cell deletion |
+| x       | Cut                |
+| v       | Paste              |
+
+
+See [this list](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/) for more shortcuts.
+
+## Noteworthy
+
+- Jupyter / IPython: After editing a module, changes are not effective without kernel restart. Read [this article](https://support.enthought.com/hc/en-us/articles/204469240-Jupyter-IPython-After-editing-a-module-changes-are-not-effective-without-kernel-restart) for more details.
+
+## Jupyter Lab
+
+Start with
+
+```bash
+jupyter lab
 ```

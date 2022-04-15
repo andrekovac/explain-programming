@@ -1,5 +1,5 @@
 ---
-title: 'Python Pytorch'
+title: 'Python Pytorch (Lightning)'
 description: 'Most important usage and commands of the python data science framework Pytorch'
 date: '2020-01-21T00:00:00.000Z'
 author: 'André Kovac'
@@ -8,15 +8,34 @@ tags: ['python', 'data-science', 'machine-learning', 'artificial-intelligence', 
 draft: true
 ---
 
-## Tensor
+## Pytorch ligthning
 
-A generalized matrix with more than two dimensions.
+### You need
 
-Useful for image data.
+- **Model**: Layered architecture of neural network
+- **Optimizer**: Method to do back-propagation (which suits the model), e.g. **Adam** is gradient descent + momentum terms)
 
-### Converting
+    - Mixing some [regularization terms](https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c) into the optimizer algorithm can cause problems.
+    - `backward` function
 
-Direct link
+- **Data**
+
+### Training/Validation/Testing vs. Inference
+
+- Training loop (via `training_step`)
+- Validation loop 
+- Test loop
+
+- Inference (prediction) (via `forward`)
+
+## Definitions
+
+### Tensor
+
+- A generalized matrix with more than two dimensions.
+- Useful for image data.
+
+#### Conversion to tensor (from numpy array)
 
 ```python
 torch.from_numpy(arr)
@@ -24,7 +43,7 @@ torch.from_numpy(arr)
 torch.as_tensor(arr)
 ```
 
-Tensor is independent copy of numpy array
+Tensor is an independent copy of numpy array
 
 ```python
 torch.tensor(arr)
@@ -33,7 +52,7 @@ torch.tensor(arr)
 * `torch.tensor` will retain the original data type
 * `torch.Tensor` is equivalent to `torch.FloatTensor` and will convert integers to floats
 
-### Create tensors
+#### Create tensors
 
 Placeholder
 
@@ -53,7 +72,7 @@ Random numbers
 
 `torch.manual_seed(42)`
 
-## Selection
+### Selection
 
 Given the following 2-D tensor
 
@@ -72,9 +91,9 @@ Row vs. Column:
     ```
 
 
-## Tensor operations
+### Tensor operations
 
-### `view`
+#### `view`
 
 * `view` creates a shallow copy, i.e. after `z = x.view(2,5)`changes to `x` (e.g. `x[0] = 1`) will also change `z`. `reshape` on the other hand creates a deep copy.
 * `view(.., -1)` will infer the right dimension if you use a `-1` for one of them (like `几` in Chinese).
@@ -84,7 +103,7 @@ x = torch.arange(10)
 x.view(2, -1)
 ```
 
-### Matrix product `mm`
+#### Matrix product `mm`
 
 ```python
 a @ b       # but @ is usually used for python decorators
@@ -92,7 +111,9 @@ a @ b       # but @ is usually used for python decorators
 torch.mm(a, b)
 ```
 
-### Several other tensor operations
+#### Several other tensor operations
+
+Given tensor `x`:
 
 ```python
 x.dot()     # Dot product
@@ -103,7 +124,7 @@ x.numel()
 len(x)      # Attention: Number of rows in 2-dimensional array
 ```
 
-### Derivatives and gradients
+#### Derivatives and gradients
 
 ```python
 x = torch.tensor(2.0, requires_grad=True)
@@ -112,9 +133,3 @@ y = 2*x**4 + x**3 + 2*x**2 + 5*x + 1
 y.backward()    # dy/dx
 x.grad          # Get result of dy/dx(x)
 ```
-
-## Optimizer
-
-A already setup model is called an **optimizer**:
-
-e.g. `nn.Linear(28*28, 1)` for a linear optimizer with data 28x28 and bias 1

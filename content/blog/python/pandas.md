@@ -22,36 +22,43 @@ my_series.value_counts()
 
 ### Operations on Series:
 
-| Function | What? |
-| --- | --- |
-| `unique()` | [Removes duplicate values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html?highlight=unique#pandas.Series.unique) |
-| `nunique()` | Returns the number of unique values |
-
+| Function    | What?                                                          |
+| ----------- | -------------------------------------------------------------- |
+| `unique()`  | [Removes duplicate values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html?highlight=unique#pandas.Series.unique) |
+| `nunique()` | Returns the number of unique values                 |
 | `apply(someFunction)` | Apply function to every element in column |
 
 
 ## Dataframe
 
-| Function | What? |
-| --- | --- |
-| `del df['new']` | Delete column *new* |
-| `df.drop(['new'], inplace = true)` | Delete column *new* |
-| `df.dropna()` | Remove lines with `nan` values |
-| `df.transpose()` or just `df.T` | Transpose |
+| Function                           | What?                          |
+| ---------------------------------- | ------------------------------ |
+| `del df['new']`                    | Delete column *new*            |
+| `df.drop(['new'], inplace = true)` | Delete column *new*            |
+| `df.dropna()`                      | Remove lines with `nan` values |
+| `df.transpose()` or just `df.T`    | Transpose                      |
 
 ### Data selection
 
 * Column (label) selection: `df[['A', 'C']]`
 
-  * Get **Series**: `df['A']`
-  * Get **DataFrame**: `df[['A']]`
+  * Get column as **Series**: `df['A']`
+  * Get column as **DataFrame**: `df[['A']]`
 
 * **Row** selection: `df.loc[['A', 'C']]`
 
 * All rows of certain columns (labels)
 
-  ```python
+  Get pointers to original object (references):
+
+  ```py
   df.loc[:, ['A', 'B']]
+  ```
+
+  Get **copy** of columns:
+
+  ```py
+  df[['A', 'C']]
   ```
 
 * By position (index)
@@ -169,3 +176,29 @@ result = b.dot(dummies).reshape(3, 3)
 
 - [100 Pandas Puzzles](https://github.com/ajcr/100-pandas-puzzles)
 - [10 Minutes to Pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)
+
+## Do's and dont's
+
+### Merging several boolean conditionals
+
+What to do if you need data based on **two** categorical variables?
+
+Use `groupby` and `agg` to simplify merging of data based on
+
+```py
+# 1 case
+df_temp1 = df[df['male'] == True]
+df_temp2 = df_temp1[df_temp1['underserved'] == True]
+engagement_index_of_group_mean = mean(df_temp2['engagement_index'])
+# Repeat 3 more times....
+# and then plot these four mean values.
+
+# Or simpler
+engagement_index_means = merged_data.groupby(['pre_covid', 'underserved']).agg({'engagement_index': 'mean'}).reset_index()
+
+sns.barplot(x="underserved", y="engagement_index", hue="pre_covid", data=engagement_index_means)
+```
+
+### Create categorical variable for two groups instead of splitting up data set
+
+Tools like `seaborn` can then do the heavy lifting for you and create nice summary plots.

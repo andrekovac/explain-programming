@@ -177,6 +177,19 @@ How to filter the output value of a neuron before passing it on.
 
 - [Lobe.ai](https://lobe.ai/) - Upload a few tagged samples - it creates ML model for you.
 
+## Transfer Learning
+
+- Complex Model (many parameters) trained on small amount of data generalizes badly!
+- See [this video](https://www.youtube.com/watch?v=BqqfQnyjmgg&list=PLo2EIpI_JMQtNtKNFFSMNIZwspj8H7-sQ&index=3) from hugging faces about it.
+
+## Ensemble
+
+Winning Kaggle Contributions are usually an ensemble of neural networks
+
+## [Transformers](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model))
+
+Deep Learning with Attention.
+
 ## Computer Vision
 
 ### Up-and down Movement detection algorithm
