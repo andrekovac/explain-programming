@@ -104,4 +104,17 @@ accessibilityHint="Opens in a new window"
 
 ## React Native
 
+### Accessibility Text Length Issues:
+
+- ... (aka ellipsis) vs. hyphenation vs. multiline
+- Hypthenation not included in React Native (Android ignores unicode soft-hyphen)
+
+1. When multiline, hyphenation doesn't work.
+2. When multiline but we only have one long word, word breaks will not be enforced with only one word, just with two words.
+
+See the following for Web: https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+
+
+### Accessibility Docs
+
 https://reactnative.dev/docs/accessibility
