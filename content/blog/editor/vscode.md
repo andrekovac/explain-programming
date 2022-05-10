@@ -44,6 +44,8 @@ tags: ['editor', 'shortcuts']
 | `Cmd + i` or `option + esc`              | Trigger auto-complete suggestion                             |
 | `Cmd + Shift + y`                        | Toggle view of terminal/debug console                        |
 | Click + `control`                        | Open file in split view                                      |
+| `Cmd` + `j`                              | Open panel (with terminal etc.)                              |
+| `Cmd` + `m`                              | Open side bar                                                |
 
 ## Notable VSCode extensions
 

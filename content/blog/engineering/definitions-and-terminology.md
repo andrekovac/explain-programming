@@ -18,4 +18,7 @@ tags: ['definition']
   Taken from [here](https://forums.codeguru.com/showthread.php?177925-what-NB-stands-for).
 - **[Business Logic](https://en.wikipedia.org/wiki/Business_logic)**: Part of the program that encodes the real-world business rules that determine how data can be created, stored, and changed. It is contrasted with the remainder of the software that might be concerned with lower-level details of managing a database or displaying the user interface, system infrastructure, or generally connecting various parts of the program.
 - **Serialization**: Transform rich data (objects, arrays) into a string (e.g. in json format) so it can be easily sent around.
+
+  - A **serializer** does this transformation.
+
 - **Rehydration**: 
