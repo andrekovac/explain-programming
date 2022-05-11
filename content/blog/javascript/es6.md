@@ -97,7 +97,9 @@ let obj = {
 
 >In fact every ***async*** function you write will **return a promise**, and every single thing you ***await*** will ordinarily **be a promise**.
 
-##### Try-Catch in async/await
+[Excellent article](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) about the difference between `await`, `return` and `await return`
+
+#### Try-Catch in async/await
 
 Create helper function ([Example from this SO answer](https://stackoverflow.com/questions/40884153/try-catch-blocks-with-async-await/49311904#49311904))
 
@@ -123,3 +125,7 @@ async performAsyncWork() {
   }
 }
 ```
+
+#### Async await in functional methods
+
+- [How to use async functions with Array.reduce in Javascript](https://advancedweb.hu/how-to-use-async-functions-with-array-reduce-in-javascript/)
