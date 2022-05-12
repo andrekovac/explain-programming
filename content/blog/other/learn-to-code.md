@@ -10,8 +10,7 @@ ready: true
 published: true
 ---
 
-- [Introduction](#introduction)
-	- [What should I learn first? Web Development, Data Science, AI?](#what-should-i-learn-first-web-development-data-science-ai)
+- [Which part of programming should I learn first?](#which-part-of-programming-should-i-learn-first)
 	- [How the Internet works](#how-the-internet-works)
 	- [Simple code completions](#simple-code-completions)
 	- [Online courses for particular technologies](#online-courses-for-particular-technologies)
@@ -28,13 +27,13 @@ published: true
 	- [Are frameworks like React JS something you should learn after you've mastered JS, or can you learn it now?](#are-frameworks-like-react-js-something-you-should-learn-after-youve-mastered-js-or-can-you-learn-it-now)
 	- [My experience in education](#my-experience-in-education)
 
-## Introduction
-
 > André, if I want to start programming, where should I start?
 
-I get asked this question a lot! This articles is my (elaborate) reply.
+I get asked this question a lot! This article is my (elaborate) reply.
 
-### What should I learn first? Web Development, Data Science, AI?
+## Which part of programming should I learn first? 
+
+Web Development, Data Science, AI - There are so many options to start.
 
 Creating things you can share with others is motivating - Such a thing is a website or an app. That's why I recommend to start with **web development**.
 
