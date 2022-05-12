@@ -43,7 +43,7 @@ I now present different online courses around the topic of web development which
 
 The **Digital Literacy** track of [TeamTreehouse](http://referrals.trhou.se/andrekovac) is the perfect way to start for complete beginners who want to get a smooth introduction into the world of technology and the internet.
 
-A very charming lady will use very simple language to teach you about:
+A charming lady will use very simple language to teach you about:
 
 - Computer Basics
 - How the internet works
@@ -58,7 +58,7 @@ You have to create an account but it's free for 7 days. [Try it for 7 days here]
 
 ### Online courses for particular technologies
 
-- TeamTreehouse and PluralSight offer structured courses.
+- [TeamTreehouse](https://teamtreehouse.com/) and [PluralSight](https://www.pluralsight.com/) offer structured courses.
   - At TeamTreehouse you always see the explanation why something is the way it is and so you understand all the concepts better, feel more confident and can remember it better.
   - PluralSight offer a 10-day trial (https://www.pluralsight.com/codeschool). Runs according to a similar system to TeamTreehouse.
 
