@@ -11,11 +11,12 @@ tags: ['editor', 'shortcuts']
 
 ### Jumping around in a file
 
-| Command             | Result                                                                                     |
-| ------------------- | ------------------------------------------------------------------------------------------ |
-| `Ctrl + -`          | (dash) Jump back to last cursor position                                                   |
-| `Ctrl + _`          | (underscore) Jump forward to next cursor position                                          |
-| `F8` (`Fn` -> `F8`) | [Move to next typescript error](https://johnpapa.net/refactoring-with-visual-studio-code/) |
+| Command                             | Result                                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------------------ |
+| `Ctrl + -`                          | (dash) Jump back to last cursor position                                                   |
+| `Ctrl + _`                          | (underscore) Jump forward to next cursor position                                          |
+| `F8` (`Fn` -> `F8`)                 | [Move to next typescript error](https://johnpapa.net/refactoring-with-visual-studio-code/) |
+| `Ctrl + g` -> then type line number | Jump to specific line number                                                               |
 
 ### Selection + Replace
 
