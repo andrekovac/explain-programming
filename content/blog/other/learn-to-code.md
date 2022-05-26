@@ -44,10 +44,10 @@ Whatever I talk about next, the best approach is the one which ensures that you 
 
 > motivation + time = success
 
-- **Motivation**: Without personal intrinsic motivation you'll give up soon. You'll face some frustrating moments along the way!
-- **Time**: You will have to gradually invest more and more time into it in case you really want to learn it properly.
+- **Motivation**: Without personal intrinsic motivation you'll give up soon. This will help you to tolerate frustrations which you'll inevitably face when learning to code!
+- **Time**[^1]: You will have to gradually invest more and more time into this learning journey in case you really want to learn it properly.
 
-This is a very general idea! To reach your fitness goals you need the same two things!
+This is a very general idea! To reach your fitness goals 👟 you need the same two ingredients! Therefore, my recommended approach considers the factors motivation and time.
 
 ### Start with web development
 
@@ -199,3 +199,5 @@ Who am I to write about this topic?
 - I myself learned the basics of web development via an [online course](#3-the-complete-web-developer-course) and am learning more about programming every single day I code.
 
 I hope this guide helps you to start your programming learning journey! 🎉🚀🐒
+
+[^1]: Of course, available time comes with some priviledge. But often it's also a lack of motivation which causes a lack of time. If you really want to become a developer, you might be able to **take** the necessary time even if you think you don't **have** it.
