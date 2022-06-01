@@ -2,6 +2,7 @@
 title: 'I want to learn how to code - Where should I start?'
 description: 'Recommendations and frequently asked questions about how to start to become a programmer.'
 date: '2020-04-21'
+updated: '2022-05-26'
 datePublished: '2022-05-11'
 author: 'André Kovac'
 category: 'other'

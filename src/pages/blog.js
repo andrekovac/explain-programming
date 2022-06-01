@@ -202,6 +202,7 @@ export const pageQuery = graphql`
             draft
             ready
             published
+            updated
             datePublished
           }
           timeToRead

@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import image from '../../static/images/explain-programming-meta-image.jpg';
+import imageSquare from '../../static/images/explain-programming-meta-image-square.jpg';
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -58,7 +59,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: image,
+          content: imageSquare,
         },
         {
           name: `twitter:card`,

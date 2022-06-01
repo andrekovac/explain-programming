@@ -8,9 +8,15 @@ tags: ['git']
 draft: true
 ---
 
+## git and GitHub
+
+![](./git-and-github-white-bg.png)
+
 ## GitHub pages
 
 Publish files to a `gh-pages` branch on GitHub via this tool: [gh-pages](https://github.com/tschaub/gh-pages)
+
+-> In repository `settings` -> `Pages` just choose the branch you want to deploy.
 
 ## Continuous integration
 
