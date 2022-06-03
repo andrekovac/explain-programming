@@ -27,7 +27,7 @@
     "gatsby-plugin-feed": "^2.5.14",
     "gatsby-plugin-gdpr-cookies": "^1.0.10",
     "gatsby-plugin-manifest": "^2.4.34",
-    "gatsby-plugin-mdx": "^1.2.46",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-nprogress": "^2.3.13",
     "gatsby-plugin-offline": "^3.2.31",
     "gatsby-plugin-react-helmet": "^3.3.14",
