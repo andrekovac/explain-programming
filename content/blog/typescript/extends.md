@@ -2,6 +2,7 @@
 title: 'Typescript extends command'
 description: 'A close look at the Typescript extend command with examples'
 date: '2021-01-30'
+updated: '2022-07-01'
 author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'typescript']
@@ -9,9 +10,9 @@ tags: ['javascript', 'typescript']
 
 ### Definition for object types
 
-- `K extends keyof T` "extends" means a type with covariant relationship with `keyof T`
+`extends` in e.g. `Lion extends Animal` says that `Lion` is a **sub-type** of `Animal` like with classes if `Ferrari extends Car`, `Ferrari` is a child of a `Car`.
 
-**Exercise**: https://stackoverflow.com/questions/45546159/type-test-cannot-be-used-to-index-type-t
+`Lion` is more special than `Animal`.
 
 ```js
 interface Animal {
@@ -22,10 +23,11 @@ interface Lion extends Animal {
 }
 ```
 
+### `extends` with `keyof`
 
-`extends` in e.g. `Lion extends Animal` says that `Lion` is a sub-type of `Animal` like with classes if `Ferrari extends Car`, `Ferrari` is a child of a `Car`.
+- In `K extends keyof T` **"extends"** means a type `K` with *covariant* relationship with `keyof T`
 
-`Lion` is more special than `Animal`.
+**Exercise**: https://stackoverflow.com/questions/45546159/type-test-cannot-be-used-to-index-type-t
 
 ### `extends` for union types
 
@@ -57,6 +59,10 @@ Nice example [here](https://stackoverflow.com/questions/45546159/type-test-canno
 ### Widening type assertion vs. type annotation
 
 Excellent explanation in [this SO answer](https://stackoverflow.com/a/68289470/3210677).
+
+> `A extends B` direction where you **widen** `A` to `B`
+
+> Type **annotations** will generally only allow you to assign a value of some type `A` to a variable of some type `B` where `A extends B`
 
 ### Narrowing down a field
 

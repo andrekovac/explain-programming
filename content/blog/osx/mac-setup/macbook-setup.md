@@ -2,13 +2,18 @@
 title: 'Setting up a new Macbook'
 description: 'Step by step to get a hassle free setup'
 date: '2022-03-02'
+updated: '2022-07-20'
 author: 'André Kovac'
 category: 'other'
 tags: ['setup']
 draft: true
 ---
 
-inspired by [Tania Rascia's great blog article](https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/) and by ...
+My guide on how to set up a fresh macbook.
+
+This guide is inspired by [Tania Rascia's great blog article](https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/) and by ...
+
+## Install applications
 
 ```bash
 ## Shell Programs
@@ -38,6 +43,7 @@ brew tap wix/brew && bew install --cask detox-instruments &&
 brew install --cask \
   appcleaner \
   arduino \
+  arq \
   audacity \
   bluejeans \
   deepl \
@@ -54,6 +60,7 @@ brew install --cask \
   gather \
   github \
   google-chrome \
+  google-drive \
   insomnia \
   intellij-idea \
   iterm2 \
@@ -69,6 +76,7 @@ brew install --cask \
   pycharm \
   react-native-debugger \
   rectangle \
+  r \
   rstudio \
   setapp \
   signal \
@@ -99,7 +107,7 @@ brew install --cask \
 
 - `virtualbox` does currently not run on ARM architecture
 
-## Node.js
+### Node.js
 
 will install node v16
 
@@ -107,12 +115,12 @@ will install node v16
 nvm install --lts
 ```
 
-## Password manager
+### Password manager
 
 1password v7: `brew install --cask 1password`
 1password v6: via https://1password.com/downloads/mac/#legacy-downloads
 
-## Global npm packages
+### Global npm packages
 
 Installing [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 
@@ -120,6 +128,8 @@ Installing [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 npm install --global \
     yarn \
     detox-cli \
+    npm-check-updates \
+    serve \
     expo-cli \
     eas-cli \
     firebase-tools &&
@@ -127,7 +137,7 @@ npm install --global \
 npm install -g blitz --legacy-peer-deps
 ```
 
-## Ruby
+### Ruby
 
 
 Install Ruby Version Manager **RVM** using [these instructions](https://rvm.io/):
@@ -138,7 +148,7 @@ Install Ruby Version Manager **RVM** using [these instructions](https://rvm.io/)
 2. Install ruby version `3.0.0` via `rvm install 3.0.0`
 
 
-## React Native
+### React Native
 
 - `brew install --cask adoptopenjdk/openjdk/adoptopenjdk11` is a React Native Android requirement
 
@@ -147,12 +157,22 @@ Install Ruby Version Manager **RVM** using [these instructions](https://rvm.io/)
 - `brew install watchman`
 - Install [Android Studio](https://developer.android.com/studio/index.html)
 
-## Python
+### Python
+
+#### Python install
+
+Follow [this guide](https://mnzel.medium.com/how-to-activate-python-venv-on-a-mac-a8fa1c3cb511).
+
+**Attention**: Always use `python3` (or `python3.9`) command. `python` command will point to OSX system python **2.7**!
+
+See `pip-python.md` guide.
+
+#### Python tools
 
 - Anaconda - Install via dmg file
 - poetry - install with install script from homepage
 
-## 1password
+### 1password
 
 Issue: M1 and 1password6 - can't install via AppStore -> no license!
 
@@ -160,49 +180,44 @@ Issue: M1 and 1password6 - can't install via AppStore -> no license!
 
 
 
-## Thunderbird
+### Thunderbird
 
 Use [this guide](https://www.lifewire.com/back-up-thunderbird-settings-1173141) to copy profile folder contents into new folder on new PC
 
-## iTerm2 setup
+### iTerm2 setup
 
-## Tunnelblick VPN settings
+### Tunnelblick VPN settings
 
 1. Export in old PC
 2. Import in new PC
 
 
-## OSX System settings
+### OSX System settings
 
-### Copy-paste keyboard shortcuts
+#### Copy-paste keyboard shortcuts
 
 - Change default of copying to clipboard vs. copying to file.
 
-### Keyboard Key Repeat speed
+#### Keyboard Key Repeat speed
 
-### Markdown default editor
+#### Markdown default editor
 
 Change it to macdown
 
 ![](./macdown_default.png)
 
-## DB
+### DB
 
 - **TablePlus**: export and import connections
 - **Insomnia**: export and import collections
 - **Postman**: Login into account in order to sync
 
-### Postgres
+#### Postgres
 
 Install first user following [this setup guide](https://www.codementor.io/@engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb).
 
-## VSCode editor
 
-1. Old PC: Login with github and enable sync
-2. New PC: Login with github -> sync will start.
-
-
-## Some default
+### Some default
 
 taken from https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development
 
@@ -223,9 +238,38 @@ defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 ```
 
-## Extra Apps
+### Extra Apps
 
 - **Loom**: It's homebrew version does not work for Macbooks with M1 chip.
+
+## VSCode
+
+Follow [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to launch vscode from the command line
+
+### Sync extensions
+
+1. Old PC: Login with github and enable sync
+2. New PC: Login with github -> sync will start.
+
+### Install extensions
+
+Install extensions via VSCode Marketplace (symbol with four squares)
+
+My favotite general (not language specific) extensions:
+
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens): Show errors inline
+- [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight): Highlight matching brackets
+- [Quokka](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode): Great for live code demos
+
+#### HTML & JSX
+
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+
+## Aliases
+
+Add the following aliases file:
+
+**TODO**
 
 ## Links
 

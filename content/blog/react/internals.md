@@ -1,10 +1,11 @@
 ---
-title: 'React - Understand <ListView />'
+title: 'React & React Native Internals - Understand <ListView />'
 description: 'A look under the hood of the React ListView component'
-date: '2019-08-25T17:58:32.169Z'
+date: '2019-08-25'
+updated: '2022-07-01'
 author: 'André Kovac'
 category: 'framework'
-tags: ['javascript', 'react', 'internals']
+tags: ['javascript', 'react', 'react-native', 'internals']
 ---
 
 **Note**: This documentation refers to an old version of `ListView`. now it is encouraged to use `FlatList`. This document can however be an in interesting read.

@@ -1,6 +1,7 @@
 ---
 title: 'Computer Vision'
 date: '2021-03-27'
+updated: '2022-06-20'
 author: 'André Kovac'
 description: ''
 category: 'data'
@@ -54,7 +55,9 @@ First layer:
 
 #### First layer
 
-Just look at the neurons with highest activations.
+- Look at the neurons with highest activations.
+- The neurons are directly connected to the input image.
+- Look through all the images which are highly activated for a given neuron and search for similarities.
 
 ![Explaining layer 1](./images/explanatory_ai_layer1.png)
 

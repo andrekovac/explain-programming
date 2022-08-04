@@ -9,7 +9,13 @@ ready: true
 ---
 
 **React**: UI is a function of state and props.
-**React Render**: Render phase + commit phase
+**React Rendering**: Consists of two phases:
+
+1. Render phase (creates virtual DOM and compares it with current browser DOM)
+2. Commit phase (creates DOM on mount / surgically adapts changed components in browser DOM)
+
+> ReactDOM.render renders a React element into the DOM
+
 
 ## Mounting vs. Rerendering
 
@@ -64,7 +70,7 @@ Taken from [this article about the DOM](https://medium.com/jspoint/how-the-brows
 
 The DOM Web API exposed by the browsers, allows UI frameworks (**Vue** and **React** alike) to efficiently create or clone html elements in memory and manipulate the DOM without affecting the actually rendered DOM tree - thereby realizing faster render times and a better user experience.
 
-> Reactivity: Automatic synchronization between the app's state and the browser's rendered Document Object Model (DOM).
+> **Reactivity**: Automatic synchronization between the app's state and the browser's rendered Document Object Model (DOM).
 
 ## `state` vs. `props`
 

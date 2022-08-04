@@ -2,6 +2,7 @@
 title: 'Health - How to lose weight'
 description: 'Concepts "calorie deficit", "body recomposition" and others explained'
 date: '2022-04-20'
+updated: '2022-06-01'
 author: 'André Kovac'
 category: 'other'
 tags: ['sport', 'health']
@@ -116,3 +117,27 @@ Body-building [Ab vacuum](https://www.youtube.com/watch?v=TdzrYvgvv3o) technique
 ### Motivation
 
 Sascha Huber macht das richtig gut!
+
+
+## Q&A
+
+### Calorie-Deficit: Large or small?
+	
+- Proteine zählen. Proteinshake. 2g  - vorher mixen?
+- 10min / 24h / 48h Muskelaufbau Intervalle.
+
+### Low-carb vs. high-carb?
+
+### Cardio - a lot vs. a little?
+
+- cannot be too much. If you eat enough protein you'll still grow muscles.
+
+
+### Shake before training good?
+
+- good for power
+
+
+### Unhealthy eating out?
+
+**Tip**: Do sports ~1 hour afterwards to utilize the extra energy from the restaurant visit!

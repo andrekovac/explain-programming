@@ -1,7 +1,8 @@
 ---
 title: 'Typescript'
 description: 'Concepts, syntax and code snippets for Typescript'
-date: '2016-08-27T12:07:32.169Z'
+date: '2016-08-27'
+updated: '2022-07-01'
 author: 'André Kovac'
 category: 'programming-language'
 tags: ['javascript', 'typescript']
@@ -643,26 +644,51 @@ See `Pick` or `Partial` above in the utility type section
 
 ### `as` in mapped types to redefine object
 
-## Structural vs. Nominal typing
+**TODO**
+
+### Mapped types on tuples and arrays
+
+Mapping over a tuple is mapping over the tuple elements -> `K` is the numerical index of the tuple element.
+
+```ts
+type MapToPromise<T> = { [K in keyof T]: Promise<T[K]> };
+```
+
+If `T` is a tuple, `{[K in keyof T]: any}` is a tuple of the same length as `T`:
+
+
+- See [the official TypeScript docs](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-1.html#mapped-types-on-tuples-and-arrays)
+
+## Structural vs. Nominal typing (Typing theory)
 
 - **Structural**: Has to be the same type - does not have to be the same instance
 - **Nominal**: Has to be the same instance
 
-## Interesting
+## Interesting TypeScript tricks
 
 - `(string & {})`
 
-  To allow auto-completion of some strings but still allow all string values.
+  To allow auto-completion of some strings but still allow **all string** values.
 
   **Example**:
 
   ```ts
-  color: 'inherit' | 'primary' | 'secondary' | 'tertiary' | 'black' | 'white' | (string & {});
+  type Color = 'inherit' | 'primary' | 'secondary' | 'tertiary' | 'black' | 'white' | (string & {});
+
+  const color: Color = 'foo';
   ```
 
   See [this TS Playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAYg9nKBeKBvAUFKBjOAbOAJwC4oByASwDsALCQi4MqAH3LAYFsBDQkZtmQDOEXFQAmvfq3LB6wClIHkARnm7YA1srIB3GowjKAFEOAMqAcygAyNAF8AlAG5099OjFmoAMwSl4RBQMLFwCEigAIjhgOkJIt1cgA).
 
   Here the given strings are theme colors and all other provided colors will be used as CSS color -> in a different manner.
+
+  **Explanation**: The `& {}` is a [technique to lower the inference priority](https://github.com/microsoft/TypeScript/issues/14829#issuecomment-320754731). It means that the string becomes **non-inferential**. `string` is now not used to infer the entire type of the `Color` type, but it's part of the type. So we get both! The auto-completion because it's a union type, but also it will allow all strings.
+
+  See the lower part of [this answer from jcalz](https://stackoverflow.com/a/62207061/3210677) for more infos.
+
+- **Hints** for the TypeScript compiler, e.g. `| [never]`
+
+  See [the tuples](./tuples.md) file!
 
 ## Template Literal Types
 
