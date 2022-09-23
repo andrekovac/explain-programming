@@ -1,22 +1,28 @@
 ---
-title: 'npm'
-description: 'npm modules - the big repository of javascript development tools'
-date: '2019-08-20T23:46:37.121Z'
+title: 'npm for contributors - how to release npm packages'
+description: 'Instructions on how to create and update your own npm packages to create new patch, minor or major release versions using a git repository with a CHANGELOG.'
+date: '2019-08-20'
+datePublished: '2022-09-23'
+updated: '2022-09-23'
 author: 'André Kovac'
 category: 'tool'
 tags: ['javascript', 'npm', 'dev-ops']
 draft: false
 ready: true
-published: false
+published: true
 ---
 
-## Distribute npm package
+## Distribute your npm package
 
-You created a cool JavaScript or TypeScript project, want to share it with the world and want a step-by-step instruction on how to publish this thing on **npm**?
+This guide describes how to create and release your (open-source) software project, want to share it with the world and want a step-by-step instruction on how to publish this thing on **npm**?
 
-Here you go!
+- [Distribute your npm package](#distribute-your-npm-package)
+  - [Create a **new** npm package](#create-a-new-npm-package)
+  - [Update an **existing** npm package](#update-an-existing-npm-package)
+  - [Add `npm` **version badge** in GitHub repo README](#add-npm-version-badge-in-github-repo-readme)
+- [Semantic Versioning overview](#semantic-versioning-overview)
 
-### New npm package
+### Create a **new** npm package
 
 1. Create an [npm account](https://www.npmjs.com/signup)
 2. Run `$ npm login` to login to your (newly created) npm account.
@@ -27,7 +33,7 @@ Here you go!
 
 These steps were taken from this [overview](https://docs.npmjs.com/misc/developers).
 
-### Update an existing npm package
+### Update an **existing** npm package
 
 My npm update routine for my open source projects.
 
@@ -59,18 +65,18 @@ The `npm` part is done. Now we add a **tag** and release to **GitHub**:
 
 **Note**: In step 1 you can run `npm version patch -m "Upgrade to %s for reasons"` to update with a message.
 
-### `npm` version in GitHub repo README
+### Add `npm` **version badge** in GitHub repo README
 
-1. Go to <https://badge.fury.io/> and create your npm badge which you can then add to your GitHub README file.
-2. Copy the Markdown version of the generated badge.
+1. Go to <https://badge.fury.io/> and create your npm badge.
+2. Copy the Markdown version of the generated badge and add it to your **README.md** file.
 
 Example in case the package is called `my-package`:
 
-```md
+```markdown
 [![npm version](https://badge.fury.io/js/my-package.svg)](https://badge.fury.io/js/my-package)
 ```
 
-## More on Semantic Versioning
+## Semantic Versioning overview
 
 In a `package.json` file you'll encounter versions with `~` or `^`. This is what it means:
 
@@ -83,7 +89,9 @@ Depending on whether you prepend `~`, `^` or *nothing* to the version `2.0.3` th
    - `"jQuery": "^2.0.3",`: Most recent `jQuery` version up to **minor** release will be installed (i.e. `2.something.something`)
 - `"jQuery": "2.0.3",`: That particular `jQuery` version will be installed (i.e. `2.0.3` and nothing else)
 
-In the `package-lock.json` or `yarn.lock` file you can check which exact version is installed
+In the `package-lock.json` or `yarn.lock` file you can check which exact version is installed.
+
+For example here version `3.6.4` of the package `core-js-pure` is installed although the `package.json` file mentions `^3.0.0`: 
 
 ```js
 core-js-pure@^3.0.0:

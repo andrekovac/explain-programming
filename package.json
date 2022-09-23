@@ -8,7 +8,7 @@
     "url": "https://github.com/andrekovac/explain-programming/issues"
   },
   "engines": {
-    "node": "12"
+    "node": ">=12"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
