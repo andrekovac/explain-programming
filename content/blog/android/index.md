@@ -24,6 +24,8 @@ adb reboot
 
 ```bash
 adb shell
+
+# cd /storage/self/primary/WhatsApp/Media/
 ```
 
 ### WhatsApp
@@ -36,6 +38,8 @@ adb pull -a /storage/self/primary/WhatsApp/Media/WhatsApp\ Video/ .
 adb pull -a /storage/self/primary/WhatsApp/Media/WhatsApp\ Voice\ Notes/ .
 adb pull -a /storage/self/primary/DCIM/Camera/ .
 ```
+
+This is much more reliable then **Android File Transfer**
 
 ### Save **Whatsapp** backups:
 

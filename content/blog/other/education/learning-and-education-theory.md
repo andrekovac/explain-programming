@@ -63,11 +63,13 @@ See https://www.teachthought.com/pedagogy/modern-trends-education-50-different-a
 
 Read about just-in-time learning [here](https://www.developgoodhabits.com/just-in-time-learning/).
 
+> The key to learning something new is to focus on a specific skill or information that can be immediately applied. This is called “just in time” learning.
+
 ### Faith learning
 
-- You don't know why it's useful now, but trust me (have faith) and you can have **impact** in the future.
+> You don't know why it's useful now, but trust me (have faith) and you can have **impact** in the future.
 
-Nick del Grosso
+*Nick del Grosso*
 
 - **Impact** has to be well defined - by the students themselves!
 

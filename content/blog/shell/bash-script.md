@@ -1,28 +1,41 @@
 ---
 title: 'bash script'
-date: '2016-08-28T17:52:03.284Z'
+date: '2016-08-28'
+updated: '2022-09-14'
 author: 'André Kovac'
 description: 'How to create your bash script (with examples)'
 category: 'shell'
-tags: ['bash']
+tags: ['bash', 'scripting']
+draft: false
+ready: true
 ---
 
-## Steps
+## Steps to create a bash script executable and run it
 
 1. Create file with `.sh` extension, e.g. with `touch filename.sh`
 2. Write contents of your script (see below)
 3. Make it executable: `chmod +x filename.sh`
 4. Move file into folder `~/bin` or equivalently `$HOME/bin`
+5. Check whether the `~/bin` folder is in your path and add it if necessary
 
-	You can now run the script with `$ filename` in a new shell tab
+	- I put my own shell scripts into the folder `~/bin`.
+	- To check whether the folder `~/bin` is in your system's `PATH`, run `echo $PATH`.
+	- If you don't see `~/bin` in there (e.g. `something:~/bin:something-else`) add it to the end of your `PATH` via
 
-5. *Optional:*
-	1. Add `alias coolerName='./filename.sh'` to `.bash_profile`
+		```bash
+		export PATH=$PATH:~/bin
+		```
+
+	- Open a new shell tab so that the new `PATH` is active.
+	- You can now run the script executable with `$ filename`	
+
+6. *Optional:*
+	1. Add `alias myScriptName='./filename.sh'` to `.bash_profile`
 	2. Reload shell or run `. .bash_profile`
 	3. Call your new shell script by just typing
 
 		```bash
-		coolerName
+		myScriptName
 		```
 
 ## My first shell script - step by step
@@ -31,6 +44,7 @@ tags: ['bash']
 
    - First line is `#!/bin/bash` (`bash` shell) or `#!/bin/sh` (`sh` shell)
    - Then write your code below, e.g.
+	
 	```bash
 	#!/bin/bash
 	# My first script
@@ -65,10 +79,9 @@ Example and instructions taken and adapted from [http://linuxcommand.org/wss0010
 #!/bin/bash -l
 
 export LANG=en_US.UTF-8
-
 ```
 
-`-l`: Use current logged in user
+`-l`: Use currently logged-in user
 
 ### Example 2
 
@@ -90,5 +103,5 @@ fi
 
 ## Links
 
-- See [https://en.wikipedia.org/wiki/Shell_script]() for more examples.
+- See [the Wikipedia article](https://en.wikipedia.org/wiki/Shell_script) for more examples.
 - [How do I parse command line arguments in bash?](http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)

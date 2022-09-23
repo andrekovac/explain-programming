@@ -1,7 +1,8 @@
 ---
 title: 'Great quotes I like'
 description: 'Quotes I personally really like'
-date: '2020-04-10T21:55:00.000Z'
+date: '2020-04-10'
+updated: '2022-09-07'
 author: 'André Kovac'
 category: 'other'
 tags: []
@@ -41,3 +42,15 @@ You can also fail by things you don’t like, so give the things you like a chan
 **Antoine de Saint Exupery**
 
 > "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away."
+
+## Spiritual
+
+Eckhart Tolle once replied to a request to explain sth a bit better (fact check this!):
+
+> Words are only pointers - the analysis of pointers is pointless
+
+
+## Health
+
+> Eat food not too much mostly plants
+by **Michael Pollan**

@@ -1,213 +1,254 @@
 ---
 title: 'Kubernetes'
-description: ''
-date: '2019-08-01T17:52:03.284Z'
+description: 'Kubernetes basics'
+date: '2016-07-01'
+updated: '2022-09-13'
 author: 'André Kovac'
 category: 'tool'
 tags: ['docker', 'dev-ops']
-draft: true
 ---
+
+## How to use Kubernetes?
+
+1. Via [google gloud console](https://console.cloud.google.com/)
+
+   Run cluster startup script
+
+   Change cluster version to: `--zone $ZONE --cluster-version "1.23.8-gke.1900" \`
+
+2. Use [minikube](https://minikube.sigs.k8s.io/docs/) for a local Kubernetes cluster
+   - **Pro**: you don't have to pay cloud costs.
+   - **Con**: only one node
+3. Via **Docker Desktop**: Enable in Configurations
 
 ## What?
 
 Orchestrate many micro services.
 
-Alternative for front-end micro services: [single-spa](https://single-spa.js.org/).
+## View what's happening
+
+Run `kubectl get pods` every second:
+
+```bash
+watch -n 1 kubectl get pods
+```
+
+View **endpoints**, **pods**, **nodes** and **services**:
+
+```bash
+kubectl get endpoints,pods,nodes,svc -o wide
+```
+
+View everything:
+
+```bash
+kubectl get all
+```
+
+Get `.yaml` file + extra information of horizontal pod autoscaler:
+
+```bash
+kubectl get hpa -o yaml
+```
+
+## Container
+
+### Kubernetes Yaml config file
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginxdemos/hello:0.3
+      ports:
+        - containerPort: 80
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "100Mi"
+        limits:
+          cpu: "250m"
+          memory: "100Mi"
+```
+
+- **CPU** measured in millicores
+  - If, for instance, we want to request **0.5 of a CPU**, we should express it as `500m` — where m represents millicores.
+  - In the example above, we’ve specified the container’s requested CPU as `100m` and the limit as `250m`. This means the processing power that will be reserved for the container is `100m`. Furthermore, if a process requires more than `100m`, it can access the additional CPU resources that the scheduler will ensure are available on the node — up to the `250m` limit.
+- **Memory** resources are measured in bytes and can be expressed as fixed-point numbers, integers or power-of-two equivalents. We will use the most common type of expression — the power-of-two equivalent, `Mi`. This represents a `Mebibyte`, or `220 bytes`.
+
+see [this link](https://thenewstack.io/kubernetes-requests-and-limits-demystified/) for more.
 
-## Workflow
+### Multi container pods
 
-### gcloud
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-multi-pod2
+spec:
+  containers:
+    - name: container-a
+      image: alpine:3.16.0
+      command:
+        - "/bin/sh"
+      args:
+        - "-c"
+        - "while true; do echo $(date) > /tmp/buffer; sleep 1; done;"
+      volumeMounts:
+        - name: buffer
+          mountPath: /tmp
+    - name: container-b
+      image: alpine:3.16.0
+      command:
+        - "/bin/sh"
+      args:
+        - "-c"
+        - "while true; do cat /tmp/buffer; sleep 1; done;"
+      volumeMounts:
+        - name: buffer
+          mountPath: /tmp
+  volumes:
+    - name: buffer
+      emptyDir: {}
+```
 
-1. Make sure you're logged in with the right user
+### Jump into a running container (in a pod):
 
-		gcloud config list
+```bash
+kubectl exec -it pod_name -- sh
 
-2. Create `project` and switch to project
+kubectl exec -it pod_name container_name -- sh
+```
 
-	Use `gcloud init` to switch users/projects.
+- Files: `ls -lisa`
+- Look at processes `ps ef`
 
-3. Create `cluster` in GCP
+## Replica Sets and deployments
 
-### docker
+### Selectors
 
-1. Update own image in local docker environment
+- Each **replica set** has to have a **selector** which defines the set of pods.
+- A **label selector** matches certain labels.
 
-	Edit `Dockerfile` and `docker_compose.yml`
+### Rollout strategies
 
-2. Build and push to DockerHub or google cloud
+## Services
 
-		docker build -t gcr.io/my-project/server-worker-cms:$(git rev-parse HEAD) .
-		gcloud docker push gcr.io/my-project/server-worker-cms:4912c5f410ccc5d2170cfa12b7a1af0b6f78ed3f
+Run **nodes** which contain **pods**.
 
-3. Using images from DockerHub
+### Service types
 
-	1. [Create secret with Docker config](http://kubernetes.io/docs/user-guide/images/)
+- `ClusterIP`: Expose ports locally on `localhost`
+- `NodePort`: Expose explicit external ports on nodes (on **all** node's external IP addresses - view them via `kubectl get nodes -o wide`)
+- `LoadBalancer`: Add external load balancer (not managed by Kubernetes)
 
-			kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL
+## Auto-Scaling
 
-		e.g. in our case
+### Horizontal pod autoscaling
 
-			kubectl create secret docker-registry my-company-registrykey --docker-server=https://index.docker.io/v1/ --docker-username=michael --docker-password=12345678 --docker-email=info@my-company.com
+Scale *horizontally* (aka horizontal pod autoscaling) with pods
 
-		Alternative: `--docker-server=https://hub.docker.com/`
 
-		Check that it's there in `~/.docker/config.json`
+```yaml
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-autoscaler
+spec:
+  maxReplicas: 5
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-deployment
+  targetCPUUtilizationPercentage: 5
+```
 
-	2. ??
+- `targetCPUUtilizationPercentage` is chosen to be low (5%) so that scaling will be triggered fast.
 
+### Vertical node auto-scaling
 
-### kubernetes
+- Scale *vertically* with nodes (instance groups)
 
-5. Get credentials for your cluster
+## Health checks
 
-		gcloud container clusters get-credentials my-project-cluster --zone europe-west1-d
+### Probes
 
-	Check which cluster you're connected to by checking
+**health-checks** run by kubernetes to test whether everything is running well.
 
- 		`~/.kube/config`
+Types of probes: **liveness** probes, **startup** probes
 
-3. Render `kubernetes_config.yml` file
+### Self-healing
 
-		kubectl create -f kubernetes_config.yml
+Compare actual state to desired state -> act on differences
 
-4. Edit kubernetes config file on
+## Concepts
 
-		kubectl apply -f kubernetes_config.yml
+| Concept                     | What?                                                                                                                                                            |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **cluster**                 | Physical network of nodes on which services/deployments/pods etc. run                                                                                            |
+| **pod**                     | smallest entity in kubernetes. Contains containers.                                                                                                              |
+| **containerd**              | default container **runtime** used by docker + kubernetes                                                                                                        |
+| `kubeadm`                   | create and manage kubernetes clusters                                                                                                                            |
+| controller                  | generate certain states                                                                                                                                          |
+| cloud controller manager    | communicates with cloud                                                                                                                                          |
+| **context**                 | Manage access to a **cluster**                                                                                                                                   |
+| controler management (`cm`) | Often runs in an own pod                                                                                                                                         |
+| worker nodes                | On this node, workloads of own machine (nothing external) are running. worker has **pods** running.                                                              |
+| **kubelet**                 | communicates with **container runtime**                                                                                                                          |
+| scheduler                   | chooses best node(s) to place resources (e.g. where to run a new pod/service etc.). Can be manually circumvented with e.g. `nodeName` to specify particular node |
+| **ServiceAccount**          | virtual/technical user (not real person)                                                                                                                         |
+| **DaemonSet**               | Run a pod (+ copies of that pod) on all nodes. When new nodes are created, a new pod will be automatically created for that node.                                |
+| **ConfigMap** + **Secret**  | Ways to store data                                                                                                                                               |
 
+## Namespaces
 
-### Scaling - Include results from load tests
+`kubectl get pods --namespace webshop`
 
-5. Do load test
+## Useful
 
-	Run script
+### View spec
 
-		go build main.go
-		./main -host="http://myserver.com" -repeats=3 -concurreny=2 -image="blub"
+View **spec** of Kubernetes object (e.g. pod or deployment etc.):
 
-	Show all pods
+```bash
+kubectl get deployments.apps my-deployment -o yaml
+```
 
-		kubectl get pod
+## Tools
 
-	Edit the `kubernetes_config.yml` file on the server
+### `helm` the kubernetes package manager
 
-		kubectl edit deployment pod_name
+- `helm` **chart**
 
-	Edit the file, hit save and observe change in script
+  ```
+  my-chart/
+    templates/
+      configmap.yaml
+      deployment.yaml
+      service.yaml
+    Chart.yaml
+    values.yaml   <-- default values file
+  my-own-values.yaml
+  ```
 
-6. Manual scaling: Ramp up number of replicas (pods) + nodes (instances)
+- `values.yaml`
 
-	* Check pod processes:
+  ```yaml
+  color: cyan
+  replicas: 1
+  ```
 
-			kubectl exec -it pod_name container_name bash
+- Run all kubernetes objects defined in your `helm` **chart** via
+  
+  ```bash
+  helm install my-release-defaults ./my-chart
+  ```
 
-		Inside the pod:
+### Prometheus
 
-			top
-
-	Tipps:
-
-	* Use Kubernetes horizontal autoscaling: Change number of pods
-	* Scaling in instance groups: Change number of managed instances (nodes)
-
-7. Auto scaling: Switch on `Autoscaling` in `instance groups`.
-
-
-### Add more containers (if needed)
-
-For example add a worker container from the same image but with a different command to run:
-
-	- name: worker
-        image: eu.gcr.io/rare-haiku-127113/whazatbackend-php:fe514626459d3935acfd51d8906c2d40e8b0502b
-        imagePullPolicy: Always
-        command:
-          - "cd /var/www && php artisan queue:listen"
-        volumeMounts:
-        - name: "content"
-          mountPath: "/var/www"
-        -
-
-## Clusters
-
-1. Create cluster in the Google Cloud Platform (GCP) dashboard
-
-2. Choose from different `Services`:
-
-	spec > type: `LoadBalancer` or `NodePort`
-
-### Load Balancer
-
-Give `Deployment` kind a `template` to handle the entire pod lifecycle, incl. creating them and the containers within
-
-	kubectl create -f path/to/kubernetes_config.yml
-	kubectl apply path/to/kubernetes_config.yml
-
-View current kubernetes config:
-
-	kubectl get service
-	kubectl get deployment
-
-Do edit on the running service directly:
-
-	kubectl edit service my_service
-
-
-- local default editor `echo $EDITOR`
-
-### NodePort
-
-Use this type in case you need static IPs
-
-* Add Load Balancer manually on Google Cloud Platform
-* `NodePort` - Port which will be opened on the machines. Reserved for pod running that service.
-
-#### Steps
-
-1. `$ kubectl get service` and copy `NodePort`
-2. Create Loadbalancer in GCP dashboard
-3. Backend configurations: Copy the `NodePort` to field `port numbers`
-	* Add health-checks which send requests to node port from internal google IPs (health check source IPs)
-	* Allow access to cluster from these internal google ports by setting a new firewall rules and allow IP ranges (google's internal IPs)
-
-			130.211.0.0/22
-			tcp:<my_node_port>
-
-		Go to `instance groups` --> copy `tag` representing all nodes in cluster.
-
-2. Choose IP address which remains your static external IP
-3. Other configurations:
-
-	* Add rerouting/target ports e.g. when using new API `/v2/` version.
-
-
-## Commands
-
-### Jenkins workflow could be
-
-* `myfile.yml.tmpl` --> with placeholder `$(git rev-parse HEAD)` for commit hash as container tag.
-* use `sed` to replace that placeholder with current tag and rename to `myfile.yml`.
-
-## Terms/Infos
-
-* `context` = cluster + user
-* `service` exposes sth beyond the pod
-* Stuff within a pod is available at `localhost` from within the pot
-* `Volumes` share content among containers in cluster. Define `volume` and then refer to it with `VolumesMount`.
-* `gcloud instance groups`
-
-	* members of an instance group are all nodes in the cluster. there you can e.g. switch on/off autoscaling
-	* tag of instance groups in google cloud platform is same concept of labels in kubernetes.
-
-## Tipps
-
-* Create separate cluster for production
-* In namespaces, define quotas on resources
-* Kill a node / pod every day
-
-## Resources to learn
-
-- Copy-on-write: http://stackoverflow.com/a/628943/450598
-- Docker Cache: http://thenewstack.io/understanding-the-docker-cache-for-faster-builds
-- K8s:
-    - https://www.youtube.com/watch?v=-8aUxpVrD40 (intro)
-    - https://www.youtube.com/watch?v=sQ2_m22_K_0 (state of the art)
-    - https://www.youtube.com/watch?v=WwBdNXt6wO4 (technical overview)
+### Grafana

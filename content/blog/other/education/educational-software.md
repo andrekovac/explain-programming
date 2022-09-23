@@ -1,6 +1,6 @@
 ---
-title: 'Education'
-description: 'Ideas, thoughts and links concerning education'
+title: 'Educational software'
+description: 'Tools and links concerning sofware which improves online/remote learning'
 date: '2018-02-25T15:26:00.000Z'
 author: 'André Kovac'
 category: 'other'

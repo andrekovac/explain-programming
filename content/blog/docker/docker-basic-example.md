@@ -32,7 +32,7 @@ Alternative: Dockerizing a Jupyter Notebook (with [repo2docker](https://github.c
 
 1. Create Dockerfile, e.g here an example `Dockerfile`:
 
-	```docker
+	```Dockerfile:title=Dockerfile
 	# our base image (a linux distribution)
 	FROM alpine:latest
 
@@ -52,7 +52,6 @@ Alternative: Dockerizing a Jupyter Notebook (with [repo2docker](https://github.c
 
 	# run the application
 	CMD ["python", "/usr/src/app/app.py"]
-
 	```
 
 	`WORKDIR` sets the directory from which all following commands will be exectued by default.
@@ -74,7 +73,7 @@ Here in `8888:5000`, `8888` stands for the **external port** you can use outside
 		$ docker stop myfirstapp
 		$ docker rm myfirstapp
 
-## Example: Run apache container
+## Example: Run `apache` container
 
 To run a basic php app with apache:
 
@@ -97,3 +96,34 @@ To run a basic php app with apache:
 	```bash
 	docker run -p 4545:80 my-name/my-app
 	```
+
+## Example: Run `nginx` server
+
+1. Create `Dockerfile`
+
+	```Dockerfile:title=Dockerfile
+	FROM alpine:3.16.0
+	
+	RUN apk update
+	RUN apk add nginx
+
+	ENTRYPOINT ["nginx", "-g", "daemon off;"]
+	```
+
+2. Build **image**
+
+	```bash
+	docker build -t my-nginx .
+	```
+
+3. Run **container**: Creates and runs the container
+
+	```bash
+	docker run -it -p 8081:80 --name super-duper2 my-nginx
+	```
+
+4. Go to `http://localhost:8081` on you system.
+
+	If you see the following it was a success:
+
+	![nginx 4040 screen](./images/nginx-running-404.png)

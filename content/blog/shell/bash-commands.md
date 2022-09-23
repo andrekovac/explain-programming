@@ -1,6 +1,7 @@
 ---
 title: 'bash - useful commands'
-date: '2016-08-28T17:52:03.284Z'
+date: '2016-08-28'
+updated: '2022-09-14'
 author: 'André Kovac'
 description: 'Useful bash commands'
 category: 'shell'
@@ -30,10 +31,10 @@ or
 **Don't forget**: Script has to be executable, e.g. via
 
 ```bash
-chmod +x my_script.sh`
+chmod +x my_script.sh
 ```
 
-##
+## create several files at once
 
 ```bash
 touch {1,2,3,4}.md
@@ -81,7 +82,7 @@ Syntax:
 app 2>&1 | grep hello
 ```
 
-Points file descriptor 2 to where file descriptor 1 is already pointing.
+Points file descriptor **2** to where file descriptor **1** is already pointing.
 Here the file descriptor to redirect (i.e. `2`) gets redirected to the already set up file descriptor `1`.
 
 
@@ -183,9 +184,10 @@ Automate [git checkout -- my_file](http://stackoverflow.com/questions/28555062/c
 git status | grep modified | sed 's/^.*modified:   //' | xargs git checkout
 ```
 
+- `xargs`: 
 --> **UNDER CONSTRUCTION**!
 
-## Move with `rsync`
+## Move files/folders with `rsync`
 
 Alternative to `mv backup/ backupArchives/`
 
@@ -194,12 +196,20 @@ rsync -a backup/ backupArchives/
 rm -rf backup/*
 ```
 
-## Internet files
+## Internet
+
+### download files
 
 Downloads file to current folder from web
 
 ```bash
 wget http://files.fast.ai/files/setup_p2.sh
+```
+
+### visit websites
+
+```bash
+curl http://somewebsite.com
 ```
 
 ## Count

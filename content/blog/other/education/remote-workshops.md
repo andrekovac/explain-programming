@@ -79,9 +79,9 @@ Ask questions. If you can answer it with yes, keep your screen on or hold your f
 
 ## Introductions
 
-- Take something around you in your room and tell us why it represents you well.
+- Take some object around you in your room and tell us why it represents you well.
 
-## Show, Guide, Do
+## Show, Guide, Do, Showcase
 
 A three-step pattern to interactively explain a new procedure and to gradually get the participants more involved.
 

@@ -1,8 +1,9 @@
 ---
 title: 'Docker Compose'
-date: '2019-08-01T17:52:03.284Z'
+date: '2019-08-01'
+updated: '2022-09-09'
 author: 'André Kovac'
-description: 'docker-compose example file'
+description: 'docker-compose example file and explanations'
 category: 'tool'
 tags: ['docker', 'dev-ops', 'stub']
 ---
@@ -83,14 +84,70 @@ Docker Compose is a tool for defining and running **multi-container** Docker **a
 1.  Launch your app. In the same directory as your `.yml` file:
 
 	```bash
-    docker-compose up -d
+  docker-compose up -d
 	```
 
-  - `-d` run in **detached mode** in background.
+  **New**: `compose` is now a built-in docker command
+
+  ```bash
+  docker compose up -d
+  ```
+
+
+## `links`
+
+With
+
+```yaml
+links:
+  - db
+```
+
+the container will wait for the db container to finish building
 
 ## `profiles`
 
 1. Add certain containers in your `docker-compose.yml` file to a `profile`.
 2. When running `docker-compose` that container will only be launched if `--profile {profile_name}` is added.
 
-  e.g. `docker-compose --profile my_profile up`
+
+e.g. `docker-compose --profile my_profile up` will only run the container which has the following attribute:
+
+```yml
+ profiles:
+      - my_profile
+```
+
+
+### Troubleshooting
+
+If `docker-compose up` throws errors, some cached files might cause trouble. Run:
+
+    docker-compose build
+
+This runs the `Dockerfile` for sure even if stuff is cached in the case of `docker-compose up`.
+
+
+#### Live Server vs. Development `docker-compose.yml` file
+
+your `docker-compose` file:
+
+**Live**
+
+```yaml
+services:
+  my_app:
+  	image: my_dockerhub_account/my_app
+  	...
+```
+
+**Dev** on `localhost`
+
+```yaml
+services:
+  my_app:
+  	build: .
+  	volumes:
+     - ./my-app:/app
+  	...
+```

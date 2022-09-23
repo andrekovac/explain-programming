@@ -8,4 +8,8 @@ tags: ['literature']
 draft: true
 ---
 
+## Lyric
+
+Nice poem
+
 - [Indigo - by Ellen Bass](https://www.newyorker.com/magazine/2017/10/16/indigo)
