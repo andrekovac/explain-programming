@@ -49,6 +49,15 @@ Eckhart Tolle once replied to a request to explain sth a bit better (fact check 
 
 > Words are only pointers - the analysis of pointers is pointless
 
+## Life
+
+> "I keep wondering, how many people do you need to be, before you can become yourself."
+
+Iain Thomas (Author)
+
+> If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.
+
+Oprah Winfrey
 
 ## Health
 

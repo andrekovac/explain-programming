@@ -5,7 +5,6 @@ date: '2020-10-07'
 author: 'André Kovac'
 category: 'other'
 tags: ['mind']
-draft: true
 ---
 
 ## Mind reading
