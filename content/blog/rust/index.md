@@ -57,3 +57,9 @@ Taken from [here](https://stackoverflow.com/a/27734760)
 > a **literal** is a notation for representing a fixed value **in source code**.
 
 > Contrast this with **identifiers**, which refer to a value **in memory**.
+
+
+## Building apps with Rust
+
+- [Tauri](https://tauri.app/)
+- [Neon - node modules with Rust](https://neon-bindings.com/)

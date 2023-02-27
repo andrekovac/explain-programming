@@ -20,6 +20,7 @@ This guide is inspired by [Tania Rascia's great blog article](https://www.taniar
 brew install \
   bat \
   exa \
+  ffmpeg \
   fzf \
   gifski \
   git \
@@ -27,6 +28,8 @@ brew install \
   gnupg2 \
   pyenv \
   ipython \
+  kubectl \
+  minikube \
   nvm \
   tldr \
   topgrade \
@@ -128,6 +131,7 @@ Installing [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 npm install --global \
     yarn \
     detox-cli \
+    http-server \
     npm-check-updates \
     serve \
     expo-cli \
@@ -242,7 +246,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
 - **Loom**: It's homebrew version does not work for Macbooks with M1 chip.
 
-## VSCode
+## VSCode (Visual Studio Code)
 
 Follow [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to launch vscode from the command line
 
@@ -251,11 +255,11 @@ Follow [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-fro
 1. Old PC: Login with github and enable sync
 2. New PC: Login with github -> sync will start.
 
-### Install extensions
+### Install VSCode extensions
 
 Install extensions via VSCode Marketplace (symbol with four squares)
 
-My favotite general (not language specific) extensions:
+My favorite general (not language specific) extensions:
 
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens): Show errors inline
 - [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight): Highlight matching brackets
@@ -268,6 +272,8 @@ My favotite general (not language specific) extensions:
 ## Aliases
 
 Add the following aliases file:
+
+`zsh_aliases`
 
 **TODO**
 

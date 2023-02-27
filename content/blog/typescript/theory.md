@@ -36,14 +36,15 @@ Taken from [this StackOverFlow thread about the difference between `any` and `un
 ## TypeScript Type Variance
 
 - TypeScript is covariant in shapes (example)
-- TypeScript is structurally typed
+- TypeScript is **structurally** typed
 
 ```ts
 interface Animal {
   name: string;
 }
 
-// This works also if Bird does not extend Animal
+// This works also if Bird does not extend Animal,
+// but just gets defined as { name: string; wingCount: number; }
 interface Bird extends Animal {
   wingCount: number;
 }
@@ -58,7 +59,7 @@ const getName = (obj: Animal) => obj.name;
 getName(myBird);
 ```
 
-### Function types are contravariant
+### Function types and contravariance
 
 function types are **covariant** in their return type but **contravariant** in their parameter types
 
@@ -79,6 +80,8 @@ function getName(obj: Foo): '1' | '2' {
 
 const getName2: (obj: Bar) => string = getName;
 ```
+
+Here the parameter of `getName2` is a subtype of the parameter of `getName` but the return type is a supertype of the return type of `getName`.
 
 Corresponding [TS Playground](https://www.typescriptlang.org/play?ssl=10&ssc=96&pln=10&pc=1#code/JYOwLgpgTgZghgYwgAgGIHt3IN4ChnIhwC2EAXMgM5hSgDmA3LgL666iSyIoBCcUOfIRLkqNekwIATYJQAOAGzgBPAHIiK1WiEYs2Aen3IYAVxAIwwdCGRhlciJWT8UCdADd+wOOGShbABYQwAJQEGAmUDZ2DsgARiZgyG7gUHCetD5J-mBBIchy-CKctvaObKbmltbIdOHqpAAU6HEAVhQY6ACUFADkAIy9yAA+yL0ATEN4BGERUcgARP0LTKy4KdS19SLjFM1tFHxQXcgAvAB8Ytp0Z1tgDRBMQA)
 

@@ -739,6 +739,8 @@ const foo: inter = { a: "one", b: 2 };
 
 See [this TS Playground](https://www.typescriptlang.org/play?ssl=9&ssc=1&pln=1&pc=1#code/C4TwDgpgBAShwFcBOA7AKuCA5CB3APGgHxQC8UaUEAHsBCgCYDOUAFAHScCGSA5kwC4oXFCADaAXQCUZEgEsUAMwhJYUAPxqhIkAG4AsACgjoSFEUBGMmxmkSAIgAWEADYuA9vaMnMUBXVVyAG9hISZgJAVeABooACMhFAQAWziVKABfKAAfePd3FwgRA2NDAGN3FHDzfKF-dODQqHtKiHtYhKgAJkySoyA).
 
+[More about the `infer` keyword](https://blog.logrocket.com/understanding-infer-typescript/)
+
 ## Type Unions and Intersections
 
 ### Type Intersections

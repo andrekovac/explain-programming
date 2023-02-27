@@ -7,6 +7,7 @@ category: 'other'
 tags: ['blockchain', 'crypto', 'bitcoin']
 ready: true
 ---
+
 ## Simple definitions
 
 - Blockchain
