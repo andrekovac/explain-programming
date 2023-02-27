@@ -2,7 +2,7 @@
 title: 'Kubernetes'
 description: 'Kubernetes basics'
 date: '2016-07-01'
-updated: '2022-09-13'
+updated: '2022-09-29'
 author: 'André Kovac'
 category: 'tool'
 tags: ['docker', 'dev-ops']
@@ -19,7 +19,27 @@ tags: ['docker', 'dev-ops']
 2. Use [minikube](https://minikube.sigs.k8s.io/docs/) for a local Kubernetes cluster
    - **Pro**: you don't have to pay cloud costs.
    - **Con**: only one node
+
+  - `minikube` is running in a docker container (check with `docker ps`) 
+  - `minikube` comes its own version of `kubectl` which is definitely compatible with `minikube`. So it's safest to NOT run `kubectl`, but `minikube kubectl` for all commands.
+
+  - Check that the running cluster is the minikube one via `kubectl config view` will contain (i.e. `context` should be pointing to `cluster: minikube`):
+
+  ```yaml
+  - context:
+    cluster: minikube
+  ```
+
+  -  You can now run `minikube dashboard` for a nice dashboard of the cluster.
+
 3. Via **Docker Desktop**: Enable in Configurations
+
+  Output of `kubectl config view` will contain:
+
+  ```yaml
+  - context:
+    cluster: docker-desktop
+  ```
 
 ## What?
 
@@ -27,7 +47,9 @@ Orchestrate many micro services.
 
 ## View what's happening
 
-Run `kubectl get pods` every second:
+### via `kubectl`
+
+Run `kubectl get pods` (or `kubectl get pods -A` to view all pods - including internal ones, e.g. of `minikube`) every second:
 
 ```bash
 watch -n 1 kubectl get pods
@@ -50,6 +72,8 @@ Get `.yaml` file + extra information of horizontal pod autoscaler:
 ```bash
 kubectl get hpa -o yaml
 ```
+
+### via 
 
 ## Container
 
