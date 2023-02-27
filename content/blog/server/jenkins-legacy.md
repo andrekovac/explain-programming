@@ -1,28 +1,12 @@
 ---
-title: 'Jenkins Continuous Integration Server'
+title: 'Jenkins (OLD)'
 description: 'How to configure and some scenarios of using Jenkins'
-date: '2016-06-27T21:22:00.169Z'
+date: '2016-06-27'
 author: 'André Kovac'
 category: 'tool'
 tags: ['server', 'continuous integration']
 draft: true
 ---
-
-## Where
-
-Jenkins Projects are saved in `~/.jenkins/workspace/` on your Continuous Integration server.
-
-## Tipps
-
-* Start Shell scripts with the `-l` tag, i.e. `#!/bin/bash -l`
-
-	e.g. here it's only executing a script which is in version control.
-
-	```bash
-	#!/bin/bash -l
-
-	./internals/scripts/build-cms.sh
-	```
 
 ## How to
 
@@ -290,3 +274,16 @@ curl_setopt_array($ch, array(
 curl_exec($ch);
 curl_close($ch);'
 ```
+
+
+## Tipps
+
+* Start Shell scripts with the `-l` tag, i.e. `#!/bin/bash -l`
+
+	e.g. here it's only executing a script which is in version control.
+
+	```bash
+	#!/bin/bash -l
+
+	./internals/scripts/build-cms.sh
+	```

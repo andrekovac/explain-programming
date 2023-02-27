@@ -1,8 +1,9 @@
 ---
 title: 'Youtube DL - CLI tool to download videos'
-date: '2020-03-14T11:42:18+00:00'
+description: 'youtube-dl is a CLI-tool to download videos (not only from YouTube). Some usage examples of how to run the youtube-dl command'
+date: '2020-03-14'
+updated: '2023-02-08'
 author: 'André Kovac'
-description: 'Some usage examples of how to run the youtube-dl command'
 category: 'shell'
 tags: ['bash']
 ---
@@ -21,7 +22,7 @@ tags: ['bash']
 
 	You'll get a list like this
 
-	```
+	```bash
 	format code  extension  resolution note
 	249          webm       audio only tiny   54k , webm_dash container, opus @ 54k (48000Hz), 1.57MiB
 	250          webm       audio only tiny   71k , webm_dash container, opus @ 71k (48000Hz), 2.08MiB
@@ -48,15 +49,19 @@ tags: ['bash']
 	18           mp4        360x360    360p  159k , avc1.42001E, 25fps, mp4a.40.2 (44100Hz), 4.60MiB (best)
 	```
 
-2. Pick a format number (here `137`) and
+2. Pick a format number
+   
+   - `1080p` resolution video: `137` as `mp4`
 
-	```bash
-	youtube-dl -f 137 'http://www.youtube.com/watch?v=P9pzm5b6FFY' --merge-output-format mp4
-	```
+		```bash
+		youtube-dl -f 137 'http://www.youtube.com/watch?v=P9pzm5b6FFY' --merge-output-format mp4
+		```
+	
+	- Audio only: `140` as `mp3` (with `--merge-output-format mp3` somehow doesn't work...)
 
 ### Simple - pick `best` option
 
-Best audio + video compromise (usually won't be best full HD video format):
+Best audio + video compromise (usually won't be best **full HD video** format):
 
 ```bash
 youtube-dl -f best 'http://www.youtube.com/watch?v=P9pzm5b6FFY'
