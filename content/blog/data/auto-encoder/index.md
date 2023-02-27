@@ -1,8 +1,9 @@
 ---
 title: 'Autoencoder'
 date: '2021-10-13'
+updated: '2023-02-09'
 author: 'André Kovac'
-description: ''
+description: 'Autoencoder definition, example, and feature extractor'
 category: 'data'
 tags: ['data-science', 'machine-learning']
 ---
@@ -11,14 +12,14 @@ tags: ['data-science', 'machine-learning']
 
 Autoencoder: **Encoder** (aka `backbone`) plus **Decoder** (aka `head`) together.
 
-- **Encoder** projects input down to a lower dimension (i.e. compression).
-- **Decoder** tries to replicate the original input (image) as close as possible (i.e. decompression).
+- **Encoder** projects input down to a lower dimension (i.e. hidden states) -> this is called **compression**.
+- **Decoder** tries to replicate the original input (e.g. image or text) as close as possible -> this is called **decompression**.
 
 ### Example: Anomaly detection:
 
 1. **Training**: Train autoencoder to reconstruct image as close to real one as possible.
 
-    - Thereby the image is first broken down into lower-dimensional features
+    - Thereby the image is first broken down into lower-dimensional features (hidden states)
     - ..and then reconstructed again.
 
 2. **Test (and Validate)**: Use autoencoder to reconstruct unseen image.

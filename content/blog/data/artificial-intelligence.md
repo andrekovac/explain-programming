@@ -1,6 +1,7 @@
 ---
 title: 'Artificial Intelligence'
 date: '2021-01-20'
+updated: '2023-02-08'
 author: 'André Kovac'
 description: 'General information about python'
 category: 'data'
@@ -14,7 +15,7 @@ tags: ['data-science', 'machine-learning', 'artificial intelligence']
 Before you hire a **Machine Learning Engineer** hire,
 
 - Data Analyst
-- Data Science
+- Data Scientist
 - Data Engineer (everyone depends on them!)
 
 ### Data Analyst

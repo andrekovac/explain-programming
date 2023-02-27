@@ -1,6 +1,7 @@
 ---
 title: 'Machine Learning'
-date: '2020-01-25T00:00:00.000Z'
+date: '2020-01-25'
+updated: '2022-02-08'
 author: 'André Kovac'
 description: 'General concepts and useful links concerning machine learning'
 category: 'data'
@@ -96,7 +97,63 @@ The universal approximation theorem shows that any function can be approximated 
 - **Formula**: 2 * (precision * recall) / (precision + recall)
 - **Note**: Harmonic mean punishes extreme differences between precision and recall
 
+## Confustion matrix
+
 Compare everything in a confusion matrix.
+
+- **True Positive (TP)**: Correctly classified as positive
+- **True Negative (TN)**: Correctly classified as negative
+- **False Positive (FP)**: Incorrectly classified as positive (I say it's positive although it's not)
+- **False Negative (FN)**: Incorrectly classified as negative (I say it's negative although it's not)
+
+### Specificity vs. Sensitivity
+
+- **Specificity**: True Negative Rate
+
+    - **Formula**: TN / (TN + FP)
+    - How well can I find the truely negative ones, aka. the irrelevant ones?
+    - How well can I rule out the truely negative ones?
+    - **Reduce false positives** for a higher specificity.
+     
+
+    > "Specificity" is often remembered as "SpPIn" (like **"specifically pinning down"** a disease or condition), as it refers to the proportion of true negative cases that are correctly identified by a test.
+
+    > "Specificity" - "SpPIn" (like "Specificity Pins Down" the true negatives)
+
+- **Sensitivity**: True Positive Rate
+
+    - **Formula**: TP / (TP + FN)
+    - How well can I find the truely positive ones, aka. the relevant ones?
+    - **Reduce false negatives** for a higher sensitivity.
+    > "Sensitivity" is often remembered as "SnNout" (like "sniffing out" a disease or condition), as it refers to the proportion of true positive cases that are correctly identified by a test.]
+
+    > "Sensitivity" - "SeSeize" (like "Sensitivity Seizes" the true positives)
+
+#### Examples
+
+- *🩻 medical test* -> false positives (treating a healthy person) are less wanted than false negatives (treating a healthy person).
+- *✈️ airport security scanners* want high sensitivity -> false positives are more dangerous than false negatives. 
+   
+
+### How to choose the right threshold?
+
+> How to decide whether to prefer specificity or sensitivity?
+
+- Decide what is more dangerous: False positive or false negative?
+- An airport security scanner is an example for a system where false positives (an actual weapon not detected) are more dangerous than false negatives (stopping a person although they don't have a weapon).
+
+- A medical test is an example for a system where false negatives are more dangerous than false positives.
+
+
+- **ROC curve**: Plot sensitivity vs. 1 - specificity
+
+    - **Note**: 1 - specificity = false positive rate (FPR) = 1 - TN / (TN + FP)
+  
+- **AUC**: Area under the ROC curve
+    
+        - **Note**: AUC = 1: Perfect classifier
+        - **Note**: AUC = 0.5: Random classifier
+
 
 ### Data Loader
 
@@ -169,7 +226,7 @@ How to filter the output value of a neuron before passing it on.
 
 - A nice machine learning graphic:
 
-    ![Machine Learning Graphic](./machine-learning-graphic.jpg)
+    ![Machine Learning Graphic](./images/machine-learning-graphic.jpg)
 
 - [Machine Learning Explained: Algorithms Are Your Friend](https://blog.dataiku.com/machine-learning-explained-algorithms-are-your-friend)
 
