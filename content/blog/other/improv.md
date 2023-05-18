@@ -1,13 +1,41 @@
 ---
 title: 'Improvisational theater'
-description: 'Collection of improv games which I find effective, fun and useful'
+description: 'Collection of improv games which I find effective, fun and useful as ice-breakers during a workshop'
 date: '2020-10-05'
+updated: '2023-03-16'
 author: 'André Kovac'
 category: 'other'
 tags: ['learning']
 ready: true
 published: false
 ---
+
+This is a collection of improv games I tested during workshops and company stand-ups with a wide range of people (different ages, cultures, backgrounds, etc.). I also talk about why I think improv is a great tool to use in a workshop.
+
+Table of contents:
+
+- [My Improv background](#my-improv-background)
+- [Improv warm-up games as ice-breaker and team-building tool](#improv-warm-up-games-as-ice-breaker-and-team-building-tool)
+- [Power of improv](#power-of-improv)
+- [Improv games](#improv-games)
+  - [Name/get to know each other games](#nameget-to-know-each-other-games)
+  - [Warm-up](#warm-up)
+  - [Moving energy around](#moving-energy-around)
+  - [Games for only **two** people](#games-for-only-two-people)
+  - [Games involving some movement/jumping](#games-involving-some-movementjumping)
+  - [Online compatible](#online-compatible)
+- [Links](#links)
+
+
+## My Improv background
+
+A few years ago I was part of an improvisational theatre group. At the beginning of our weekly improv practice session, we played warm-up games to brush off thoughts about work, family, etc. and to get a clear, uncluttered mind.
+
+## Improv warm-up games as ice-breaker and team-building tool
+
+While playing improv I started my role as CTO of a tech-startup. To spice up our daily standup meetings, I took improv games. Some co-workers were hesitant at first, but after a few sessions, everyone was having fun and were looking forward to each daily standup meeting. Quickly co-workers from other departments noticed us having fun and asked to join our pre-standup games.
+
+I also used improv games during workshops and trainings to get people to open up and to get to know each other.
 
 ## Power of improv
 
@@ -16,6 +44,8 @@ published: false
 - You become amazed by what you are capable of coming up with!
 
 ## Improv games
+
+A selection of improv games I used with non-improv-people, split-up into categories. I also added some explanations and variations.
 
 ### Name/get to know each other games
 
@@ -32,14 +62,14 @@ published: false
 
   - Variation: Person makes gesture and others guess their quality.
   - Variation: **Action Syllables** - different movement for every syllable in name
-  - Variation: **Name + quality with gesture** - e.g. "I'm Tom and I am quick thinker".
+  - Variation: **Name + quality with gesture** - e.g. "I'm Tom and I am a quick thinker".
 
 - Blob: ?
-- **Concentration**
+- **Concentration**: A game where you tap your thigs, clap and snip your fingers.  
 
 ### Warm-up
 
-- **Eights** (also called **Crazy Chicken**/**Shake down**): Shake arms and legs 8 times, 7 times, 6 times, ... until we reach 1 and jump
+- **Eights** (also called **Crazy Chicken**/**Shake down**): Shake arms and legs 8 times, 7 times, 6 times, ... until we reach 1 and jump into the air and shout "EIGHTS!" (or another word you pick as a group).
 - **Zen Counting (Digits/No Doubles/Count up)**: Form a circle, heads down, eyes closed and count up to 20, one person naming a number, one-by-one. If two people say a number at the same time we have to start at zero again.
 - **Oh yeah! / Yes, let's!**: "Let's all do jumping jacks" - "Oh yeah!", "Let's all touch our cheeks" - "Oh yeah!" - "Oh yeah!", "Let's all look at our thumbs with awe" - "Oh yeah!"
 - **Die - not today**: "Die - not today", "This is a big bowl of spaghetti - oh thank you", "Hawk - to me hawk"
@@ -54,7 +84,7 @@ published: false
 
 ### Moving energy around
 
-- **Moving clap with increasing intensity**: Move clap around in circle, getting
+- **Moving clap with increasing intensity**: Move clap around in circle, gradually getting louder and faster...
 - **Exaggeration Circle**: Moving little sound or gesture with increasing intensity
 - **Ha-ha-haya**: Look at a person and say "Ha" (move both arms to front), the receiving person says "Ha" and moves both their arms up, then the persons to the left and right of the receiving person say "Haya" while moving their arms like swords towards the belly of the receiving person. Than the receiver makes a new "Ha" towards another person. Whoever makes an error is out for this round. The last two get into a duel to shoot.
 - **Zip-Zap-Boing**:
@@ -73,32 +103,40 @@ published: false
 - **Beat/Rhythm detective**: One person has to leave the room. Group decides who the beat leader is and all people copy the beat of the leader. Person comes back in. Everyone does the beat as the beat leader who changes the beat frequently to give the detective a chance to figure out who the leader is.
 - **Whisky Mixer**: clockwise: Whisky Mixer, counterclockwise: Mister Whisker (German: Wax Maske), Max Mutzke (or "Misty Vista") to go diagonal or to change direction.
 
-    Only rule: You're not allowed to laugh. If you do, you have to run a lap around the circle.
+    - Also: **viscous mixture**
+
+    **Only rule**: You're not allowed to laugh. If you do, you have to run a lap around the circle.
 
 - **Hand Slap**: All players in a circle, down on the floor. Cross arms, and then put hands flat on the ground. Each hand in turn pats/slaps the ground, in order. Hands that miss are eliminated.
-- **Association circle**
--
+- **Association circle**: State an association with the word of the person before your turn mentioned.
 
-### Two people
+### Games for only **two** people
 
 - **Count till three**: Gradually replace numbers by other words
 - **Clap - Hands - Clap - Hands**: Hands move either up, down or to the sides. Don't move hands in same direction!
 - **Remote Control**: One player makes sound, the other player makes movement according to sound.
 
 
-### Movement
+### Games involving some movement/jumping
 
-- **Ninja**:
-- **Walking Game**: Form scissors, knife, spoon etc.
-- **Bunny bunny, tuki, tuki**: Hands open and close before eyes with "Bunny, bunny" and people move right-left with "tuki, tuki".
+|          **Game**           | **Online compatibility** | **Craziness** | **Beginner friendliness** | **Andrés score** |
+| :-------------------------: | :----------------------: | :-----------: | :-----------------------: | :--------------: |
+|          **Ninja**          |            0             |       3       |             3             |        3         |
+| **Bunny bunny, tuki, tuki** |            1             |       5       |             4             |        2         |
+|       **Stop and Go**       |            1             |       5       |             4             |        2         |
+
+#### Walking around in the room
+
 - **Stop and Go**: Walk around in room. When you say stop, people stop, when you say go, people go. If people stop when you say go a second time, they are out. Trick people by saying stop or go multiple times.
-
-    Variation: Instead of saying go, you clap.
-
+  - Variation: Instead of saying go, you clap.
 - **Number of people walking**: All people walk around. One playmaster says a number. Exactly that number of people have to continue to walk. All other people have to stop walking. Playmaster will change the number frequently.
-
 - **Greetings**: Walk around in room and greet people you meet. Make variations of how people should greet each other. E.g. ex-lover, someone with bad breath, secret crush, someone you really hate, someone who sold you a crapy car.
-- **Dance, dance, dance**: Music changes every 20-30 seconds and another person is the dance leader. Others dance as they do.
+
+
+- **Ninja**: Take turns in trying to tap people via you and the other person being allowed to make one movement of any kind. If you are tapped, you lose one arm (which you keep behind your back). If you lose both arms, you're out.
+- **Bunny bunny, tuki, tuki**: Hands open and close before eyes with "Bunny, bunny" and people move right-left with "tuki, tuki".
+- **Dance, dance, dance**: Music changes every 20-30 seconds and another person is the dance leader. Others mimic the cheerleader's dance moves.
+- **Group cutlery**: Form scissors, knife, spoon etc. on floor.
 
 ### Online compatible
 

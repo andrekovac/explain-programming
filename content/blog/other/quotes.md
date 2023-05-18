@@ -49,6 +49,10 @@ Eckhart Tolle once replied to a request to explain sth a bit better (fact check 
 
 > Words are only pointers - the analysis of pointers is pointless
 
+@naval's finest quote
+
+> "A fit body, a calm mind, a house full of love. These things cannot be bought - they must be earned."
+
 ## Life
 
 > "I keep wondering, how many people do you need to be, before you can become yourself."

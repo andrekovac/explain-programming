@@ -1,7 +1,7 @@
 ---
 title: 'Machine Learning'
 date: '2020-01-25'
-updated: '2022-02-08'
+updated: '2023-03-10'
 author: 'André Kovac'
 description: 'General concepts and useful links concerning machine learning'
 category: 'data'
@@ -110,7 +110,7 @@ Compare everything in a confusion matrix.
 
 - **Specificity**: True Negative Rate
 
-    - **Formula**: TN / (TN + FP)
+    - **Formula**: TN / All negative cases = TN / (TN + FP)
     - How well can I find the truely negative ones, aka. the irrelevant ones?
     - How well can I rule out the truely negative ones?
     - **Reduce false positives** for a higher specificity.
@@ -122,7 +122,7 @@ Compare everything in a confusion matrix.
 
 - **Sensitivity**: True Positive Rate
 
-    - **Formula**: TP / (TP + FN)
+    - **Formula**: TP / All positive cases = TP / (TP + FN)
     - How well can I find the truely positive ones, aka. the relevant ones?
     - **Reduce false negatives** for a higher sensitivity.
     > "Sensitivity" is often remembered as "SnNout" (like "sniffing out" a disease or condition), as it refers to the proportion of true positive cases that are correctly identified by a test.]
@@ -131,8 +131,8 @@ Compare everything in a confusion matrix.
 
 #### Examples
 
-- *🩻 medical test* -> false positives (treating a healthy person) are less wanted than false negatives (treating a healthy person).
-- *✈️ airport security scanners* want high sensitivity -> false positives are more dangerous than false negatives. 
+- *🩻 medical test (e.g. cancer screening)* want a high **sensitivity** -> screening tests aim to accurately identify people with cancer, thereby having a high true positive rate - you don't want to miss a person with cancer. Avoidance of false positives (false alarms) is not the main goal - so people who don't have cancer might be falsely identified as having cancer. 
+- *✈️ airport security scanners* want high specificity -> they are able to accurately identify non-threat objects (i.e. identify passangers without bombs)
    
 
 ### How to choose the right threshold?

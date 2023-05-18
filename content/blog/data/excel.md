@@ -10,6 +10,7 @@ tags: ['business-intelligence', 'data', 'microsoft office']
 ## Shortcuts
 
 - Mark all data in a data sheet: `Ctrl + Shift + Down` + `Ctrl + Shift + Right`
+- Lock row and column: `F4`
 
 ## VLookup vs. Index + Match
 
@@ -47,3 +48,10 @@ you can write
 - In `[@[SicCodes.1]]` (equivalent: `[@[#"SicCodes.1"]]`):
   - The outer square brackets `[]` indicate that you are referring to a column in a table.
   - `@`  is a shorthand notation for the current row.
+
+
+## Troubleshooting
+
+### PowerQuery .NET framework issue when connecting to web link
+
+- Open Excel in safe mode: press and hold the `ctrl` key + start **Excel**.

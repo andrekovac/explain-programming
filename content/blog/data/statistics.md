@@ -99,13 +99,15 @@ The ROC Curve is a plot of the **true positive rate (TPR)** against the **false 
 
     - **Example**: Power outage disrupts data collection.
 
-- **MAR** (Missing at Random): The missingness of the data is related to the observed data (independent variable) but not the target variable.
+- **MAR** (Missing at Random): The missingness of the data is related to the observed data (**independent** variable) but not the target variable.
 
-    - **Example**:  For example, some respondents did not complete a certain survey module, but the probability of non-completion can be predicted by other variables such as age or education.
+    - **Example**:  For example, some respondents did not complete a certain survey module, but the probability of non-completion can be predicted by other variables such as `age` or `education`.
+    - Fixable
 
-- **MNAR** (Missing Not at Random): The missingness of the data is related to the target variable (dependent variable).
+- **MNAR** (Missing Not at Random): The missingness of the data is related to the target variable (**dependent** variable).
 
     - **Example**: People with higher income refused to respond to state it in the survey.
+    - Not fixable
 
 
 ## Guides

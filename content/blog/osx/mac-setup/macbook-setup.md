@@ -123,6 +123,11 @@ nvm install --lts
 1password v7: `brew install --cask 1password`
 1password v6: via https://1password.com/downloads/mac/#legacy-downloads
 
+Issue: M1 and 1password6 - can't install via AppStore -> no license!
+Update: Worked eventually.
+
+[1password Chrome extension](https://chrome.google.com/webstore/detail/1password-extension-deskt/aomjjhallfgjeglblehebfpbcfeobpgk)
+
 ### Global npm packages
 
 Installing [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
@@ -176,14 +181,6 @@ See `pip-python.md` guide.
 - Anaconda - Install via dmg file
 - poetry - install with install script from homepage
 
-### 1password
-
-Issue: M1 and 1password6 - can't install via AppStore -> no license!
-
-[1password Chrome extension](https://chrome.google.com/webstore/detail/1password-extension-deskt/aomjjhallfgjeglblehebfpbcfeobpgk)
-
-
-
 ### Thunderbird
 
 Use [this guide](https://www.lifewire.com/back-up-thunderbird-settings-1173141) to copy profile folder contents into new folder on new PC
@@ -210,7 +207,7 @@ Change it to macdown
 
 ![](./macdown_default.png)
 
-### DB
+### Database migration
 
 - **TablePlus**: export and import connections
 - **Insomnia**: export and import collections
@@ -268,6 +265,10 @@ My favorite general (not language specific) extensions:
 #### HTML & JSX
 
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+
+### Git
+
+`.gitconfig`: ...
 
 ## Aliases
 
