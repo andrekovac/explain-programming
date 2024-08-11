@@ -2,7 +2,7 @@
 title: 'Great quotes I like'
 description: 'Quotes I personally really like'
 date: '2020-04-10'
-updated: '2022-09-07'
+updated: '2024-08-11'
 author: 'André Kovac'
 category: 'other'
 tags: []
@@ -67,3 +67,9 @@ Oprah Winfrey
 
 > Eat food not too much mostly plants
 by **Michael Pollan**
+
+## Knowledge
+
+> Be careful while using **average**, it can be **mean** to you 😆 
+
+Unknown

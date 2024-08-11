@@ -2,6 +2,7 @@
 title: 'Visual Studio Code'
 description: 'Useful shortcuts and tips for Visual Studio Code (VS Code)'
 date: '2018-06-20'
+updated: '2024-08-11'
 author: 'André Kovac'
 category: 'tool'
 tags: ['editor', 'shortcuts']
@@ -42,6 +43,7 @@ tags: ['editor', 'shortcuts']
 | Press `Left` key                         | Close very long `node_modules` folder inside the bar         |
 | `Cmd + b`                                | Toggle left menu bar (when not in a Markdown file)           |
 | `Cmd + Shift + k`                        | Delete line without copying it (i.e. no cut via `Shift + x`) |
+| Hover over variable + `Cmd + Shift + l`  | Select all occurances of variable                            |
 | `Cmd + i` or `option + esc`              | Trigger auto-complete suggestion                             |
 | `Cmd + Shift + y`                        | Toggle view of terminal/debug console                        |
 | Click + `control`                        | Open file in split view                                      |

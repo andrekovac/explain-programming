@@ -1,7 +1,8 @@
 ---
 title: 'Secure shell (SSH) and secure copy (SCP)'
 description: 'Some important commands when using SSH and SCP'
-date: '2014-01-12T12:58:52.169Z'
+date: '2014-01-12'
+updated: '2023-08-14'
 author: 'André Kovac'
 category: 'tool'
 tags: ['security', 'communication', 'outdated']
@@ -169,11 +170,11 @@ See [this reply](http://stackoverflow.com/questions/30495445/git-suddenly-starte
 
 ## Further SSH commands
 
-| Command | Explanation |
-| --- | --- |
-| `ssh-keygen -C „some comment“` | Create public/private keypair with comment. |
-| `ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub` | Retrieve ssh public key from private key |
-| `cat ~/.ssh/id_rsa.pub | pbcopy` or `pbcopy < ~/.ssh/id_rsa.pub"` | Copy public key to clipboard |
+| Command                                              | Explanation                                 |
+| ---------------------------------------------------- | ------------------------------------------- |
+| `ssh-keygen -C „some comment“`                       | Create public/private keypair with comment. |
+| `ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub` | Retrieve ssh public key from private key    |
+| `cat ~/.ssh/id_rsa.pub                               | pbcopy` or `pbcopy < ~/.ssh/id_rsa.pub"`    | Copy public key to clipboard |
 
 
 ## Create new user with sudo rights on server

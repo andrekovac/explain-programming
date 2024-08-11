@@ -242,6 +242,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 ### Extra Apps
 
 - **Loom**: It's homebrew version does not work for Macbooks with M1 chip.
+- **Keyman** for Indonesian keyboard: Install via dmg file from [the Keyman website](https://keyman.com/mac/download)
 
 ## VSCode (Visual Studio Code)
 

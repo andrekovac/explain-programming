@@ -1,10 +1,11 @@
 ---
 title: 'Github'
 description: 'Useful commands for GitHub projects'
-date: '2020-03-23T12:03:00.169Z'
+date: '2020-03-23'
+updated: '2024-08-11'
 author: 'André Kovac'
 category: 'tool'
-tags: ['git']
+tags: ['git', 'github']
 draft: true
 ---
 

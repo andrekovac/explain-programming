@@ -1,7 +1,8 @@
 ---
 title: 'Python Pandas'
 description: 'Most important usage and commands of the python data science framework Pandas'
-date: '2020-01-21T00:00:00.000Z'
+date: '2020-01-21'
+updated: '2024-08-11'
 author: 'André Kovac'
 category: 'framework'
 tags: ['python', 'data-science', 'machine-learning', 'artificial-intelligence', 'statistics']
@@ -22,11 +23,16 @@ my_series.value_counts()
 
 ### Operations on Series:
 
-| Function    | What?                                                          |
-| ----------- | -------------------------------------------------------------- |
-| `unique()`  | [Removes duplicate values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html?highlight=unique#pandas.Series.unique) |
-| `nunique()` | Returns the number of unique values                 |
-| `apply(someFunction)` | Apply function to every element in column |
+```python
+my_series = pd.Series([1, 2, 3, 4], index=['USA', 'Germany', 'USSR', 'Japan'])
+```
+
+
+| Function                        | What?                                                                                                                                                  |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `my_series.unique()`            | [Removes duplicate values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html?highlight=unique#pandas.Series.unique) |
+| `my_series.nunique()`           | Returns the number of unique values                                                                                                                    |
+| `my_series.apply(someFunction)` | Apply function to every element in column                                                                                                              |
 
 
 ## Dataframe

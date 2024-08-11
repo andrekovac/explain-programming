@@ -2,10 +2,10 @@
 title: 'Improvisational theater'
 description: 'Collection of improv games which I find effective, fun and useful as ice-breakers during a workshop'
 date: '2020-10-05'
-updated: '2023-03-16'
+updated: '2024-08-11'
 author: 'André Kovac'
 category: 'other'
-tags: ['learning']
+tags: ['learning', 'workshop', 'improv', 'games', 'ice-breaker', 'energisers']
 ready: true
 published: false
 ---
@@ -23,7 +23,7 @@ Table of contents:
   - [Moving energy around](#moving-energy-around)
   - [Games for only **two** people](#games-for-only-two-people)
   - [Games involving some movement/jumping](#games-involving-some-movementjumping)
-  - [Online compatible](#online-compatible)
+  - [Online/remote compatible](#onlineremote-compatible)
 - [Links](#links)
 
 
@@ -55,7 +55,7 @@ A selection of improv games I used with non-improv-people, split-up into categor
 
 - **Present other**: Choose a partner, share facts about yourself for 1 minute, then present the other person.
 - **All at once**: Stand in a circle and ask all people to choose the person diagonal of them as partner. When you say go everyone tries to find out as much as they can of the person opposite of them. It will get very loud! Then you present the other person. The person being presented is not allowed to correct while the other is speaking. Only when the person is finished she is asked whether everything was right and she can correct mistakes.
-- **10 Fingers**: Ask yes/no questions in the group. However can't say yes, looses a finger. Person with one finger left wind. E.g. "I have a cat"
+- **10 Fingers**: Ask yes/no questions in the group. However can't say yes, looses a finger. Person with one finger left wins. E.g. "I have a cat"
 - **Accepting Circle**: Move one gesture + sound around in the circle
 - **Memorize names + gesture**: In circle, repeat all mentioned names with their gesture and add your own. It's a difficult memorization exercise for the last person in the circle. 😉
 
@@ -81,6 +81,8 @@ A selection of improv games I used with non-improv-people, split-up into categor
 - **Blink** (*no language*): Form circle with two rows. Each person has a person standing behind them. One standing person has no one sitting in front of them. This person blinks to another sitting person which has to run to the empty chair. The person standing behind her has to try to stop her from getting to the other spot.
 - **Ha Soh Kah**: Put index and middle finger together horizontally on your forehead and says "Ha". The next player (left or right - where fingers of first player point to) puts index and middle finger near chin and says "Ha". Last person says "Kah", pointing to another player with both hands. If someone makes a mistake they are out "Ha Soh Kah - you're out!".
 - **You - remembering patterns**: Everyone in a circle. Everyone raises their right hand. Point to person in circle and continue. Remember pattern (order) of people and repeat. Then switch places in the circle. Repeat the pattern. Close your eyes, and repeat the pattern. Now this is repeated with favorite animal/food ...
+- **Rock-Paper-Scissors EXTREME**: Two people play rock paper scissors. The person who loses begins to be the Cheerleader of the winner. Until there’s a final winner, people will cheer the winner!
+- **Look on shoes and into eyes**: Look down and look on someone’s shoes secretly. Then quickly look that person in the eyes. If two peoples eyes meet, you both scream and you are out until they’re only two people left.
 
 ### Moving energy around
 
@@ -101,9 +103,12 @@ A selection of improv games I used with non-improv-people, split-up into categor
 
 - **Synchro clap**: Stand in a circle. Look another person (not one directly next to you) into the eyes. You have to clap simultaneously - you can also clap back to the same person.
 - **Beat/Rhythm detective**: One person has to leave the room. Group decides who the beat leader is and all people copy the beat of the leader. Person comes back in. Everyone does the beat as the beat leader who changes the beat frequently to give the detective a chance to figure out who the leader is.
-- **Whisky Mixer**: clockwise: Whisky Mixer, counterclockwise: Mister Whisker (German: Wax Maske), Max Mutzke (or "Misty Vista") to go diagonal or to change direction.
+- **Whisky Mixer**:
+  - clockwise: *Whisky Mixer*
+  - counterclockwise: *Mister Whisker* (German: *Wax Maske*)
+  - diagonal or change direction: *Max Mutzke* (or *Misty Vista*)
 
-    - Also: **viscous mixture**
+    - Word alternative: **viscous mixture**
 
     **Only rule**: You're not allowed to laugh. If you do, you have to run a lap around the circle.
 
@@ -138,9 +143,9 @@ A selection of improv games I used with non-improv-people, split-up into categor
 - **Dance, dance, dance**: Music changes every 20-30 seconds and another person is the dance leader. Others mimic the cheerleader's dance moves.
 - **Group cutlery**: Form scissors, knife, spoon etc. on floor.
 
-### Online compatible
+### Online/remote compatible
 
-- **Zen Counting**, **Eights**, **Beat/Rhythm detective**, **Memorize names + gesture**, **Oh yeah! / Yes, let's!**
+- **Zen Counting**, **Eights**, **Beat/Rhythm detective**, **Memorize names + gesture**, **Oh yeah! / Yes, let's!**, **10 Fingers**
 
 - **Kamehameha**: Facilitator sends “energy blasts” out of her hands to different sides of the screen: **LEFT**, **RIGHT**, **UP**, **DOWN**, **CENTER**. The group dodges the blasts by moving in the opposite direction of where the blast is pointed. Blast left → dodge right, etc. Up requires ducking, down requires jumping, and center can be any direction.
 

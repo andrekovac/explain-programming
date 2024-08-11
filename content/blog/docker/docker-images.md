@@ -95,12 +95,12 @@ or e.g cde-d3.js course materials
 
 `docker images`: Show all images
 
-`docker rmi \$(docker images | grep "^<none>" | awk '{print \$3}')`: 
+`docker rmi $(docker images | grep "^<none>" | awk '{print $3}')`: 
 
 | Command                                           | What?                                                                                                                                  |
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `$ docker images`                                 | Show all images                                                                                                                        |
-| "`docker rmi \$(docker images                     | grep "^<none>"                                                                                                                         | awk '{print \$3}')` | [Remove all untagged images](http://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html)) |
+| "`docker rmi $(docker images                      | grep "^<none>"                                                                                                                         | awk '{print $3}')` | [Remove all untagged images](http://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html)) |
 | `$ docker rmi 78d3370bd990`                       | Copy **IMAGE ID** from appearing list and remove a single image                                                                        |
 | `$ docker history 78d3370bd990 `                  | Show history of images                                                                                                                 |
 | `$ docker inspect <image id>`                     | Show details like defined CMD and entrypoint of an image                                                                               |

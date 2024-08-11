@@ -1,7 +1,8 @@
 ---
 title: 'Stock footage - royality free video, photo, audio'
 description: 'Collection of useful resources for free stock footage for YouTube videos'
-date: '2020-03-26T09:24:00.000Z'
+date: '2020-03-26'
+updated: '2024-08-11'
 author: 'André Kovac'
 category: 'other'
 tags: ['film']
@@ -16,7 +17,7 @@ tags: ['film']
 | What                                              | Details                                                          |
 | ------------------------------------------------- | ---------------------------------------------------------------- |
 | [Pexels Video](https://videos.pexels.com/videos/) | Best free video footage - well searchable                        |
-| [Videvo](https://www.videvo.net/video/)           | Free video footage - also have sound effects and motion graphics |
+| [Videvo](https://www.videvo.net/)                 | Free video footage - also have sound effects and motion graphics |
 
 ## Audio
 
