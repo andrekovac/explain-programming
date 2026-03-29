@@ -15,7 +15,6 @@ draft: true
 
 > What's better for us? Should we settle for the world as it is or work for a world as it should be?
 
-
 **Jim Carey**
 
 You can also fail by things you don’t like, so give the things you like a chance!!!
@@ -31,11 +30,9 @@ You can also fail by things you don’t like, so give the things you like a chan
 
 > I've since made a habit of doing this. And this habit has helped in negotiations and other adversarial situations as well.
 
-
 **Douglas Adams - Hitchhiker’s Guide to the Galaxy**
 
 > "I may not have gone where I intended to go, but I think I have ended up where I needed to be."
-
 
 ## Work
 
@@ -63,13 +60,22 @@ Iain Thomas (Author)
 
 Oprah Winfrey
 
+> Maturity is the ability to decline good offers in favor of great ones.
+
+from the Book Principles from Ray Dalio
+
+> Don't make permanent decisions based on temporary emotions
+
+Unknown
+
 ## Health
 
 > Eat food not too much mostly plants
+
 by **Michael Pollan**
 
 ## Knowledge
 
-> Be careful while using **average**, it can be **mean** to you 😆 
+> Be careful while using **average**, it can be **mean** to you 😆
 
 Unknown

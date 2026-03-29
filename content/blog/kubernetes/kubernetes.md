@@ -276,3 +276,31 @@ kubectl get deployments.apps my-deployment -o yaml
 ### Prometheus
 
 ### Grafana
+
+### krew
+
+krew#
+Plugin manager for kubectl. 
+
+  *You can install it with brew. *
+kubectl-ctx
+
+Allows to easily switch the context of kubernetes - switching between environments.
+# install
+kubectl krew install ctx
+# usage
+kubectl ctx
+kubectl-ns
+
+Allows to easily display/switch kube namespaces.
+# install
+kubectl krew install ns
+# usage
+kubectl ns
+kubectl-view-secret
+
+This plugin allows for easy secret decoding. Useful if you want to see what’s inside of a secret.
+# install
+kubectl krew install view-secret
+# usage
+kubectl view-secret <secret>

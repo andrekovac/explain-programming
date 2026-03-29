@@ -16,14 +16,12 @@ draft: true
 | `shift + b` | split speed  |
 | `shift + h` | freeze frame |
 
-
 ## Useful settings
 
 | Shortcut                    | What?               |
 | --------------------------- | ------------------- |
 | `s`                         | skimming            |
 | `n` ? **TODO**: Check this! | clip while skimming |
-
 
 ## Sync Audio + Video
 
@@ -32,12 +30,12 @@ draft: true
 1. Copy all the tags of the video clip
 1. Mark both clips
 
-	Easiest if ...
+   Easiest if ...
 
-2. Right click + `Synchronize clips…`
-3. When finished, select clip and open `inspector` ![inspector](./images/inspector.png)
-4. Choose `audio` to work on audio effects
-5. In `Channel configuration` deselect Storyline audio.
+1. Right click + `Synchronize clips…`
+1. When finished, select clip and open `inspector` ![inspector](./images/inspector.png)
+1. Choose `audio` to work on audio effects
+1. In `Channel configuration` deselect Storyline audio.
 
 ##### If speaker was targeting on of the two mic channels
 
@@ -46,8 +44,8 @@ draft: true
 
 ##### Synchronizing several clips at once
 
-* Do upper procedure several times
-* Mark several clips and change sound channels and other stuff in a batch
+- Do upper procedure several times
+- Mark several clips and change sound channels and other stuff in a batch
 
 ##### Other things to do
 
@@ -60,11 +58,10 @@ draft: true
 
 #### Enhance human voices / a dialog
 
-* At `音量和声相` in `声相模式` choose `对白` (Dialoge), play clip from preview and move dot to best position.
-* At `音频增强`
-	1. Choose `人声增强`
-	2. Hit right arrow to analyze sound and choose the upper one if it is green after analysis. Don't choose the middle one.
-
+- At `音量和声相` in `声相模式` choose `对白` (Dialoge), play clip from preview and move dot to best position.
+- At `音频增强`
+  1.  Choose `人声增强`
+  2.  Hit right arrow to analyze sound and choose the upper one if it is green after analysis. Don't choose the middle one.
 
 ## Video
 

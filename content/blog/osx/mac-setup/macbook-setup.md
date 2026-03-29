@@ -28,6 +28,7 @@ brew install \
   gnupg2 \
   pyenv \
   ipython \
+  jq \ # View JSON output in a pretty way in the terminal
   kubectl \
   minikube \
   nvm \
@@ -43,7 +44,7 @@ brew tap leoafarias/fvm && brew install fvm &&
 brew tap wix/brew && bew install --cask detox-instruments &&
 
 # GUI programs
-brew install --cask \
+brew install \
   appcleaner \
   arduino \
   arq \
@@ -74,6 +75,7 @@ brew install --cask \
   microsoft-teams \
   miro \
   ngrok \
+  orbstack \
   postman \
   postgresql \
   pycharm \
@@ -148,20 +150,18 @@ npm install -g blitz --legacy-peer-deps
 
 ### Ruby
 
-
 Install Ruby Version Manager **RVM** using [these instructions](https://rvm.io/):
 
-   1. Install GPG keys: `gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB`
-   2. Install RVM: `\curl -sSL https://get.rvm.io | bash -s stable` 
+1.  Install GPG keys: `gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB`
+2.  Install RVM: `\curl -sSL https://get.rvm.io | bash -s stable`
 
-2. Install ruby version `3.0.0` via `rvm install 3.0.0`
-
+3.  Install ruby version `3.0.0` via `rvm install 3.0.0`
 
 ### React Native
 
 - `brew install --cask adoptopenjdk/openjdk/adoptopenjdk11` is a React Native Android requirement
 
-    - You'll be asked to install Rosetta via `sudo softwareupdate --install-rosetta`
+  - You'll be asked to install Rosetta via `sudo softwareupdate --install-rosetta`
 
 - `brew install watchman`
 - Install [Android Studio](https://developer.android.com/studio/index.html)
@@ -192,7 +192,6 @@ Use [this guide](https://www.lifewire.com/back-up-thunderbird-settings-1173141) 
 1. Export in old PC
 2. Import in new PC
 
-
 ### OSX System settings
 
 #### Copy-paste keyboard shortcuts
@@ -216,7 +215,6 @@ Change it to macdown
 #### Postgres
 
 Install first user following [this setup guide](https://www.codementor.io/@engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb).
-
 
 ### Some default
 
@@ -242,6 +240,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 ### Extra Apps
 
 - **Loom**: It's homebrew version does not work for Macbooks with M1 chip.
+- **TextSniper**: Image to text to clipboard
 - **Keyman** for Indonesian keyboard: Install via dmg file from [the Keyman website](https://keyman.com/mac/download)
 
 ## VSCode (Visual Studio Code)
@@ -283,4 +282,3 @@ Add the following aliases file:
 
 - [Eikes dot files](https://github.com/efoken/dotfiles)
 - [Use Tania Rascia's guide as template](https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development)
-
