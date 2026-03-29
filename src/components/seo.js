@@ -13,7 +13,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import image from '../../static/images/explain-programming-meta-image.jpg';
 import imageSquare from '../../static/images/explain-programming-meta-image-square.jpg';
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -22,6 +22,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
             social {
               twitter
             }
@@ -32,6 +33,21 @@ function SEO({ description, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const canonical = pathname
+    ? `${site.siteMetadata.siteUrl}${pathname}`
+    : site.siteMetadata.siteUrl;
+
+  const schemaOrgJSONLD = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: site.siteMetadata.siteUrl,
+    name: site.siteMetadata.title,
+    description: site.siteMetadata.description,
+    publisher: {
+      '@type': 'Person',
+      name: site.siteMetadata.author,
+    },
+  };
 
   return (
     <Helmet
@@ -40,6 +56,22 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={
+        canonical
+          ? [
+              {
+                rel: `canonical`,
+                href: canonical,
+              },
+            ]
+          : []
+      }
+      script={[
+        {
+          type: `application/ld+json`,
+          innerHTML: JSON.stringify(schemaOrgJSONLD),
+        },
+      ]}
       meta={[
         {
           name: `description`,
@@ -58,6 +90,10 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: canonical,
+        },
+        {
           property: `og:image`,
           content: imageSquare,
         },
@@ -67,15 +103,10 @@ function SEO({ description, lang, meta, title }) {
           content: `summary_large_image`,
         },
         {
-          // Use twitter card validator to validate Twitter image:
-          // https://cards-dev.twitter.com/validator
-          // Type 'summary_large_image': Image has to have an aspect ratio of 2:1
-          // Type 'summary': Image has to have an aspect ratio of 1:1
           name: `twitter:image`,
           content: image,
         },
         {
-          // Alt text for the visually impaired
           name: `twitter:image:alt`,
           content: `Image about what the "Explain programming" website is about - commands and knowledge about programming languages and frameworks. Collected over several years by André Kovac`,
         },
@@ -94,6 +125,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `viewport`,
+          content: `width=device-width, initial-scale=1`,
         },
       ].concat(meta)}
     />

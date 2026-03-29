@@ -58,9 +58,9 @@ const BlogIndex = (props) => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO title="Explain Programming" />
+      <SEO title="Explain Programming" pathname={props.location.pathname} />
       <Box>
-        <Heading color="brand.500">All articles</Heading>
+        <Heading as="h1" color="brand.500">All articles</Heading>
       </Box>
       <Flex
         my="5"

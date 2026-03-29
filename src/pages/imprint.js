@@ -11,7 +11,10 @@ class ImprintPage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Imprint | Explain Programming" />
+        <SEO
+          title="Imprint | Explain Programming"
+          pathname={this.props.location.pathname}
+        />
         <h1>Imprint</h1>
         <p>
           Owner of this site and responsible for the content of this website

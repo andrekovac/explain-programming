@@ -16,7 +16,10 @@ const Confirmed = (props) => {
 
   return (
     <Layout hideNewsletter={true} location={props.location} title={siteTitle}>
-      <SEO title="Subscription Confirmed | Explain Programming" />
+      <SEO
+        title="Subscription Confirmed | Explain Programming"
+        pathname={props.location.pathname}
+      />
       <h1>Subscription confirmed</h1>
       <p>
         Hi

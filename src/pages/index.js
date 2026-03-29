@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
-import { Flex, Box, PseudoBox, Text } from '@chakra-ui/core';
+import { Flex, Box, PseudoBox, Text, Heading } from '@chakra-ui/core';
 import * as dayjs from 'dayjs';
 import * as localizedFormat from 'dayjs/plugin/localizedFormat';
 
@@ -41,7 +41,17 @@ const BlogIndex = (props) => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO title="Explain Programming" />
+      <SEO title="Explain Programming" pathname={props.location.pathname} />
+      <Box my="6">
+        <Heading as="h1" color="brand.500" textAlign="center" mb="3">
+          Explain Programming
+        </Heading>
+        <Text fontSize="lg" maxWidth="3xl" mx="auto" lineHeight="tall">
+          A growing collection of programming commands, language notes and
+          developer tips. Explore useful code snippets, reference material and
+          practical examples that help you solve programming problems faster.
+        </Text>
+      </Box>
       <Box>
         {/* <Text
         color="brand.500"

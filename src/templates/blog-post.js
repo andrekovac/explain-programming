@@ -47,6 +47,7 @@ const BlogPostTemplate = (props) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        pathname={props.location.pathname}
       />
       <Box>
         <article>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
+import { Heading } from '@chakra-ui/core';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -12,7 +13,13 @@ class Projects extends Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Projects | Explain Programming" />
+        <SEO
+          title="Projects | Explain Programming"
+          pathname={this.props.location.pathname}
+        />
+        <Heading as="h1" color="brand.500" mb="4">
+          Projects
+        </Heading>
         <Project />
         <Project />
         <Project />

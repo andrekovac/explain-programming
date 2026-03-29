@@ -11,7 +11,10 @@ class PrivacyPolicyPage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Privacy Policy | Explain Programming" />
+        <SEO
+          title="Privacy Policy | Explain Programming"
+          pathname={this.props.location.pathname}
+        />
         <h1>Privacy Policy</h1>
         <div id="privacy-policy">
           <p>

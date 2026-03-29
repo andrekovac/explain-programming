@@ -129,6 +129,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -151,20 +152,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: "gatsby-plugin-chakra-ui",
-      options: {
-        /**
-         * @property {boolean} [isResettingCSS=true]
-         * if false, this plugin will not use `<CSSReset />
-         */
-        isResettingCSS: false,
-        /**
-         * @property {boolean} [isUsingColorMode=true]
-         * if false, this plugin will not use <ColorModeProvider />
-         */
-        isUsingColorMode: false,
-      },
-    },
+
   ],
 };
